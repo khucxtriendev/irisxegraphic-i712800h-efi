@@ -1,0 +1,76 @@
+2026-10-25 23:29:20.501 system_profiler[11099:91210] Device PreExisted [000000010000065b] Intel(R) TGL Unknown
+2026-10-25 23:29:20.502 system_profiler[11099:91210] Synchronize with Metal initialization
+2026-10-25 23:29:23.507 system_profiler[11099:91210] Can't find (Metal) name, location, locationNumber, maxTransferRate
+2026-10-25 23:29:23.566 system_profiler[11099:91210] Synchronize with Metal initialization
+2026-10-25 23:29:26.569 system_profiler[11099:91210] Can't find (Metal) name, location, locationNumber, maxTransferRate
+Graphics/Displays:
+
+    Intel Iris Xe Graphics:
+
+      Chipset Model: Intel Iris Xe Graphics
+      Type: GPU
+      Bus: Built-In
+      Slot: built-in
+      VRAM (Dynamic, Max): 1536 MB
+      Vendor: Intel
+      Device ID: 0x9a49
+      Revision ID: 0x000c
+      Metal Support: Metal 2
+      Displays:
+        Display:
+          Resolution: 2880 x 1800
+          UI Looks like: 1440 x 900
+          Framebuffer Depth: 24-Bit Color (ARGB8888)
+          Main Display: Yes
+          Mirror: Off
+          Online: Yes
+          Connection Type: Internal
+
+Audio:
+
+    Devices:
+
+        内建输出:
+
+          Default Output Device: Yes
+          Default System Output Device: Yes
+          Manufacturer: Apple Inc.
+          Output Channels: 2
+          Current SampleRate: 48000
+          Transport: Built-in
+          Output Source: 内置扬声器
+
+Camera:
+
+    Integrated Camera:
+
+      Model ID: UVC Camera VendorID_5967 ProductID_6162
+      Unique ID: 0x14800000174f1812
+
+Bluetooth:
+
+      Bluetooth Controller:
+          State: On
+          Chipset: THIRD_PARTY_DONGLE
+          Discoverable: Off
+          Firmware Version: v12490 c12490
+          Supported services: 0x392039 < HFP AVRCP A2DP HID Braille LEA AACP GATT SerialPort >
+          Transport: USB
+          Vendor ID: 0x004C (Apple)
+      Not Connected:
+          Airpod 4 ANC của KXT:
+              Case Version: 9A348
+              Firmware Version: 9A348
+              Minor Type: Headphones
+              Serial Number: HFJ4XH3QQW
+              Serial Number (Left): GX1HSM0U5AC0000B2Z
+              Serial Number (Right): GN3HSP0RX0T0000B31
+          khuctrien's Airport 🙈:
+              Firmware Version: 5A377
+              Minor Type: Headphones
+              Serial Number: C2KNHD904G
+              Serial Number (Left): G0WJ49GYDL
+              Serial Number (Right): G0WJ49GYDR
+          kxt:
+              RSSI: -36
+

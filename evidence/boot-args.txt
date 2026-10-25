@@ -1,0 +1,1 @@
+boot-args	IGLogLevel=3 -ngreentglwithgfx -allow3d -disablegfxfirmware ngreen-dmc=adlp -ngreenv189 -ngreenkeepefi -ngreenxefix -ngreenfixbootmode amfi_get_out_of_my_way=1 ngreenSched=4 ngreenV142=3 -xenobb -ngreennoblr -ngreenv99g disablesleep=1 gfxrst=1 -v

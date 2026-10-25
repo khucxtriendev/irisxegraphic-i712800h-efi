@@ -1,0 +1,400 @@
++-o XHCI@14000000  <class AppleUSBXHCIPCI, id 0x100000441, registered, matched, active, busy 0 (1631 ms), retain 153>
+  | {
+  |   "IOClass" = "AppleUSBXHCIPCI"
+  |   "kUSBSleepPortCurrentLimit" = 3000
+  |   "UsbHostControllerSoftRetryPolicy" = 0
+  |   "IOPersonalityPublisher" = "com.apple.driver.usb.AppleUSBXHCIPCI"
+  |   "IOMatchedAtBoot" = Yes
+  |   "IOPowerManagement" = {"ChildrenPowerState"=3,"DevicePowerState"=0,"CurrentPowerState"=3,"CapabilityFlags"=32768,"MaxPowerState"=3,"DriverPowerState"=0}
+  |   "IOProviderClass" = "IOPCIDevice"
+  |   "ports" = {"HS01"={"usb-port-type"=0,"UsbConnector"=0,"usb-port-number"=<01000000>,"port"=<01000000>},"HS11"={"usb-port-type"=0,"UsbConnector"=0,"usb-port-number"=<0b000000>,"port"=<0b000000>},"SS02"={"usb-port-type"=3,"UsbConnector"=3,"usb-port-number"=<0e000000>,"port"=<0e000000>},"HS08"={"usb-port-type"=255,"UsbConnector"=255,"usb-port-number"=<08000000>,"port"=<08000000>},"HS04"={"usb-port-type"=0,"UsbConnector"=0,"usb-port-number"=<04000000>,"port"=<04000000>},"HS10"={"usb-port-type"=255,"UsbConnector"=255,"usb-port-number"=<0a000000>,"port"=<0a000000>},"SS01"={"usb-port-type"=3,"UsbConnector"=3,"usb-port-number"=<0d000000>,"port"=<0d000000>},"HS07"={"usb-port-type"=0,"UsbConnector"=0,"usb-port-number"=<07000000>,"port"=<07000000>},"HS03"={"usb-port-type"=0,"UsbConnector"=0,"usb-port-number"=<03000000>,"port"=<03000000>},"HS06"={"usb-port-type"=255,"UsbConnector"=255,"usb-port-number"=<06000000>,"port"=<06000000>},"HS02"={"usb-port-type"=0,"UsbConnector"=0,"usb-port-number"=<02000000>,"port"=<02000000>},"HS12"={"usb-port-type"=0,"UsbConnector"=0,"usb-port-number"=<0c000000>,"port"=<0c000000>},"SS03"={"usb-port-type"=3,"UsbConnector"=3,"usb-port-number"=<0f000000>,"port"=<0f000000>},"HS09"={"usb-port-type"=0,"UsbConnector"=0,"usb-port-number"=<09000000>,"port"=<09000000>},"HS05"={"usb-port-type"=0,"UsbConnector"=0,"usb-port-number"=<05000000>,"port"=<05000000>}}
+  |   "IOProbeScore" = 0
+  |   "locationID" = 335544320
+  |   "name" = <"XHCI">
+  |   "IOPCIPauseCompatible" = Yes
+  |   "IOPCIUseDeviceMapper" = Yes
+  |   "device-properties" = {"acpi-device"="IOACPIPlatformDevice is not serializable","acpi-path"="IOACPIPlane:/_SB/PC00/XHCI@140000"}
+  |   "kUSBWakePortCurrentLimit" = 3000
+  |   "CFBundleIdentifierKernel" = "com.apple.driver.usb.AppleUSBXHCIPCI"
+  |   "IOMatchCategory" = "IODefaultMatchCategory"
+  |   "CFBundleIdentifier" = "com.apple.driver.usb.AppleUSBXHCIPCI"
+  |   "port-count" = <0f000000>
+  |   "UsbHostControllerUSB4LPMPolicy" = 1
+  |   "IOPCITunnelCompatible" = Yes
+  |   "controller-statistics" = {"kControllerStatIOCount"=177190,"kControllerStatPowerStateTime"={"kPowerStateInitialize"="0ms (0%)","kPowerStateOff"="0ms (0%)","kPowerStateSleep"="0ms (0%)","kPowerStateOn"="4394701ms (100%)","kPowerStateSuspended"="0ms (0%)"},"kControllerStatSpuriousInterruptCount"=0}
+  |   "UsbHostControllerProtocolRevision" = "3.1"
+  |   "kUSBSleepSupported" = Yes
+  |   "IOPCIClassMatch" = "0x0c033000"
+  | }
+  | 
+  +-o HS01@14100000  <class AppleUSB20XHCIPort, id 0x100000508, registered, matched, active, busy 0 (0 ms), retain 11>
+  |   {
+  |     "usb-port-number" = <01000000>
+  |     "IOPowerManagement" = {"DevicePowerState"=2,"CurrentPowerState"=2,"CapabilityFlags"=65536,"MaxPowerState"=3,"DriverPowerState"=0}
+  |     "usb-port-location" = <01000000>
+  |     "UsbConnector" = 0
+  |     "UsbProtocol (1.x)" = Yes
+  |     "UsbProtocol (2.0)" = Yes
+  |     "locationID" = 336592896
+  |     "kUSBWakePortCurrentLimit" = 3000
+  |     "UsbProtocolCompanion (3.x)" = "IOService:/AppleACPIPlatformExpert/PC00/AppleACPIPCI/XHCI@14/XHCI@14000000/SS01@14d00000"
+  |     "kUSBSleepPortCurrentLimit" = 3000
+  |     "usb-port-type" = 0
+  |     "port-status" = 0
+  |     "port-statistics" = {"kPortStatEOF2ViolationCurrentConnectCount"=0,"kPortStatEOF2ViolationDuringResetCount"=0,"kPortStatPowerStateTime"={"kPowerStateOff"="0ms (0%)","kPowerStateSleep"="0ms (0%)","kPowerStateOn"="0ms (0%)","kPowerStateSuspended"="4394358ms (100%)"},"kPortStatConnectCount"=0,"kPortStatRemoteWakeCount"=0,"kPortStatEOF2ViolationRecoveryDuringResetCount"=0,"kPortStatAddressFailureCount"=0,"kPortStatEOF2ViolationCount"=0,"kPortStatEnumerationFailureCount"=0,"kPortStatOverCurrentCount"=0,"kPortStatEOF2ViolationDuringResumeCount"=0}
+  |     "name" = "HS01"
+  |     "port" = <01000000>
+  |   }
+  |   
+  +-o HS02@14200000  <class AppleUSB20XHCIPort, id 0x10000050a, registered, matched, active, busy 0 (0 ms), retain 11>
+  |   {
+  |     "usb-port-number" = <02000000>
+  |     "IOPowerManagement" = {"DevicePowerState"=2,"CurrentPowerState"=2,"CapabilityFlags"=65536,"MaxPowerState"=3,"DriverPowerState"=0}
+  |     "usb-port-location" = <02000000>
+  |     "UsbConnector" = 0
+  |     "UsbProtocol (1.x)" = Yes
+  |     "UsbProtocol (2.0)" = Yes
+  |     "locationID" = 337641472
+  |     "kUSBWakePortCurrentLimit" = 3000
+  |     "UsbProtocolCompanion (3.x)" = "IOService:/AppleACPIPlatformExpert/PC00/AppleACPIPCI/XHCI@14/XHCI@14000000/SS02@14e00000"
+  |     "kUSBSleepPortCurrentLimit" = 3000
+  |     "usb-port-type" = 0
+  |     "port-status" = 0
+  |     "port-statistics" = {"kPortStatEOF2ViolationCurrentConnectCount"=0,"kPortStatEOF2ViolationDuringResetCount"=0,"kPortStatPowerStateTime"={"kPowerStateOff"="0ms (0%)","kPowerStateSleep"="0ms (0%)","kPowerStateOn"="397ms (0%)","kPowerStateSuspended"="4394263ms (99%)"},"kPortStatConnectCount"=1,"kPortStatRemoteWakeCount"=0,"kPortStatEOF2ViolationRecoveryDuringResetCount"=0,"kPortStatAddressFailureCount"=0,"kPortStatEOF2ViolationCount"=0,"kPortStatEnumerationFailureCount"=0,"kPortStatOverCurrentCount"=0,"kPortStatEOF2ViolationDuringResumeCount"=0}
+  |     "name" = "HS02"
+  |     "port" = <02000000>
+  |   }
+  |   
+  +-o HS03@14300000  <class AppleUSB20XHCIPort, id 0x10000050c, registered, matched, active, busy 0 (0 ms), retain 11>
+  |   {
+  |     "usb-port-number" = <03000000>
+  |     "IOPowerManagement" = {"DevicePowerState"=2,"CurrentPowerState"=2,"CapabilityFlags"=65536,"MaxPowerState"=3,"DriverPowerState"=0}
+  |     "usb-port-location" = <03000000>
+  |     "UsbConnector" = 0
+  |     "UsbProtocol (1.x)" = Yes
+  |     "UsbProtocol (2.0)" = Yes
+  |     "locationID" = 338690048
+  |     "kUSBWakePortCurrentLimit" = 3000
+  |     "UsbProtocolCompanion (3.x)" = "IOService:/AppleACPIPlatformExpert/PC00/AppleACPIPCI/XHCI@14/XHCI@14000000/SS03@14f00000"
+  |     "kUSBSleepPortCurrentLimit" = 3000
+  |     "usb-port-type" = 0
+  |     "port-status" = 0
+  |     "port-statistics" = {"kPortStatEOF2ViolationCurrentConnectCount"=0,"kPortStatEOF2ViolationDuringResetCount"=0,"kPortStatPowerStateTime"={"kPowerStateOff"="0ms (0%)","kPowerStateSleep"="0ms (0%)","kPowerStateOn"="0ms (0%)","kPowerStateSuspended"="4394662ms (100%)"},"kPortStatConnectCount"=0,"kPortStatRemoteWakeCount"=0,"kPortStatEOF2ViolationRecoveryDuringResetCount"=0,"kPortStatAddressFailureCount"=0,"kPortStatEOF2ViolationCount"=0,"kPortStatEnumerationFailureCount"=0,"kPortStatOverCurrentCount"=0,"kPortStatEOF2ViolationDuringResumeCount"=0}
+  |     "name" = "HS03"
+  |     "port" = <03000000>
+  |   }
+  |   
+  +-o HS04@14400000  <class AppleUSB20XHCIPort, id 0x10000050e, registered, matched, active, busy 0 (0 ms), retain 9>
+  |   {
+  |     "usb-port-number" = <04000000>
+  |     "IOPowerManagement" = {"DevicePowerState"=2,"CurrentPowerState"=2,"CapabilityFlags"=65536,"MaxPowerState"=3,"DriverPowerState"=0}
+  |     "usb-port-location" = <04000000>
+  |     "UsbConnector" = 0
+  |     "UsbProtocol (1.x)" = Yes
+  |     "UsbProtocol (2.0)" = Yes
+  |     "locationID" = 339738624
+  |     "kUSBWakePortCurrentLimit" = 3000
+  |     "kUSBSleepPortCurrentLimit" = 3000
+  |     "usb-port-type" = 0
+  |     "port-status" = 0
+  |     "port-statistics" = {"kPortStatEOF2ViolationCurrentConnectCount"=0,"kPortStatEOF2ViolationDuringResetCount"=0,"kPortStatPowerStateTime"={"kPowerStateOff"="0ms (0%)","kPowerStateSleep"="0ms (0%)","kPowerStateOn"="0ms (0%)","kPowerStateSuspended"="4394683ms (100%)"},"kPortStatConnectCount"=0,"kPortStatRemoteWakeCount"=0,"kPortStatEOF2ViolationRecoveryDuringResetCount"=0,"kPortStatAddressFailureCount"=0,"kPortStatEOF2ViolationCount"=0,"kPortStatEnumerationFailureCount"=0,"kPortStatOverCurrentCount"=0,"kPortStatEOF2ViolationDuringResumeCount"=0}
+  |     "name" = "HS04"
+  |     "port" = <04000000>
+  |   }
+  |   
+  +-o HS05@14500000  <class AppleUSB20XHCIPort, id 0x100000510, registered, matched, active, busy 0 (0 ms), retain 9>
+  |   {
+  |     "usb-port-number" = <05000000>
+  |     "IOPowerManagement" = {"DevicePowerState"=2,"CurrentPowerState"=2,"CapabilityFlags"=65536,"MaxPowerState"=3,"DriverPowerState"=0}
+  |     "usb-port-location" = <05000000>
+  |     "UsbConnector" = 0
+  |     "UsbProtocol (1.x)" = Yes
+  |     "UsbProtocol (2.0)" = Yes
+  |     "locationID" = 340787200
+  |     "kUSBWakePortCurrentLimit" = 3000
+  |     "kUSBSleepPortCurrentLimit" = 3000
+  |     "usb-port-type" = 0
+  |     "port-status" = 0
+  |     "port-statistics" = {"kPortStatEOF2ViolationCurrentConnectCount"=0,"kPortStatEOF2ViolationDuringResetCount"=0,"kPortStatPowerStateTime"={"kPowerStateOff"="0ms (0%)","kPowerStateSleep"="0ms (0%)","kPowerStateOn"="0ms (0%)","kPowerStateSuspended"="4394683ms (100%)"},"kPortStatConnectCount"=0,"kPortStatRemoteWakeCount"=0,"kPortStatEOF2ViolationRecoveryDuringResetCount"=0,"kPortStatAddressFailureCount"=0,"kPortStatEOF2ViolationCount"=0,"kPortStatEnumerationFailureCount"=0,"kPortStatOverCurrentCount"=0,"kPortStatEOF2ViolationDuringResumeCount"=0}
+  |     "name" = "HS05"
+  |     "port" = <05000000>
+  |   }
+  |   
+  +-o HS06@14600000  <class AppleUSB20XHCIPort, id 0x100000512, registered, matched, active, busy 0 (4 ms), retain 13>
+  |   {
+  |     "usb-port-number" = <06000000>
+  |     "IOPowerManagement" = {"ChildrenPowerState"=3,"DevicePowerState"=2,"CurrentPowerState"=3,"CapabilityFlags"=32768,"MaxPowerState"=3,"DriverPowerState"=0}
+  |     "usb-port-location" = <06000000>
+  |     "UsbConnector" = 255
+  |     "UsbProtocol (1.x)" = Yes
+  |     "UsbProtocol (2.0)" = Yes
+  |     "locationID" = 341835776
+  |     "kUSBBusCurrentSleepAllocation" = 0
+  |     "usb-port-type" = 255
+  |     "port-status" = 4354
+  |     "kUSBBusCurrentAllocation" = 100
+  |     "port-statistics" = {"kPortStatEOF2ViolationCurrentConnectCount"=0,"kPortStatEOF2ViolationDuringResetCount"=0,"kPortStatPowerStateTime"={"kPowerStateOff"="0ms (0%)","kPowerStateSleep"="0ms (0%)","kPowerStateOn"="4394682ms (100%)","kPowerStateSuspended"="0ms (0%)"},"kPortStatConnectCount"=1,"kPortStatRemoteWakeCount"=0,"kPortStatEOF2ViolationRecoveryDuringResetCount"=0,"kPortStatAddressFailureCount"=0,"kPortStatEOF2ViolationCount"=0,"kPortStatEnumerationFailureCount"=0,"kPortStatOverCurrentCount"=0,"kPortStatEOF2ViolationDuringResumeCount"=0}
+  |     "name" = "HS06"
+  |     "port" = <06000000>
+  |   }
+  |   
+  +-o HS07@14700000  <class AppleUSB20XHCIPort, id 0x100000514, registered, matched, active, busy 0 (0 ms), retain 9>
+  |   {
+  |     "usb-port-number" = <07000000>
+  |     "IOPowerManagement" = {"DevicePowerState"=2,"CurrentPowerState"=2,"CapabilityFlags"=65536,"MaxPowerState"=3,"DriverPowerState"=0}
+  |     "usb-port-location" = <07000000>
+  |     "UsbConnector" = 0
+  |     "UsbProtocol (1.x)" = Yes
+  |     "UsbProtocol (2.0)" = Yes
+  |     "locationID" = 342884352
+  |     "kUSBWakePortCurrentLimit" = 3000
+  |     "kUSBSleepPortCurrentLimit" = 3000
+  |     "usb-port-type" = 0
+  |     "port-status" = 0
+  |     "port-statistics" = {"kPortStatEOF2ViolationCurrentConnectCount"=0,"kPortStatEOF2ViolationDuringResetCount"=0,"kPortStatPowerStateTime"={"kPowerStateOff"="0ms (0%)","kPowerStateSleep"="0ms (0%)","kPowerStateOn"="0ms (0%)","kPowerStateSuspended"="4394683ms (100%)"},"kPortStatConnectCount"=0,"kPortStatRemoteWakeCount"=0,"kPortStatEOF2ViolationRecoveryDuringResetCount"=0,"kPortStatAddressFailureCount"=0,"kPortStatEOF2ViolationCount"=0,"kPortStatEnumerationFailureCount"=0,"kPortStatOverCurrentCount"=0,"kPortStatEOF2ViolationDuringResumeCount"=0}
+  |     "name" = "HS07"
+  |     "port" = <07000000>
+  |   }
+  |   
+  +-o HS08@14800000  <class AppleUSB20XHCIPort, id 0x100000516, registered, matched, active, busy 0 (195 ms), retain 13>
+  |   {
+  |     "usb-port-number" = <08000000>
+  |     "IOPowerManagement" = {"ChildrenPowerState"=3,"DevicePowerState"=2,"CurrentPowerState"=3,"CapabilityFlags"=32768,"MaxPowerState"=3,"DriverPowerState"=0}
+  |     "usb-port-location" = <08000000>
+  |     "UsbConnector" = 255
+  |     "UsbProtocol (1.x)" = Yes
+  |     "UsbProtocol (2.0)" = Yes
+  |     "locationID" = 343932928
+  |     "kUSBBusCurrentSleepAllocation" = 0
+  |     "usb-port-type" = 255
+  |     "port-status" = 4866
+  |     "kUSBBusCurrentAllocation" = 500
+  |     "port-statistics" = {"kPortStatEOF2ViolationCurrentConnectCount"=0,"kPortStatEOF2ViolationDuringResetCount"=0,"kPortStatPowerStateTime"={"kPowerStateOff"="0ms (0%)","kPowerStateSleep"="0ms (0%)","kPowerStateOn"="4394683ms (100%)","kPowerStateSuspended"="0ms (0%)"},"kPortStatConnectCount"=1,"kPortStatRemoteWakeCount"=0,"kPortStatEOF2ViolationRecoveryDuringResetCount"=0,"kPortStatAddressFailureCount"=0,"kPortStatEOF2ViolationCount"=0,"kPortStatEnumerationFailureCount"=0,"kPortStatOverCurrentCount"=0,"kPortStatEOF2ViolationDuringResumeCount"=0}
+  |     "name" = "HS08"
+  |     "port" = <08000000>
+  |   }
+  |   
+  +-o HS09@14900000  <class AppleUSB20XHCIPort, id 0x100000518, registered, matched, active, busy 0 (321 ms), retain 13>
+  |   {
+  |     "usb-port-number" = <09000000>
+  |     "IOPowerManagement" = {"ChildrenPowerState"=3,"DevicePowerState"=2,"CurrentPowerState"=3,"CapabilityFlags"=32768,"MaxPowerState"=3,"DriverPowerState"=0}
+  |     "usb-port-location" = <09000000>
+  |     "UsbConnector" = 0
+  |     "UsbProtocol (1.x)" = Yes
+  |     "UsbProtocol (2.0)" = Yes
+  |     "locationID" = 344981504
+  |     "kUSBWakePortCurrentLimit" = 3000
+  |     "kUSBSleepPortCurrentLimit" = 3000
+  |     "usb-port-type" = 0
+  |     "port-status" = 4352
+  |     "port-statistics" = {"kPortStatEOF2ViolationCurrentConnectCount"=0,"kPortStatEOF2ViolationDuringResetCount"=0,"kPortStatPowerStateTime"={"kPowerStateOff"="0ms (0%)","kPowerStateSleep"="0ms (0%)","kPowerStateOn"="4394683ms (100%)","kPowerStateSuspended"="0ms (0%)"},"kPortStatConnectCount"=1,"kPortStatRemoteWakeCount"=0,"kPortStatEOF2ViolationRecoveryDuringResetCount"=0,"kPortStatAddressFailureCount"=0,"kPortStatEOF2ViolationCount"=0,"kPortStatEnumerationFailureCount"=0,"kPortStatOverCurrentCount"=0,"kPortStatEOF2ViolationDuringResumeCount"=0}
+  |     "name" = "HS09"
+  |     "port" = <09000000>
+  |   }
+  |   
+  +-o HS10@14a00000  <class AppleUSB20XHCIPort, id 0x10000051a, registered, matched, active, busy 0 (1304 ms), retain 13>
+  |   {
+  |     "usb-port-number" = <0a000000>
+  |     "IOPowerManagement" = {"ChildrenPowerState"=3,"DevicePowerState"=2,"CurrentPowerState"=3,"CapabilityFlags"=32768,"MaxPowerState"=3,"DriverPowerState"=0}
+  |     "usb-port-location" = <0a000000>
+  |     "UsbConnector" = 255
+  |     "UsbProtocol (1.x)" = Yes
+  |     "UsbProtocol (2.0)" = Yes
+  |     "locationID" = 346030080
+  |     "kUSBBusCurrentSleepAllocation" = 0
+  |     "usb-port-type" = 255
+  |     "port-status" = 4354
+  |     "kUSBBusCurrentAllocation" = 100
+  |     "port-statistics" = {"kPortStatEOF2ViolationCurrentConnectCount"=0,"kPortStatEOF2ViolationDuringResetCount"=0,"kPortStatPowerStateTime"={"kPowerStateOff"="0ms (0%)","kPowerStateSleep"="0ms (0%)","kPowerStateOn"="4394683ms (100%)","kPowerStateSuspended"="0ms (0%)"},"kPortStatConnectCount"=1,"kPortStatRemoteWakeCount"=0,"kPortStatEOF2ViolationRecoveryDuringResetCount"=0,"kPortStatAddressFailureCount"=0,"kPortStatEOF2ViolationCount"=0,"kPortStatEnumerationFailureCount"=0,"kPortStatOverCurrentCount"=0,"kPortStatEOF2ViolationDuringResumeCount"=0}
+  |     "name" = "HS10"
+  |     "port" = <0a000000>
+  |   }
+  |   
+  +-o HS11@14b00000  <class AppleUSB20XHCIPort, id 0x10000051c, registered, matched, active, busy 0 (0 ms), retain 9>
+  |   {
+  |     "usb-port-number" = <0b000000>
+  |     "IOPowerManagement" = {"DevicePowerState"=2,"CurrentPowerState"=2,"CapabilityFlags"=65536,"MaxPowerState"=3,"DriverPowerState"=0}
+  |     "usb-port-location" = <0b000000>
+  |     "UsbConnector" = 0
+  |     "UsbProtocol (1.x)" = Yes
+  |     "UsbProtocol (2.0)" = Yes
+  |     "locationID" = 347078656
+  |     "kUSBWakePortCurrentLimit" = 3000
+  |     "kUSBSleepPortCurrentLimit" = 3000
+  |     "usb-port-type" = 0
+  |     "port-status" = 0
+  |     "port-statistics" = {"kPortStatEOF2ViolationCurrentConnectCount"=0,"kPortStatEOF2ViolationDuringResetCount"=0,"kPortStatPowerStateTime"={"kPowerStateOff"="0ms (0%)","kPowerStateSleep"="0ms (0%)","kPowerStateOn"="0ms (0%)","kPowerStateSuspended"="4394684ms (100%)"},"kPortStatConnectCount"=0,"kPortStatRemoteWakeCount"=0,"kPortStatEOF2ViolationRecoveryDuringResetCount"=0,"kPortStatAddressFailureCount"=0,"kPortStatEOF2ViolationCount"=0,"kPortStatEnumerationFailureCount"=0,"kPortStatOverCurrentCount"=0,"kPortStatEOF2ViolationDuringResumeCount"=0}
+  |     "name" = "HS11"
+  |     "port" = <0b000000>
+  |   }
+  |   
+  +-o HS12@14c00000  <class AppleUSB20XHCIPort, id 0x10000051e, registered, matched, active, busy 0 (0 ms), retain 9>
+  |   {
+  |     "usb-port-number" = <0c000000>
+  |     "IOPowerManagement" = {"DevicePowerState"=2,"CurrentPowerState"=2,"CapabilityFlags"=65536,"MaxPowerState"=3,"DriverPowerState"=0}
+  |     "usb-port-location" = <0c000000>
+  |     "UsbConnector" = 0
+  |     "UsbProtocol (1.x)" = Yes
+  |     "UsbProtocol (2.0)" = Yes
+  |     "locationID" = 348127232
+  |     "kUSBWakePortCurrentLimit" = 3000
+  |     "kUSBSleepPortCurrentLimit" = 3000
+  |     "usb-port-type" = 0
+  |     "port-status" = 0
+  |     "port-statistics" = {"kPortStatEOF2ViolationCurrentConnectCount"=0,"kPortStatEOF2ViolationDuringResetCount"=0,"kPortStatPowerStateTime"={"kPowerStateOff"="0ms (0%)","kPowerStateSleep"="0ms (0%)","kPowerStateOn"="0ms (0%)","kPowerStateSuspended"="4394683ms (100%)"},"kPortStatConnectCount"=0,"kPortStatRemoteWakeCount"=0,"kPortStatEOF2ViolationRecoveryDuringResetCount"=0,"kPortStatAddressFailureCount"=0,"kPortStatEOF2ViolationCount"=0,"kPortStatEnumerationFailureCount"=0,"kPortStatOverCurrentCount"=0,"kPortStatEOF2ViolationDuringResumeCount"=0}
+  |     "name" = "HS12"
+  |     "port" = <0c000000>
+  |   }
+  |   
+  +-o SS01@14d00000  <class AppleUSB30XHCIPort, id 0x100000520, registered, matched, active, busy 0 (0 ms), retain 10>
+  |   {
+  |     "usb-port-number" = <0d000000>
+  |     "UsbProtocol (3.x)" = Yes
+  |     "UsbProtocolCompanion (1.x)" = "IOService:/AppleACPIPlatformExpert/PC00/AppleACPIPCI/XHCI@14/XHCI@14000000/HS01@14100000"
+  |     "link-error-count" = 0
+  |     "IOPowerManagement" = {"DevicePowerState"=2,"CurrentPowerState"=2,"CapabilityFlags"=65536,"MaxPowerState"=3,"DriverPowerState"=0}
+  |     "usb-port-location" = <0d000000>
+  |     "UsbConnector" = 3
+  |     "UsbProtocolCompanion (2.0)" = "IOService:/AppleACPIPlatformExpert/PC00/AppleACPIPCI/XHCI@14/XHCI@14000000/HS01@14100000"
+  |     "kUSBWakePortCurrentLimit" = 3000
+  |     "locationID" = 349175808
+  |     "kUSBSleepPortCurrentLimit" = 3000
+  |     "usb-port-type" = 3
+  |     "port-status" = 0
+  |     "port-statistics" = {"kPortStatEOF2ViolationCurrentConnectCount"=0,"kPortStatEOF2ViolationDuringResetCount"=0,"kPortStatPowerStateTime"={"kPowerStateOff"="0ms (0%)","kPowerStateSleep"="0ms (0%)","kPowerStateOn"="303ms (0%)","kPowerStateSuspended"="4394379ms (99%)"},"kPortStatConnectCount"=0,"kPortStatRemoteWakeCount"=0,"kPortStatEOF2ViolationRecoveryDuringResetCount"=0,"kPortStatAddressFailureCount"=0,"kPortStatEOF2ViolationCount"=0,"kPortStatEnumerationFailureCount"=0,"kPortStatOverCurrentCount"=0,"kPortStatEOF2ViolationDuringResumeCount"=0}
+  |     "name" = "SS01"
+  |     "port" = <0d000000>
+  |   }
+  |   
+  +-o SS02@14e00000  <class AppleUSB30XHCIPort, id 0x100000522, registered, matched, active, busy 0 (0 ms), retain 10>
+  |   {
+  |     "usb-port-number" = <0e000000>
+  |     "UsbProtocol (3.x)" = Yes
+  |     "UsbProtocolCompanion (1.x)" = "IOService:/AppleACPIPlatformExpert/PC00/AppleACPIPCI/XHCI@14/XHCI@14000000/HS02@14200000"
+  |     "link-error-count" = 0
+  |     "IOPowerManagement" = {"DevicePowerState"=2,"CurrentPowerState"=2,"CapabilityFlags"=65536,"MaxPowerState"=3,"DriverPowerState"=0}
+  |     "usb-port-location" = <0e000000>
+  |     "UsbConnector" = 3
+  |     "UsbProtocolCompanion (2.0)" = "IOService:/AppleACPIPlatformExpert/PC00/AppleACPIPCI/XHCI@14/XHCI@14000000/HS02@14200000"
+  |     "kUSBWakePortCurrentLimit" = 3000
+  |     "locationID" = 350224384
+  |     "kUSBSleepPortCurrentLimit" = 3000
+  |     "usb-port-type" = 3
+  |     "port-status" = 0
+  |     "port-statistics" = {"kPortStatEOF2ViolationCurrentConnectCount"=0,"kPortStatEOF2ViolationDuringResetCount"=0,"kPortStatPowerStateTime"={"kPowerStateOff"="0ms (0%)","kPowerStateSleep"="0ms (0%)","kPowerStateOn"="303ms (0%)","kPowerStateSuspended"="4394380ms (99%)"},"kPortStatConnectCount"=0,"kPortStatRemoteWakeCount"=0,"kPortStatEOF2ViolationRecoveryDuringResetCount"=0,"kPortStatAddressFailureCount"=0,"kPortStatEOF2ViolationCount"=0,"kPortStatEnumerationFailureCount"=0,"kPortStatOverCurrentCount"=0,"kPortStatEOF2ViolationDuringResumeCount"=0}
+  |     "name" = "SS02"
+  |     "port" = <0e000000>
+  |   }
+  |   
+  +-o SS03@14f00000  <class AppleUSB30XHCIPort, id 0x100000525, registered, matched, active, busy 0 (0 ms), retain 10>
+      {
+        "usb-port-number" = <0f000000>
+        "UsbProtocol (3.x)" = Yes
+        "UsbProtocolCompanion (1.x)" = "IOService:/AppleACPIPlatformExpert/PC00/AppleACPIPCI/XHCI@14/XHCI@14000000/HS03@14300000"
+        "link-error-count" = 0
+        "IOPowerManagement" = {"DevicePowerState"=2,"CurrentPowerState"=2,"CapabilityFlags"=65536,"MaxPowerState"=3,"DriverPowerState"=0}
+        "usb-port-location" = <0f000000>
+        "UsbConnector" = 3
+        "UsbProtocolCompanion (2.0)" = "IOService:/AppleACPIPlatformExpert/PC00/AppleACPIPCI/XHCI@14/XHCI@14000000/HS03@14300000"
+        "kUSBWakePortCurrentLimit" = 3000
+        "locationID" = 351272960
+        "kUSBSleepPortCurrentLimit" = 3000
+        "usb-port-type" = 3
+        "port-status" = 0
+        "port-statistics" = {"kPortStatEOF2ViolationCurrentConnectCount"=0,"kPortStatEOF2ViolationDuringResetCount"=0,"kPortStatPowerStateTime"={"kPowerStateOff"="0ms (0%)","kPowerStateSleep"="0ms (0%)","kPowerStateOn"="303ms (0%)","kPowerStateSuspended"="4394379ms (99%)"},"kPortStatConnectCount"=0,"kPortStatRemoteWakeCount"=0,"kPortStatEOF2ViolationRecoveryDuringResetCount"=0,"kPortStatAddressFailureCount"=0,"kPortStatEOF2ViolationCount"=0,"kPortStatEnumerationFailureCount"=0,"kPortStatOverCurrentCount"=0,"kPortStatEOF2ViolationDuringResumeCount"=0}
+        "name" = "SS03"
+        "port" = <0f000000>
+      }
+      
+
++-o XHCI@00000000  <class AppleUSBXHCIPCI, id 0x100000461, registered, matched, active, busy 0 (296 ms), retain 61>
+  | {
+  |   "IOClass" = "AppleUSBXHCIPCI"
+  |   "kUSBSleepPortCurrentLimit" = 3000
+  |   "UsbHostControllerSoftRetryPolicy" = 0
+  |   "IOPersonalityPublisher" = "com.apple.driver.usb.AppleUSBXHCIPCI"
+  |   "IOMatchedAtBoot" = Yes
+  |   "IOPowerManagement" = {"ChildrenPowerState"=3,"DevicePowerState"=0,"CurrentPowerState"=3,"CapabilityFlags"=32768,"MaxPowerState"=3,"DriverPowerState"=0}
+  |   "IOProviderClass" = "IOPCIDevice"
+  |   "IOProbeScore" = 0
+  |   "locationID" = 0
+  |   "name" = <"XHCI">
+  |   "IOPCIPauseCompatible" = Yes
+  |   "IOPCIUseDeviceMapper" = Yes
+  |   "device-properties" = {"acpi-device"="IOACPIPlatformDevice is not serializable","acpi-path"="IOACPIPlane:/_SB/PC00/RP09@1d0000/PXSX@0/TBDU@20000/XHCI@0"}
+  |   "kUSBWakePortCurrentLimit" = 3000
+  |   "CFBundleIdentifierKernel" = "com.apple.driver.usb.AppleUSBXHCIPCI"
+  |   "IOMatchCategory" = "IODefaultMatchCategory"
+  |   "CFBundleIdentifier" = "com.apple.driver.usb.AppleUSBXHCIPCI"
+  |   "UsbHostControllerUSB4LPMPolicy" = 1
+  |   "IOPCITunnelCompatible" = Yes
+  |   "controller-statistics" = {"kControllerStatIOCount"=53128,"kControllerStatPowerStateTime"={"kPowerStateInitialize"="0ms (0%)","kPowerStateOff"="0ms (0%)","kPowerStateSleep"="0ms (0%)","kPowerStateOn"="4394669ms (99%)","kPowerStateSuspended"="34ms (0%)"},"kControllerStatSpuriousInterruptCount"=0}
+  |   "UsbHostControllerProtocolRevision" = "3.1"
+  |   "kUSBSleepSupported" = Yes
+  |   "IOPCIClassMatch" = "0x0c033000"
+  | }
+  | 
+  +-o AppleUSB20XHCIPort@00100000  <class AppleUSB20XHCIPort, id 0x100000526, registered, matched, active, busy 0 (0 ms), retain 11>
+  |   {
+  |     "port" = <01000000>
+  |     "usb-port-number" = <01000000>
+  |     "UsbProtocol (1.x)" = Yes
+  |     "port-status" = 0
+  |     "port-statistics" = {"kPortStatEOF2ViolationCurrentConnectCount"=0,"kPortStatEOF2ViolationDuringResetCount"=0,"kPortStatPowerStateTime"={"kPowerStateOff"="0ms (0%)","kPowerStateSleep"="0ms (0%)","kPowerStateOn"="0ms (0%)","kPowerStateSuspended"="4394359ms (100%)"},"kPortStatConnectCount"=0,"kPortStatRemoteWakeCount"=0,"kPortStatEOF2ViolationRecoveryDuringResetCount"=0,"kPortStatAddressFailureCount"=0,"kPortStatEOF2ViolationCount"=0,"kPortStatEnumerationFailureCount"=0,"kPortStatOverCurrentCount"=0,"kPortStatEOF2ViolationDuringResumeCount"=0}
+  |     "UsbProtocolCompanion (3.x)" = "IOService:/AppleACPIPlatformExpert/PC00/AppleACPIPCI/RP09@1D/IOPP/PXSX@0/IOPP/TBDU@2/IOPP/XHCI@0/XHCI@00000000/AppleUSB30XHCIPort@00300000"
+  |     "kUSBWakePortCurrentLimit" = 3000
+  |     "kUSBSleepPortCurrentLimit" = 3000
+  |     "IOPowerManagement" = {"DevicePowerState"=2,"CurrentPowerState"=2,"CapabilityFlags"=65536,"MaxPowerState"=3,"DriverPowerState"=0}
+  |     "UsbProtocol (2.0)" = Yes
+  |     "locationID" = 1048576
+  |   }
+  |   
+  +-o AppleUSB20XHCIPort@00200000  <class AppleUSB20XHCIPort, id 0x100000529, registered, matched, active, busy 0 (0 ms), retain 11>
+  |   {
+  |     "port" = <02000000>
+  |     "usb-port-number" = <02000000>
+  |     "UsbProtocol (1.x)" = Yes
+  |     "port-status" = 0
+  |     "port-statistics" = {"kPortStatEOF2ViolationCurrentConnectCount"=0,"kPortStatEOF2ViolationDuringResetCount"=0,"kPortStatPowerStateTime"={"kPowerStateOff"="0ms (0%)","kPowerStateSleep"="0ms (0%)","kPowerStateOn"="0ms (0%)","kPowerStateSuspended"="4394349ms (100%)"},"kPortStatConnectCount"=0,"kPortStatRemoteWakeCount"=0,"kPortStatEOF2ViolationRecoveryDuringResetCount"=0,"kPortStatAddressFailureCount"=0,"kPortStatEOF2ViolationCount"=0,"kPortStatEnumerationFailureCount"=0,"kPortStatOverCurrentCount"=0,"kPortStatEOF2ViolationDuringResumeCount"=0}
+  |     "UsbProtocolCompanion (3.x)" = "IOService:/AppleACPIPlatformExpert/PC00/AppleACPIPCI/RP09@1D/IOPP/PXSX@0/IOPP/TBDU@2/IOPP/XHCI@0/XHCI@00000000/AppleUSB30XHCIPort@00400000"
+  |     "kUSBWakePortCurrentLimit" = 3000
+  |     "kUSBSleepPortCurrentLimit" = 3000
+  |     "IOPowerManagement" = {"DevicePowerState"=2,"CurrentPowerState"=2,"CapabilityFlags"=65536,"MaxPowerState"=3,"DriverPowerState"=0}
+  |     "UsbProtocol (2.0)" = Yes
+  |     "locationID" = 2097152
+  |   }
+  |   
+  +-o AppleUSB30XHCIPort@00300000  <class AppleUSB30XHCIPort, id 0x10000052b, registered, matched, active, busy 0 (0 ms), retain 10>
+  |   {
+  |     "usb-port-number" = <03000000>
+  |     "UsbProtocol (3.x)" = Yes
+  |     "link-error-count" = 0
+  |     "IOPowerManagement" = {"DevicePowerState"=2,"CurrentPowerState"=2,"CapabilityFlags"=65536,"MaxPowerState"=3,"DriverPowerState"=0}
+  |     "kUSBSleepPortCurrentLimit" = 3000
+  |     "kUSBWakePortCurrentLimit" = 3000
+  |     "UsbProtocolCompanion (2.0)" = "IOService:/AppleACPIPlatformExpert/PC00/AppleACPIPCI/RP09@1D/IOPP/PXSX@0/IOPP/TBDU@2/IOPP/XHCI@0/XHCI@00000000/AppleUSB20XHCIPort@00100000"
+  |     "locationID" = 3145728
+  |     "port-status" = 0
+  |     "port-statistics" = {"kPortStatEOF2ViolationCurrentConnectCount"=0,"kPortStatEOF2ViolationDuringResetCount"=0,"kPortStatPowerStateTime"={"kPowerStateOff"="0ms (0%)","kPowerStateSleep"="0ms (0%)","kPowerStateOn"="305ms (0%)","kPowerStateSuspended"="4394380ms (99%)"},"kPortStatConnectCount"=0,"kPortStatRemoteWakeCount"=0,"kPortStatEOF2ViolationRecoveryDuringResetCount"=0,"kPortStatAddressFailureCount"=0,"kPortStatEOF2ViolationCount"=0,"kPortStatEnumerationFailureCount"=0,"kPortStatOverCurrentCount"=0,"kPortStatEOF2ViolationDuringResumeCount"=0}
+  |     "UsbProtocolCompanion (1.x)" = "IOService:/AppleACPIPlatformExpert/PC00/AppleACPIPCI/RP09@1D/IOPP/PXSX@0/IOPP/TBDU@2/IOPP/XHCI@0/XHCI@00000000/AppleUSB20XHCIPort@00100000"
+  |     "port" = <03000000>
+  |   }
+  |   
+  +-o AppleUSB30XHCIPort@00400000  <class AppleUSB30XHCIPort, id 0x10000052d, registered, matched, active, busy 0 (295 ms), retain 15>
+      {
+        "usb-port-number" = <04000000>
+        "UsbProtocol (3.x)" = Yes
+        "link-error-count" = 0
+        "IOPowerManagement" = {"ChildrenPowerState"=3,"DevicePowerState"=2,"CurrentPowerState"=3,"CapabilityFlags"=32768,"MaxPowerState"=3,"DriverPowerState"=0}
+        "kUSBSleepPortCurrentLimit" = 3000
+        "kUSBWakePortCurrentLimit" = 3000
+        "UsbProtocolCompanion (2.0)" = "IOService:/AppleACPIPlatformExpert/PC00/AppleACPIPCI/RP09@1D/IOPP/PXSX@0/IOPP/TBDU@2/IOPP/XHCI@0/XHCI@00000000/AppleUSB20XHCIPort@00200000"
+        "locationID" = 4194304
+        "port-status" = 5120
+        "kUSBBusCurrentAllocation" = 304
+        "port-statistics" = {"kPortStatEOF2ViolationCurrentConnectCount"=0,"kPortStatEOF2ViolationDuringResetCount"=0,"kPortStatPowerStateTime"={"kPowerStateOff"="0ms (0%)","kPowerStateSleep"="0ms (0%)","kPowerStateOn"="4394629ms (99%)","kPowerStateSuspended"="56ms (0%)"},"kPortStatConnectCount"=1,"kPortStatRemoteWakeCount"=0,"kPortStatEOF2ViolationRecoveryDuringResetCount"=0,"kPortStatAddressFailureCount"=0,"kPortStatEOF2ViolationCount"=0,"kPortStatEnumerationFailureCount"=0,"kPortStatOverCurrentCount"=0,"kPortStatEOF2ViolationDuringResumeCount"=0}
+        "UsbProtocolCompanion (1.x)" = "IOService:/AppleACPIPlatformExpert/PC00/AppleACPIPCI/RP09@1D/IOPP/PXSX@0/IOPP/TBDU@2/IOPP/XHCI@0/XHCI@00000000/AppleUSB20XHCIPort@00200000"
+        "port" = <04000000>
+      }
+      
+

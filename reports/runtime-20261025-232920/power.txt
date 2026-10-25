@@ -1,0 +1,37 @@
+Battery Power:
+ lidwake              1
+ standbydelayhigh     86400
+ lowpowermode         0
+ standbydelaylow      10800
+ standby              1
+ proximitywake        0
+ hibernatemode        3
+ powernap             0
+ gpuswitch            2
+ hibernatefile        /var/vm/sleepimage
+ ttyskeepawake        1
+ highstandbythreshold 50
+ displaysleep         2
+ sleep                1
+ lessbright           1
+ tcpkeepalive         1
+ disksleep            10
+AC Power:
+ lidwake              1
+ standbydelayhigh     86400
+ lowpowermode         0
+ standbydelaylow      10800
+ standby              1
+ proximitywake        1
+ hibernatemode        3
+ powernap             1
+ gpuswitch            2
+ hibernatefile        /var/vm/sleepimage
+ ttyskeepawake        1
+ highstandbythreshold 50
+ displaysleep         10
+ womp                 1
+ networkoversleep     0
+ sleep                1
+ tcpkeepalive         1
+ disksleep            10

@@ -1,0 +1,8 @@
+Hardware CPUID brand: 12th Gen Intel(R) Core(TM) i7-12800H
+Hardware CPUID signature: 0x000906a3
+hw.physicalcpu: 6
+hw.logicalcpu: 20
+hw.memsize: 34359738368
+machdep.xcpm.mode: inaccessible
+
+Exit status: 0

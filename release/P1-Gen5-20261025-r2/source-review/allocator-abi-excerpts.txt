@@ -1,0 +1,122 @@
+__ZN16IGRangeAllocator13initWithRangeE14IGAddressRangey:
+000000000001309e	pushq	%rbp
+000000000001309f	movq	%rsp, %rbp
+00000000000130a2	pushq	%r15
+00000000000130a4	pushq	%r14
+00000000000130a6	pushq	%rbx
+00000000000130a7	pushq	%rax
+00000000000130a8	movq	%rsi, %rbx
+00000000000130ab	movq	%rdi, %r15
+00000000000130ae	movq	0xb5093(%rip), %rax
+00000000000130b5	leaq	-0x1(%rsi,%rdx), %rsi
+00000000000130ba	xorl	%r14d, %r14d
+00000000000130bd	movq	%rcx, %rdx
+00000000000130c0	xorl	%ecx, %ecx
+00000000000130c2	xorl	%r8d, %r8d
+00000000000130c5	callq	*0x138(%rax)
+00000000000130cb	testb	%al, %al
+00000000000130cd	je	0x130f2
+00000000000130cf	testq	%rbx, %rbx
+00000000000130d2	je	0x130ef
+00000000000130d4	decq	%rbx
+00000000000130d7	movq	(%r15), %rax
+00000000000130da	xorl	%r14d, %r14d
+00000000000130dd	movq	%r15, %rdi
+00000000000130e0	xorl	%esi, %esi
+00000000000130e2	movq	%rbx, %rdx
+00000000000130e5	callq	*0x158(%rax)
+00000000000130eb	testb	%al, %al
+00000000000130ed	je	0x130f2
+00000000000130ef	movb	$0x1, %r14b
+00000000000130f2	movl	%r14d, %eax
+00000000000130f5	addq	$0x8, %rsp
+00000000000130f9	popq	%rbx
+00000000000130fa	popq	%r14
+00000000000130fc	popq	%r15
+00000000000130fe	popq	%rbp
+00000000000130ff	retq
+
+__ZN18IGStolenMemoryPool4initERK14_stolenMemInfoP16IntelAccelerator:
+000000000000c5de	pushq	%rbp
+000000000000c5df	movq	%rsp, %rbp
+000000000000c5e2	pushq	%r15
+000000000000c5e4	pushq	%r14
+000000000000c5e6	pushq	%rbx
+000000000000c5e7	pushq	%rax
+000000000000c5e8	movq	%rdx, %r15
+000000000000c5eb	movq	%rsi, %r14
+000000000000c5ee	movq	%rdi, %rbx
+000000000000c5f1	movq	0xbbbe8(%rip), %rax
+000000000000c5f8	callq	*0x98(%rax)
+000000000000c5fe	testb	%al, %al
+000000000000c600	je	0xc6a4
+000000000000c606	movq	%r15, 0x10(%rbx)
+000000000000c60a	xorl	%eax, %eax
+000000000000c60c	movq	%rax, 0x18(%rbx)
+000000000000c610	movq	%rax, 0x20(%rbx)
+000000000000c614	movq	(%r14), %rcx
+000000000000c617	movq	0x8(%r14), %rdx
+000000000000c61b	movq	%rcx, 0x28(%rbx)
+000000000000c61f	movq	%rdx, 0x30(%rbx)
+000000000000c623	movq	0x10(%r14), %rcx
+000000000000c627	movq	%rcx, 0x38(%rbx)
+000000000000c62b	movq	0x18(%r14), %rcx
+000000000000c62f	movq	%rcx, 0x40(%rbx)
+000000000000c633	movq	0x20(%r14), %rcx
+000000000000c637	movq	%rcx, 0x48(%rbx)
+000000000000c63b	movq	%rax, 0x50(%rbx)
+000000000000c63f	movq	%rax, 0x58(%rbx)
+000000000000c643	movq	%rax, 0x60(%rbx)
+000000000000c647	movq	%rax, 0x68(%rbx)
+000000000000c64b	leaq	0x70(%rbx), %rcx
+000000000000c64f	movq	%rax, 0x70(%rbx)
+000000000000c653	movq	%rcx, 0x78(%rbx)
+000000000000c657	movq	%rbx, %rdi
+000000000000c65a	callq	__ZN18IGStolenMemoryPool16createDescriptorEv ## IGStolenMemoryPool::createDescriptor()
+000000000000c65f	movb	$0x1, %r14b
+000000000000c662	testb	%al, %al
+000000000000c664	je	0xc6a7
+000000000000c666	movq	0x18(%rbx), %rdi
+000000000000c66a	movq	(%rdi), %rax
+000000000000c66d	callq	*0x1c8(%rax)
+000000000000c673	movq	0xbbbbe(%rip), %rcx
+000000000000c67a	movq	(%rcx), %rdx
+000000000000c67d	xorl	%edi, %edi
+000000000000c67f	movq	%rax, %rsi
+000000000000c682	callq	__ZN16IGRangeAllocator9withRangeE14IGAddressRangey ## IGRangeAllocator::withRange(IGAddressRange, unsigned long long)
+000000000000c687	movq	%rax, 0x20(%rbx)
+000000000000c68b	testq	%rax, %rax
+000000000000c68e	jne	0xc6a7
+000000000000c690	movq	0x18(%rbx), %rdi
+000000000000c694	movq	(%rdi), %rax
+000000000000c697	callq	*0x28(%rax)
+000000000000c69a	movq	$0x0, 0x18(%rbx)
+000000000000c6a2	jmp	0xc6a7
+000000000000c6a4	xorl	%r14d, %r14d
+000000000000c6a7	movl	%r14d, %eax
+000000000000c6aa	addq	$0x8, %rsp
+000000000000c6ae	popq	%rbx
+000000000000c6af	popq	%r14
+000000000000c6b1	popq	%r15
+000000000000c6b3	popq	%rbp
+000000000000c6b4	retq
+000000000000c6b5	nop
+
+__ZN16IGRangeAllocatorC2Ev:
+0000000000012fe8	pushq	%rbp
+0000000000012fe9	movq	%rsp, %rbp
+0000000000012fec	pushq	%r14
+0000000000012fee	pushq	%rbx
+0000000000012fef	movq	%rdi, %rbx
+0000000000012ff2	leaq	__ZN16IGRangeAllocator10gMetaClassE(%rip), %r14 ## IGRangeAllocator::gMetaClass
+0000000000012ff9	movq	%r14, %rsi
+0000000000012ffc	callq	__ZN16IORangeAllocatorC2EPK11OSMetaClass
+0000000000013001	leaq	0xbac80(%rip), %rax
+0000000000013008	movq	%rax, (%rbx)
+000000000001300b	movq	%r14, %rdi
+000000000001300e	popq	%rbx
+000000000001300f	popq	%r14
+0000000000013011	popq	%rbp
+0000000000013012	jmp	__ZNK11OSMetaClass19instanceConstructedEv
+0000000000013017	nop
+

@@ -1,0 +1,1 @@
+Bản này chưa khắc phục các lỗi nháy/badge mới báo. Bản phụ EFI-upstream giữ V99 4000 trang cũ trong khi boot-args bật V99. Không dùng như bản đã sửa. Xem ../ra-soat-20261025/BAO-CAO-RA-SOAT.md. Chưa có thay đổi lên EFI đang chạy.

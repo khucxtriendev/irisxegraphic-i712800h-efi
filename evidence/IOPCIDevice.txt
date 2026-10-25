@@ -1,0 +1,1229 @@
++-o MC@0  <class IOPCIDevice, id 0x1000003f4, registered, matched, active, busy 0 (0 ms), retain 9>
+    {
+      "IOInterruptSpecifiers" = ()
+      "class-code" = <00000600>
+      "IOPowerManagement" = {"CurrentPowerState"=2,"CapabilityFlags"=258,"ChildProxyPowerState"=2,"MaxPowerState"=3}
+      "subsystem-vendor-id" = <aa170000>
+      "built-in" = <00>
+      "acpi-device" = "IOACPIPlatformDevice is not serializable"
+      "IOBusyInterest" = "IOCommand is not serializable"
+      "Capability Offsets" = {"VendorSpecificCapability"=224}
+      "IOInterruptControllers" = ()
+      "vendor-id" = <86800000>
+      "name" = <"pci8086,4641">
+      "device-id" = <41460000>
+      "IOPCIResourced" = Yes
+      "compatible" = <"pci17aa,22f8","pci8086,4641","pciclass,060000","MC">
+      "IOPCIExpressLinkCapabilities" = 0
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.pci"))
+      "acpi-path" = "IOACPIPlane:/_SB/PC00/MC@0"
+      "subsystem-id" = <f8220000>
+      "revision-id" = <02000000>
+      "pcidebug" = "0:0:0"
+      "IOName" = "pci8086,4641"
+      "reg" = <0000000000000000000000000000000000000000>
+    }
+    
+
++-o PEG1@1  <class IOPCIDevice, id 0x1000003f5, registered, matched, active, busy 0 (5029 ms), retain 12>
+    {
+      "acpi-device" = "IOACPIPlatformDevice is not serializable"
+      "IOPCIExpressLinkCapabilities2" = 30
+      "IOPCIExpressLinkCapabilities" = 7495812
+      "vendor-id" = <86800000>
+      "class-code" = <00040600>
+      "subsystem-vendor-id" = <40000000>
+      "IOInterruptSpecifiers" = (<1000000007000000>)
+      "IOName" = "pci-bridge"
+      "#size-cells" = <02000000>
+      "IOPCIExpressSlotCapabilities" = 796032
+      "pcidebug" = "0:1:0(4:4)"
+      "IOPCIExpressLinkStatus" = 28804
+      "IOPCIExpressCapabilities" = 322
+      "IODTPersist" = 0
+      "Capability Offsets" = {"PowerManagementCapability"=160,"PCIExpressCapability"=64,"SPCIe"=2608,"LaneMarginingRx"=3804,"PrecisionTimeManagementCapability"=336,"PL32GTs"=2780,"PL16GTs"=2716,"DataLinkFeature"=2704,"AlternateProtocol"=2828,"AccessControlServicesCapability"=544,"L1PMSubstatesCapability"=512,"MSICapability"=128,"ErrorReportingCapability"=256}
+      "IOPCIConfigured" = Yes
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.pci","com.apple.developer.driverkit.transport.pci.bridge"))
+      "IOInterruptControllers" = ("io-apic-0")
+      "built-in" = <00>
+      "IOBusyInterest" = "IOCommand is not serializable"
+      "IOPowerManagement" = {"ChildrenPowerState"=2,"CurrentPowerState"=2,"CapabilityFlags"=258,"ChildProxyPowerState"=2,"MaxPowerState"=3}
+      "ranges" = <0000008200000000000000b30000008200000000000000b30000000000001001000000c24000000000000010000000c2400000000000001000000000000000020000008100000000003000000000008100000000003000000000000000100000>
+      "IOPCIResourced" = Yes
+      "IOPCIMSIMessageControl" = 128
+      "name" = <"pci-bridge">
+      "subsystem-id" = <00000000>
+      "IOPCIACSCapabilities" = 31
+      "acpi-pmcap-offset" = 160
+      "IOPCIPTMCapabilities" = 1046
+      "IOPCIExpressSlotCapabilities2" = 0
+      "IOPCIL1PMCapabilities" = 2780735
+      "compatible" = <"pci40,0","pci8086,460d","pciclass,060400","PEG1">
+      "IOPCIExpressDeviceCapabilities2" = 12258295
+      "IOPCIExpressDeviceCapabilities" = 32769
+      "IOPCIExpressSlotStatus" = 328
+      "reg" = <0008000000000000000000000000000000000000>
+      "IOPCIPowerManagementCapabilities" = 18446744072770224129
+      "device-id" = <0d460000>
+      "IOPCIExpressRootCapabilities" = 0
+      "#address-cells" = <03000000>
+      "revision-id" = <02000000>
+      "IOPCIAERCapabilities" = 0
+      "acpi-path" = "IOACPIPlane:/_SB/PC00/PEG1@10000"
+    }
+    
+
++-o PEGP@0  <class IOPCIDevice, id 0x100000408, registered, matched, active, busy 0 (5023 ms), retain 14>
+    {
+      "acpi-device" = "IOACPIPlatformDevice is not serializable"
+      "IOInterruptSpecifiers" = (<1000000007000000>,<0600000000000100>)
+      "assigned-addresses" = <1000048200000000000000b300000000000000011800048200000000004000b400000000100000001c0004c24000000000000010000000000000000224000481000000000030000000000000800000003000048200000000000008b40000000000000800>
+      "class-code" = <ffffffff>
+      "vendor-id" = <de100000>
+      "subsystem-vendor-id" = <aa170000>
+      "IOPCIExpressLinkCapabilities" = 4541700
+      "IOName" = "display"
+      "pcidebug" = "4:0:0"
+      "IOChildIndex" = 1
+      "IOPCIExpressLinkStatus" = 4228
+      "IOPCIExpressCapabilities" = 18
+      "AAPL,gray-value" = <00000000>
+      "Capability Offsets" = {"PowerManagementCapability"=96,"PCIExpressCapability"=120,"VirtualChannelCapability"=256,"SPCIe"=2304,"LaneMarginingRx"=3328,"LatencyToleranceReportingCapability"=592,"PowerBudgetCapability"=296,"VendorSpecificCapability"=180,"PL16GTs"=3100,"DataLinkFeature"=3584,"L1PMSubstatesCapability"=600,"VSEC"=1536,"MSICapability"=104,"ResizableBAR"=2992,"ErrorReportingCapability"=1056}
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.pci"))
+      "IOInterruptControllers" = ("io-apic-0","IOPCIMessagedInterruptController")
+      "built-in" = <00>
+      "IOBusyInterest" = "IOCommand is not serializable"
+      "IOPowerManagement" = {"CurrentPowerState"=2,"CapabilityFlags"=258,"ChildProxyPowerState"=2,"MaxPowerState"=3}
+      "IOPCIResourced" = Yes
+      "IODeviceMemory" = (({"address"=3003121664,"length"=16777216}),({"address"=3019915264,"length"=16}),({"address"=275146342400,"length"=33554432}),"IOSubMemoryDescriptor is not serializable",({"address"=3020423168,"length"=524288}))
+      "IOPCIMSIMessageControl" = 128
+      "name" = <"display">
+      "subsystem-id" = <f8220000>
+      "acpi-pmcap-offset" = 96
+      "AAPL,RegEntryID" = <e8db879a0900000017247865f6ffffff656d6953000000007a6c755200000000>
+      "AAPL,gray-page" = <01000000>
+      "AAPL,ndrv-dev" = Yes
+      "IOPCIL1PMCapabilities" = 2686751
+      "compatible" = <"pci17aa,22f8","pci10de,25b9","pciclass,030000","PEGP">
+      "IOPCIExpressDeviceCapabilities2" = 460819
+      "IOPCIExpressDeviceCapabilities" = 288132577
+      "attached-gpu-control-path" = "IOService:/AppleACPIPlatformExpert/PC00/AppleACPIPCI/PEG1@1/IOPP/PEGP@0/IONDRVFramebuffer/AGPM"
+      "disable-gpu" = <01>
+      "reg" = <0000040000000000000000000000000000000000100004020000000000000000000000000000000118000402000000000000000000000000100000001c0004420000000000000000000000000000000224000401000000000000000000000000800000003000040200000000000000000000000000000800>
+      "IOPCIPowerManagementCapabilities" = 1208182785
+      "device-id" = <b9250000>
+      "revision-id" = <a1000000>
+      "IOPCIAERCapabilities" = 0
+      "IOPCIExpressLinkCapabilities2" = 25165854
+      "acpi-path" = "IOACPIPlane:/_SB/PC00/PEG1@10000/PEGP@0"
+    }
+    
+
++-o PEGA@0,1  <class IOPCIDevice, id 0x100000409, registered, matched, active, busy 0 (332 ms), retain 9>
+    {
+      "acpi-device" = "IOACPIPlatformDevice is not serializable"
+      "IOInterruptSpecifiers" = (<1100000007000000>,<0700000000000100>)
+      "assigned-addresses" = <1001048200000000000000b40000000000400000>
+      "vendor-id" = <de100000>
+      "class-code" = <00030400>
+      "subsystem-vendor-id" = <aa170000>
+      "IOPCIExpressLinkCapabilities" = 4541700
+      "IOName" = "pci10de,2291"
+      "pcidebug" = "4:0:1"
+      "IOChildIndex" = 2
+      "IOPCIExpressLinkStatus" = 4228
+      "IOPCIExpressCapabilities" = 2
+      "Capability Offsets" = {"DataLinkFeature"=352,"PCIExpressCapability"=120,"ErrorReportingCapability"=256,"MSICapability"=104,"PowerManagementCapability"=96}
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.pci"))
+      "IOInterruptControllers" = ("io-apic-0","IOPCIMessagedInterruptController")
+      "built-in" = <00>
+      "IOBusyInterest" = "IOCommand is not serializable"
+      "IOPowerManagement" = {"CurrentPowerState"=2,"CapabilityFlags"=258,"ChildProxyPowerState"=2,"MaxPowerState"=3}
+      "IOPCIResourced" = Yes
+      "IODeviceMemory" = (({"address"=3019898880,"length"=16384}))
+      "IOPCIMSIMessageControl" = 128
+      "name" = <"pci10de,2291">
+      "subsystem-id" = <f8220000>
+      "compatible" = <"pci17aa,22f8","pci10de,2291","pciclass,040300","PEGA">
+      "IOPCIExpressDeviceCapabilities2" = 460819
+      "IOPCIExpressDeviceCapabilities" = 19697121
+      "reg" = <00010400000000000000000000000000000000001001040200000000000000000000000000400000>
+      "IOPCIPowerManagementCapabilities" = 223233
+      "device-id" = <91220000>
+      "revision-id" = <a1000000>
+      "IOPCIAERCapabilities" = 0
+      "IOPCIExpressLinkCapabilities2" = 25165854
+      "acpi-path" = "IOACPIPlane:/_SB/PC00/PEG1@10000/PEGA@1"
+    }
+    
+
++-o IGPU@2  <class IOPCIDevice, id 0x1000003f6, registered, matched, active, busy 0 (25375 ms), retain 36>
+    {
+      "acpi-path" = "IOACPIPlane:/_SB/PC00/GFX0@20000"
+      "acpi-device" = "IOACPIPlatformDevice is not serializable"
+      "assigned-addresses" = <1010008240000000000000120000000000000001181000c2400000000000000000000000000000102010008100000000004000000000000040000000>
+      "vendor-id" = <86800000>
+      "class-code" = <00000300>
+      "subsystem-vendor-id" = <aa170000>
+      "hda-gfx" = <"onboard-1">
+      "IOPCIExpressLinkCapabilities" = 0
+      "IOName" = "display"
+      "IOPCIMSIMode" = Yes
+      "rps-control" = <01000000>
+      "force-online" = <01000000>
+      "pcidebug" = "0:2:0"
+      "IOPCIExpressLinkStatus" = 0
+      "complete-modeset" = <01000000>
+      "IOPCIExpressCapabilities" = 146
+      "Capability Offsets" = {"VendorSpecificCapability"=64,"PowerManagementCapability"=208,"PCIExpressCapability"=112,"PASID"=256,"PRI"=768,"MSICapability"=172,"SRIOV"=800,"ATS"=512}
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.pci"))
+      "IOInterruptControllers" = ("io-apic-0","IOPCIMessagedInterruptController")
+      "AAPL,gray-value" = <00000000>
+      "built-in" = <00>
+      "enable-max-pixel-clock-override" = <01000000>
+      "AAPL,slot-name" = <"built-in">
+      "IOBusyInterest" = "IOCommand is not serializable"
+      "IOPowerManagement" = {"ChildrenPowerState"=2,"CurrentPowerState"=2,"CapabilityFlags"=258,"ChildProxyPowerState"=2,"MaxPowerState"=3}
+      "IOPCIMSIMessageControl" = 256
+      "name" = <"display">
+      "subsystem-id" = <f8220000>
+      "IOPCIResourced" = Yes
+      "model" = <"Intel Iris Xe Graphics">
+      "IODeviceMemory" = (({"address"=275179896832,"length"=16777216}),({"address"=274877906944,"length"=268435456}),"IOSubMemoryDescriptor is not serializable")
+      "AAPL,gray-page" = <01000000>
+      "compatible" = <"pci17aa,22f8","pci8086,46a6","pciclass,030000","GFX0","IGPU">
+      "IOPCIExpressDeviceCapabilities2" = 0
+      "IOPCIExpressDeviceCapabilities" = 268468224
+      "IOReportLegendPublic" = Yes
+      "attached-gpu-control-path" = "IOService:/AppleACPIPlatformExpert/PC00/AppleACPIPCI/IGPU@2/AppleIntelFramebufferDiags@0/AGPM"
+      "framebuffer-patch-enable" = <01000000>
+      "reg" = <0010000000000000000000000000000000000000101000020000000000000000000000000000000118100042000000000000000000000000000000102010000100000000000000000000000040000000>
+      "IOPCIPowerManagementCapabilities" = 2228225
+      "IOReportLegend" = ({"IOReportGroupName"="Interrupt Statistics (by index)","IOReportChannels"=((5291294645182070784,4295098369,"               First Level Interrupt Handler Count"),(5291294645182070785,4295098369,"              Second Level Interrupt Handler Count"),(5291294645182070786,4295098369,"        First Level Interrupt Handler Time (MATUs)"),(5291294645182070787,4295098369,"   Second Level Interrupt Handler CPU Time (MATUs)"),(5291294645182070788,4295098369,"Second Level Interrupt Handler System Time (MATUs)")),"IOReportChannelInfo"={"IOReportChannelUnit"=0},"IOReportSubGroupName"="IGPU 1"})
+      "device-id" = <499a0000>
+      "revision-id" = <0c000000>
+      "IOPCIExpressLinkCapabilities2" = 0
+      "IOInterruptSpecifiers" = (<1000000007000000>,<0400000000000100>)
+      "AAPL,ig-platform-id" = <0000499a>
+    }
+    
+
++-o TCPU@4  <class IOPCIDevice, id 0x1000003f7, registered, matched, active, busy 0 (0 ms), retain 9>
+    {
+      "assigned-addresses" = <1020008240000000000020130000000000000200>
+      "IOInterruptSpecifiers" = (<1000000007000000>,<0800000000000100>)
+      "class-code" = <00801100>
+      "IODeviceMemory" = (({"address"=275198771200,"length"=131072}))
+      "IOPowerManagement" = {"CurrentPowerState"=2,"CapabilityFlags"=258,"ChildProxyPowerState"=2,"MaxPowerState"=3}
+      "subsystem-vendor-id" = <aa170000>
+      "built-in" = <00>
+      "acpi-device" = "IOACPIPlatformDevice is not serializable"
+      "IOBusyInterest" = "IOCommand is not serializable"
+      "IOPCIPowerManagementCapabilities" = 253953
+      "Capability Offsets" = {"MSICapability"=144,"PowerManagementCapability"=208,"VendorSpecificCapability"=224}
+      "IOInterruptControllers" = ("io-apic-0","IOPCIMessagedInterruptController")
+      "vendor-id" = <86800000>
+      "name" = <"pci8086,461d">
+      "device-id" = <1d460000>
+      "IOPCIMSIMessageControl" = 0
+      "IOPCIResourced" = Yes
+      "compatible" = <"pci17aa,22f8","pci8086,461d","pciclass,118000","TCPU">
+      "IOPCIExpressLinkCapabilities" = 0
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.pci"))
+      "acpi-path" = "IOACPIPlane:/_SB/PC00/TCPU@40000"
+      "subsystem-id" = <f8220000>
+      "revision-id" = <02000000>
+      "pcidebug" = "0:4:0"
+      "IOName" = "pci8086,461d"
+      "reg" = <00200000000000000000000000000000000000001020000200000000000000000000000000000200>
+    }
+    
+
++-o PEG0@6  <class IOPCIDevice, id 0x1000003f8, registered, matched, active, busy 0 (2788 ms), retain 11>
+    {
+      "acpi-device" = "IOACPIPlatformDevice is not serializable"
+      "IOPCIExpressLinkCapabilities2" = 25165854
+      "IOPCIExpressLinkCapabilities" = 91383876
+      "vendor-id" = <86800000>
+      "class-code" = <00040600>
+      "IOInterruptSpecifiers" = (<1300000007000000>)
+      "IOName" = "pci-bridge"
+      "#size-cells" = <02000000>
+      "IOPCIExpressSlotCapabilities" = 271744
+      "pcidebug" = "0:6:0(3:3)"
+      "IOPCIExpressLinkStatus" = 28740
+      "IOPCIExpressCapabilities" = 322
+      "IODTPersist" = 0
+      "Capability Offsets" = {"PowerManagementCapability"=160,"PCIExpressCapability"=64,"VirtualChannelCapability"=640,"SPCIe"=2608,"PrecisionTimeManagementCapability"=336,"LaneMarginingRx"=3804,"PL16GTs"=2716,"DataLinkFeature"=2704,"AccessControlServicesCapability"=544,"L1PMSubstatesCapability"=512,"MSICapability"=128,"ErrorReportingCapability"=256}
+      "IOPCIConfigured" = Yes
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.pci","com.apple.developer.driverkit.transport.pci.bridge"))
+      "IOInterruptControllers" = ("io-apic-0")
+      "built-in" = <00>
+      "IOBusyInterest" = "IOCommand is not serializable"
+      "IOPowerManagement" = {"ChildrenPowerState"=2,"CurrentPowerState"=2,"CapabilityFlags"=258,"ChildProxyPowerState"=2,"MaxPowerState"=3}
+      "ranges" = <00000082000000000000b0b400000082000000000000b0b40000000000001000000000c20000000000000000000000c2000000000000000000000000000000000000008100000000000000000000008100000000000000000000000000000000>
+      "IOPCIResourced" = Yes
+      "IOPCIMSIMessageControl" = 0
+      "name" = <"pci-bridge">
+      "IOPCIACSCapabilities" = 31
+      "acpi-pmcap-offset" = 160
+      "IOPCIPTMCapabilities" = 1046
+      "IOPCIExpressSlotCapabilities2" = 0
+      "IOPCIL1PMCapabilities" = 2780735
+      "compatible" = <"pci8086,464d","pciclass,060400","PEG0">
+      "IOPCIExpressDeviceCapabilities2" = 199671
+      "IOPCIExpressDeviceCapabilities" = 32769
+      "IOPCIExpressSlotStatus" = 328
+      "reg" = <0030000000000000000000000000000000000000>
+      "IOPCIPowerManagementCapabilities" = 18446744072770224129
+      "device-id" = <4d460000>
+      "IOPCIExpressRootCapabilities" = 0
+      "#address-cells" = <03000000>
+      "revision-id" = <02000000>
+      "IOPCIAERCapabilities" = 0
+      "acpi-path" = "IOACPIPlane:/_SB/PC00/PEG0@60000"
+    }
+    
+
++-o PEGP@0  <class IOPCIDevice, id 0x10000040a, registered, matched, active, busy 0 (2782 ms), retain 13>
+    {
+      "acpi-device" = "IOACPIPlatformDevice is not serializable"
+      "IOInterruptSpecifiers" = (<0000000000000300>)
+      "assigned-addresses" = <10000382000000000000b0b40000000000400000>
+      "vendor-id" = <0f1e0000>
+      "class-code" = <02080100>
+      "subsystem-vendor-id" = <0f1e0000>
+      "IOPCIExpressLinkCapabilities" = 4380740
+      "IOPCIMSIMode" = Yes
+      "IOName" = "pci1e0f,10"
+      "IOPCIUseDeviceMapper" = Yes
+      "pcidebug" = "3:0:0"
+      "IOChildIndex" = 1
+      "IOPCIExpressLinkStatus" = 28740
+      "IOPCIExpressCapabilities" = 2
+      "Capability Offsets" = {"PowerManagementCapability"=128,"PCIExpressCapability"=192,"VirtualChannelCapability"=336,"SPCIe"=768,"LaneMarginingRx"=1136,"LatencyToleranceReportingCapability"=608,"PL16GTs"=896,"DataLinkFeature"=864,"L1PMSubstatesCapability"=1024,"MSIXCapability"=176,"MSICapability"=144,"ErrorReportingCapability"=256}
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.pci"))
+      "IOInterruptControllers" = ("IOPCIMessagedInterruptController")
+      "built-in" = <00>
+      "IOBusyInterest" = "IOCommand is not serializable"
+      "IOPowerManagement" = {"ChildrenPowerState"=2,"CurrentPowerState"=2,"CapabilityFlags"=258,"ChildProxyPowerState"=2,"MaxPowerState"=3}
+      "IOPCIResourced" = Yes
+      "IODeviceMemory" = (({"address"=3031433216,"length"=16384}))
+      "IOPCIMSIMessageControl" = 394
+      "name" = <"pci1e0f,10">
+      "subsystem-id" = <01000000>
+      "IOPCIL1PMCapabilities" = 7945239
+      "compatible" = <"pci1e0f,1","pci1e0f,10","pciclass,010802","PEGP">
+      "IOPCIExpressDeviceCapabilities2" = 1116191
+      "IOPCIExpressDeviceCapabilities" = 288133089
+      "IOReportLegendPublic" = Yes
+      "reg" = <00000300000000000000000000000000000000001000030200000000000000000000000000400000>
+      "IOPCIPowerManagementCapabilities" = 233473
+      "driver-child-bundle" = "com.apple.iokit.IONVMeFamily"
+      "IOReportLegend" = ({"IOReportGroupName"="Interrupt Statistics (by index)","IOReportChannels"=((5291294645182005248,4295098369,"               First Level Interrupt Handler Count"),(5291294645182005249,4295098369,"              Second Level Interrupt Handler Count"),(5291294645182005250,4295098369,"        First Level Interrupt Handler Time (MATUs)"),(5291294645182005251,4295098369,"   Second Level Interrupt Handler CPU Time (MATUs)"),(5291294645182005252,4295098369,"Second Level Interrupt Handler System Time (MATUs)")),"IOReportChannelInfo"={"IOReportChannelUnit"=0},"IOReportSubGroupName"="PEGP 0"})
+      "device-id" = <10000000>
+      "revision-id" = <01000000>
+      "IOPCIAERCapabilities" = 160
+      "IOPCIExpressLinkCapabilities2" = 25165854
+      "acpi-path" = "IOACPIPlane:/_SB/PC00/PEG0@60000/PEGP@0"
+    }
+    
+
++-o GNA0@8  <class IOPCIDevice, id 0x1000003f9, registered, matched, active, busy 0 (0 ms), retain 9>
+    {
+      "assigned-addresses" = <1040008240000000007024130000000000100000>
+      "IOInterruptSpecifiers" = (<1000000007000000>,<0900000000000100>)
+      "class-code" = <00800800>
+      "IODeviceMemory" = (({"address"=275199062016,"length"=4096}))
+      "IOPowerManagement" = {"CurrentPowerState"=2,"CapabilityFlags"=258,"ChildProxyPowerState"=2,"MaxPowerState"=3}
+      "subsystem-vendor-id" = <aa170000>
+      "built-in" = <00>
+      "acpi-device" = "IOACPIPlatformDevice is not serializable"
+      "IOBusyInterest" = "IOCommand is not serializable"
+      "IOPCIPowerManagementCapabilities" = 192513
+      "Capability Offsets" = {"AF"=240,"VendorSpecificCapability"=160,"MSICapability"=144,"PowerManagementCapability"=220}
+      "IOInterruptControllers" = ("io-apic-0","IOPCIMessagedInterruptController")
+      "vendor-id" = <86800000>
+      "name" = <"pci8086,464f">
+      "device-id" = <4f460000>
+      "IOPCIMSIMessageControl" = 0
+      "IOPCIResourced" = Yes
+      "compatible" = <"pci17aa,22f8","pci8086,464f","pciclass,088000","GNA0">
+      "IOPCIExpressLinkCapabilities" = 0
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.pci"))
+      "acpi-path" = "IOACPIPlane:/_SB/PC00/GNA0@80000"
+      "subsystem-id" = <f8220000>
+      "revision-id" = <02000000>
+      "pcidebug" = "0:8:0"
+      "IOName" = "pci8086,464f"
+      "reg" = <00400000000000000000000000000000000000001040000200000000000000000000000000100000>
+    }
+    
+
++-o pci8086,467d@A  <class IOPCIDevice, id 0x1000003fa, registered, matched, active, busy 0 (334 ms), retain 9>
+    {
+      "assigned-addresses" = <1050008240000000000023130000000000800000>
+      "IOPCIExpressDeviceCapabilities2" = 0
+      "IOInterruptSpecifiers" = ()
+      "class-code" = <00801100>
+      "IODeviceMemory" = (({"address"=275198967808,"length"=32768}))
+      "IOPowerManagement" = {"CurrentPowerState"=2,"CapabilityFlags"=258,"ChildProxyPowerState"=2,"MaxPowerState"=3}
+      "subsystem-vendor-id" = <aa170000>
+      "IOBusyInterest" = "IOCommand is not serializable"
+      "IOPCIPowerManagementCapabilities" = 196609
+      "Capability Offsets" = {"PCIExpressCapability"=112,"PowerManagementCapability"=208,"DVSEC"=288}
+      "IOInterruptControllers" = ()
+      "vendor-id" = <86800000>
+      "name" = <"pci8086,467d">
+      "device-id" = <7d460000>
+      "IOPCIResourced" = Yes
+      "compatible" = <"pci17aa,22f8","pci8086,467d","pciclass,118000">
+      "IOPCIExpressLinkCapabilities" = 0
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.pci"))
+      "IOPCIExpressLinkCapabilities2" = 0
+      "subsystem-id" = <f8220000>
+      "revision-id" = <01000000>
+      "IOPCIExpressLinkStatus" = 0
+      "IOPCIExpressCapabilities" = 146
+      "pcidebug" = "0:10:0"
+      "IOName" = "pci8086,467d"
+      "reg" = <00500000000000000000000000000000000000001050000200000000000000000000000000800000>
+      "IOPCIExpressDeviceCapabilities" = 4064
+    }
+    
+
++-o XHCI@14  <class IOPCIDevice, id 0x1000003fb, registered, matched, active, busy 0 (19267 ms), retain 15>
+    {
+      "acpi-device" = "IOACPIPlatformDevice is not serializable"
+      "IOPCIMSIMode" = Yes
+      "assigned-addresses" = <10a0008240000000000022130000000000000100>
+      "vendor-id" = <86800000>
+      "class-code" = <30030c00>
+      "subsystem-vendor-id" = <aa170000>
+      "IOPCIExpressLinkCapabilities" = 0
+      "IOName" = "pci8086,51ed"
+      "IOPCIUseDeviceMapper" = Yes
+      "pcidebug" = "0:20:0"
+      "Capability Offsets" = {"MSICapability"=128,"PowerManagementCapability"=112,"VendorSpecificCapability"=176}
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.pci"))
+      "IOInterruptControllers" = ("io-apic-0","IOPCIMessagedInterruptController")
+      "built-in" = <00>
+      "IOBusyInterest" = "IOCommand is not serializable"
+      "IOPowerManagement" = {"ChildrenPowerState"=2,"CurrentPowerState"=2,"CapabilityFlags"=258,"ChildProxyPowerState"=2,"MaxPowerState"=3}
+      "IOPCIResourced" = Yes
+      "IODeviceMemory" = (({"address"=275198902272,"length"=65536}))
+      "IOPCIMSIMessageControl" = 134
+      "name" = <"pci8086,51ed">
+      "subsystem-id" = <f8220000>
+      "acpi-pmcap-offset" = 112
+      "compatible" = <"pci17aa,22f8","pci8086,51ed","pciclass,0c0330","XHCI">
+      "IOReportLegendPublic" = Yes
+      "reg" = <00a000000000000000000000000000000000000010a0000200000000000000000000000000000100>
+      "IOPCIPowerManagementCapabilities" = 18446744072665333761
+      "UTB Version" = "REL-Jun 13 2025-15:09:49"
+      "IOReportLegend" = ({"IOReportGroupName"="Interrupt Statistics (by index)","IOReportChannels"=((5291294645182070784,4295098369,"               First Level Interrupt Handler Count"),(5291294645182070785,4295098369,"              Second Level Interrupt Handler Count"),(5291294645182070786,4295098369,"        First Level Interrupt Handler Time (MATUs)"),(5291294645182070787,4295098369,"   Second Level Interrupt Handler CPU Time (MATUs)"),(5291294645182070788,4295098369,"Second Level Interrupt Handler System Time (MATUs)")),"IOReportChannelInfo"={"IOReportChannelUnit"=0},"IOReportSubGroupName"="XHCI 1"})
+      "device-id" = <ed510000>
+      "driver-child-bundle" = "com.apple.driver.usb.AppleUSBXHCIPCI"
+      "revision-id" = <01000000>
+      "IOInterruptSpecifiers" = (<1000000007000000>,<0100000000000100>)
+      "acpi-path" = "IOACPIPlane:/_SB/PC00/XHCI@140000"
+    }
+    
+
++-o pci8086,51ef@14,2  <class IOPCIDevice, id 0x1000003fc, registered, matched, active, busy 0 (335 ms), retain 9>
+    {
+      "assigned-addresses" = <10a200824000000000002413000000000040000018a2008240000000006024130000000000100000>
+      "IOInterruptSpecifiers" = ()
+      "class-code" = <00000500>
+      "IODeviceMemory" = (({"address"=275199033344,"length"=16384}),({"address"=275199057920,"length"=4096}))
+      "IOPowerManagement" = {"CurrentPowerState"=2,"CapabilityFlags"=258,"ChildProxyPowerState"=2,"MaxPowerState"=3}
+      "subsystem-vendor-id" = <aa170000>
+      "IOBusyInterest" = "IOCommand is not serializable"
+      "IOPCIPowerManagementCapabilities" = 196609
+      "Capability Offsets" = {"PowerManagementCapability"=128}
+      "IOInterruptControllers" = ()
+      "vendor-id" = <86800000>
+      "name" = <"pci8086,51ef">
+      "device-id" = <ef510000>
+      "IOPCIResourced" = Yes
+      "compatible" = <"pci17aa,22f8","pci8086,51ef","pciclass,050000">
+      "IOPCIExpressLinkCapabilities" = 0
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.pci"))
+      "subsystem-id" = <f8220000>
+      "revision-id" = <01000000>
+      "pcidebug" = "0:20:2"
+      "IOName" = "pci8086,51ef"
+      "reg" = <00a200000000000000000000000000000000000010a200020000000000000000000000000040000018a2000200000000000000000000000000100000>
+    }
+    
+
++-o CNVW@14,3  <class IOPCIDevice, id 0x1000003fd, registered, matched, active, busy 0 (8030 ms), retain 12>
+    {
+      "acpi-device" = "IOACPIPlatformDevice is not serializable"
+      "IOPCIMSIMode" = Yes
+      "assigned-addresses" = <10a300824000000000c023130000000000400000>
+      "vendor-id" = <86800000>
+      "class-code" = <00800200>
+      "subsystem-vendor-id" = <86800000>
+      "IOPCIExpressLinkCapabilities" = 0
+      "IOName" = "pci8086,51f0"
+      "IOPCIUseDeviceMapper" = Yes
+      "pcidebug" = "0:20:3"
+      "IOPCIExpressLinkStatus" = 0
+      "IOPCIExpressCapabilities" = 146
+      "Capability Offsets" = {"MSIXCapability"=128,"PCIExpressCapability"=64,"LatencyToleranceReportingCapability"=256,"VSEC"=356,"MSICapability"=208,"PowerManagementCapability"=200}
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.pci"))
+      "IOInterruptControllers" = ("io-apic-0","IOPCIMessagedInterruptController")
+      "built-in" = <00>
+      "IOBusyInterest" = "IOCommand is not serializable"
+      "IOPowerManagement" = {"ChildrenPowerState"=2,"CurrentPowerState"=2,"CapabilityFlags"=258,"ChildProxyPowerState"=2,"MaxPowerState"=3}
+      "IOPCIResourced" = Yes
+      "IODeviceMemory" = (({"address"=275199016960,"length"=16384}))
+      "IOPCIMSIMessageControl" = 128
+      "name" = <"pci8086,51f0">
+      "subsystem-id" = <90000000>
+      "acpi-pmcap-offset" = 200
+      "compatible" = <"pci8086,90","pci8086,51f0","pciclass,028000","CNVW">
+      "IOPCIExpressDeviceCapabilities2" = 526354
+      "acpi-wake-type" = 2
+      "IOPCIExpressDeviceCapabilities" = 268439232
+      "IOReportLegendPublic" = Yes
+      "reg" = <00a300000000000000000000000000000000000010a3000200000000000000000000000000400000>
+      "IOPCIPowerManagementCapabilities" = 18446744072772374529
+      "driver-child-bundle" = "com.zxystd.AirportItlwm"
+      "IOReportLegend" = ({"IOReportGroupName"="Interrupt Statistics (by index)","IOReportChannels"=((5291294645182070784,4295098369,"               First Level Interrupt Handler Count"),(5291294645182070785,4295098369,"              Second Level Interrupt Handler Count"),(5291294645182070786,4295098369,"        First Level Interrupt Handler Time (MATUs)"),(5291294645182070787,4295098369,"   Second Level Interrupt Handler CPU Time (MATUs)"),(5291294645182070788,4295098369,"Second Level Interrupt Handler System Time (MATUs)")),"IOReportChannelInfo"={"IOReportChannelUnit"=0},"IOReportSubGroupName"="CNVW 1"})
+      "device-id" = <f0510000>
+      "revision-id" = <01000000>
+      "IOPCIExpressLinkCapabilities2" = 0
+      "IOInterruptSpecifiers" = (<1000000007000000>,<0300000000000100>)
+      "acpi-path" = "IOACPIPlane:/_SB/PC00/CNVW@140003"
+    }
+    
+
++-o I2C0@15  <class IOPCIDevice, id 0x1000003fe, registered, matched, active, busy 0 (5793 ms), retain 15>
+    {
+      "assigned-addresses" = <10a8008240000000005024130000000000100000>
+      "VoodooI2CServices Supported" = Yes
+      "isI2CController" = Yes
+      "IOInterruptSpecifiers" = (<1b00000007000000>)
+      "class-code" = <00800c00>
+      "IODeviceMemory" = (({"address"=275199053824,"length"=4096}))
+      "IOPowerManagement" = {"ChildrenPowerState"=2,"CurrentPowerState"=2,"CapabilityFlags"=258,"ChildProxyPowerState"=2,"MaxPowerState"=3}
+      "subsystem-vendor-id" = <aa170000>
+      "built-in" = <00>
+      "acpi-device" = "IOACPIPlatformDevice is not serializable"
+      "IOBusyInterest" = "IOCommand is not serializable"
+      "IOPCIPowerManagementCapabilities" = 233473
+      "Capability Offsets" = {"PowerManagementCapability"=128,"VendorSpecificCapability"=144}
+      "IOInterruptControllers" = ("io-apic-0")
+      "driver-child-bundle" = "com.alexandred.VoodooI2C"
+      "vendor-id" = <86800000>
+      "name" = <"pci8086,51e8">
+      "device-id" = <e8510000>
+      "IOPCIResourced" = Yes
+      "compatible" = <"pci17aa,22f8","pci8086,51e8","pciclass,0c8000","I2C0">
+      "IOPCIExpressLinkCapabilities" = 0
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.pci"))
+      "acpi-path" = "IOACPIPlane:/_SB/PC00/I2C0@150000"
+      "subsystem-id" = <f8220000>
+      "revision-id" = <01000000>
+      "pcidebug" = "0:21:0"
+      "IOName" = "pci8086,51e8"
+      "reg" = <00a800000000000000000000000000000000000010a8000200000000000000000000000000100000>
+    }
+    
+
++-o HECI@16  <class IOPCIDevice, id 0x1000003ff, registered, matched, active, busy 0 (335 ms), retain 9>
+    {
+      "assigned-addresses" = <10b0008240000000004024130000000000100000>
+      "IOInterruptSpecifiers" = (<1000000007000000>,<0a00000000000100>)
+      "class-code" = <00800700>
+      "IODeviceMemory" = (({"address"=275199049728,"length"=4096}))
+      "IOPowerManagement" = {"CurrentPowerState"=2,"CapabilityFlags"=258,"ChildProxyPowerState"=2,"MaxPowerState"=3}
+      "subsystem-vendor-id" = <aa170000>
+      "built-in" = <00>
+      "acpi-device" = "IOACPIPlatformDevice is not serializable"
+      "IOBusyInterest" = "IOCommand is not serializable"
+      "IOPCIPowerManagementCapabilities" = 1073974273
+      "Capability Offsets" = {"MSICapability"=140,"PowerManagementCapability"=80,"VendorSpecificCapability"=164}
+      "IOInterruptControllers" = ("io-apic-0","IOPCIMessagedInterruptController")
+      "vendor-id" = <86800000>
+      "name" = <"pci8086,51e0">
+      "device-id" = <e0510000>
+      "IOPCIMSIMessageControl" = 128
+      "acpi-pmcap-offset" = 80
+      "IOPCIResourced" = Yes
+      "compatible" = <"pci17aa,22f8","pci8086,51e0","pciclass,078000","HECI">
+      "IOPCIExpressLinkCapabilities" = 0
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.pci"))
+      "acpi-path" = "IOACPIPlane:/_SB/PC00/HECI@160000"
+      "subsystem-id" = <f8220000>
+      "revision-id" = <01000000>
+      "pcidebug" = "0:22:0"
+      "IOName" = "pci8086,51e0"
+      "reg" = <00b000000000000000000000000000000000000010b0000200000000000000000000000000100000>
+    }
+    
+
++-o pci8086,51e3@16,3  <class IOPCIDevice, id 0x100000400, registered, matched, active, busy 0 (5029 ms), retain 11>
+    {
+      "assigned-addresses" = <10b300810000000060400000000000000800000014b30082000000000010c8b40000000000100000>
+      "IOInterruptSpecifiers" = (<1300000007000000>,<0500000000000100>)
+      "class-code" = <02000700>
+      "IODeviceMemory" = ("IOSubMemoryDescriptor is not serializable",({"address"=3033010176,"length"=4096}))
+      "IOReportLegendPublic" = Yes
+      "IOPowerManagement" = {"ChildrenPowerState"=2,"CurrentPowerState"=2,"CapabilityFlags"=258,"ChildProxyPowerState"=2,"MaxPowerState"=3}
+      "subsystem-vendor-id" = <aa170000>
+      "IOBusyInterest" = "IOCommand is not serializable"
+      "IOPCIPowerManagementCapabilities" = 2293761
+      "Capability Offsets" = {"MSICapability"=64,"PowerManagementCapability"=80}
+      "IOInterruptControllers" = ("io-apic-0","IOPCIMessagedInterruptController")
+      "vendor-id" = <86800000>
+      "name" = <"pci8086,51e3">
+      "device-id" = <e3510000>
+      "IOPCIMSIMessageControl" = 128
+      "IOPCIResourced" = Yes
+      "compatible" = <"pci17aa,22f8","pci8086,51e3","pciclass,070002">
+      "IODEXTMatchCount" = 1
+      "IOPCIExpressLinkCapabilities" = 0
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.pci"))
+      "subsystem-id" = <f8220000>
+      "revision-id" = <01000000>
+      "pcidebug" = "0:22:3"
+      "IOName" = "pci8086,51e3"
+      "IOReportLegend" = ({"IOReportGroupName"="Interrupt Statistics (by index)","IOReportChannels"=((5291294645182005248,4295098369,"               First Level Interrupt Handler Count"),(5291294645182005249,4295098369,"              Second Level Interrupt Handler Count"),(5291294645182005250,4295098369,"        First Level Interrupt Handler Time (MATUs)"),(5291294645182005251,4295098369,"   Second Level Interrupt Handler CPU Time (MATUs)"),(5291294645182005252,4295098369,"Second Level Interrupt Handler System Time (MATUs)")),"IOReportChannelInfo"={"IOReportChannelUnit"=0},"IOReportSubGroupName"="pci8086,51e3 0"})
+      "reg" = <00b300000000000000000000000000000000000010b300010000000000000000000000000800000014b3000200000000000000000000000000100000>
+    }
+    
+
++-o RP01@1C  <class IOPCIDevice, id 0x100000401, registered, matched, active, busy 0 (331 ms), retain 11>
+    {
+      "acpi-device" = "IOACPIPlatformDevice is not serializable"
+      "IOInterruptSpecifiers" = ()
+      "IOPCIExpressLinkCapabilities" = 24202275
+      "vendor-id" = <86800000>
+      "class-code" = <00040600>
+      "IOName" = "pci-bridge"
+      "#size-cells" = <02000000>
+      "pcidebug" = "0:28:0(2:2)"
+      "IOPCIExpressLinkStatus" = 4097
+      "IOPCIExpressCapabilities" = 66
+      "IODTPersist" = 0
+      "Capability Offsets" = {"PCIExpressCapability"=64,"MSICapability"=128,"PowerManagementCapability"=160}
+      "IOPCIConfigured" = Yes
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.pci","com.apple.developer.driverkit.transport.pci.bridge"))
+      "IOInterruptControllers" = ()
+      "built-in" = <00>
+      "IOBusyInterest" = "IOCommand is not serializable"
+      "IOPowerManagement" = {"ChildrenPowerState"=2,"CurrentPowerState"=2,"CapabilityFlags"=258,"ChildProxyPowerState"=2,"MaxPowerState"=3}
+      "ranges" = <0000008200000000000000000000008200000000000000000000000000000000000000c20000000000000000000000c2000000000000000000000000000000000000008100000000000000000000008100000000000000000000000000000000>
+      "IOPCIResourced" = Yes
+      "IOPCIMSIMessageControl" = 0
+      "name" = <"pci-bridge">
+      "acpi-pmcap-offset" = 160
+      "compatible" = <"pci8086,51b8","pciclass,060400","RP01">
+      "IOPCIExpressDeviceCapabilities2" = 526391
+      "IOPCIExpressDeviceCapabilities" = 32769
+      "reg" = <00e0000000000000000000000000000000000000>
+      "IOPCIPowerManagementCapabilities" = 18446744072770224129
+      "device-id" = <b8510000>
+      "IOPCIExpressRootCapabilities" = 0
+      "#address-cells" = <03000000>
+      "revision-id" = <01000000>
+      "IOPCIExpressLinkCapabilities2" = 14
+      "acpi-path" = "IOACPIPlane:/_SB/PC00/RP01@1c0000"
+    }
+    
+
++-o RP08@1C,7  <class IOPCIDevice, id 0x100000402, registered, matched, active, busy 0 (335 ms), retain 11>
+    {
+      "acpi-device" = "IOACPIPlatformDevice is not serializable"
+      "IOPCIExpressLinkCapabilities2" = 14
+      "IOPCIExpressLinkCapabilities" = 141707283
+      "vendor-id" = <86800000>
+      "class-code" = <00040600>
+      "IOInterruptSpecifiers" = (<1300000007000000>)
+      "IOName" = "pci-bridge"
+      "#size-cells" = <02000000>
+      "IOPCIExpressSlotCapabilities" = 3977824
+      "IOPCIHPType" = 33
+      "pcidebug" = "0:28:7(1:1)"
+      "IOPCIHotPlug" = Yes
+      "IOPCIExpressLinkStatus" = 28689
+      "IOPCIExpressCapabilities" = 322
+      "IODTPersist" = 0
+      "Capability Offsets" = {"PowerManagementCapability"=160,"PCIExpressCapability"=64,"ErrorReportingCapability"=256,"AccessControlServicesCapability"=544,"SPCIe"=2608,"PrecisionTimeManagementCapability"=336,"MSICapability"=128,"L1PMSubstatesCapability"=512}
+      "IOPCIConfigured" = Yes
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.pci","com.apple.developer.driverkit.transport.pci.bridge"))
+      "IOInterruptControllers" = ("io-apic-0")
+      "built-in" = <00>
+      "IOBusyInterest" = "IOCommand is not serializable"
+      "IOPowerManagement" = {"ChildrenPowerState"=2,"CurrentPowerState"=2,"CapabilityFlags"=258,"ChildProxyPowerState"=2,"MaxPowerState"=3}
+      "ranges" = <0000008200000000000010b40000008200000000000010b40000000000001000000000c20000000000000000000000c2000000000000000000000000000000000000008100000000000000000000008100000000000000000000000000000000>
+      "IOPCIResourced" = Yes
+      "IOPCIMSIMessageControl" = 0
+      "name" = <"pci-bridge">
+      "IOPCIACSCapabilities" = 31
+      "acpi-pmcap-offset" = 160
+      "IOPCIPTMCapabilities" = 1030
+      "IOPCIExpressSlotCapabilities2" = 0
+      "IOPCIL1PMCapabilities" = 11544639
+      "compatible" = <"pci8086,51bf","pciclass,060400","RP08">
+      "IOPCIExpressDeviceCapabilities2" = 526391
+      "IOPCIExpressDeviceCapabilities" = 32769
+      "IOReportLegendPublic" = Yes
+      "IOPCIExpressSlotStatus" = 320
+      "reg" = <00e7000000000000000000000000000000000000>
+      "IOPCIPowerManagementCapabilities" = 18446744072770224129
+      "IOPCIOnline" = Yes
+      "IOReportLegend" = ({"IOReportGroupName"="Interrupt Statistics (by index)","IOReportChannels"=((5291294645182005248,4295098369,"               First Level Interrupt Handler Count"),(5291294645182005249,4295098369,"              Second Level Interrupt Handler Count"),(5291294645182005250,4295098369,"        First Level Interrupt Handler Time (MATUs)"),(5291294645182005251,4295098369,"   Second Level Interrupt Handler CPU Time (MATUs)"),(5291294645182005252,4295098369,"Second Level Interrupt Handler System Time (MATUs)")),"IOReportChannelInfo"={"IOReportChannelUnit"=0},"IOReportSubGroupName"="RP08 0"})
+      "device-id" = <bf510000>
+      "IOPCIExpressRootCapabilities" = 0
+      "#address-cells" = <03000000>
+      "revision-id" = <01000000>
+      "IOPCIAERCapabilities" = 0
+      "acpi-path" = "IOACPIPlane:/_SB/PC00/RP08@1c0007"
+    }
+    
+
++-o PXSX@0  <class IOPCIDevice, id 0x10000040b, registered, matched, active, busy 0 (330 ms), retain 9>
+    {
+      "acpi-device" = "IOACPIPlatformDevice is not serializable"
+      "IOInterruptSpecifiers" = (<1300000007000000>,<0b00000000000100>)
+      "assigned-addresses" = <1000018200000000000010b40000000000100000>
+      "vendor-id" = <ec100000>
+      "class-code" = <0000ff00>
+      "subsystem-vendor-id" = <ec100000>
+      "IOPCIExpressLinkCapabilities" = 4684817
+      "IOName" = "pci10ec,5261"
+      "IOPCIHPType" = 33
+      "pcidebug" = "1:0:0"
+      "IOPCIHotPlug" = Yes
+      "IOChildIndex" = 1
+      "IOPCIExpressLinkStatus" = 28689
+      "IOPCIExpressCapabilities" = 2
+      "Capability Offsets" = {"LatencyToleranceReportingCapability"=336,"PowerManagementCapability"=64,"PCIExpressCapability"=112,"ErrorReportingCapability"=256,"MSICapability"=80,"DeviceSerialNumberCapability"=320,"L1PMSubstatesCapability"=344}
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.pci"))
+      "IOInterruptControllers" = ("io-apic-0","IOPCIMessagedInterruptController")
+      "built-in" = <00>
+      "IOBusyInterest" = "IOCommand is not serializable"
+      "IOPowerManagement" = {"CurrentPowerState"=2,"CapabilityFlags"=258,"ChildProxyPowerState"=2,"MaxPowerState"=3}
+      "IOPCIResourced" = Yes
+      "IODeviceMemory" = (({"address"=3020947456,"length"=4096}))
+      "IOPCIMSIMessageControl" = 128
+      "name" = <"pci10ec,5261">
+      "subsystem-id" = <61520000>
+      "acpi-pmcap-offset" = 64
+      "IOPCIEjectable" = Yes
+      "IOPCIL1PMCapabilities" = 3226655
+      "compatible" = <"pci10ec,5261","pciclass,ff0000","PXSX">
+      "IOPCIExpressDeviceCapabilities2" = 788496
+      "IOPCIExpressDeviceCapabilities" = 93360064
+      "reg" = <00000100000000000000000000000000000000001000010200000000000000000000000000100000>
+      "IOPCIPowerManagementCapabilities" = 18446744073571356673
+      "IOPCIOnline" = Yes
+      "IOGeneralInterest" = "IOCommand is not serializable"
+      "device-id" = <61520000>
+      "revision-id" = <01000000>
+      "IOPCIAERCapabilities" = 160
+      "IOPCIExpressLinkCapabilities2" = 0
+      "acpi-path" = "IOACPIPlane:/_SB/PC00/RP08@1c0007/PXSX@0"
+    }
+    
+
++-o RP09@1D  <class IOPCIDevice, id 0x100000403, registered, matched, active, busy 0 (2729 ms), retain 12>
+    {
+      "acpi-device" = "IOACPIPlatformDevice is not serializable"
+      "IOPCIExpressLinkCapabilities2" = 14
+      "IOPCIExpressLinkCapabilities" = 158484547
+      "vendor-id" = <86800000>
+      "class-code" = <00040600>
+      "subsystem-vendor-id" = <40000000>
+      "IOInterruptSpecifiers" = (<1000000007000000>)
+      "IOName" = "pci-bridge"
+      "#size-cells" = <02000000>
+      "IOPCIExpressSlotCapabilities" = 4521312
+      "IOPCIHPType" = 33
+      "pcidebug" = "0:29:0(5:10)"
+      "IOPCIHotPlug" = Yes
+      "IOPCIExpressLinkStatus" = 28739
+      "IOPCIExpressCapabilities" = 322
+      "IODTPersist" = 0
+      "Capability Offsets" = {"PowerManagementCapability"=160,"PCIExpressCapability"=64,"ErrorReportingCapability"=256,"AccessControlServicesCapability"=544,"SPCIe"=2608,"PrecisionTimeManagementCapability"=336,"MSICapability"=128}
+      "IOPCIConfigured" = Yes
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.pci","com.apple.developer.driverkit.transport.pci.bridge"))
+      "IOInterruptControllers" = ("io-apic-0")
+      "built-in" = <00>
+      "IOBusyInterest" = "IOCommand is not serializable"
+      "IOPowerManagement" = {"ChildrenPowerState"=2,"CurrentPowerState"=2,"CapabilityFlags"=258,"ChildProxyPowerState"=2,"MaxPowerState"=3}
+      "ranges" = <0000008200000000000000840000008200000000000000840000000000001000000000c24000000000001013000000c2400000000000101300000000000010000000008100000000000000000000008100000000000000000000000000000000>
+      "IOPCIResourced" = Yes
+      "IOPCIMSIMessageControl" = 0
+      "name" = <"pci-bridge">
+      "subsystem-id" = <00000000>
+      "IOPCIACSCapabilities" = 31
+      "acpi-pmcap-offset" = 160
+      "IOPCIPTMCapabilities" = 1030
+      "IOPCIExpressSlotCapabilities2" = 0
+      "compatible" = <"pci40,0","pci8086,51b0","pciclass,060400","RP09">
+      "IOPCIExpressDeviceCapabilities2" = 526391
+      "IOPCIExpressDeviceCapabilities" = 32769
+      "IOReportLegendPublic" = Yes
+      "IOPCIExpressSlotStatus" = 320
+      "reg" = <00e8000000000000000000000000000000000000>
+      "IOPCIPowerManagementCapabilities" = 18446744072770224129
+      "IOPCIOnline" = Yes
+      "IOReportLegend" = ({"IOReportGroupName"="Interrupt Statistics (by index)","IOReportChannels"=((5291294645182005248,4295098369,"               First Level Interrupt Handler Count"),(5291294645182005249,4295098369,"              Second Level Interrupt Handler Count"),(5291294645182005250,4295098369,"        First Level Interrupt Handler Time (MATUs)"),(5291294645182005251,4295098369,"   Second Level Interrupt Handler CPU Time (MATUs)"),(5291294645182005252,4295098369,"Second Level Interrupt Handler System Time (MATUs)")),"IOReportChannelInfo"={"IOReportChannelUnit"=0},"IOReportSubGroupName"="RP09 0"})
+      "device-id" = <b0510000>
+      "IOPCIExpressRootCapabilities" = 0
+      "#address-cells" = <03000000>
+      "revision-id" = <01000000>
+      "IOPCIAERCapabilities" = 0
+      "acpi-path" = "IOACPIPlane:/_SB/PC00/RP09@1d0000"
+    }
+    
+
++-o PXSX@0  <class IOPCIDevice, id 0x10000040c, registered, matched, active, busy 0 (2725 ms), retain 14>
+    {
+      "acpi-device" = "IOACPIPlatformDevice is not serializable"
+      "IOPCIExpressLinkCapabilities2" = 14
+      "IOPCIExpressLinkCapabilities" = 4545603
+      "vendor-id" = <86800000>
+      "class-code" = <00040600>
+      "subsystem-vendor-id" = <40000000>
+      "IOInterruptSpecifiers" = (<1000000007000000>)
+      "IOName" = "pci-bridge"
+      "#size-cells" = <02000000>
+      "IOPCIFPBCapabilities" = 66079
+      "IOPCIHPType" = 32
+      "pcidebug" = "5:0:0(6:10)"
+      "IOChildIndex" = 1
+      "IOPCIExpressLinkStatus" = 28739
+      "IOPCIExpressCapabilities" = 82
+      "IODTPersist" = 0
+      "Capability Offsets" = {"PowerManagementCapability"=128,"PCIExpressCapability"=192,"VirtualChannelCapability"=768,"SPCIe"=1792,"PrecisionTimeManagementCapability"=2816,"LatencyToleranceReportingCapability"=2048,"PowerBudgetCapability"=1024,"L1PMSubstatesCapability"=2560,"VSEC"=1536,"MSICapability"=136,"FPBCapability"=80,"DeviceSerialNumberCapability"=256,"ErrorReportingCapability"=512}
+      "IOPCIConfigured" = Yes
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.pci","com.apple.developer.driverkit.transport.pci.bridge"))
+      "IOInterruptControllers" = ("io-apic-0")
+      "built-in" = <00>
+      "IOBusyInterest" = "IOCommand is not serializable"
+      "IOPowerManagement" = {"ChildrenPowerState"=2,"CurrentPowerState"=2,"CapabilityFlags"=258,"ChildProxyPowerState"=2,"MaxPowerState"=3}
+      "ranges" = <0000008200000000000000840000008200000000000000840000000000001000000000c24000000000001013000000c2400000000000101300000000000010000000008100000000000000000000008100000000000000000000000000000000>
+      "IOPCIResourced" = Yes
+      "IOPCIMSIMessageControl" = 128
+      "name" = <"pci-bridge">
+      "subsystem-id" = <00000000>
+      "acpi-pmcap-offset" = 128
+      "IOPCIPTMCapabilities" = 27
+      "IOPCIEjectable" = Yes
+      "IOPCIL1PMCapabilities" = 2621471
+      "compatible" = <"pci40,0","pci8086,1136","pciclass,060400","PXSX">
+      "IOPCIExpressDeviceCapabilities2" = 2048
+      "IOPCIExpressDeviceCapabilities" = 132677664
+      "reg" = <0000050000000000000000000000000000000000>
+      "IOPCIPowerManagementCapabilities" = 18446744073705588737
+      "IOGeneralInterest" = "IOCommand is not serializable"
+      "device-id" = <36110000>
+      "#address-cells" = <03000000>
+      "revision-id" = <02000000>
+      "IOPCIAERCapabilities" = 0
+      "acpi-path" = "IOACPIPlane:/_SB/PC00/RP09@1d0000/PXSX@0"
+    }
+    
+
++-o TBDT@0  <class IOPCIDevice, id 0x10000040d, registered, matched, active, busy 0 (2005 ms), retain 11>
+    {
+      "acpi-device" = "IOACPIPlatformDevice is not serializable"
+      "IOPCIExpressLinkCapabilities2" = 2
+      "IOPCIExpressLinkCapabilities" = 6380609
+      "vendor-id" = <86800000>
+      "class-code" = <00040600>
+      "subsystem-vendor-id" = <40000000>
+      "IOInterruptSpecifiers" = (<1000000007000000>)
+      "IOName" = "pci-bridge"
+      "#size-cells" = <02000000>
+      "IOPCIExpressSlotCapabilities" = 262144
+      "IOPCIFPBCapabilities" = 66055
+      "IOPCIHPType" = 32
+      "pcidebug" = "6:0:0(10:10)"
+      "IOChildIndex" = 1
+      "IOPCIExpressLinkStatus" = 20545
+      "IOPCIExpressCapabilities" = 354
+      "IODTPersist" = 0
+      "Capability Offsets" = {"VSEC"=1536,"PowerManagementCapability"=128,"FPBCapability"=80,"PCIExpressCapability"=192,"DVSEC"=3072,"ErrorReportingCapability"=512,"AccessControlServicesCapability"=2304,"PowerBudgetCapability"=1024,"MSICapability"=136,"DeviceSerialNumberCapability"=256,"VirtualChannelCapability"=768}
+      "IOPCIConfigured" = Yes
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.pci","com.apple.developer.driverkit.transport.pci.bridge"))
+      "IOInterruptControllers" = ("io-apic-0")
+      "built-in" = <00>
+      "IOBusyInterest" = "IOCommand is not serializable"
+      "IOPowerManagement" = {"ChildrenPowerState"=2,"CurrentPowerState"=2,"CapabilityFlags"=258,"ChildProxyPowerState"=2,"MaxPowerState"=3}
+      "ranges" = <0000008200000000000000000000008200000000000000000000000000000000000000c24000000000001013000000c2400000000000101300000000000010000000008100000000000000000000008100000000000000000000000000000000>
+      "IOPCIResourced" = Yes
+      "IOPCIMSIMessageControl" = 128
+      "name" = <"pci-bridge">
+      "subsystem-id" = <00000000>
+      "IOPCIACSCapabilities" = 1407
+      "acpi-pmcap-offset" = 128
+      "IOPCIEjectable" = Yes
+      "IOPCIExpressSlotCapabilities2" = 0
+      "compatible" = <"pci40,0","pci8086,1136","pciclass,060400","TBDT">
+      "IOPCIExpressDeviceCapabilities2" = 2048
+      "IOPCIExpressDeviceCapabilities" = 32800
+      "IOPCIExpressSlotStatus" = 72
+      "reg" = <0000060000000000000000000000000000000000>
+      "IOPCIPowerManagementCapabilities" = 18446744073705588737
+      "IOGeneralInterest" = "IOCommand is not serializable"
+      "device-id" = <36110000>
+      "#address-cells" = <03000000>
+      "revision-id" = <02000000>
+      "IOPCIAERCapabilities" = 0
+      "acpi-path" = "IOACPIPlane:/_SB/PC00/RP09@1d0000/PXSX@0/TBDT@0"
+    }
+    
+
++-o TBCL@0  <class IOPCIDevice, id 0x100000411, registered, matched, active, busy 0 (2002 ms), retain 10>
+    {
+      "acpi-device" = "IOACPIPlatformDevice is not serializable"
+      "IOInterruptSpecifiers" = (<1000000007000000>,<0c00000000000100>)
+      "assigned-addresses" = <10000ac24000000000001013000000000000040018000ac240000000000014130000000000100000>
+      "vendor-id" = <86800000>
+      "class-code" = <40030c00>
+      "subsystem-vendor-id" = <86800000>
+      "IOPCIExpressLinkCapabilities" = 264257
+      "IOName" = "pci8086,1137"
+      "IOPCIHPType" = 32
+      "pcidebug" = "10:0:0"
+      "IOChildIndex" = 1
+      "IOPCIExpressLinkStatus" = 4161
+      "IOPCIExpressCapabilities" = 2
+      "Capability Offsets" = {"VSEC"=1280,"PowerManagementCapability"=128,"MSIXCapability"=160,"PCIExpressCapability"=192,"LatencyToleranceReportingCapability"=1536,"ErrorReportingCapability"=512,"PowerBudgetCapability"=1024,"MSICapability"=136,"DeviceSerialNumberCapability"=256,"VirtualChannelCapability"=768}
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.pci"))
+      "IOInterruptControllers" = ("io-apic-0","IOPCIMessagedInterruptController")
+      "built-in" = <00>
+      "IOBusyInterest" = "IOCommand is not serializable"
+      "IOPowerManagement" = {"CurrentPowerState"=2,"CapabilityFlags"=258,"ChildProxyPowerState"=2,"MaxPowerState"=3}
+      "IOPCIResourced" = Yes
+      "IODeviceMemory" = (({"address"=275197722624,"length"=262144}),({"address"=275197984768,"length"=4096}))
+      "IOPCIMSIMessageControl" = 128
+      "name" = <"pci8086,1137">
+      "subsystem-id" = <00000000>
+      "acpi-pmcap-offset" = 128
+      "IOPCIEjectable" = Yes
+      "compatible" = <"pci8086,0","pci8086,1137","pciclass,0c0340","TBCL">
+      "IOPCIExpressDeviceCapabilities2" = 2066
+      "IOPCIExpressDeviceCapabilities" = 36832
+      "reg" = <00000a000000000000000000000000000000000010000a420000000000000000000000000000040018000a4200000000000000000000000000100000>
+      "IOPCIPowerManagementCapabilities" = 18446744073705588737
+      "UTB Version" = "REL-Jun 13 2025-15:09:49"
+      "IOGeneralInterest" = "IOCommand is not serializable"
+      "device-id" = <37110000>
+      "revision-id" = <00000000>
+      "IOPCIAERCapabilities" = 0
+      "IOPCIExpressLinkCapabilities2" = 0
+      "acpi-path" = "IOACPIPlane:/_SB/PC00/RP09@1d0000/PXSX@0/TBDT@0/TBCL@0"
+    }
+    
+
++-o TBD0@1  <class IOPCIDevice, id 0x10000040e, registered, matched, active, busy 0 (1 ms), retain 10>
+    {
+      "acpi-device" = "IOACPIPlatformDevice is not serializable"
+      "IOPCIExpressLinkCapabilities2" = 2
+      "IOPCIExpressLinkCapabilities" = 24205377
+      "vendor-id" = <86800000>
+      "class-code" = <00040600>
+      "IOInterruptSpecifiers" = (<1100000007000000>)
+      "IOName" = "pci-bridge"
+      "#size-cells" = <02000000>
+      "IOPCIExpressSlotCapabilities" = 786528
+      "IOPCIFPBCapabilities" = 66055
+      "IOPCIHPType" = 32
+      "pcidebug" = "6:1:0(9:9)"
+      "IOChildIndex" = 2
+      "IOPCIExpressLinkStatus" = 4161
+      "IOPCIExpressCapabilities" = 354
+      "IODTPersist" = 0
+      "Capability Offsets" = {"VSEC"=1536,"PowerManagementCapability"=128,"FPBCapability"=80,"PCIExpressCapability"=192,"DVSEC"=3072,"ErrorReportingCapability"=512,"AccessControlServicesCapability"=2304,"PowerBudgetCapability"=1024,"MSICapability"=136,"DeviceSerialNumberCapability"=256,"VirtualChannelCapability"=768}
+      "IOPCIConfigured" = Yes
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.pci","com.apple.developer.driverkit.transport.pci.bridge"))
+      "IOInterruptControllers" = ("io-apic-0")
+      "built-in" = <00>
+      "IOBusyInterest" = "IOCommand is not serializable"
+      "IOPowerManagement" = {"ChildrenPowerState"=2,"CurrentPowerState"=2,"CapabilityFlags"=258,"ChildProxyPowerState"=2,"MaxPowerState"=3}
+      "ranges" = <0000008200000000000000000000008200000000000000000000000000000000000000c20000000000000000000000c2000000000000000000000000000000000000008100000000000000000000008100000000000000000000000000000000>
+      "IOPCIResourced" = Yes
+      "IOPCIMSIMessageControl" = 128
+      "name" = <"pci-bridge">
+      "IOPCIACSCapabilities" = 1407
+      "acpi-pmcap-offset" = 128
+      "IOPCIEjectable" = Yes
+      "IOPCIExpressSlotCapabilities2" = 0
+      "compatible" = <"pci8086,1136","pciclass,060400","TBD0">
+      "IOPCIExpressDeviceCapabilities2" = 2048
+      "IOPCIExpressDeviceCapabilities" = 32800
+      "IOPCIExpressSlotStatus" = 0
+      "reg" = <0008060000000000000000000000000000000000>
+      "IOPCIPowerManagementCapabilities" = 18446744073705588737
+      "IOGeneralInterest" = "IOCommand is not serializable"
+      "device-id" = <36110000>
+      "#address-cells" = <03000000>
+      "revision-id" = <02000000>
+      "IOPCIAERCapabilities" = 0
+      "acpi-path" = "IOACPIPlane:/_SB/PC00/RP09@1d0000/PXSX@0/TBD0@10000"
+    }
+    
+
++-o TBDU@2  <class IOPCIDevice, id 0x10000040f, registered, matched, active, busy 0 (2393 ms), retain 11>
+    {
+      "acpi-device" = "IOACPIPlatformDevice is not serializable"
+      "IOPCIExpressLinkCapabilities2" = 2
+      "IOPCIExpressLinkCapabilities" = 39935041
+      "vendor-id" = <86800000>
+      "class-code" = <00040600>
+      "IOInterruptSpecifiers" = (<1200000007000000>)
+      "IOName" = "pci-bridge"
+      "#size-cells" = <02000000>
+      "IOPCIExpressSlotCapabilities" = 262144
+      "IOPCIFPBCapabilities" = 66055
+      "IOPCIHPType" = 32
+      "pcidebug" = "6:2:0(8:8)"
+      "IOChildIndex" = 3
+      "IOPCIExpressLinkStatus" = 4160
+      "IOPCIExpressCapabilities" = 354
+      "IODTPersist" = 0
+      "Capability Offsets" = {"VSEC"=1280,"PowerManagementCapability"=128,"FPBCapability"=80,"PCIExpressCapability"=192,"DVSEC"=3072,"ErrorReportingCapability"=512,"AccessControlServicesCapability"=2304,"PowerBudgetCapability"=1024,"MSICapability"=136,"DeviceSerialNumberCapability"=256,"VirtualChannelCapability"=768}
+      "IOPCIConfigured" = Yes
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.pci","com.apple.developer.driverkit.transport.pci.bridge"))
+      "IOInterruptControllers" = ("io-apic-0")
+      "built-in" = <00>
+      "IOBusyInterest" = "IOCommand is not serializable"
+      "IOPowerManagement" = {"ChildrenPowerState"=2,"CurrentPowerState"=2,"CapabilityFlags"=258,"ChildProxyPowerState"=2,"MaxPowerState"=3}
+      "ranges" = <0000008200000000000000840000008200000000000000840000000000001000000000c20000000000000000000000c2000000000000000000000000000000000000008100000000000000000000008100000000000000000000000000000000>
+      "IOPCIResourced" = Yes
+      "IOPCIMSIMessageControl" = 128
+      "name" = <"pci-bridge">
+      "IOPCIACSCapabilities" = 1407
+      "acpi-pmcap-offset" = 128
+      "IOPCIEjectable" = Yes
+      "IOPCIExpressSlotCapabilities2" = 0
+      "compatible" = <"pci8086,1136","pciclass,060400","TBDU">
+      "IOPCIExpressDeviceCapabilities2" = 2048
+      "IOPCIExpressDeviceCapabilities" = 32800
+      "IOPCIExpressSlotStatus" = 72
+      "reg" = <0010060000000000000000000000000000000000>
+      "IOPCIPowerManagementCapabilities" = 18446744073705588737
+      "IOGeneralInterest" = "IOCommand is not serializable"
+      "device-id" = <36110000>
+      "#address-cells" = <03000000>
+      "revision-id" = <02000000>
+      "IOPCIAERCapabilities" = 0
+      "acpi-path" = "IOACPIPlane:/_SB/PC00/RP09@1d0000/PXSX@0/TBDU@20000"
+    }
+    
+
++-o XHCI@0  <class IOPCIDevice, id 0x100000412, registered, matched, active, busy 0 (2391 ms), retain 14>
+    {
+      "acpi-device" = "IOACPIPlatformDevice is not serializable"
+      "IOPCIMSIMode" = Yes
+      "assigned-addresses" = <1000088200000000000000840000000000000100>
+      "vendor-id" = <86800000>
+      "class-code" = <30030c00>
+      "IOPCIExpressLinkCapabilities" = 4458561
+      "IOGeneralInterest" = "IOCommand is not serializable"
+      "IOName" = "pci8086,1138"
+      "IOPCIHPType" = 32
+      "IOPCIUseDeviceMapper" = Yes
+      "pcidebug" = "8:0:0"
+      "IOChildIndex" = 1
+      "IOPCIExpressLinkStatus" = 4161
+      "IOPCIExpressCapabilities" = 2
+      "Capability Offsets" = {"LatencyToleranceReportingCapability"=256,"PCIExpressCapability"=188,"VendorSpecificCapability"=176,"MSICapability"=128,"PowerManagementCapability"=112}
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.pci"))
+      "IOInterruptControllers" = ("IOPCIMessagedInterruptController")
+      "built-in" = <00>
+      "IOBusyInterest" = "IOCommand is not serializable"
+      "IOPowerManagement" = {"ChildrenPowerState"=2,"CurrentPowerState"=2,"CapabilityFlags"=258,"ChildProxyPowerState"=2,"MaxPowerState"=3}
+      "IOPCIResourced" = Yes
+      "IODeviceMemory" = (({"address"=2214592512,"length"=65536}))
+      "IOPCIMSIMessageControl" = 134
+      "name" = <"pci8086,1138">
+      "acpi-pmcap-offset" = 112
+      "IOPCIEjectable" = Yes
+      "compatible" = <"pci8086,1138","pciclass,0c0330","XHCI">
+      "IOPCIExpressDeviceCapabilities2" = 2064
+      "IOPCIExpressDeviceCapabilities" = 34657
+      "IOReportLegendPublic" = Yes
+      "reg" = <00000800000000000000000000000000000000001000080200000000000000000000000000000100>
+      "IOPCIPowerManagementCapabilities" = 18446744072665399297
+      "UTB Version" = "REL-Jun 13 2025-15:09:49"
+      "IOReportLegend" = ({"IOReportGroupName"="Interrupt Statistics (by index)","IOReportChannels"=((5291294645182005248,4295098369,"               First Level Interrupt Handler Count"),(5291294645182005249,4295098369,"              Second Level Interrupt Handler Count"),(5291294645182005250,4295098369,"        First Level Interrupt Handler Time (MATUs)"),(5291294645182005251,4295098369,"   Second Level Interrupt Handler CPU Time (MATUs)"),(5291294645182005252,4295098369,"Second Level Interrupt Handler System Time (MATUs)")),"IOReportChannelInfo"={"IOReportChannelUnit"=0},"IOReportSubGroupName"="XHCI 0"})
+      "device-id" = <38110000>
+      "driver-child-bundle" = "com.apple.driver.usb.AppleUSBXHCIPCI"
+      "revision-id" = <00000000>
+      "IOPCIExpressLinkCapabilities2" = 14
+      "IOInterruptSpecifiers" = (<0200000000000100>)
+      "acpi-path" = "IOACPIPlane:/_SB/PC00/RP09@1d0000/PXSX@0/TBDU@20000/XHCI@0"
+    }
+    
+
++-o TBD1@3  <class IOPCIDevice, id 0x100000410, registered, matched, active, busy 0 (2 ms), retain 10>
+    {
+      "acpi-device" = "IOACPIPlatformDevice is not serializable"
+      "IOPCIExpressLinkCapabilities2" = 2
+      "IOPCIExpressLinkCapabilities" = 57759809
+      "vendor-id" = <86800000>
+      "class-code" = <00040600>
+      "IOInterruptSpecifiers" = (<1300000007000000>)
+      "IOName" = "pci-bridge"
+      "#size-cells" = <02000000>
+      "IOPCIExpressSlotCapabilities" = 1835104
+      "IOPCIFPBCapabilities" = 66055
+      "IOPCIHPType" = 32
+      "pcidebug" = "6:3:0(7:7)"
+      "IOChildIndex" = 4
+      "IOPCIExpressLinkStatus" = 4161
+      "IOPCIExpressCapabilities" = 354
+      "IODTPersist" = 0
+      "Capability Offsets" = {"VSEC"=1536,"PowerManagementCapability"=128,"FPBCapability"=80,"PCIExpressCapability"=192,"DVSEC"=3072,"ErrorReportingCapability"=512,"AccessControlServicesCapability"=2304,"PowerBudgetCapability"=1024,"MSICapability"=136,"DeviceSerialNumberCapability"=256,"VirtualChannelCapability"=768}
+      "IOPCIConfigured" = Yes
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.pci","com.apple.developer.driverkit.transport.pci.bridge"))
+      "IOInterruptControllers" = ("io-apic-0")
+      "built-in" = <00>
+      "IOBusyInterest" = "IOCommand is not serializable"
+      "IOPowerManagement" = {"ChildrenPowerState"=2,"CurrentPowerState"=2,"CapabilityFlags"=258,"ChildProxyPowerState"=2,"MaxPowerState"=3}
+      "ranges" = <0000008200000000000000000000008200000000000000000000000000000000000000c20000000000000000000000c2000000000000000000000000000000000000008100000000000000000000008100000000000000000000000000000000>
+      "IOPCIResourced" = Yes
+      "IOPCIMSIMessageControl" = 128
+      "name" = <"pci-bridge">
+      "IOPCIACSCapabilities" = 1407
+      "acpi-pmcap-offset" = 128
+      "IOPCIEjectable" = Yes
+      "IOPCIExpressSlotCapabilities2" = 0
+      "compatible" = <"pci8086,1136","pciclass,060400","TBD1">
+      "IOPCIExpressDeviceCapabilities2" = 2048
+      "IOPCIExpressDeviceCapabilities" = 32800
+      "IOPCIExpressSlotStatus" = 0
+      "reg" = <0018060000000000000000000000000000000000>
+      "IOPCIPowerManagementCapabilities" = 18446744073705588737
+      "IOGeneralInterest" = "IOCommand is not serializable"
+      "device-id" = <36110000>
+      "#address-cells" = <03000000>
+      "revision-id" = <02000000>
+      "IOPCIAERCapabilities" = 0
+      "acpi-path" = "IOACPIPlane:/_SB/PC00/RP09@1d0000/PXSX@0/TBD1@30000"
+    }
+    
+
++-o LPCB@1F  <class IOPCIDevice, id 0x100000404, registered, matched, active, busy 0 (0 ms), retain 20>
+    {
+      "IOInterruptSpecifiers" = ()
+      "class-code" = <00010600>
+      "IOPowerManagement" = {"CurrentPowerState"=2,"CapabilityFlags"=258,"ChildProxyPowerState"=2,"MaxPowerState"=3}
+      "subsystem-vendor-id" = <aa170000>
+      "built-in" = <00>
+      "acpi-device" = "IOACPIPlatformDevice is not serializable"
+      "IOBusyInterest" = "IOCommand is not serializable"
+      "Capability Offsets" = {}
+      "IOInterruptControllers" = ()
+      "vendor-id" = <86800000>
+      "name" = <"pci8086,5182">
+      "device-id" = <82510000>
+      "IOPCIResourced" = Yes
+      "compatible" = <"pci17aa,22f8","pci8086,5182","pciclass,060100","LPCB">
+      "IOPCIExpressLinkCapabilities" = 0
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.pci"))
+      "acpi-path" = "IOACPIPlane:/_SB/PC00/LPCB@1f0000"
+      "subsystem-id" = <f8220000>
+      "revision-id" = <01000000>
+      "pcidebug" = "0:31:0"
+      "IOName" = "pci8086,5182"
+      "reg" = <00f8000000000000000000000000000000000000>
+    }
+    
+
++-o HDAS@1F,3  <class IOPCIDevice, id 0x100000405, registered, matched, active, busy 0 (334 ms), retain 11>
+    {
+      "assigned-addresses" = <10fb00824000000000802313000000000040000020fb008240000000000000130000000000001000>
+      "IOInterruptSpecifiers" = (<1000000007000000>,<0d00000000000100>)
+      "class-code" = <00010400>
+      "IODeviceMemory" = (({"address"=275199000576,"length"=16384}),({"address"=275196674048,"length"=1048576}))
+      "IOPowerManagement" = {"CurrentPowerState"=2,"CapabilityFlags"=258,"ChildProxyPowerState"=2,"MaxPowerState"=3}
+      "subsystem-vendor-id" = <aa170000>
+      "built-in" = <00>
+      "acpi-device" = "IOACPIPlatformDevice is not serializable"
+      "IOBusyInterest" = "IOCommand is not serializable"
+      "IOPCIPowerManagementCapabilities" = 18446744072640233473
+      "Capability Offsets" = {"MSICapability"=96,"PowerManagementCapability"=80,"VendorSpecificCapability"=128}
+      "IOInterruptControllers" = ("io-apic-0","IOPCIMessagedInterruptController")
+      "vendor-id" = <86800000>
+      "name" = <"pci8086,51c8">
+      "device-id" = <c8510000>
+      "IOPCIMSIMessageControl" = 128
+      "acpi-pmcap-offset" = 80
+      "IOPCIResourced" = Yes
+      "compatible" = <"pci17aa,22f8","pci8086,51c8","pciclass,040100","HDAS">
+      "IOPCIExpressLinkCapabilities" = 0
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.pci"))
+      "acpi-path" = "IOACPIPlane:/_SB/PC00/HDAS@1f0003"
+      "subsystem-id" = <f8220000>
+      "revision-id" = <01000000>
+      "pcidebug" = "0:31:3"
+      "IOName" = "pci8086,51c8"
+      "reg" = <00fb00000000000000000000000000000000000010fb00020000000000000000000000000040000020fb000200000000000000000000000000001000>
+    }
+    
+
++-o SBUS@1F,4  <class IOPCIDevice, id 0x100000406, registered, matched, active, busy 0 (5023 ms), retain 10>
+    {
+      "assigned-addresses" = <10fc00824000000000802413000000000001000020fc008100000000a0ef00000000000020000000>
+      "IOInterruptSpecifiers" = (<1000000007000000>)
+      "class-code" = <00050c00>
+      "IODeviceMemory" = (({"address"=275199066112,"length"=256}),"IOSubMemoryDescriptor is not serializable")
+      "IOPowerManagement" = {"CurrentPowerState"=2,"CapabilityFlags"=258,"ChildProxyPowerState"=2,"MaxPowerState"=3}
+      "subsystem-vendor-id" = <aa170000>
+      "built-in" = <00>
+      "acpi-device" = "IOACPIPlatformDevice is not serializable"
+      "IOBusyInterest" = "IOCommand is not serializable"
+      "Capability Offsets" = {}
+      "IOInterruptControllers" = ("io-apic-0")
+      "vendor-id" = <86800000>
+      "name" = <"pci8086,51a3">
+      "device-id" = <a3510000>
+      "IOPCIResourced" = Yes
+      "compatible" = <"pci17aa,22f8","pci8086,51a3","pciclass,0c0500","SBUS">
+      "IOPCIExpressLinkCapabilities" = 0
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.pci"))
+      "acpi-path" = "IOACPIPlane:/_SB/PC00/SBUS@1f0004"
+      "subsystem-id" = <f8220000>
+      "revision-id" = <01000000>
+      "pcidebug" = "0:31:4"
+      "IOName" = "pci8086,51a3"
+      "reg" = <00fc00000000000000000000000000000000000010fc00020000000000000000000000000001000020fc000100000000000000000000000020000000>
+    }
+    
+
++-o pci8086,51a4@1F,5  <class IOPCIDevice, id 0x100000407, registered, matched, active, busy 0 (333 ms), retain 9>
+    {
+      "assigned-addresses" = <10fd008200000000000080800000000000100000>
+      "IOInterruptSpecifiers" = ()
+      "class-code" = <00800c00>
+      "IODeviceMemory" = (({"address"=2155872256,"length"=4096}))
+      "IOPowerManagement" = {"CurrentPowerState"=2,"CapabilityFlags"=258,"ChildProxyPowerState"=2,"MaxPowerState"=3}
+      "subsystem-vendor-id" = <aa170000>
+      "IOBusyInterest" = "IOCommand is not serializable"
+      "Capability Offsets" = {}
+      "IOInterruptControllers" = ()
+      "vendor-id" = <86800000>
+      "name" = <"pci8086,51a4">
+      "device-id" = <a4510000>
+      "IOPCIResourced" = Yes
+      "compatible" = <"pci17aa,22f8","pci8086,51a4","pciclass,0c8000">
+      "IOPCIExpressLinkCapabilities" = 0
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.pci"))
+      "subsystem-id" = <f8220000>
+      "revision-id" = <01000000>
+      "pcidebug" = "0:31:5"
+      "IOName" = "pci8086,51a4"
+      "reg" = <00fd00000000000000000000000000000000000010fd000200000000000000000000000000100000>
+    }
+    
+

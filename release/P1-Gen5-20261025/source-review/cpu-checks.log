@@ -1,0 +1,2 @@
+PASS: reservation intersections, stride, bounds, stale VA, live-slot protection, cache hit, invalid PTE, HiDPI and reset; CPU only.
+PASS: both NoCopy signatures, aligned native preservation, offset-zero failure recovery, callbacks, ownership, exceptions and legacy unaligned copy; CPU only.

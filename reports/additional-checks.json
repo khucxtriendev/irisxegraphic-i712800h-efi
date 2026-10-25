@@ -1,0 +1,9 @@
+{
+  "shell_syntax": "pass",
+  "display_argument_checks": "pass",
+  "upstream_efi_delta": [
+    "OC/Kexts/NootedGreen.kext/Contents/MacOS/NootedGreen"
+  ],
+  "upstream_ad_hoc_codesign": "pass",
+  "boot_tested": false
+}

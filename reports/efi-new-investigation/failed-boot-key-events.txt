@@ -1,0 +1,26 @@
+34: 2026-10-25 19:52:29.703 Df kernel[0:79] (AppleMobileFileIntegrity) kern_return_t _initializeAppleMobileFileIntegrity(): signature enforcement disabled by boot-arg
+789: 2026-10-25 19:52:30.363 Df kernel[0:460] kPEDisableScreen -1
+3220: 2026-10-25 19:52:50.830 Df kernel[0:8b4] (AppleIntelTGLGraphicsFramebuffer) [IGFB][ERROR][DISPLAY   ][AppleIntelController.cpp :14636 ][FBMemMgr_Init       ]       Insufficient stolen memory
+4498: 2026-10-25 19:53:18.735 F  kernel[0:8b4] (IOAcceleratorFamily2) virtual IOReturn IOAccelEventMachine2::waitForStamp(int32_t, stamp_t, stamp_t *): initial wait for 1 second expired. Continue wait for 4 seconds. stamp 3 (gpu_stamp=2)
+4518: 2026-10-25 19:53:22.737 F  kernel[0:8b4] (IOAcceleratorFamily2) virtual IOReturn IOAccelEventMachine2::waitForStamp(int32_t, stamp_t, stamp_t *): timeout waiting for IntelAccelerator stamp 3 (gpu_stamp=2)
+4621: 2026-10-25 19:53:24.975 E  WindowServer[201:424] [com.apple.CoreDisplay:default] [ERROR] - Setting main display 0x00000000 offline 	
+5288: 2026-10-25 19:53:26.162 Df kernel[0:424] kPEDisableScreen 1
+5336: 2026-10-25 19:53:26.270 Df kernel[0:424] (AppleIntelTGLGraphicsFramebuffer) [IGFB][ERROR][DISPLAY   ][AppleIntelFB.cpp         :  795 ][getOnlineInfo       ]       FB0: Failed to read EDID 0xe00002d6
+5339: 2026-10-25 19:53:28.298 Df kernel[0:424] kPEDisableScreen 1
+5351: 2026-10-25 19:53:28.347 Df kernel[0:424] kPEDisableScreen 1
+5400: 2026-10-25 19:53:28.687 Df kernel[0:424] (AppleIntelTGLGraphicsFramebuffer) [IGFB][ERROR][DISPLAY   ][AppleIntelMultiLink.cpp  :   88 ][allocateDisplayResou]         FB0: Display resources already allocated - bailing out
+5789: 2026-10-25 19:54:21.049 Df kernel[0:424] kPEDisableScreen 1
+5978: 2026-10-25 19:54:53.452 Df WindowServer[201:424] (libxedrv.dylib) xedrv17: carregada em WindowServer[201]: entries=1 pd=1 rhm=1 layout=1 lab=0
+6061: 2026-10-25 19:55:07.452 E  WindowServer[201:424] [com.apple.CoreDisplay:default] [ERROR] - Setting main display 0x00000000 offline 	
+6189: 2026-10-25 19:55:32.433 E  WindowServer[201:424] [com.apple.CoreDisplay:default] [ERROR] - Setting main display 0x00000000 offline 	
+6226: 2026-10-25 19:55:32.457 E  WindowServer[201:424] [com.apple.CoreDisplay:default] [ERROR] - Setting main display 0x00000000 offline 	
+6248: 2026-10-25 19:55:32.459 E  WindowServer[201:424] [com.apple.CoreDisplay:default] [ERROR] - Setting main display 0x00000000 offline 	
+6270: 2026-10-25 19:55:32.460 E  WindowServer[201:424] [com.apple.CoreDisplay:default] [ERROR] - Setting main display 0x00000000 offline 	
+6292: 2026-10-25 19:55:32.461 E  WindowServer[201:424] [com.apple.CoreDisplay:default] [ERROR] - Setting main display 0x00000000 offline 	
+6314: 2026-10-25 19:55:32.462 E  WindowServer[201:424] [com.apple.CoreDisplay:default] [ERROR] - Setting main display 0x00000000 offline 	
+6336: 2026-10-25 19:55:32.463 E  WindowServer[201:424] [com.apple.CoreDisplay:default] [ERROR] - Setting main display 0x00000000 offline 	
+6358: 2026-10-25 19:55:32.464 E  WindowServer[201:424] [com.apple.CoreDisplay:default] [ERROR] - Setting main display 0x00000000 offline 	
+6380: 2026-10-25 19:55:32.465 E  WindowServer[201:424] [com.apple.CoreDisplay:default] [ERROR] - Setting main display 0x00000000 offline 	
+6740: 2026-10-25 20:04:10.767 Df kernel[0:7b] (AppleMobileFileIntegrity) kern_return_t _initializeAppleMobileFileIntegrity(): signature enforcement disabled by boot-arg
+7465: 2026-10-25 20:04:12.252 Df kernel[0:3d5] kPEDisableScreen -1
+9950: 2026-10-25 20:04:34.729 Df kernel[0:8b0] (AppleIntelTGLGraphicsFramebuffer) [IGFB][ERROR][DISPLAY   ][AppleIntelController.cpp :14636 ][FBMemMgr_Init       ]       Insufficient stolen memory

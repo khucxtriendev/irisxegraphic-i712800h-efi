@@ -1,0 +1,22 @@
+{
+  "build/userland/AppleIntelTGLGraphicsMTLDriver.bundle": {
+    "verified": true,
+    "detail": ""
+  },
+  "build/userland/xe.bundle": {
+    "verified": true,
+    "detail": ""
+  },
+  "build/video-decode/AppleIntelTGLGraphicsVADriver.bundle": {
+    "verified": true,
+    "detail": ""
+  },
+  "vendor/iris-xe/build/HookCase.kext": {
+    "verified": true,
+    "detail": ""
+  },
+  "vendor/iris-xe/build/NootedGreen.kext": {
+    "verified": true,
+    "detail": ""
+  }
+}

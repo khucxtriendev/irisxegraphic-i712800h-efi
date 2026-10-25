@@ -1,0 +1,23 @@
+/Users/kxt/Documents/gen5_igpu_driver/build/userland/AppleIntelTGLGraphicsMTLDriver.bundle/Contents/MacOS/libxedrv.dylib: replacing existing signature
+/Users/kxt/Documents/gen5_igpu_driver/build/userland/AppleIntelTGLGraphicsMTLDriver.bundle/Contents/MacOS/AppleIntelTGLGraphicsMTLDriver: replacing existing signature
+/Users/kxt/Documents/gen5_igpu_driver/build/userland/AppleIntelTGLGraphicsMTLDriver.bundle: replacing existing signature
+built /Users/kxt/Documents/gen5_igpu_driver/build/userland/AppleIntelTGLGraphicsMTLDriver.bundle
+/Users/kxt/Documents/gen5_igpu_driver/build/userland/AppleIntelTGLGraphicsMTLDriver.bundle/Contents/MacOS/libigdmd.dylib: replacing existing signature
+/Users/kxt/Documents/gen5_igpu_driver/build/userland/AppleIntelTGLGraphicsMTLDriver.bundle/Contents/MacOS/libxedrv.dylib: replacing existing signature
+/Users/kxt/Documents/gen5_igpu_driver/build/userland/AppleIntelTGLGraphicsMTLDriver.bundle: replacing existing signature
+ld: warning: static initializer '' found in '/private/var/folders/5h/pdzrk90966dc91pn_xvr4vf40000gn/T/llvm-bridge-03f4d9.o'. Use -no_inits to make this an error.  Use -no_warn_inits to suppress warning
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/macos/src/compiler-adapter.cpp:38:47: warning: variable length arrays in C++ are a Clang extension [-Wvla-cxx-extension]
+   38 |   for (size_t c = 0; c < tot; c++) { char buf[CH + 1]; size_t l = olen - c * CH < CH ? olen - c * CH : CH; memcpy(buf, o + c * CH, l); buf[l] = 0;
+      |                                               ^~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/macos/src/compiler-adapter.cpp:38:47: note: read of non-const variable 'CH' is not allowed in a constant expression
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/macos/src/compiler-adapter.cpp:36:20: note: declared here
+   36 |   o[j] = 0; size_t CH = 720, tot = (olen + CH - 1) / CH;
+      |                    ^
+1 warning generated.
+ld: warning: static initializer '' found in '/private/var/folders/5h/pdzrk90966dc91pn_xvr4vf40000gn/T/compiler-adapter-91b341.o'. Use -no_inits to make this an error.  Use -no_warn_inits to suppress warning
+/Users/kxt/Documents/gen5_igpu_driver/build/userland/xe.bundle/Contents/MacOS/libIGIL-Metal.dylib: replacing existing signature
+/Users/kxt/Documents/gen5_igpu_driver/build/userland/xe.bundle/Contents/MacOS/libISAProfilerDyn.dylib: replacing existing signature
+/Users/kxt/Documents/gen5_igpu_driver/build/userland/xe.bundle/Contents/MacOS/libigc.dylib: replacing existing signature
+/Users/kxt/Documents/gen5_igpu_driver/build/userland/xe.bundle/Contents/MacOS/libigcHSW.dylib: replacing existing signature
+built /Users/kxt/Documents/gen5_igpu_driver/build/userland/xe.bundle  (install: sudo ditto it to /System/Library/Caches/xe.bundle; chown -R root:wheel)
+Built userland stack against this macOS compiler ABI: /Users/kxt/Documents/gen5_igpu_driver/build/userland

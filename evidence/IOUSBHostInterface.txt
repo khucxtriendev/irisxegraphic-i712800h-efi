@@ -1,0 +1,284 @@
++-o MISC Data@0  <class IOUSBHostInterface, id 0x1000006fb, registered, matched, active, busy 0 (1 ms), retain 5>
+    {
+      "USBSpeed" = 1
+      "iInterface" = 4
+      "bInterfaceProtocol" = 0
+      "bAlternateSetting" = 0
+      "idProduct" = 26004
+      "bcdDevice" = 256
+      "USB Product Name" = "Goodix USB2.0 MISC"
+      "locationID" = 341835776
+      "bInterfaceClass" = 255
+      "bInterfaceSubClass" = 0
+      "IOCFPlugInTypes" = {"2d9786c6-9ef3-11d4-ad51-000a27052861"="IOUSBHostFamily.kext/Contents/PlugIns/IOUSBLib.bundle"}
+      "USBPortType" = 0
+      "kUSBString" = "MISC Data"
+      "bInterfaceNumber" = 0
+      "bConfigurationValue" = 1
+      "USB Vendor Name" = "Goodix Technology Co., Ltd."
+      "idVendor" = 10182
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.usb"))
+      "bNumEndpoints" = 2
+      "USB Serial Number" = "UID7BD35DBF_XXXX_MOC_B0"
+    }
+    
+
++-o IOUSBHostInterface@0  <class IOUSBHostInterface, id 0x100000538, registered, matched, active, busy 0 (110 ms), retain 11>
+    {
+      "USBSpeed" = 3
+      "iInterface" = 0
+      "bInterfaceProtocol" = 80
+      "bAlternateSetting" = 0
+      "idProduct" = 8282
+      "bcdDevice" = 512
+      "USB Product Name" = "USB_0114"
+      "locationID" = 342884352
+      "bInterfaceClass" = 8
+      "bInterfaceSubClass" = 6
+      "IOCFPlugInTypes" = {"2d9786c6-9ef3-11d4-ad51-000a27052861"="IOUSBHostFamily.kext/Contents/PlugIns/IOUSBLib.bundle"}
+      "UsbExclusiveOwner" = "IOUSBMassStorageInterfaceNub"
+      "USBPortType" = 0
+      "bConfigurationValue" = 1
+      "bInterfaceNumber" = 0
+      "USB Vendor Name" = "ASolid"
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.usb"))
+      "idVendor" = 9385
+      "bNumEndpoints" = 2
+      "USB Serial Number" = "60315027"
+    }
+    
+
++-o Integrated Camera@0  <class IOUSBHostInterface, id 0x100000661, registered, matched, active, busy 0 (4 ms), retain 10>
+    {
+      "USBSpeed" = 3
+      "iInterface" = 5
+      "bInterfaceProtocol" = 0
+      "bAlternateSetting" = 0
+      "idProduct" = 6162
+      "bcdDevice" = 4128
+      "USB Product Name" = "Integrated Camera"
+      "locationID" = 343932928
+      "bInterfaceClass" = 14
+      "bInterfaceSubClass" = 1
+      "IOCFPlugInTypes" = {"2d9786c6-9ef3-11d4-ad51-000a27052861"="IOUSBHostFamily.kext/Contents/PlugIns/IOUSBLib.bundle"}
+      "UsbExclusiveOwner" = "pid 315, UVCAssistant"
+      "USBPortType" = 0
+      "kUSBString" = "Integrated Camera"
+      "bInterfaceNumber" = 0
+      "bConfigurationValue" = 1
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.usb"))
+      "idVendor" = 5967
+      "CameraAssistantConfiguration" = {"UVCCameraHideControls"=({"UVCControlEntityType"=3})}
+      "bNumEndpoints" = 1
+      "CameraBundleIDPublished" = Yes
+      "USB Serial Number" = "0001"
+      "IODEXTMatchCount" = 1
+      "CameraAssistantBundleID" = "com.apple.cmio.uvcassistantextension"
+      "IOGeneralInterest" = "IOCommand is not serializable"
+    }
+    
+
++-o IOUSBHostInterface@1  <class IOUSBHostInterface, id 0x100000663, registered, matched, active, busy 0 (3 ms), retain 9>
+    {
+      "USBSpeed" = 3
+      "iInterface" = 0
+      "bInterfaceProtocol" = 0
+      "bAlternateSetting" = 0
+      "idProduct" = 6162
+      "bcdDevice" = 4128
+      "USB Product Name" = "Integrated Camera"
+      "locationID" = 343932928
+      "bInterfaceClass" = 14
+      "bInterfaceSubClass" = 2
+      "IOCFPlugInTypes" = {"2d9786c6-9ef3-11d4-ad51-000a27052861"="IOUSBHostFamily.kext/Contents/PlugIns/IOUSBLib.bundle"}
+      "UsbExclusiveOwner" = "pid 315, UVCAssistant"
+      "USBPortType" = 0
+      "bConfigurationValue" = 1
+      "bInterfaceNumber" = 1
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.usb"))
+      "CameraAssistantConfiguration" = {"UVCCameraHideControls"=({"UVCControlEntityType"=3})}
+      "idVendor" = 5967
+      "CameraBundleIDPublished" = Yes
+      "bNumEndpoints" = 0
+      "IODEXTMatchCount" = 1
+      "USB Serial Number" = "0001"
+      "IOGeneralInterest" = "IOCommand is not serializable"
+      "CameraAssistantBundleID" = "com.apple.cmio.uvcassistantextension"
+    }
+    
+
++-o Integrated IR Camera@2  <class IOUSBHostInterface, id 0x100000664, registered, matched, active, busy 0 (4 ms), retain 10>
+    {
+      "USBSpeed" = 3
+      "iInterface" = 6
+      "bInterfaceProtocol" = 1
+      "bAlternateSetting" = 0
+      "idProduct" = 6162
+      "bcdDevice" = 4128
+      "USB Product Name" = "Integrated Camera"
+      "locationID" = 343932928
+      "bInterfaceClass" = 14
+      "bInterfaceSubClass" = 1
+      "IOCFPlugInTypes" = {"2d9786c6-9ef3-11d4-ad51-000a27052861"="IOUSBHostFamily.kext/Contents/PlugIns/IOUSBLib.bundle"}
+      "UsbExclusiveOwner" = "pid 315, UVCAssistant"
+      "USBPortType" = 0
+      "kUSBString" = "Integrated IR Camera"
+      "bInterfaceNumber" = 2
+      "bConfigurationValue" = 1
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.usb"))
+      "idVendor" = 5967
+      "CameraAssistantConfiguration" = {"UVCCameraHideControls"=({"UVCControlEntityType"=3})}
+      "bNumEndpoints" = 1
+      "CameraBundleIDPublished" = Yes
+      "USB Serial Number" = "0001"
+      "IODEXTMatchCount" = 1
+      "CameraAssistantBundleID" = "com.apple.cmio.uvcassistantextension"
+      "IOGeneralInterest" = "IOCommand is not serializable"
+    }
+    
+
++-o IOUSBHostInterface@3  <class IOUSBHostInterface, id 0x100000666, registered, matched, active, busy 0 (4 ms), retain 6>
+    {
+      "USBSpeed" = 3
+      "iInterface" = 0
+      "bInterfaceProtocol" = 1
+      "bAlternateSetting" = 0
+      "idProduct" = 6162
+      "bcdDevice" = 4128
+      "USB Product Name" = "Integrated Camera"
+      "locationID" = 343932928
+      "bInterfaceClass" = 14
+      "bInterfaceSubClass" = 2
+      "IOCFPlugInTypes" = {"2d9786c6-9ef3-11d4-ad51-000a27052861"="IOUSBHostFamily.kext/Contents/PlugIns/IOUSBLib.bundle"}
+      "USBPortType" = 0
+      "bConfigurationValue" = 1
+      "bInterfaceNumber" = 3
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.usb"))
+      "CameraAssistantConfiguration" = {"UVCCameraHideControls"=({"UVCControlEntityType"=3})}
+      "idVendor" = 5967
+      "CameraBundleIDPublished" = Yes
+      "bNumEndpoints" = 0
+      "IODEXTMatchCount" = 1
+      "USB Serial Number" = "0001"
+      "IOGeneralInterest" = "IOCommand is not serializable"
+      "CameraAssistantBundleID" = "com.apple.cmio.uvcassistantextension"
+    }
+    
+
++-o Camera DFU Device@4  <class IOUSBHostInterface, id 0x10000066b, registered, matched, active, busy 0 (4 ms), retain 5>
+    {
+      "USBPortType" = 0
+      "kUSBString" = "Camera DFU Device"
+      "IOCFPlugInTypes" = {"2d9786c6-9ef3-11d4-ad51-000a27052861"="IOUSBHostFamily.kext/Contents/PlugIns/IOUSBLib.bundle"}
+      "USB Serial Number" = "0001"
+      "bcdDevice" = 4128
+      "USBSpeed" = 3
+      "idProduct" = 6162
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.usb"))
+      "bInterfaceSubClass" = 1
+      "bConfigurationValue" = 1
+      "locationID" = 343932928
+      "USB Product Name" = "Integrated Camera"
+      "bInterfaceProtocol" = 1
+      "iInterface" = 11
+      "bAlternateSetting" = 0
+      "idVendor" = 5967
+      "bInterfaceNumber" = 4
+      "bInterfaceClass" = 254
+      "bNumEndpoints" = 0
+    }
+    
+
++-o IOUSBHostInterface@0  <class IOUSBHostInterface, id 0x100000545, registered, matched, active, busy 0 (7693 ms), retain 11>
+    {
+      "USBSpeed" = 1
+      "iInterface" = 0
+      "bInterfaceProtocol" = 1
+      "bAlternateSetting" = 0
+      "idProduct" = 12320
+      "bcdDevice" = 2
+      "USB Product Name" = "Wireless Device"
+      "locationID" = 344981504
+      "bInterfaceClass" = 3
+      "bInterfaceSubClass" = 1
+      "IOCFPlugInTypes" = {"2d9786c6-9ef3-11d4-ad51-000a27052861"="IOUSBHostFamily.kext/Contents/PlugIns/IOUSBLib.bundle"}
+      "UsbExclusiveOwner" = "AppleUserUSBHostHIDDevice"
+      "USBPortType" = 0
+      "bConfigurationValue" = 1
+      "bInterfaceNumber" = 0
+      "USB Vendor Name" = "YICHIP"
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.usb"))
+      "idVendor" = 12625
+      "IODEXTMatchCount" = 2
+      "bNumEndpoints" = 1
+    }
+    
+
++-o IOUSBHostInterface@1  <class IOUSBHostInterface, id 0x100000546, registered, matched, active, busy 0 (7690 ms), retain 11>
+    {
+      "USBSpeed" = 1
+      "iInterface" = 0
+      "bInterfaceProtocol" = 2
+      "bAlternateSetting" = 0
+      "idProduct" = 12320
+      "bcdDevice" = 2
+      "USB Product Name" = "Wireless Device"
+      "locationID" = 344981504
+      "bInterfaceClass" = 3
+      "bInterfaceSubClass" = 1
+      "IOCFPlugInTypes" = {"2d9786c6-9ef3-11d4-ad51-000a27052861"="IOUSBHostFamily.kext/Contents/PlugIns/IOUSBLib.bundle"}
+      "UsbExclusiveOwner" = "AppleUserUSBHostHIDDevice"
+      "USBPortType" = 0
+      "bConfigurationValue" = 1
+      "bInterfaceNumber" = 1
+      "USB Vendor Name" = "YICHIP"
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.usb"))
+      "idVendor" = 12625
+      "IODEXTMatchCount" = 1
+      "bNumEndpoints" = 1
+    }
+    
+
++-o IOUSBHostInterface@0  <class IOUSBHostInterface, id 0x10000055b, registered, matched, active, busy 0 (0 ms), retain 13>
+    {
+      "USBPortType" = 0
+      "IOCFPlugInTypes" = {"2d9786c6-9ef3-11d4-ad51-000a27052861"="IOUSBHostFamily.kext/Contents/PlugIns/IOUSBLib.bundle"}
+      "bcdDevice" = 0
+      "USBSpeed" = 1
+      "idProduct" = 51
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.usb"))
+      "bInterfaceSubClass" = 1
+      "bConfigurationValue" = 1
+      "locationID" = 346030080
+      "UsbExclusiveOwner" = "pid 161, bluetoothd"
+      "bInterfaceProtocol" = 1
+      "iInterface" = 0
+      "bAlternateSetting" = 0
+      "idVendor" = 32903
+      "bInterfaceNumber" = 0
+      "bInterfaceClass" = 224
+      "bNumEndpoints" = 3
+    }
+    
+
++-o IOUSBHostInterface@1  <class IOUSBHostInterface, id 0x10000055c, registered, matched, active, busy 0 (0 ms), retain 9>
+    {
+      "USBPortType" = 0
+      "IOCFPlugInTypes" = {"2d9786c6-9ef3-11d4-ad51-000a27052861"="IOUSBHostFamily.kext/Contents/PlugIns/IOUSBLib.bundle"}
+      "bcdDevice" = 0
+      "USBSpeed" = 1
+      "idProduct" = 51
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.usb"))
+      "bInterfaceSubClass" = 1
+      "bConfigurationValue" = 1
+      "locationID" = 346030080
+      "bInterfaceProtocol" = 1
+      "iInterface" = 0
+      "bAlternateSetting" = 0
+      "idVendor" = 32903
+      "bInterfaceNumber" = 1
+      "bInterfaceClass" = 224
+      "bNumEndpoints" = 2
+    }
+    
+

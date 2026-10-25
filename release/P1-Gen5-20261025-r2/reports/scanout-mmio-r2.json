@@ -1,0 +1,18 @@
+{
+  "method": "Fake IO read32 counter; CPU only, not GPU timing",
+  "native": {
+    "old_reads": 40580,
+    "new_reads": 16004,
+    "destination_reads_new": 0,
+    "pte_writes_on_hit": 0
+  },
+  "hidpi": {
+    "old_reads": 45280,
+    "new_reads": 20704,
+    "destination_reads_new": 0,
+    "pte_writes_on_hit": 0
+  },
+  "source_validation": "retained to detect reuse of a source VA",
+  "milliseconds_measured": false,
+  "panel_165hz_verified": false
+}

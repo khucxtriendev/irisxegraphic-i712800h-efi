@@ -1,0 +1,16 @@
+patched: device-id 0x9A498086 accepted
+patched: service lookup by name
+patched: skip bwar fourcc check
+patched: skip flag==1 check
+patched: skip unknown driver parameters
+VAME name ICL->TGL: 2 occurrences
+patch_nodes: node size 0x438, next link at +0x428 and +0x430
+ok: conv 0xb00+407, create hook 0xd00+20, param14 0x1100+38
+patched 0x64a15 je -> nop*6
+patched 0x6453c -> cave 0xe00 (53 bytes)
+spsshift: patched 3/3 sites
+hcpsurface: 0x193543 -> cave 0xf00 (26 bytes)
+hevclastslice: 0x13fee0 -> cave 0xf40 (69 bytes)
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/build/video-decode/AppleIntelTGLGraphicsVADriver.bundle: replacing existing signature
+ok: /Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/build/video-decode/AppleIntelTGLGraphicsVADriver.bundle
+6291f574afa064ed2dd56f6787cd92bcf79750b16cc13ef6d07a49e599934dff  /Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/build/video-decode/AppleIntelTGLGraphicsVADriver.bundle/Contents/MacOS/AppleIntelTGLGraphicsVADriver

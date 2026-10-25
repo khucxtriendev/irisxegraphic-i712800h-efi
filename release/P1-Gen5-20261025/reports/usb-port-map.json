@@ -1,0 +1,40 @@
+{
+  "source": "IORegistry of this P1, 2026-10-25; old EFI session",
+  "pch": {
+    "pci_id": "8086:51ED",
+    "pci_address": "0:20:0",
+    "usb2_ports": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "usb3_ports": [
+      13,
+      14,
+      15
+    ],
+    "preserved_port_count": 15,
+    "confirmed_internal": {
+      "6": "Goodix fingerprint 27C6:6594",
+      "8": "UVC camera 174F:1812",
+      "10": "Intel Bluetooth 8087:0033"
+    },
+    "external_connector_types_verified": false
+  },
+  "thunderbolt": {
+    "pci_id": "8086:1138",
+    "pci_address": "8:0:0",
+    "mode": "preserve enumeration; no custom port map"
+  },
+  "physical_connector_map_verified": false,
+  "boot_tested": false
+}

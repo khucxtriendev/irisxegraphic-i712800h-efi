@@ -1,0 +1,15 @@
++-o VoodooGPIOTigerLakeLP  <class VoodooGPIOTigerLakeLP, id 0x1000003bb, registered, matched, active, busy 0 (3 ms), retain 6>
+    {
+      "IOProbeScore" = 0
+      "CFBundleIdentifier" = "org.coolstar.VoodooGPIO"
+      "IOProviderClass" = "IOService"
+      "IOClass" = "VoodooGPIOTigerLakeLP"
+      "IOMatchCategory" = "IODefaultMatchCategory"
+      "CFBundleIdentifierKernel" = "org.coolstar.VoodooGPIO"
+      "IOMatchedAtBoot" = Yes
+      "IONameMatch" = ("INTC1055")
+      "IOPowerManagement" = {"CapabilityFlags"=2,"MaxPowerState"=1,"CurrentPowerState"=1}
+      "IONameMatched" = "INTC1055"
+    }
+    
+

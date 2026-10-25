@@ -1,0 +1,19 @@
+{
+  "created_at": "2026-10-25T10:07:39.067298+00:00",
+  "release": "P1-Gen5-20261025-r2",
+  "configuration_checks": 1079,
+  "source_cpu_sanitizers": "PASS",
+  "two_component_transaction_and_rollback": "PASS; temporary fake bundles",
+  "real_signature_at_staging_paths": "PASS; temporary copies",
+  "quick_installer_preflight": "passed earlier on current sources; final check safely refused because /Volumes/1401/EFI is no longer mounted",
+  "manifest_files": 293,
+  "all_release_file_hashes": "PASS",
+  "zip_sha256": "c5e7f02808cc5c066fbe13e99e620d89a7ccad3e2c528174535d9bc11541855f",
+  "zip_crc": "PASS",
+  "word_xml": "PASS",
+  "boot_tested": false,
+  "actual_dock_render_tested": false,
+  "frame_latency_ms_measured": false,
+  "ocvalidate": "not available; not run",
+  "wrote_live_efi_or_system": false
+}

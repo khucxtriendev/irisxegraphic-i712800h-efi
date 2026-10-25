@@ -1,0 +1,198 @@
+1792923446 sem compressão: dev=1 ios=1 heap=1 heapoff=1 heapsize=1
+1792923446 registrador de pipelines: 1 1 1 1 1
+1792923446 nocopyfix: 1 1
+1792923446 fillfix: fill=1 fill4=1 cópia2D->3D=1
+1792923446 12 métodos adicionados, caps/dynlib/archive desligados (índice inválido=0, driver base=0x12955d000)
+1792923446 layout: RPDInternal size=0x338 _private@0x30; attInternal size=0x10 _private@0x8
+1792923446 layout: sonda sampleCount@0xb8=4 vertexDescriptor@0x110 ok -> conversão ligada
+1792923446 carregada em WindowServer[201]: entries=1 pd=1 rhm=1 layout=1 lab=0
+1792923446 hashMap[0] nó=0x600002de1a40 k0=3 k1=3 valor=0x600002fd8550 isa=11dfff84e2076f1
+1792923446 hashMap[1] nó=0x600002de1a60 k0=6 k1=6 valor=0x600002fd85d0 isa=11dfff84e2076f1
+1792923446 hashMap[2] nó=0x600002de1a20 k0=1 k1=1 valor=0x600002fd85c0 isa=11dfff84e2076f1
+1792923446 hashMap[3] nó=0x600002de1a00 k0=0 k1=0 valor=0x600002fd85a0 isa=11dfff84e2076f1
+1792923446 hashMap[4] nó=0x600002de19e0 k0=2 k1=2 valor=0x600002fd8540 isa=11dfff84e2076f1
+1792923446 hashMap[0] nó=0x600002de1a80 k0=3 k1=3 valor=0x600002fd8610 isa=11dfff84e2076f1
+1792923446 hashMap[1] nó=0x600002de1aa0 k0=6 k1=6 valor=0x600002fd8640 isa=11dfff84e2076f1
+1792923446 hashMap[2] nó=0x600002de1a40 k0=1 k1=1 valor=0x600002fd8630 isa=11dfff84e2076f1
+1792923446 hashMap[3] nó=0x600002de1a60 k0=0 k1=0 valor=0x600002fd8620 isa=11dfff84e2076f1
+1792923446 hashMap[4] nó=0x600002de1a20 k0=2 k1=2 valor=0x600002fd8600 isa=11dfff84e2076f1
+1792923446 _descriptorPrivate(pipeline) convertido p/ layout antigo
+1792923446 _descriptorPrivate(attachment) convertido p/ bits antigos
+1792923446 PIPE sync ok vf=ViewportToNDC ff=GPUPass cor0=94 blend=0 ok=1 falhas=0 
+1792923446 TEX via=iosurface fmt=80 2560x1600 mips=1 usage=0x5 storage=1 type=2 ios=0x42475241 plano=0 -> ok (n=1)
+1792923446 hashMap[0] nó=0x600002de4fe0 k0=3 k1=3 valor=0x600002fd8bd0 isa=11dfff84e2076f1
+1792923446 hashMap[1] nó=0x600002de4c80 k0=6 k1=6 valor=0x600002fd8c10 isa=11dfff84e2076f1
+1792923446 hashMap[2] nó=0x600002de4ce0 k0=1 k1=1 valor=0x600002fd8bf0 isa=11dfff84e2076f1
+1792923446 hashMap[3] nó=0x600002de5340 k0=0 k1=0 valor=0x600002fd8b70 isa=11dfff84e2076f1
+1792923446 hashMap[4] nó=0x600002de4c20 k0=2 k1=2 valor=0x600002fd84d0 isa=11dfff84e2076f1
+1792923446 hashMap[0] nó=0x600002de4c80 k0=3 k1=3 valor=0x600002fd8c40 isa=11dfff84e2076f1
+1792923446 hashMap[1] nó=0x600002de4fe0 k0=6 k1=6 valor=0x600002fd8c70 isa=11dfff84e2076f1
+1792923446 hashMap[2] nó=0x600002de4ce0 k0=1 k1=1 valor=0x600002fd8c60 isa=11dfff84e2076f1
+1792923446 hashMap[3] nó=0x600002de5340 k0=0 k1=0 valor=0x600002fd8c50 isa=11dfff84e2076f1
+1792923446 hashMap[4] nó=0x600002de4c20 k0=2 k1=2 valor=0x600002fd8c20 isa=11dfff84e2076f1
+1792923446 PIPE sync ok vf=ViewportToNDC ff=ColorFill cor0=80 blend=0 ok=2 falhas=0 
+1792923446 hashMap[0] nó=0x600002de5940 k0=3 k1=3 valor=0x600002fd8dd0 isa=11dfff84e2076f1
+1792923446 hashMap[1] nó=0x600002de4900 k0=6 k1=6 valor=0x600002fd8dc0 isa=11dfff84e2076f1
+1792923446 hashMap[2] nó=0x600002de4720 k0=1 k1=1 valor=0x600002fd8df0 isa=11dfff84e2076f1
+1792923446 hashMap[3] nó=0x600002de59c0 k0=0 k1=0 valor=0x600002fd8de0 isa=11dfff84e2076f1
+1792923446 hashMap[4] nó=0x600002de47c0 k0=2 k1=2 valor=0x600002fd8db0 isa=11dfff84e2076f1
+1792923446 hashMap[0] nó=0x600002de49a0 k0=3 k1=3 valor=0x600002fd8d70 isa=11dfff84e2076f1
+1792923446 hashMap[1] nó=0x600002de4920 k0=6 k1=6 valor=0x600002fd8d10 isa=11dfff84e2076f1
+1792923446 hashMap[2] nó=0x600002de5940 k0=1 k1=1 valor=0x600002fd8d60 isa=11dfff84e2076f1
+1792923446 hashMap[3] nó=0x600002de4900 k0=0 k1=0 valor=0x600002fd8d80 isa=11dfff84e2076f1
+1792923446 hashMap[4] nó=0x600002de4720 k0=2 k1=2 valor=0x600002fd8da0 isa=11dfff84e2076f1
+1792923446 PIPE sync ok vf=UberCompositeVertex ff=UberCompositeFragment cor0=80 blend=0 ok=3 falhas=0 
+1792923446 TEX via=iosurface fmt=80 2560x1600 mips=1 usage=0x5 storage=1 type=2 ios=0x42475241 plano=0 -> ok (n=2)
+1792923446 TEX via=dev fmt=55 16384x1 mips=1 usage=0x1 storage=1 type=1 ios=0x00000000 plano=0 -> ok (n=1)
+1792923446 hashMap[0] nó=0x600002dba480 k0=3 k1=3 valor=0x600002fc8110 isa=11dfff84e2076f1
+1792923446 hashMap[1] nó=0x600002db9a60 k0=6 k1=6 valor=0x600002fc8250 isa=11dfff84e2076f1
+1792923446 hashMap[2] nó=0x600002db9ca0 k0=1 k1=1 valor=0x600002fc8230 isa=11dfff84e2076f1
+1792923446 hashMap[3] nó=0x600002db9c80 k0=0 k1=0 valor=0x600002fc8200 isa=11dfff84e2076f1
+1792923446 hashMap[4] nó=0x600002db86c0 k0=2 k1=2 valor=0x600002fc80d0 isa=11dfff84e2076f1
+1792923446 PIPE sync ok vf=ViewportToNDC ff=GPUPass cor0=80 blend=0 ok=4 falhas=0 
+1792923447 TEX via=iosurface fmt=80 2560x1600 mips=1 usage=0x5 storage=1 type=2 ios=0x42475241 plano=0 -> ok (n=3)
+1792923447 TEX via=dev fmt=25 1024x1 mips=1 usage=0x1 storage=1 type=1 ios=0x00000000 plano=0 -> ok (n=1)
+1792923447 hashMap[0] nó=0x600002dd18e0 k0=3 k1=3 valor=0x600002f94960 isa=11dfff84e2076f1
+1792923447 hashMap[1] nó=0x600002dd1cc0 k0=6 k1=6 valor=0x600002f94920 isa=11dfff84e2076f1
+1792923447 hashMap[2] nó=0x600002dd1880 k0=1 k1=1 valor=0x600002f949d0 isa=11dfff84e2076f1
+1792923447 hashMap[3] nó=0x600002dd1840 k0=0 k1=0 valor=0x600002f94950 isa=11dfff84e2076f1
+1792923447 hashMap[4] nó=0x600002dd1860 k0=2 k1=2 valor=0x600002f94a40 isa=11dfff84e2076f1
+1792923447 PIPE sync ok vf=UberCompositeVertex ff=UberCompositeFragment cor0=80 blend=0 ok=5 falhas=0 
+1792923448 PIPE sync ok vf=VfxXh ff=Xhf cor0=80 blend=0 ok=6 falhas=0 
+1792923448 TEX via=dev fmt=80 168x206 mips=1 usage=0x1 storage=1 type=2 ios=0x00000000 plano=0 -> ok (n=1)
+1792923448 NOCOPY textura 168x206 fmt=80 off=0x0 bpr=704 -> cópia alinhada (n=1)
+1792923448 TEX via=dev fmt=80 1x1 mips=1 usage=0x1 storage=1 type=2 ios=0x00000000 plano=0 -> ok (n=2)
+1792923448 TEX via=dev fmt=80 1x1 mips=1 usage=0x1 storage=1 type=7 ios=0x00000000 plano=0 -> ok (n=3)
+1792923448 TEX via=dev fmt=80 32x32 mips=1 usage=0x1 storage=1 type=2 ios=0x00000000 plano=0 -> ok (n=4)
+1792923448 NOCOPY textura 468x36 fmt=80 off=0x100 bpr=1920 -> cópia alinhada (n=2)
+1792923448 PIPE sync ok vf=VfxU10Xh ff=TimgXhf_Isrc cor0=80 blend=1 ok=8 falhas=0 
+1792923448 TEX via=iosurface fmt=80 2560x1600 mips=1 usage=0x5 storage=1 type=2 ios=0x42475241 plano=0 -> ok (n=4)
+1792923448 NOCOPY textura 468x36 fmt=80 off=0x100 bpr=1920 -> cópia alinhada (n=3)
+1792923448 NOCOPY textura 468x36 fmt=80 off=0x100 bpr=1920 -> cópia alinhada (n=4)
+1792923448 TEX via=dev fmt=80 468x36 mips=1 usage=0x1 storage=1 type=2 ios=0x00000000 plano=0 -> ok (n=8)
+1792923451 NOCOPY textura 1x1 fmt=80 off=0x100 bpr=64 -> cópia alinhada (n=8)
+1792923451 TEX via=dev fmt=1 255x32 mips=1 usage=0x1 storage=1 type=2 ios=0x00000000 plano=0 -> ok (n=1)
+1792923451 TEX via=dev fmt=1 148x58 mips=1 usage=0x1 storage=1 type=2 ios=0x00000000 plano=0 -> ok (n=2)
+1792923451 TEX via=dev fmt=80 64x64 mips=1 usage=0x5 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=16)
+1792923451 PIPE sync ok vf=downsample_blur_vert_lph ff=narrow_blur_19_frag_lph cor0=80 blend=0 ok=16 falhas=0 
+1792923451 TEX via=dev fmt=115 512x192 mips=1 usage=0x5 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=1)
+1792923451 TEX via=iosurface fmt=94 472x164 mips=1 usage=0x1 storage=1 type=2 ios=0x6c313072 plano=0 -> ok (n=1)
+1792923451 TEX via=dev fmt=115 256x1 mips=1 usage=0x1 storage=1 type=2 ios=0x00000000 plano=0 -> ok (n=2)
+1792923451 TEX via=dev fmt=1 137x53 mips=1 usage=0x1 storage=1 type=2 ios=0x00000000 plano=0 -> ok (n=3)
+1792923451 NOCOPY textura 137x53 fmt=1 off=0x100 bpr=192 -> cópia alinhada (n=16)
+1792923451 TEX via=dev fmt=115 256x1 mips=1 usage=0x1 storage=1 type=2 ios=0x00000000 plano=0 -> ok (n=3)
+1792923451 TEX via=dev fmt=115 64x64 mips=1 usage=0x5 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=4)
+1792923451 TEX via=dev fmt=1 369x76 mips=1 usage=0x1 storage=1 type=2 ios=0x00000000 plano=0 -> ok (n=4)
+1792923451 TEX via=dev fmt=115 768x448 mips=1 usage=0x5 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=8)
+1792923451 PIPE sync ok vf=VfxXh ff=BvcmXhf cor0=80 blend=0 ok=32 falhas=0 
+1792923451 TEX via=iosurface fmt=80 2880x1800 mips=1 usage=0x5 storage=1 type=2 ios=0x42475241 plano=0 -> ok (n=8)
+1792923451 TEX via=dev fmt=80 64x64 mips=1 usage=0x5 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=32)
+1792923451 TEX via=iosurface fmt=94 530x184 mips=1 usage=0x1 storage=1 type=2 ios=0x6c313072 plano=0 -> ok (n=2)
+1792923451 TEX via=dev fmt=115 64x64 mips=1 usage=0x5 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=16)
+1792923451 TEX via=dev fmt=115 64x64 mips=1 usage=0x5 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=32)
+1792923453 TEX via=iosurface fmt=94 530x184 mips=1 usage=0x1 storage=1 type=2 ios=0x6c313072 plano=0 -> ok (n=3)
+1792923455 TEX via=dev fmt=1 128x32 mips=1 usage=0x1 storage=1 type=2 ios=0x00000000 plano=0 -> ok (n=8)
+1792923455 TEX via=dev fmt=115 64x64 mips=1 usage=0x5 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=64)
+1792923457 TEX via=dev fmt=70 1536x1024 mips=1 usage=0x5 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=1)
+1792923457 TEX via=dev fmt=70 256x128 mips=1 usage=0x5 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=2)
+1792923457 TEX via=dev fmt=125 256x128 mips=1 usage=0x2 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=1)
+1792923457 PIPE sync ok vf=SimpleVertex ff=SimpleTextureFragment cor0=70 blend=0 ok=64 falhas=0 
+1792923457 TEX via=heap fmt=125 180x113 mips=1 usage=0x3 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=1)
+1792923459 TEX via=iosurface fmt=80 2880x60 mips=1 usage=0x5 storage=1 type=2 ios=0x42475241 plano=0 -> ok (n=16)
+1792923459 NOCOPY textura 68x60 fmt=1 off=0x100 bpr=128 -> cópia alinhada (n=32)
+1792923459 TEX via=dev fmt=1 76x53 mips=1 usage=0x1 storage=1 type=2 ios=0x00000000 plano=0 -> ok (n=16)
+1792923460 TEX via=iosurface fmt=20 3840x2160 mips=1 usage=0x1 storage=1 type=2 ios=0x78343230 plano=0 -> ok (n=1)
+1792923460 TEX via=iosurface fmt=60 1920x1080 mips=1 usage=0x1 storage=1 type=2 ios=0x78343230 plano=1 -> ok (n=1)
+1792923460 TEX via=dev fmt=80 2880x1856 mips=1 usage=0x5 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=64)
+1792923460 TEX via=iosurface fmt=20 3840x2160 mips=1 usage=0x1 storage=1 type=2 ios=0x78343230 plano=0 -> ok (n=2)
+1792923460 TEX via=iosurface fmt=60 1920x1080 mips=1 usage=0x1 storage=1 type=2 ios=0x78343230 plano=1 -> ok (n=2)
+1792923460 TEX via=dev fmt=70 1472x960 mips=1 usage=0x5 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=3)
+1792923460 TEX via=heap fmt=125 180x113 mips=1 usage=0x3 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=2)
+1792923460 TEX via=heap fmt=125 180x113 mips=1 usage=0x3 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=3)
+1792923461 TEX via=dev fmt=70 1472x960 mips=1 usage=0x5 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=4)
+1792923461 TEX via=heap fmt=125 180x113 mips=1 usage=0x3 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=4)
+1792923461 TEX via=iosurface fmt=80 2880x60 mips=1 usage=0x1 storage=1 type=2 ios=0x42475241 plano=0 -> ok (n=32)
+1792923462 TEX via=iosurface fmt=115 352x352 mips=1 usage=0x1 storage=1 type=2 ios=0x52476841 plano=0 -> ok (n=1)
+1792923462 TEX via=iosurface fmt=115 352x352 mips=1 usage=0x1 storage=1 type=2 ios=0x52476841 plano=0 -> ok (n=2)
+1792923462 TEX via=iosurface fmt=115 704x352 mips=1 usage=0x1 storage=1 type=2 ios=0x52476841 plano=0 -> ok (n=3)
+1792923462 TEX via=iosurface fmt=115 352x352 mips=1 usage=0x1 storage=1 type=2 ios=0x52476841 plano=0 -> ok (n=4)
+1792923462 TEX via=dev fmt=80 2880x64 mips=1 usage=0x5 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=128)
+1792923462 TEX via=dev fmt=30 46x24 mips=1 usage=0x1 storage=1 type=2 ios=0x00000000 plano=0 -> ok (n=1)
+1792923462 TEX via=dev fmt=30 4x24 mips=1 usage=0x1 storage=1 type=2 ios=0x00000000 plano=0 -> ok (n=2)
+1792923463 NOCOPY textura 160x160 fmt=80 off=0x20 bpr=640 -> cópia alinhada (n=64)
+1792923463 TEX via=dev fmt=1 222x53 mips=1 usage=0x1 storage=1 type=2 ios=0x00000000 plano=0 -> ok (n=32)
+1792923463 TEX via=iosurface fmt=30 240x240 mips=1 usage=0x1 storage=1 type=2 ios=0x4c413038 plano=0 -> ok (n=1)
+1792923463 NOCOPY textura 38x46 fmt=80 off=0x0 bpr=160 -> cópia alinhada (n=128)
+1792923463 TEX via=dev fmt=80 2944x64 mips=1 usage=0x5 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=256)
+1792923463 TEX via=iosurface fmt=80 76x60 mips=1 usage=0x5 storage=1 type=2 ios=0x42475241 plano=0 -> ok (n=64)
+1792923464 TEX via=iosurface fmt=80 64x60 mips=1 usage=0x5 storage=1 type=2 ios=0x42475241 plano=0 -> ok (n=128)
+1792923466 TEX via=dev fmt=80 2944x128 mips=1 usage=0x5 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=512)
+1792923467 PIPE sync ok vf=VfxXh ff=BdrkXhf cor0=80 blend=0 ok=128 falhas=0 
+1792923467 TEX via=dev fmt=1 28x28 mips=1 usage=0x1 storage=1 type=2 ios=0x00000000 plano=0 -> ok (n=64)
+1792923467 TEX via=iosurface fmt=80 76x60 mips=1 usage=0x5 storage=1 type=2 ios=0x42475241 plano=0 -> ok (n=256)
+1792923468 TEX via=iosurface fmt=80 2880x1800 mips=1 usage=0x5 storage=1 type=2 ios=0x42475241 plano=0 -> ok (n=512)
+1792923468 TEX via=iosurface fmt=115 704x352 mips=1 usage=0x1 storage=1 type=2 ios=0x52476841 plano=0 -> ok (n=8)
+1792923468 NOCOPY textura 92x30 fmt=1 off=0x0 bpr=128 -> cópia alinhada (n=256)
+1792923469 TEX via=dev fmt=80 192x128 mips=1 usage=0x5 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=1024)
+1792923470 TEX via=dev fmt=1 46x46 mips=1 usage=0x1 storage=1 type=2 ios=0x00000000 plano=0 -> ok (n=128)
+1792923471 TEX via=iosurface fmt=80 84x60 mips=1 usage=0x5 storage=1 type=2 ios=0x42475241 plano=0 -> ok (n=1024)
+1792923474 TEX via=iosurface fmt=115 704x352 mips=1 usage=0x1 storage=1 type=2 ios=0x52476841 plano=0 -> ok (n=16)
+1792923475 TEX via=iosurface fmt=115 704x352 mips=1 usage=0x1 storage=1 type=2 ios=0x52476841 plano=0 -> ok (n=32)
+1792923476 TEX via=dev fmt=80 256x128 mips=4 usage=0x5 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=2048)
+1792923476 TEX via=dev fmt=115 960x128 mips=1 usage=0x5 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=128)
+1792923479 TEX via=dev fmt=110 256x256 mips=6 usage=0x1 storage=1 type=2 ios=0x00000000 plano=0 -> ok (n=1)
+1792923482 TEX via=dev fmt=30 24x24 mips=1 usage=0x1 storage=1 type=2 ios=0x00000000 plano=0 -> ok (n=3)
+1792923482 TEX via=dev fmt=30 24x24 mips=1 usage=0x1 storage=1 type=2 ios=0x00000000 plano=0 -> ok (n=4)
+1792923483 TEX via=dev fmt=1 98x26 mips=1 usage=0x1 storage=1 type=2 ios=0x00000000 plano=0 -> ok (n=256)
+1792923484 NOCOPY textura 12x22 fmt=1 off=0x0 bpr=64 -> cópia alinhada (n=512)
+1792923491 TEX via=iosurface fmt=80 76x60 mips=1 usage=0x5 storage=1 type=2 ios=0x42475241 plano=0 -> ok (n=2048)
+1792923492 TEX via=dev fmt=1 28x28 mips=1 usage=0x1 storage=1 type=2 ios=0x00000000 plano=0 -> ok (n=512)
+1792923494 TEX via=dev fmt=80 256x128 mips=1 usage=0x5 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=4096)
+1792923505 NOCOPY textura 151x49 fmt=1 off=0x100 bpr=192 -> cópia alinhada (n=1024)
+1792923523 TEX via=dev fmt=115 320x128 mips=1 usage=0x5 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=256)
+1792923556 TEX via=iosurface fmt=80 960x1200 mips=1 usage=0x5 storage=1 type=2 ios=0x42475241 plano=0 -> ok (n=4096)
+1792923571 TEX via=iosurface fmt=115 704x352 mips=1 usage=0x1 storage=1 type=2 ios=0x52476841 plano=0 -> ok (n=64)
+1792923578 TEX via=dev fmt=63 640x192 mips=1 usage=0x5 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=1)
+1792923578 TEX via=dev fmt=63 640x192 mips=1 usage=0x5 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=2)
+1792923582 TEX via=dev fmt=30 24x2 mips=1 usage=0x1 storage=1 type=2 ios=0x00000000 plano=0 -> ok (n=8)
+1792923591 TEX via=dev fmt=80 256x128 mips=1 usage=0x5 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=8192)
+1792923624 TEX via=dev fmt=63 640x192 mips=1 usage=0x5 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=3)
+1792923624 TEX via=dev fmt=63 640x192 mips=1 usage=0x5 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=4)
+1792923624 TEX via=iosurface fmt=80 360x360 mips=1 usage=0x5 storage=1 type=2 ios=0x42475241 plano=0 -> ok (n=8192)
+1792923625 TEX via=dev fmt=125 256x128 mips=1 usage=0x2 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=2)
+1792923626 TEX via=heap fmt=125 180x113 mips=1 usage=0x3 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=8)
+1792923635 TEX via=dev fmt=63 576x512 mips=1 usage=0x5 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=8)
+1792923734 TEX via=iosurface fmt=30 284x284 mips=1 usage=0x1 storage=1 type=2 ios=0x4c413038 plano=0 -> ok (n=2)
+1792923734 TEX via=dev fmt=1 28x28 mips=1 usage=0x1 storage=1 type=2 ios=0x00000000 plano=0 -> ok (n=1024)
+1792923755 TEX via=dev fmt=115 448x320 mips=1 usage=0x5 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=512)
+1792923776 TEX via=iosurface fmt=80 64x512 mips=1 usage=0x1 storage=1 type=2 ios=0x42475241 plano=0 -> ok (n=16384)
+1792923806 TEX via=iosurface fmt=30 240x240 mips=1 usage=0x1 storage=1 type=2 ios=0x4c413038 plano=0 -> ok (n=3)
+1792923827 TEX via=dev fmt=110 256x256 mips=6 usage=0x1 storage=1 type=2 ios=0x00000000 plano=0 -> ok (n=2)
+1792923853 NOCOPY textura 140x44 fmt=80 off=0x0 bpr=576 -> cópia alinhada (n=2048)
+1792923878 TEX via=dev fmt=80 256x192 mips=4 usage=0x5 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=16384)
+1792923886 TEX via=iosurface fmt=30 240x240 mips=1 usage=0x1 storage=1 type=2 ios=0x4c413038 plano=0 -> ok (n=4)
+1792923913 TEX via=dev fmt=63 576x64 mips=1 usage=0x5 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=16)
+1792924005 TEX via=dev fmt=115 256x1 mips=1 usage=0x1 storage=1 type=2 ios=0x00000000 plano=0 -> ok (n=1024)
+1792924005 TEX via=iosurface fmt=10 800x551 mips=1 usage=0x1 storage=1 type=2 ios=0x34323066 plano=0 -> ok (n=1)
+1792924005 TEX via=iosurface fmt=30 400x275 mips=1 usage=0x1 storage=1 type=2 ios=0x34323066 plano=1 -> ok (n=1)
+1792924010 PIPE sync ok vf=VfxU10Xhv ff=TcimXhvf_Icir cor0=80 blend=1 ok=256 falhas=0 
+1792924052 TEX via=iosurface fmt=80 1536x1024 mips=1 usage=0x1 storage=1 type=2 ios=0x42475241 plano=0 -> ok (n=32768)
+1792924101 TEX via=iosurface fmt=1 1440x124 mips=1 usage=0x1 storage=1 type=2 ios=0x41303038 plano=0 -> ok (n=1)
+1792924102 TEX via=dev fmt=1 28x28 mips=1 usage=0x1 storage=1 type=2 ios=0x00000000 plano=0 -> ok (n=2048)
+1792924103 TEX via=dev fmt=70 63x63 mips=1 usage=0x1 storage=1 type=2 ios=0x00000000 plano=0 -> ok (n=8)
+1792924125 TEX via=iosurface fmt=10 1440x960 mips=1 usage=0x1 storage=1 type=2 ios=0x34323066 plano=0 -> ok (n=2)
+1792924125 TEX via=iosurface fmt=30 720x480 mips=1 usage=0x1 storage=1 type=2 ios=0x34323066 plano=1 -> ok (n=2)
+1792924202 TEX via=dev fmt=30 808x48 mips=1 usage=0x1 storage=1 type=2 ios=0x00000000 plano=0 -> ok (n=16)
+1792924208 TEX via=dev fmt=80 64x64 mips=2 usage=0x5 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=32768)
+1792924223 TEX via=dev fmt=63 1472x1088 mips=1 usage=0x5 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=32)
+1792924283 NOCOPY textura 84x53 fmt=1 off=0x100 bpr=128 -> cópia alinhada (n=4096)
+1792924643 TEX via=iosurface fmt=30 240x240 mips=1 usage=0x1 storage=1 type=2 ios=0x4c413038 plano=0 -> ok (n=8)
+1792924650 TEX via=dev fmt=115 320x192 mips=1 usage=0x5 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=2048)
+1792924686 TEX via=dev fmt=30 832x48 mips=1 usage=0x1 storage=1 type=2 ios=0x00000000 plano=0 -> ok (n=32)
+1792924712 TEX via=dev fmt=63 1024x64 mips=1 usage=0x5 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=64)
+1792924910 TEX via=iosurface fmt=80 1536x1024 mips=1 usage=0x1 storage=1 type=2 ios=0x42475241 plano=0 -> ok (n=65536)
+1792925047 TEX via=dev fmt=80 1024x128 mips=4 usage=0x5 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=65536)
+1792925050 TEX via=dev fmt=1 208x58 mips=1 usage=0x1 storage=1 type=2 ios=0x00000000 plano=0 -> ok (n=4096)
+1792925059 NOCOPY textura 112x112 fmt=1 off=0x0 bpr=128 -> cópia alinhada (n=8192)
+1792925112 TEX via=iosurface fmt=1 986x272 mips=1 usage=0x1 storage=1 type=2 ios=0x41303038 plano=0 -> ok (n=2)
+1792925249 TEX via=dev fmt=30 162x64 mips=1 usage=0x1 storage=1 type=2 ios=0x00000000 plano=0 -> ok (n=64)

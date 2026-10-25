@@ -1,0 +1,8 @@
+os exit=0
+boottime exit=0
+boot-args exit=0
+loaded-kexts exit=0
+graphics-registry exit=0
+framebuffer-registry exit=0
+failed-boot-log exit=0
+current-graphics-log exit=0

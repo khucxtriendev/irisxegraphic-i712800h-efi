@@ -1,0 +1,18 @@
+{
+  "created_at": "2026-10-25T10:31:35.203845+00:00",
+  "installed_libxedrv_matches_release_r2": true,
+  "WindowServer_log_confirms_zero_offset_managed_copy": true,
+  "sampling_five_formats_read_and_sample": "PASS; expected alpha values preserved",
+  "CPU_raster_white_pixels": 325,
+  "CATextLayer_white_pixels": 277,
+  "actual_Settings_badge": "user screenshot: red badge without visible digits",
+  "Settings_attention_producer_observed": "com.apple.FollowUpSettings.FollowUpSettingsExtension: 1",
+  "unresolved": "Ordinary alpha sampling and CATextLayer pass; native Dock badge loses digits. Test texture views/swizzle and IOSurface path next.",
+  "driver_modified_this_investigation": false,
+  "direct_NSDockTile_test": {
+    "label_requested": "12",
+    "label_read_back": "12",
+    "user_visual_result": "P1 also shows red badge without digits",
+    "confirmed": true
+  }
+}

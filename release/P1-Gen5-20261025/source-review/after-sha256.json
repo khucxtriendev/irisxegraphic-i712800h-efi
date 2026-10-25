@@ -1,0 +1,8 @@
+{
+  "vendor/iris-xe/src/NootedGreen/kern_gen11.cpp": "144589beedc0ea31beae0f1fd046297bfc76a360a16af8c57106e35cff6b7e45",
+  "vendor/iris-xe/macos/src/libxedrv.m": "5a13c4cbfda99a2ef42ba6f2042bac81b28a4a617b03285b24ab055cba19bc0a",
+  "vendor/iris-xe/src/NootedGreen/kern_gen11.hpp": "55d0c3066565a86d43ce0993dcada4b4bd46b2de3836711a73d35dd18de7f7c8",
+  "vendor/iris-xe/src/NootedGreen/kern_green.hpp": "f5859db7297aefddfeb43c703e75fae98e318f61573ecefacb875fdc83099b65",
+  "vendor/iris-xe/src/NootedGreen/p1_scanout.hpp": "46c54a74b81ad931d7d7cc4a1aca9fca36cb1ba4e96268571c04ebdc8a1c4885",
+  "vendor/iris-xe/macos/src/xe_image_span.h": "c595b505913202004f58b17a3fb2d669f281ac9d60010b8fe84ccb823d4b3d50"
+}

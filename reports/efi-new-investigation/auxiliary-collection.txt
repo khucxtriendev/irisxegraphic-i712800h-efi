@@ -1,0 +1,10 @@
+auxiliary kext collection at /Library/KernelCollections/AuxiliaryKernelExtensions.kc (2C36A7C9-099A-ABF0-57EF-B28242DEC7D9):
+Extension Information:
+com.highpoint-tech.kext.HighPointRR	4.22.1	/Library/Extensions/HighPointRR.kext	(6DF47B93-DB65-36BD-9392-0101CFDDDDFF)
+org.smichaud.HookCase	8.0.1	/Library/Extensions/HookCase.kext	(E72A2707-BCA4-3948-BE17-EBA6F3F66B7C)
+com.apple.driver.AppleMobileDevice	4.0	/Library/Apple/System/Library/Extensions/AppleMobileDevice.kext	
+com.xxxxx.driver.AppleIntelTGLGraphicsFramebuffer	16.0.0	/Library/Extensions/AppleIntelTGLGraphicsFramebuffer.kext	(B96A8448-9D17-3F78-B76D-15A0B359A9A0)
+com.highpoint-tech.kext.HighPointIOP	4.4.5	/Library/Extensions/HighPointIOP.kext	(571AEA63-3845-3A83-B37F-5FD117C0FFDE)
+com.xxxxx.driver.AppleIntelTGLGraphics	16.0.2	/Library/Extensions/AppleIntelTGLGraphics.kext	(BA3AA1C0-FE6B-33B3-9D85-73F848394E3D)
+
+No variant specified, falling back to release

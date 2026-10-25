@@ -1,0 +1,4 @@
+Native cache hit: 16004 reads, zero destination reads/writes; previous 40580 reads.
+HiDPI cache hit: 20704 reads, zero destination reads/writes; previous 45280 reads.
+PASS: reservation intersections, stride, bounds, stale VA, live-slot protection, cache hit, invalid PTE, HiDPI and reset; CPU only.
+PASS: proactive managed image upload at zero/aligned/unaligned offsets; both NoCopy signatures; writable/native fallback; bounds, callbacks and exceptions. CPU only; no visual Dock validation.

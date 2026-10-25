@@ -1,0 +1,444 @@
+000000010002cd8d	pushq	%rbp
+000000010002cd8e	movq	%rsp, %rbp
+000000010002cd91	pushq	%r15
+000000010002cd93	pushq	%r14
+000000010002cd95	pushq	%r13
+000000010002cd97	pushq	%r12
+000000010002cd99	pushq	%rbx
+000000010002cd9a	subq	$0x1b8, %rsp                    ## imm = 0x1B8
+000000010002cda1	movq	%rdi, %r14
+000000010002cda4	movq	0x446e55(%rip), %rbx
+000000010002cdab	movq	(%rdi,%rbx), %rdi
+000000010002cdaf	movq	0x43e29a(%rip), %rsi SELECTOR=string
+000000010002cdb6	callq	*0x3d03b4(%rip)                 ## Objc message: _objc_msgSend
+000000010002cdbc	movq	%rax, %rdi
+000000010002cdbf	callq	0x10035fdac                     ## symbol stub for: _objc_retainAutoreleasedReturnValue
+000000010002cdc4	movq	%rax, %r12
+000000010002cdc7	testq	%rax, %rax
+000000010002cdca	je	0x10002d56b
+000000010002cdd0	movq	0x446e19(%rip), %rax
+000000010002cdd7	movss	(%r14,%rax), %xmm0
+000000010002cddd	movss	%xmm0, -0x3c(%rbp)
+000000010002cde2	movq	(%r14,%rbx), %rdi
+000000010002cde6	movq	0x43f65b(%rip), %rsi SELECTOR=type
+000000010002cded	callq	*0x3d037d(%rip)                 ## Objc message: _objc_msgSend
+000000010002cdf3	cmpb	$0x1, %al
+000000010002cdf5	jne	0x10002cea7
+000000010002cdfb	leaq	0x44a59e(%rip), %rdi
+000000010002ce02	movq	0x43f137(%rip), %rsi SELECTOR=sharedCache
+000000010002ce09	movq	0x3d0360(%rip), %rbx            ## Objc message: _objc_msgSend
+000000010002ce10	callq	*%rbx
+000000010002ce12	movq	%rax, %rdi
+000000010002ce15	callq	0x10035fdac                     ## symbol stub for: _objc_retainAutoreleasedReturnValue
+000000010002ce1a	movq	%rax, %r15
+000000010002ce1d	movq	0x4430dc(%rip), %rsi SELECTOR=symbolImageWithName:andScaleFactor:
+000000010002ce24	movq	%rax, %rdi
+000000010002ce27	movq	%r12, %rdx
+000000010002ce2a	movss	-0x3c(%rbp), %xmm0
+000000010002ce2f	callq	*%rbx
+000000010002ce31	movq	%rax, %rdi
+000000010002ce34	callq	0x10035fdac                     ## symbol stub for: _objc_retainAutoreleasedReturnValue
+000000010002ce39	movq	%rax, %r13
+000000010002ce3c	movq	%r15, %rdi
+000000010002ce3f	callq	*0x3d036b(%rip)                 ## literal pool symbol address: _objc_release
+000000010002ce45	movq	0x446dbc(%rip), %rbx
+000000010002ce4c	movq	0x446d95(%rip), %rax
+000000010002ce53	movsd	(%r14,%rax), %xmm2
+000000010002ce59	movq	0x446d98(%rip), %rax
+000000010002ce60	movzbl	(%r14,%rax), %esi
+000000010002ce65	movq	0x446d94(%rip), %rax
+000000010002ce6c	movq	(%r14,%rax), %rdx
+000000010002ce70	leaq	-0x100(%rbp), %r15
+000000010002ce77	movsd	0x3349a1(%rip), %xmm0
+000000010002ce7f	movq	%r15, %rdi
+000000010002ce82	movaps	%xmm0, %xmm1
+000000010002ce85	callq	0x10014c09d
+000000010002ce8a	movupd	(%r15), %xmm0
+000000010002ce8f	movupd	0x10(%r15), %xmm1
+000000010002ce95	movupd	%xmm1, 0x10(%r14,%rbx)
+000000010002ce9c	movupd	%xmm0, (%r14,%rbx)
+000000010002cea2	jmp	0x10002d460
+000000010002cea7	movq	(%r14,%rbx), %rsi
+000000010002ceab	movq	0x446d46(%rip), %rax
+000000010002ceb2	testq	%rsi, %rsi
+000000010002ceb5	je	0x10002ced8
+000000010002ceb7	movzbl	(%r14,%rax), %ecx
+000000010002cebc	movq	0x443045(%rip), %rdx
+000000010002cec3	leaq	-0xa0(%rbp), %rdi
+000000010002ceca	leaq	-0x110(%rbp), %r8
+000000010002ced1	callq	0x10035fd82                     ## symbol stub for: _objc_msgSend_stret
+000000010002ced6	jmp	0x10002cee9
+000000010002ced8	xorps	%xmm0, %xmm0
+000000010002cedb	movaps	%xmm0, -0x90(%rbp)
+000000010002cee2	movaps	%xmm0, -0xa0(%rbp)
+000000010002cee9	movq	%r12, -0x50(%rbp)
+000000010002ceed	movq	0x446cf4(%rip), %rax
+000000010002cef4	movsd	(%r14,%rax), %xmm0
+000000010002cefa	movsd	%xmm0, -0x38(%rbp)
+000000010002ceff	movaps	-0xa0(%rbp), %xmm0
+000000010002cf06	movaps	-0x90(%rbp), %xmm1
+000000010002cf0d	movups	%xmm1, 0x10(%rsp)
+000000010002cf12	movups	%xmm0, (%rsp)
+000000010002cf16	callq	0x10035ec42                     ## symbol stub for: _CGRectGetWidth
+000000010002cf1b	movsd	%xmm0, -0x30(%rbp)
+000000010002cf20	movaps	-0xa0(%rbp), %xmm0
+000000010002cf27	movaps	-0x90(%rbp), %xmm1
+000000010002cf2e	movups	%xmm1, 0x10(%rsp)
+000000010002cf33	movups	%xmm0, (%rsp)
+000000010002cf37	callq	0x10035ec36                     ## symbol stub for: _CGRectGetMinX
+000000010002cf3c	movsd	%xmm0, -0x48(%rbp)
+000000010002cf41	leaq	0x46a430(%rip), %rax
+000000010002cf48	movq	(%rax), %rdi
+000000010002cf4b	movq	0x43f3fe(%rip), %rsi SELECTOR=iconAppearance
+000000010002cf52	movq	0x3d0217(%rip), %r15            ## Objc message: _objc_msgSend
+000000010002cf59	callq	*%r15
+000000010002cf5c	movq	%rax, %rdi
+000000010002cf5f	callq	0x10035fdac                     ## symbol stub for: _objc_retainAutoreleasedReturnValue
+000000010002cf64	movq	%rax, %rbx
+000000010002cf67	movq	0x441bca(%rip), %rsi SELECTOR=tintColor
+000000010002cf6e	movq	%rax, %rdi
+000000010002cf71	callq	*%r15
+000000010002cf74	movq	%rax, %r15
+000000010002cf77	testq	%rbx, %rbx
+000000010002cf7a	je	0x10002cf92
+000000010002cf7c	movq	0x441bad(%rip), %rsi SELECTOR=style
+000000010002cf83	movq	%rbx, %rdi
+000000010002cf86	callq	*0x3d01e4(%rip)                 ## Objc message: _objc_msgSend
+000000010002cf8c	movzbl	%al, %r12d
+000000010002cf90	jmp	0x10002cf95
+000000010002cf92	xorl	%r12d, %r12d
+000000010002cf95	movsd	-0x30(%rbp), %xmm0
+000000010002cf9a	subsd	-0x48(%rbp), %xmm0
+000000010002cf9f	movsd	%xmm0, -0x30(%rbp)
+000000010002cfa4	callq	0x100165863
+000000010002cfa9	testb	%al, %al
+000000010002cfab	movq	%rbx, -0x58(%rbp)
+000000010002cfaf	je	0x10002cfd8
+000000010002cfb1	cmpl	$0x1, %r12d
+000000010002cfb5	jbe	0x10002cfd8
+000000010002cfb7	movl	%r12d, %eax
+000000010002cfba	andl	$-0x2, %eax
+000000010002cfbd	cmpl	$0x2, %eax
+000000010002cfc0	jne	0x10002d168
+000000010002cfc6	movsd	0x33484a(%rip), %xmm0
+000000010002cfce	movsd	0x3334d2(%rip), %xmm1
+000000010002cfd6	jmp	0x10002cfe4
+000000010002cfd8	movsd	0x3334c8(%rip), %xmm0
+000000010002cfe0	movapd	%xmm0, %xmm1
+000000010002cfe4	callq	0x10035e972                     ## symbol stub for: _CGColorCreateGenericGray
+000000010002cfe9	movq	%rax, %r15
+000000010002cfec	movq	%rax, %rdi
+000000010002cfef	callq	0x10035fd16                     ## symbol stub for: _objc_autorelease
+000000010002cff4	movsd	-0x38(%rbp), %xmm0
+000000010002cff9	mulsd	-0x30(%rbp), %xmm0
+000000010002cffe	movsd	%xmm0, -0x38(%rbp)
+000000010002d003	movq	0x46ae46(%rip), %rbx
+000000010002d00a	movq	0x441787(%rip), %r13
+000000010002d011	movq	-0x50(%rbp), %r12
+000000010002d015	movq	%r12, %rdi
+000000010002d018	callq	*0x3d019a(%rip)                 ## literal pool symbol address: _objc_retain
+000000010002d01e	movq	%rbx, %rdi
+000000010002d021	movq	%r13, %rsi
+000000010002d024	movq	0x3d0145(%rip), %rbx            ## Objc message: _objc_msgSend
+000000010002d02b	callq	*%rbx
+000000010002d02d	movq	%rax, %r13
+000000010002d030	movq	0x3d1609(%rip), %rax            ## literal pool symbol address: _kCTForegroundColorAttributeName
+000000010002d037	movq	(%rax), %rcx
+000000010002d03a	movq	0x43f5b7(%rip), %rsi SELECTOR=setObject:forKey:
+000000010002d041	movq	%r13, %rdi
+000000010002d044	movq	%r15, %rdx
+000000010002d047	callq	*%rbx
+000000010002d049	movq	0x3cebb0(%rip), %rdi            ## literal pool symbol address: _OBJC_CLASS_$_NSAttributedString
+000000010002d050	callq	0x10035fd04                     ## symbol stub for: _objc_alloc
+000000010002d055	movq	0x43f0a4(%rip), %rsi SELECTOR=initWithString:attributes:
+000000010002d05c	movq	%rax, %rdi
+000000010002d05f	movq	%r12, %rdx
+000000010002d062	movq	%r13, %rcx
+000000010002d065	callq	*%rbx
+000000010002d067	movq	%rax, %r15
+000000010002d06a	movq	%r12, %rdi
+000000010002d06d	callq	*0x3d013d(%rip)                 ## literal pool symbol address: _objc_release
+000000010002d073	testq	%r15, %r15
+000000010002d076	movq	%r15, -0x48(%rbp)
+000000010002d07a	je	0x10002d161
+000000010002d080	movq	%r15, %rdi
+000000010002d083	callq	0x10035f13a                     ## symbol stub for: _CTLineCreateWithAttributedString
+000000010002d088	testq	%rax, %rax
+000000010002d08b	je	0x10002d198
+000000010002d091	movq	%rax, -0x70(%rbp)
+000000010002d095	movq	0x3ceb6c(%rip), %rdi            ## literal pool symbol address: _OBJC_CLASS_$_NSBundle
+000000010002d09c	movq	0x43d85d(%rip), %rsi SELECTOR=mainBundle
+000000010002d0a3	callq	*%rbx
+000000010002d0a5	movq	%rax, %rdi
+000000010002d0a8	callq	0x10035fdac                     ## symbol stub for: _objc_retainAutoreleasedReturnValue
+000000010002d0ad	movq	%rax, %r12
+000000010002d0b0	movq	0x43d851(%rip), %rsi SELECTOR=localizedStringForKey:value:table:
+000000010002d0b7	leaq	0x3f2012(%rip), %rdx            ## Objc cfstring ref: @"bad cfstring ref"
+000000010002d0be	leaq	0x3f0c4b(%rip), %rcx            ## Objc cfstring ref: @"bad cfstring ref"
+000000010002d0c5	movq	$0x0, -0x30(%rbp)
+000000010002d0cd	movq	%rax, %rdi
+000000010002d0d0	xorl	%r8d, %r8d
+000000010002d0d3	callq	*%rbx
+000000010002d0d5	movq	%rax, %rdi
+000000010002d0d8	callq	0x10035fdac                     ## symbol stub for: _objc_retainAutoreleasedReturnValue
+000000010002d0dd	movq	%rax, %rbx
+000000010002d0e0	movq	%r12, %rdi
+000000010002d0e3	callq	*0x3d00c7(%rip)                 ## literal pool symbol address: _objc_release
+000000010002d0e9	movq	0x3ceb10(%rip), %rdi            ## literal pool symbol address: _OBJC_CLASS_$_NSAttributedString
+000000010002d0f0	callq	0x10035fd04                     ## symbol stub for: _objc_alloc
+000000010002d0f5	movq	%rax, %rdi
+000000010002d0f8	movq	0x43f001(%rip), %rsi SELECTOR=initWithString:attributes:
+000000010002d0ff	movq	%rbx, -0x78(%rbp)
+000000010002d103	movq	%rbx, %rdx
+000000010002d106	movq	%r13, %rcx
+000000010002d109	callq	*0x3d0061(%rip)                 ## Objc message: _objc_msgSend
+000000010002d10f	movq	%rax, %r12
+000000010002d112	testq	%rax, %rax
+000000010002d115	je	0x10002d145
+000000010002d117	movq	%r12, %rdi
+000000010002d11a	callq	0x10035f13a                     ## symbol stub for: _CTLineCreateWithAttributedString
+000000010002d11f	movq	%rax, %rbx
+000000010002d122	movq	-0x70(%rbp), %rdi
+000000010002d126	movsd	-0x38(%rbp), %xmm0
+000000010002d12b	movl	$0x2, %esi
+000000010002d130	movq	%rax, %rdx
+000000010002d133	callq	0x10035f134                     ## symbol stub for: _CTLineCreateTruncatedLine
+000000010002d138	movq	%rax, -0x30(%rbp)
+000000010002d13c	movq	%rbx, %rdi
+000000010002d13f	callq	*0x3d006b(%rip)                 ## literal pool symbol address: _objc_release
+000000010002d145	movq	0x3d0064(%rip), %rbx            ## literal pool symbol address: _objc_release
+000000010002d14c	movq	%r12, %rdi
+000000010002d14f	callq	*%rbx
+000000010002d151	movq	-0x78(%rbp), %rdi
+000000010002d155	callq	*%rbx
+000000010002d157	movq	-0x50(%rbp), %r12
+000000010002d15b	movq	-0x70(%rbp), %rax
+000000010002d15f	jmp	0x10002d1a0
+000000010002d161	movq	%r13, %r15
+000000010002d164	xorl	%ebx, %ebx
+000000010002d166	jmp	0x10002d1b0
+000000010002d168	cmpl	$0x5, %r12d
+000000010002d16c	je	0x10002d586
+000000010002d172	cmpl	$0x4, %r12d
+000000010002d176	jne	0x10002d5f2
+000000010002d17c	leaq	-0x100(%rbp), %r12
+000000010002d183	movss	0x3341a1(%rip), %xmm0
+000000010002d18b	movq	%r12, %rdi
+000000010002d18e	callq	0x10035e66c                     ## symbol stub for: _CAColorMatrixMakeBrightness
+000000010002d193	jmp	0x10002d5a7
+000000010002d198	movq	$0x0, -0x30(%rbp)
+000000010002d1a0	movq	%r13, %r15
+000000010002d1a3	movq	%rax, %rdi
+000000010002d1a6	callq	*0x3d0004(%rip)                 ## literal pool symbol address: _objc_release
+000000010002d1ac	movq	-0x30(%rbp), %rbx
+000000010002d1b0	movq	0x3cfff9(%rip), %r13            ## literal pool symbol address: _objc_release
+000000010002d1b7	movq	-0x48(%rbp), %rdi
+000000010002d1bb	callq	*%r13
+000000010002d1be	movq	%r15, %rdi
+000000010002d1c1	callq	*%r13
+000000010002d1c4	testq	%rbx, %rbx
+000000010002d1c7	movq	%rbx, %r13
+000000010002d1ca	je	0x10002d293
+000000010002d1d0	movq	0x43d929(%rip), %rsi SELECTOR=isEqualToString:
+000000010002d1d7	leaq	0x3f7992(%rip), %rdx            ## Objc cfstring ref: @"bad cfstring ref"
+000000010002d1de	movq	%r12, %rdi
+000000010002d1e1	callq	*0x3cff89(%rip)                 ## Objc message: _objc_msgSend
+000000010002d1e7	xorpd	%xmm0, %xmm0
+000000010002d1eb	testb	%al, %al
+000000010002d1ed	je	0x10002d1f7
+000000010002d1ef	movsd	0x3337a1(%rip), %xmm0
+000000010002d1f7	movsd	%xmm0, -0x30(%rbp)
+000000010002d1fc	leaq	-0x80(%rbp), %rsi
+000000010002d200	movq	$0x0, (%rsi)
+000000010002d207	leaq	-0xb0(%rbp), %rdx
+000000010002d20e	leaq	-0xa8(%rbp), %rcx
+000000010002d215	movq	%r13, %rdi
+000000010002d218	callq	0x10035f14c                     ## symbol stub for: _CTLineGetDefaultBounds
+000000010002d21d	addsd	0x33327b(%rip), %xmm0
+000000010002d225	cvttpd2dq	%xmm0, %xmm0
+000000010002d229	cvtdq2pd	%xmm0, %xmm0
+000000010002d22d	movsd	-0x38(%rbp), %xmm3
+000000010002d232	minsd	%xmm0, %xmm3
+000000010002d236	movsd	0x3335ba(%rip), %xmm0
+000000010002d23e	addsd	%xmm3, %xmm0
+000000010002d242	movsd	0x3345d6(%rip), %xmm1
+000000010002d24a	maxsd	%xmm0, %xmm1
+000000010002d24e	movsd	0x333af2(%rip), %xmm0
+000000010002d256	addsd	%xmm1, %xmm0
+000000010002d25a	movsd	%xmm0, -0x48(%rbp)
+000000010002d25f	cvttsd2si	%xmm1, %rcx
+000000010002d264	movq	%rcx, %rdx
+000000010002d267	sarq	$0x3f, %rdx
+000000010002d26b	movapd	%xmm1, -0x70(%rbp)
+000000010002d270	movapd	%xmm1, %xmm0
+000000010002d274	subsd	0x33325c(%rip), %xmm0
+000000010002d27c	cvttsd2si	%xmm0, %rax
+000000010002d281	andq	%rdx, %rax
+000000010002d284	orq	%rcx, %rax
+000000010002d287	js	0x10002d2a0
+000000010002d289	xorps	%xmm0, %xmm0
+000000010002d28c	cvtsi2ss	%rax, %xmm0
+000000010002d291	jmp	0x10002d2ba
+000000010002d293	movq	$0x0, -0x38(%rbp)
+000000010002d29b	jmp	0x10002d445
+000000010002d2a0	movq	%rax, %rcx
+000000010002d2a3	shrq	%rcx
+000000010002d2a6	movl	%eax, %edx
+000000010002d2a8	andl	$0x1, %edx
+000000010002d2ab	orq	%rcx, %rdx
+000000010002d2ae	xorps	%xmm0, %xmm0
+000000010002d2b1	cvtsi2ss	%rdx, %xmm0
+000000010002d2b6	addss	%xmm0, %xmm0
+000000010002d2ba	movss	-0x3c(%rbp), %xmm2
+000000010002d2bf	mulss	%xmm2, %xmm0
+000000010002d2c3	cvttss2si	%xmm0, %rcx
+000000010002d2c8	movq	%rcx, %rdx
+000000010002d2cb	sarq	$0x3f, %rdx
+000000010002d2cf	movss	0x333311(%rip), %xmm1
+000000010002d2d7	subss	%xmm1, %xmm0
+000000010002d2db	cvttss2si	%xmm0, %r12
+000000010002d2e0	movss	0x334548(%rip), %xmm0
+000000010002d2e8	mulss	%xmm2, %xmm0
+000000010002d2ec	cvttss2si	%xmm0, %rsi
+000000010002d2f1	andq	%rdx, %r12
+000000010002d2f4	subss	%xmm1, %xmm0
+000000010002d2f8	cvttss2si	%xmm0, %rdx
+000000010002d2fd	orq	%rcx, %r12
+000000010002d300	movq	%rsi, %rbx
+000000010002d303	sarq	$0x3f, %rbx
+000000010002d307	andq	%rdx, %rbx
+000000010002d30a	orq	%rsi, %rbx
+000000010002d30d	movq	0x3cef8c(%rip), %rcx            ## literal pool symbol address: __NSConcreteStackBlock
+000000010002d314	leaq	-0x188(%rbp), %r15
+000000010002d31b	movq	%rcx, (%r15)
+000000010002d31e	movl	$0xc2000000, %ecx               ## imm = 0xC2000000
+000000010002d323	movq	%rcx, 0x8(%r15)
+000000010002d327	leaq	0x2df(%rip), %rcx
+000000010002d32e	movq	%rcx, 0x10(%r15)
+000000010002d332	leaq	0x3d78ef(%rip), %rcx
+000000010002d339	movq	%rcx, 0x18(%r15)
+000000010002d33d	movss	%xmm2, 0x48(%r15)
+000000010002d343	movq	%rax, 0x28(%r15)
+000000010002d347	movsd	%xmm3, 0x30(%r15)
+000000010002d34d	movsd	-0x30(%rbp), %xmm0
+000000010002d352	movsd	%xmm0, 0x38(%r15)
+000000010002d358	movsd	-0x80(%rbp), %xmm0
+000000010002d35d	movsd	%xmm0, 0x40(%r15)
+000000010002d363	movq	%r13, %rdi
+000000010002d366	callq	*0x3cfe4c(%rip)                 ## literal pool symbol address: _objc_retain
+000000010002d36c	movq	%r13, 0x20(%r15)
+000000010002d370	movq	%r12, %rdi
+000000010002d373	movq	%rbx, %rsi
+000000010002d376	xorl	%edx, %edx
+000000010002d378	movq	%r15, %rcx
+000000010002d37b	callq	0x100019645
+000000010002d380	movq	%rax, %rdi
+000000010002d383	callq	0x10035fdac                     ## symbol stub for: _objc_retainAutoreleasedReturnValue
+000000010002d388	movq	%rax, -0x38(%rbp)
+000000010002d38c	movq	0x446855(%rip), %rax
+000000010002d393	movsd	(%r14,%rax), %xmm2
+000000010002d399	movq	0x446858(%rip), %rax
+000000010002d3a0	movq	%r13, -0x30(%rbp)
+000000010002d3a4	movq	%rax, %r13
+000000010002d3a7	movzbl	(%r14,%rax), %esi
+000000010002d3ac	movq	0x44684d(%rip), %r12
+000000010002d3b3	movq	(%r14,%r12), %rdx
+000000010002d3b7	leaq	-0x100(%rbp), %rbx
+000000010002d3be	movq	%rbx, %rdi
+000000010002d3c1	movaps	-0x70(%rbp), %xmm0
+000000010002d3c5	movsd	0x334453(%rip), %xmm1
+000000010002d3cd	callq	0x10014c09d
+000000010002d3d2	movups	(%rbx), %xmm0
+000000010002d3d5	movups	0x10(%rbx), %xmm1
+000000010002d3d9	movq	0x446828(%rip), %rax
+000000010002d3e0	movups	%xmm1, 0x10(%r14,%rax)
+000000010002d3e6	movups	%xmm0, (%r14,%rax)
+000000010002d3eb	movq	0x4467f6(%rip), %rax
+000000010002d3f2	movsd	(%r14,%rax), %xmm2
+000000010002d3f8	movzbl	(%r14,%r13), %esi
+000000010002d3fd	movq	-0x30(%rbp), %r13
+000000010002d401	movq	(%r14,%r12), %rdx
+000000010002d405	movsd	0x33338b(%rip), %xmm1
+000000010002d40d	movq	%rbx, %rdi
+000000010002d410	movsd	-0x48(%rbp), %xmm0
+000000010002d415	callq	0x10014c09d
+000000010002d41a	movupd	(%rbx), %xmm0
+000000010002d41e	movupd	0x10(%rbx), %xmm1
+000000010002d423	movq	0x4467f6(%rip), %rax
+000000010002d42a	movupd	%xmm1, 0x10(%r14,%rax)
+000000010002d431	movupd	%xmm0, (%r14,%rax)
+000000010002d437	movq	0x20(%r15), %rdi
+000000010002d43b	callq	*0x3cfd6f(%rip)                 ## literal pool symbol address: _objc_release
+000000010002d441	movq	-0x50(%rbp), %r12
+000000010002d445	movq	-0x58(%rbp), %rbx
+000000010002d449	movq	%r13, %rdi
+000000010002d44c	movq	0x3cfd5d(%rip), %r15            ## literal pool symbol address: _objc_release
+000000010002d453	callq	*%r15
+000000010002d456	movq	%rbx, %rdi
+000000010002d459	callq	*%r15
+000000010002d45c	movq	-0x38(%rbp), %r13
+000000010002d460	callq	0x100007025
+000000010002d465	movl	%eax, %r15d
+000000010002d468	movq	0x4467a9(%rip), %rax
+000000010002d46f	movq	(%r14,%rax), %rdi
+000000010002d473	movq	0x43dafe(%rip), %rsi SELECTOR=setContents:
+000000010002d47a	testq	%r13, %r13
+000000010002d47d	je	0x10002d4b5
+000000010002d47f	movq	%r13, %rdx
+000000010002d482	callq	*0x3cfce8(%rip)                 ## Objc message: _objc_msgSend
+000000010002d488	movq	0x4467b1(%rip), %rbx
+000000010002d48f	cmpb	$0x1, (%r14,%rbx)
+000000010002d494	jne	0x10002d4dc
+000000010002d496	movq	0x43d3eb(%rip), %rsi SELECTOR=setOpacity:
+000000010002d49d	movss	0x332fa3(%rip), %xmm0
+000000010002d4a5	movq	%r14, %rdi
+000000010002d4a8	callq	*0x3cfcc2(%rip)                 ## Objc message: _objc_msgSend
+000000010002d4ae	movb	$0x0, (%r14,%rbx)
+000000010002d4b3	jmp	0x10002d4dc
+000000010002d4b5	movq	0x3cfcb4(%rip), %rbx            ## Objc message: _objc_msgSend
+000000010002d4bc	xorl	%edx, %edx
+000000010002d4be	callq	*%rbx
+000000010002d4c0	movq	0x43d3c1(%rip), %rsi SELECTOR=setOpacity:
+000000010002d4c7	xorpd	%xmm0, %xmm0
+000000010002d4cb	movq	%r14, %rdi
+000000010002d4ce	callq	*%rbx
+000000010002d4d0	movq	0x446769(%rip), %rax
+000000010002d4d7	movb	$0x1, (%r14,%rax)
+000000010002d4dc	movq	0x44672d(%rip), %rax
+000000010002d4e3	movq	0x43ea9e(%rip), %rsi SELECTOR=layoutForFrame:
+000000010002d4ea	movups	(%r14,%rax), %xmm0
+000000010002d4ef	movups	0x10(%r14,%rax), %xmm1
+000000010002d4f5	movups	%xmm1, 0x10(%rsp)
+000000010002d4fa	movups	%xmm0, (%rsp)
+000000010002d4fe	movq	%r14, %rdi
+000000010002d501	callq	*0x3cfc69(%rip)                 ## Objc message: _objc_msgSend
+000000010002d507	testb	%r15b, %r15b
+000000010002d50a	je	0x10002d522
+000000010002d50c	movq	0x3ce9c5(%rip), %rdi            ## literal pool symbol address: _OBJC_CLASS_$_CATransaction
+000000010002d513	movq	0x43d26e(%rip), %rsi SELECTOR=setDisableActions:
+000000010002d51a	xorl	%edx, %edx
+000000010002d51c	callq	*0x3cfc4e(%rip)                 ## Objc message: _objc_msgSend
+000000010002d522	movq	0x3ced77(%rip), %rax            ## literal pool symbol address: __NSConcreteStackBlock
+000000010002d529	leaq	-0x138(%rbp), %rsi
+000000010002d530	movq	%rax, (%rsi)
+000000010002d533	movl	$0xc2000000, %eax               ## imm = 0xC2000000
+000000010002d538	movq	%rax, 0x8(%rsi)
+000000010002d53c	leaq	0x11ed27(%rip), %rax
+000000010002d543	movq	%rax, 0x10(%rsi)
+000000010002d547	leaq	0x3d37fa(%rip), %rax
+000000010002d54e	movq	%rax, 0x18(%rsi)
+000000010002d552	movq	%r14, 0x20(%rsi)
+000000010002d556	movq	0x3cedbb(%rip), %rdi            ## literal pool symbol address: __dispatch_main_q
+000000010002d55d	callq	0x10035faf4                     ## symbol stub for: _dispatch_async
+000000010002d562	movq	%r13, %rdi
+000000010002d565	callq	*0x3cfc45(%rip)                 ## literal pool symbol address: _objc_release
+000000010002d56b	movq	%r12, %rdi
+000000010002d56e	callq	*0x3cfc3c(%rip)                 ## literal pool symbol address: _objc_release
+000000010002d574	addq	$0x1b8, %rsp                    ## imm = 0x1B8
+000000010002d57b	popq	%rbx
+000000010002d57c	popq	%r12
+000000010002d57e	popq	%r13
+000000010002d580	popq	%r14
+000000010002d582	popq	%r15
+000000010002d584	popq	%rbp
+000000010002d585	retq

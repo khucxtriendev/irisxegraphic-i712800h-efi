@@ -1,0 +1,305 @@
+In file included from /Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:138:
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.h:743:29: warning: implicit conversion loses integer precision: 'uint64_t' (aka 'unsigned long long') to 'UInt32' (aka 'unsigned int') [-Wshorten-64-to-32]
+  743 |             rmmioPtr[reg] = val;
+      |                           ~ ^~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.h:746:38: warning: implicit conversion loses integer precision: 'uint64_t' (aka 'unsigned long long') to 'UInt32' (aka 'unsigned int') [-Wshorten-64-to-32]
+  746 |             rmmioPtr[mmPCIE_DATA2] = val;
+      |                                    ~ ^~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:1232:21: warning: implicit conversion changes signedness: 'int' to 'uintptr_t' (aka 'unsigned long') [-Wsign-conversion]
+ 1232 |   set_cr0(org_cr0 & ~CR0_WP);
+      |                   ~ ^~~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:1943:50: warning: implicit conversion changes signedness: 'int' to 'vm_map_offset_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 1943 |   uintptr_t retval = ((pv_entry->va_and_flags) & ~PAGE_MASK);
+      |                                                ~ ^~~~~~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:2703:37: warning: implicit conversion changes signedness: 'int' to 'vm_object_offset_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 2703 |   return (entry_local->vme_offset & ~PAGE_MASK);
+      |                                   ~ ^~~~~~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:3269:45: warning: implicit conversion changes signedness: 'int' to 'vm_map_offset_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 3269 |   static vm_map_offset_t offset_in_struct = -1;
+      |                          ~~~~~~~~~~~~~~~~   ^~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:3601:45: warning: implicit conversion changes signedness: 'int' to 'vm_map_offset_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 3601 |   static vm_map_offset_t offset_in_struct = -1;
+      |                          ~~~~~~~~~~~~~~~~   ^~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:3640:45: warning: implicit conversion changes signedness: 'int' to 'vm_map_offset_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 3640 |   static vm_map_offset_t offset_in_struct = -1;
+      |                          ~~~~~~~~~~~~~~~~   ^~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:5805:37: warning: implicit conversion changes signedness: 'long' to 'uint64_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 5805 | uint64_t g_iotier_override_offset = -1L;
+      |          ~~~~~~~~~~~~~~~~~~~~~~~~   ^~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:5958:45: warning: implicit conversion changes signedness: 'int' to 'vm_map_offset_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 5958 |   static vm_map_offset_t offset_in_struct = -1;
+      |                          ~~~~~~~~~~~~~~~~   ^~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:6124:45: warning: implicit conversion changes signedness: 'int' to 'vm_map_offset_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 6124 |   static vm_map_offset_t offset_in_struct = -1;
+      |                          ~~~~~~~~~~~~~~~~   ^~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:6177:23: warning: implicit conversion changes signedness: 'int' to 'uint64_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 6177 |   uint64_t uniqueid = -1;
+      |            ~~~~~~~~   ^~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:6178:20: warning: implicit conversion changes signedness: 'int' to 'u_short' (aka 'unsigned short') [-Wsign-conversion]
+ 6178 |   u_short acflag = -1;
+      |           ~~~~~~   ^~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:6179:24: warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+ 6179 |   unsigned int lflag = -1;
+      |                ~~~~~   ^~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:6180:23: warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+ 6180 |   unsigned int flag = -1;
+      |                ~~~~   ^~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:6229:5: warning: implicit conversion changes signedness: 'int' to 'vm_map_offset_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 6229 |     vm_map_trunc_page(start, vm_map_page_mask(kernel_map));
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:1891:61: note: expanded from macro 'vm_map_trunc_page'
+ 1891 | #define vm_map_trunc_page(x,pgmask) ((vm_map_offset_t)(x) & ~((signed)(pgmask)))
+      |                                                           ~ ^~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:6231:5: warning: implicit conversion changes signedness: 'int' to 'vm_map_offset_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 6231 |     vm_map_round_page(end, vm_map_page_mask(kernel_map));
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:1892:74: note: expanded from macro 'vm_map_round_page'
+ 1892 | #define vm_map_round_page(x,pgmask) (((vm_map_offset_t)(x) + (pgmask)) & ~((signed)(pgmask)))
+      |                                                                        ~ ^~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:6271:22: warning: implicit conversion changes signedness: 'int' to 'vm_map_offset_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 6271 |       page_offset += vm_map_page_size(kernel_map);
+      |                   ~~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:6296:11: warning: implicit conversion changes signedness: 'int' to 'vm_map_offset_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 6296 |     end = vm_map_trunc_page(VM_MAX_KERNEL_ADDRESS, vm_map_page_mask(submap));
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:1891:61: note: expanded from macro 'vm_map_trunc_page'
+ 1891 | #define vm_map_trunc_page(x,pgmask) ((vm_map_offset_t)(x) & ~((signed)(pgmask)))
+      |                                                           ~ ^~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:6300:5: warning: implicit conversion changes signedness: 'int' to 'vm_map_offset_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 6300 |     vm_map_trunc_page(start, vm_map_page_mask(submap));
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:1891:61: note: expanded from macro 'vm_map_trunc_page'
+ 1891 | #define vm_map_trunc_page(x,pgmask) ((vm_map_offset_t)(x) & ~((signed)(pgmask)))
+      |                                                           ~ ^~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:6302:5: warning: implicit conversion changes signedness: 'int' to 'vm_map_offset_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 6302 |     vm_map_round_page(end, vm_map_page_mask(submap));
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:1892:74: note: expanded from macro 'vm_map_round_page'
+ 1892 | #define vm_map_round_page(x,pgmask) (((vm_map_offset_t)(x) + (pgmask)) & ~((signed)(pgmask)))
+      |                                                                        ~ ^~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:6309:18: warning: implicit conversion changes signedness: 'int' to 'vm_map_offset_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 6309 |     end_fixed += vm_map_page_size(submap);
+      |               ~~ ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:6357:11: warning: implicit conversion changes signedness: 'int' to 'vm_map_offset_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 6357 |     end = vm_map_trunc_page(VM_MAX_KERNEL_ADDRESS, vm_map_page_mask(map));
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:1891:61: note: expanded from macro 'vm_map_trunc_page'
+ 1891 | #define vm_map_trunc_page(x,pgmask) ((vm_map_offset_t)(x) & ~((signed)(pgmask)))
+      |                                                           ~ ^~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:6361:5: warning: implicit conversion changes signedness: 'int' to 'vm_map_offset_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 6361 |     vm_map_trunc_page(start, vm_map_page_mask(map));
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:1891:61: note: expanded from macro 'vm_map_trunc_page'
+ 1891 | #define vm_map_trunc_page(x,pgmask) ((vm_map_offset_t)(x) & ~((signed)(pgmask)))
+      |                                                           ~ ^~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:6363:5: warning: implicit conversion changes signedness: 'int' to 'vm_map_offset_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 6363 |     vm_map_round_page(end, vm_map_page_mask(map));
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:1892:74: note: expanded from macro 'vm_map_round_page'
+ 1892 | #define vm_map_round_page(x,pgmask) (((vm_map_offset_t)(x) + (pgmask)) & ~((signed)(pgmask)))
+      |                                                                        ~ ^~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:6370:18: warning: implicit conversion changes signedness: 'int' to 'vm_map_offset_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 6370 |     end_fixed += vm_map_page_size(map);
+      |               ~~ ^~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:6519:7: warning: declaration shadows a variable in the global namespace [-Wshadow]
+ 6519 |   int page_size = vm_map_page_size(proc_map);
+      |       ^
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/build/deps/MacKernelSDK/Headers/mach/vm_param.h:258:25: note: previous declaration is here
+  258 | extern vm_size_t        page_size;
+      |                         ^
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:6520:38: warning: implicit conversion changes signedness: 'int' to 'user_addr_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 6520 |   user_addr_t dest_rounded = (dest & ~((signed)(vm_map_page_mask(proc_map))));
+      |                                    ~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:6521:24: warning: implicit conversion changes signedness: 'int' to 'size_t' (aka 'unsigned long') [-Wsign-conversion]
+ 6521 |   size_t len_rounded = page_size;
+      |          ~~~~~~~~~~~   ^~~~~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:6523:20: warning: implicit conversion changes signedness: 'int' to 'size_t' (aka 'unsigned long') [-Wsign-conversion]
+ 6523 |     len_rounded += page_size;
+      |                 ~~ ^~~~~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:7138:44: warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+ 7138 |   vm_size_t desired_envp_size = (env_count + 1) * sizeof(char *);
+      |                                  ~~~~~~~~~~^~~  ~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:7471:45: warning: implicit conversion changes signedness: 'int' to 'vm_map_offset_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 7471 |   static vm_map_offset_t offset_in_struct = -1;
+      |                          ~~~~~~~~~~~~~~~~   ^~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:7574:45: warning: implicit conversion changes signedness: 'int' to 'vm_map_offset_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 7574 |   static vm_map_offset_t offset_in_struct = -1;
+      |                          ~~~~~~~~~~~~~~~~   ^~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:7677:45: warning: implicit conversion changes signedness: 'int' to 'vm_map_offset_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 7677 |   static vm_map_offset_t offset_in_struct = -1;
+      |                          ~~~~~~~~~~~~~~~~   ^~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:7792:45: warning: implicit conversion changes signedness: 'int' to 'vm_map_offset_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 7792 |   static vm_map_offset_t offset_in_struct = -1;
+      |                          ~~~~~~~~~~~~~~~~   ^~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:8816:16: warning: declaration shadows a local variable [-Wshadow]
+ 8816 |     name_out_t basename_out;
+      |                ^
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:8669:14: note: previous declaration is here
+ 8669 |   name_out_t basename_out;
+      |              ^
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:8863:20: warning: declaration shadows a local variable [-Wshadow]
+ 8863 |         name_out_t basename_out;
+      |                    ^
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:8669:14: note: previous declaration is here
+ 8669 |   name_out_t basename_out;
+      |              ^
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:8897:26: warning: implicit conversion changes signedness: 'uint32_t' (aka 'unsigned int') to 'int32_t' (aka 'int') [-Wsign-conversion]
+ 8897 |   for (i = symbol_table->symbol_index;
+      |          ~ ~~~~~~~~~~~~~~^~~~~~~~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:8906:39: warning: implicit conversion changes signedness: 'int32_t' (aka 'int') to 'unsigned long' [-Wsign-conversion]
+ 8906 |         (symbol_table->symbol_table + i * sizeof(struct nlist_64));
+      |                                       ^ ~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:8914:39: warning: implicit conversion changes signedness: 'int32_t' (aka 'int') to 'unsigned long' [-Wsign-conversion]
+ 8914 |         (symbol_table->symbol_table + i * sizeof(struct nlist));
+      |                                       ^ ~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:9127:19: warning: declaration shadows a local variable [-Wshadow]
+ 9127 |       vm_object_t shadow = object_get_shadow(object);
+      |                   ^
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:9119:15: note: previous declaration is here
+ 9119 |   vm_object_t shadow = NULL;
+      |               ^
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:9148:37: warning: implicit conversion changes signedness: 'int' to 'unsigned char' [-Wsign-conversion]
+ 9148 |         page_set_cs_validated(page, -1);
+      |         ~~~~~~~~~~~~~~~~~~~~~       ^~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:9868:21: warning: implicit conversion changes signedness: 'int' to 'uintptr_t' (aka 'unsigned long') [-Wsign-conversion]
+ 9868 |   set_cr0(org_cr0 & ~CR0_WP);
+      |                   ~ ^~~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:9904:21: warning: implicit conversion changes signedness: 'int' to 'uintptr_t' (aka 'unsigned long') [-Wsign-conversion]
+ 9904 |   set_cr0(org_cr0 & ~CR0_WP);
+      |                   ~ ^~~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:10856:5: warning: implicit conversion changes signedness: 'int' to 'vm_map_offset_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 10856 |     vm_map_trunc_page(watchpoint, vm_map_page_mask(proc_map));
+       |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:1891:61: note: expanded from macro 'vm_map_trunc_page'
+ 1891 | #define vm_map_trunc_page(x,pgmask) ((vm_map_offset_t)(x) & ~((signed)(pgmask)))
+      |                                                           ~ ^~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:10858:5: warning: implicit conversion changes signedness: 'int' to 'vm_map_offset_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 10858 |     vm_map_round_page(watchpoint + watchpoint_length,
+       |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 10859 |                       vm_map_page_mask(proc_map));
+       |                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:1892:74: note: expanded from macro 'vm_map_round_page'
+ 1892 | #define vm_map_round_page(x,pgmask) (((vm_map_offset_t)(x) + (pgmask)) & ~((signed)(pgmask)))
+      |                                                                        ~ ^~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:11578:21: warning: declaration shadows a local variable [-Wshadow]
+ 11578 |       vfs_context_t context = vfs_context_create(NULL);
+       |                     ^
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:11546:17: note: previous declaration is here
+ 11546 |   vfs_context_t context = vfs_context_create(NULL);
+       |                 ^
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:11597:51: warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+ 11597 |                     sizeof(fixed_add_kids_path) - fixed_to - 1);
+       |                                                 ~ ^~~~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:12140:28: warning: implicit conversion changes signedness: 'int' to 'size_t' (aka 'unsigned long') [-Wsign-conversion]
+ 12140 |                 fixed_to = len - proxy_name_len - 1;
+       |                            ^~~ ~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:13061:37: warning: implicit conversion changes signedness: 'int64_t' (aka 'long long') to 'user_addr_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 13060 |       old_lazy_ptr_addr =
+       |                         ~
+ 13061 |         (int64_t) next_entry_offset + (int64_t) instr.offset;
+       |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:13625:16: warning: declaration shadows a local variable [-Wshadow]
+ 13625 |       uint16_t new_code = HC_INT1_OPCODE_SHORT;
+       |                ^
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:13600:14: note: previous declaration is here
+ 13600 |     uint32_t new_code;
+       |              ^
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:13710:18: warning: declaration shadows a local variable [-Wshadow]
+ 13710 |         uint16_t new_code = HC_INT1_OPCODE_SHORT;
+       |                  ^
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:13679:16: note: previous declaration is here
+ 13679 |       uint32_t new_code;
+       |                ^
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:14333:9: warning: implicit conversion changes signedness: 'int' to 'vm_map_offset_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 14333 |         vm_map_trunc_page(watchpoint, vm_map_page_mask(proc_map));
+       |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:1891:61: note: expanded from macro 'vm_map_trunc_page'
+ 1891 | #define vm_map_trunc_page(x,pgmask) ((vm_map_offset_t)(x) & ~((signed)(pgmask)))
+      |                                                           ~ ^~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:14335:9: warning: implicit conversion changes signedness: 'int' to 'vm_map_offset_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 14335 |         vm_map_round_page(watchpoint + watchpoint_length,
+       |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 14336 |                           vm_map_page_mask(proc_map));
+       |                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:1892:74: note: expanded from macro 'vm_map_round_page'
+ 1892 | #define vm_map_round_page(x,pgmask) (((vm_map_offset_t)(x) + (pgmask)) & ~((signed)(pgmask)))
+      |                                                                        ~ ^~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:14963:27: warning: implicit conversion changes signedness: 'int' to 'uint64_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 14963 |   intr_state->ss_64.rax = retval;
+       |                         ~ ^~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:15007:27: warning: implicit conversion changes signedness: 'int' to 'uint64_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 15007 |   intr_state->ss_64.rax = retval;
+       |                         ~ ^~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:15120:27: warning: implicit conversion changes signedness: 'int' to 'uint64_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 15120 |   intr_state->ss_64.rax = retval;
+       |                         ~ ^~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:15176:27: warning: implicit conversion changes signedness: 'int' to 'uint64_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 15176 |   intr_state->ss_64.rax = retval;
+       |                         ~ ^~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:15235:27: warning: implicit conversion changes signedness: 'int' to 'uint64_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 15235 |   intr_state->ss_64.rax = retval;
+       |                         ~ ^~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:15269:27: warning: implicit conversion changes signedness: 'int' to 'uint64_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 15269 |   intr_state->ss_64.rax = retval;
+       |                         ~ ^~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:15295:27: warning: implicit conversion changes signedness: 'int' to 'uint64_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 15295 |   intr_state->ss_64.rax = retval;
+       |                         ~ ^~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:15322:27: warning: implicit conversion changes signedness: 'int' to 'uint64_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 15322 |   intr_state->ss_64.rax = retval;
+       |                         ~ ^~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:15478:40: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+ 15478 |       watcherp->info.page_fault_code = code;
+       |                                      ~ ^~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:15621:5: warning: implicit conversion changes signedness: 'int' to 'vm_map_offset_t' (aka 'unsigned long long') [-Wsign-conversion]
+ 15621 |     vm_map_trunc_page((vm_map_offset_t) info.ptr, PAGE_MASK);
+       |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:1891:61: note: expanded from macro 'vm_map_trunc_page'
+ 1891 | #define vm_map_trunc_page(x,pgmask) ((vm_map_offset_t)(x) & ~((signed)(pgmask)))
+      |                                                           ~ ^~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:15885:47: warning: implicit conversion changes signedness: 'int' to 'vm_offset_t' (aka 'unsigned long') [-Wsign-conversion]
+ 15885 | vm_offset_t g_kernel_idt64_hndl_table0_addr = -1;
+       |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   ^~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:15899:15: warning: implicit conversion changes signedness: 'int64_t' (aka 'long long') to 'unsigned long long' [-Wsign-conversion]
+ 15899 |     retval += g_doublemap_distance;
+       |            ~~ ^~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:15929:49: warning: implicit conversion changes signedness: 'int' to 'vm_offset_t' (aka 'unsigned long') [-Wsign-conversion]
+ 15929 |   static vm_offset_t kernel_master_idt64_addr = -1;
+       |                      ~~~~~~~~~~~~~~~~~~~~~~~~   ^~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:15937:61: warning: implicit conversion changes signedness: 'int' to 'vm_offset_t' (aka 'unsigned long') [-Wsign-conversion]
+ 15937 |   static vm_offset_t kernel_gIOHibernateRestoreStack_addr = -1;
+       |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   ^~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:15945:44: warning: implicit conversion changes signedness: 'int' to 'vm_offset_t' (aka 'unsigned long') [-Wsign-conversion]
+ 15945 |   static vm_offset_t kernel_scfstks_addr = -1;
+       |                      ~~~~~~~~~~~~~~~~~~~   ^~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:15961:30: warning: implicit conversion changes signedness: 'vm_offset_t' (aka 'unsigned long') to 'int64_t' (aka 'long long') [-Wsign-conversion]
+ 15960 |   int64_t idt64_hndl_table0_size =
+       |           ~~~~~~~~~~~~~~~~~~~~~~
+ 15961 |     kernel_master_idt64_addr - g_kernel_idt64_hndl_table0_addr;
+       |     ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:15964:44: warning: implicit conversion changes signedness: 'vm_offset_t' (aka 'unsigned long') to 'int64_t' (aka 'long long') [-Wsign-conversion]
+ 15963 |     idt64_hndl_table0_size =
+       |                            ~
+ 15964 |       kernel_gIOHibernateRestoreStack_addr - g_kernel_idt64_hndl_table0_addr;
+       |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:15967:29: warning: implicit conversion changes signedness: 'vm_offset_t' (aka 'unsigned long') to 'int64_t' (aka 'long long') [-Wsign-conversion]
+ 15966 |       idt64_hndl_table0_size =
+       |                              ~
+ 15967 |         kernel_scfstks_addr - g_kernel_idt64_hndl_table0_addr;
+       |         ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:15978:30: warning: implicit conversion changes signedness: 'vm_offset_t' (aka 'unsigned long') to 'int64_t' (aka 'long long') [-Wsign-conversion]
+ 15977 |   g_doublemap_distance =
+       |                        ~
+ 15978 |     kernel_master_idt64_addr - master_idt64_addr;
+       |     ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:15981:39: warning: implicit conversion changes signedness: 'int64_t' (aka 'long long') to 'unsigned long long' [-Wsign-conversion]
+ 15981 |     g_kernel_idt64_hndl_table0_addr - g_doublemap_distance;
+       |                                     ~ ^~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:16170:21: warning: implicit conversion changes signedness: 'int' to 'uintptr_t' (aka 'unsigned long') [-Wsign-conversion]
+ 16170 |   set_cr0(org_cr0 & ~CR0_WP);
+       |                   ~ ^~~~~~~
+/Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/src/HookCase/HookCase.cpp:16276:20: warning: implicit conversion loses integer precision: 'int' to 'char' [-Wimplicit-int-conversion]
+ 16276 |     our_stub[2]  = intr_num; //   (Do *not* use the 0x68 form of this instruction)
+       |                  ~ ^~~~~~~~
+76 warnings generated.
+built /Users/kxt/Documents/Hackintosh-P1-Gen5/ban-rieng-20261025/vendor/iris-xe/build/HookCase.kext

@@ -1,0 +1,12 @@
+{
+  "binary": "/Library/Extensions/AppleIntelTGLGraphics.kext/Contents/MacOS/AppleIntelTGLGraphics",
+  "sha256": "1b2f5aa3131f9b909fe984877e41d5ebcdb2837572b45e1e901a72a6271515a2",
+  "symbol": "__ZN16IGRangeAllocator13initWithRangeE14IGAddressRangey",
+  "arguments_x86_64": {
+    "rdi": "this, IORangeAllocator base at offset 0",
+    "rsi": "range.start",
+    "rdx": "range.length",
+    "rcx": "alignment"
+  },
+  "verification": "local binary disassembly and SDK header; runtime route not tested"
+}

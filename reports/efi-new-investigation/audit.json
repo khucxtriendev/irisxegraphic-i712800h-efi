@@ -1,0 +1,199 @@
+{
+  "collected_at": "2026-10-25T20:19:56.511990+07:00",
+  "usb_vs_build": {
+    "compared_files": 156,
+    "changed": [],
+    "missing": []
+  },
+  "missing_enabled_references": [],
+  "configs": {
+    "old": {
+      "path": "/Volumes/1401/EFI",
+      "boot_args": "-v debug=0x100 keepsyms=1 -vi2c-force-polling ctrsmt=full -btlfxbeta revpatch=sbvmm nvfb=1 nvfbhidpi=1 nvaccel=1 nvfbheads=4 -nvkmsnosmooth amfi_get_out_of_my_way=0x1 amfi=0x80 ipc_control_port_options=0 gfxrst=4 nvrmacpibl=1 -alcbeta alcid=11 -ibtcompatbeta",
+      "csr_active_config_hex": "430a0000",
+      "enabled_kexts": [
+        "Lilu.kext",
+        "AppleALC.kext",
+        "SimpleHDA.kext",
+        "AMFIPass.kext",
+        "BrightnessKeys.kext",
+        "CpuTopologyRebuild.kext",
+        "ECEnabler.kext",
+        "IntelBluetoothFirmware.kext",
+        "IntelBTPatcher.kext",
+        "BlueToolFixup.kext",
+        "NVMeFix.kext",
+        "RestrictEvents.kext",
+        "VirtualSMC.kext",
+        "SMCBatteryManager.kext",
+        "SMCLightSensor.kext",
+        "SMCProcessor.kext",
+        "USBToolBox.kext",
+        "UTBDefault.kext",
+        "VoodooI2C.kext/Contents/PlugIns/VoodooI2CServices.kext",
+        "VoodooI2C.kext/Contents/PlugIns/VoodooGPIO.kext",
+        "VoodooI2C.kext",
+        "VoodooI2C.kext/Contents/PlugIns/VoodooInput.kext",
+        "VoodooI2CHID.kext",
+        "VoodooPS2Controller.kext",
+        "VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Keyboard.kext",
+        "VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Mouse.kext",
+        "WhateverGreen.kext",
+        "YogaSMC.kext",
+        "AirportItlwm.kext"
+      ],
+      "kernel_block": [
+        {
+          "Arch": "Any",
+          "Comment": "boot framebuffer IONDRVFramebuffer steals index 0 from NVRMFB",
+          "Enabled": true,
+          "Identifier": "com.apple.iokit.IONDRVSupport",
+          "MaxKernel": "",
+          "MinKernel": "",
+          "Strategy": "Exclude"
+        }
+      ],
+      "debug": {
+        "AppleDebug": true,
+        "ApplePanic": true,
+        "DisableWatchDog": true,
+        "DisplayDelay": 0,
+        "DisplayLevel": 2147483650,
+        "LogModules": "*",
+        "SysReport": false,
+        "Target": 67
+      }
+    },
+    "new": {
+      "path": "/Volumes/1401/EFI new",
+      "boot_args": "IGLogLevel=3 -ngreentglwithgfx -allow3d -disablegfxfirmware ngreen-dmc=adlp -ngreenv189 -ngreenkeepefi -ngreenxefix -ngreenfixbootmode amfi_get_out_of_my_way=1 ngreenSched=4 ngreenV142=3 -xenobb -ngreennoblr -ngreenv99g disablesleep=1 gfxrst=1 -v ngreengtfreq=1400 keepsyms=1 -alcbeta alcid=11",
+      "csr_active_config_hex": "130a0000",
+      "enabled_kexts": [
+        "Lilu.kext",
+        "AppleALC.kext",
+        "SimpleHDA.kext",
+        "ECEnabler.kext",
+        "IntelBluetoothFirmware.kext",
+        "IntelBTPatcher.kext",
+        "BlueToolFixup.kext",
+        "BrightnessKeys.kext",
+        "CpuTopologyRebuild.kext",
+        "RestrictEvents.kext",
+        "VirtualSMC.kext",
+        "YogaSMC.kext",
+        "SMCBatteryManager.kext",
+        "SMCProcessor.kext",
+        "USBToolBox.kext",
+        "P1Gen5USBMap.kext",
+        "VoodooI2C.kext/Contents/PlugIns/VoodooI2CServices.kext",
+        "VoodooI2C.kext/Contents/PlugIns/VoodooGPIO.kext",
+        "VoodooI2C.kext",
+        "VoodooI2C.kext/Contents/PlugIns/VoodooInput.kext",
+        "VoodooI2CHID.kext",
+        "VoodooPS2Controller.kext",
+        "VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Keyboard.kext",
+        "VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Mouse.kext",
+        "VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Trackpad.kext",
+        "NootedGreen.kext",
+        "AirportItlwm.kext"
+      ],
+      "kernel_block": [],
+      "debug": {
+        "AppleDebug": false,
+        "ApplePanic": false,
+        "DisableWatchDog": true,
+        "DisplayDelay": 0,
+        "DisplayLevel": 2147483650,
+        "LogModules": "*",
+        "SysReport": false,
+        "Target": 65
+      }
+    }
+  },
+  "installed_metal": [
+    {
+      "path": "/Library/GPUBundles/AppleIntelTGLGraphicsMTLDriver.bundle/Contents/MacOS/libxedrv.dylib",
+      "sha256": "32b932bf4740236d105f2f9a2bb237b6134c9d74a94f7623a6ca5e021418c7b9",
+      "matches_build": true
+    },
+    {
+      "path": "/Library/GPUBundles/AppleIntelTGLGraphicsMTLDriver.bundle/Contents/MacOS/AppleIntelTGLGraphicsMTLDriver",
+      "sha256": "44057f85249b57c54cf300f1b6e24b6da178f5ee2c5532ca7311f42007d3126a",
+      "matches_build": true
+    },
+    {
+      "path": "/Library/GPUBundles/AppleIntelTGLGraphicsMTLDriver.bundle/Contents/MacOS/libigdmd.dylib",
+      "sha256": "c89e830d945c8398ddf070f8cf8f5d2fe1e199e455f1aab42cceb25c75b7f286",
+      "matches_build": true
+    }
+  ],
+  "kernel_panic": {
+    "file": "Kernel-2026-10-25-200427.panic",
+    "local_time": "2026-10-25 20:04:27 +0700",
+    "boot_args_match_new_prefix": true,
+    "uptime_seconds": 441.793912744,
+    "panic": "waitq lock timeout",
+    "backtrace_kext": "com.apple.iokit.IO80211Family",
+    "black_screen_cause_proven": false
+  },
+  "static_scanout_risk": "If reservation or layout validation fails, redirect returns false and native non-aperture SURF is retained. Earlier non-TGL source documents the aperture redirect as required for visible scanout. No runtime evidence yet that this branch was taken.",
+  "usb_modified": false,
+  "system_driver_modified": false,
+  "boot_fix_verified": false,
+  "ocvalidate": "not run",
+  "additional_checks": {
+    "dependency_and_aml_checks": 33,
+    "errors": [],
+    "usb_nootedgreen_codesign": true,
+    "installed_metal_bundle_codesign": true,
+    "installed_shader_compiler_codesign": true,
+    "installed_hookcase_codesign": true,
+    "installed_accelerator_codesign": "invalid signature: modified code/signature",
+    "installed_framebuffer_codesign": "not signed",
+    "auxiliary_collection_inspection_exit": 0,
+    "auxiliary_collection_contains": [
+      "com.xxxxx.driver.AppleIntelTGLGraphics",
+      "com.xxxxx.driver.AppleIntelTGLGraphicsFramebuffer",
+      "org.smichaud.HookCase"
+    ],
+    "collector_shell_syntax": "passed"
+  },
+  "runtime_analysis": {
+    "source": "runtime-20261025-202224",
+    "command_exit_statuses": [
+      "os exit=0",
+      "boottime exit=0",
+      "boot-args exit=0",
+      "loaded-kexts exit=0",
+      "graphics-registry exit=0",
+      "framebuffer-registry exit=0",
+      "failed-boot-log exit=0",
+      "current-graphics-log exit=0"
+    ],
+    "failed_boot_has_libxedrv_loaded_in_windowserver": true,
+    "failed_boot_tgl_kernel_code_executed": true,
+    "failed_boot_errors": [
+      "IntelAccelerator stamp 3 timeout, gpu_stamp 2",
+      "DDI0 AUX timeout",
+      "FB0 EDID read failed 0xe00002d6",
+      "display resources already allocated",
+      "main display offline"
+    ],
+    "stolen_memory_message": "present; allocation/DVMT cause not proven",
+    "nootedgreen_reservation_runtime_state": "unknown: no corresponding diagnostic lines",
+    "current_old_efi_graphics": "Intel IGPU IONDRVFramebuffer, accelerator absent; no active NVIDIA acceleration established",
+    "root_cause_code_path_proven": false,
+    "gpu_routing_user_questions": "pending"
+  },
+  "runtime_file_sha256": {
+    "current-graphics-log.txt": "493ce3bfa2074bdd9ea5afe84e4304bab631b7fd9c42d9c86da6806e9e52b6ea",
+    "loaded-kexts.txt": "1736ac0f3e1e4fa513dc9cdaecb079e5603eaa5fd6631b2c988f346ff6daeb01",
+    "framebuffer-registry.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "boot-args.txt": "c8f6ad5b7d7feed9f4029aec35467c5aaa912ca519551d3277cb0d463b70a806",
+    "boottime.txt": "2fa386c95b33474424b513b5785f9d9c9de4c8bf729f8db4005411e87e0f686c",
+    "os.txt": "0b74dee9f2004e79e0ebb6e94909916c30d37db5dfb5c1f733b7ca7f723a701d",
+    "graphics-registry.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "commands.txt": "144bdd7e77204dfece36b5975fc9a5424575ce35a9eb5693cdec5b6f6e3f81d8",
+    "failed-boot-log.txt": "cd93c1062c839613a66f568050cf103f35f5c1e3964dd254397984debb4e04de"
+  }
+}

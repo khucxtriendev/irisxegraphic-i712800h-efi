@@ -1,0 +1,1404 @@
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/DYLDPatches.cpp:4:
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/DYLDPatches.hpp:5:
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_patcher.hpp:13:
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:445:82: warning: implicit conversion changes signedness: 'int' to 'size_t' (aka 'unsigned long') [-Wsign-conversion]
+  445 |         return (size_t)(version[0] - '0') * 100 + (version[2] - '0') * 10 + (version[4] - '0');
+      |                                                                           ~  ~~~~~~~~~~~^~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:445:63: warning: implicit conversion changes signedness: 'int' to 'size_t' (aka 'unsigned long') [-Wsign-conversion]
+  445 |         return (size_t)(version[0] - '0') * 100 + (version[2] - '0') * 10 + (version[4] - '0');
+      |                                                 ~ ~~~~~~~~~~~~~~~~~~~^~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:1012:16: warning: declaration shadows a field of 'CircularBuffer<T>' [-Wshadow]
+ 1012 |         bool init(T (&storage)[N]) {
+      |                       ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:961:5: note: previous declaration is here
+  961 |         T *storage {nullptr};
+      |            ^
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/DYLDPatches.cpp:4:
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/DYLDPatches.hpp:39:42: warning: declaration shadows a field of 'DYLDPatch' [-Wshadow]
+   39 |     inline void apply(void *data, size_t size) const {
+      |                                          ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/DYLDPatches.hpp:11:18: note: previous declaration is here
+   11 |     const size_t size {0};
+      |                  ^
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/DYLDPatches.cpp:5:
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:84:36: warning: implicit conversion loses integer precision: 'unsigned long' to 'UInt32' (aka 'unsigned int') [-Wshorten-64-to-32]
+   84 |                         this->rmmioPtr[mmPCIE_INDEX2] = reg;
+      |                                                       ~ ^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:125:36: warning: implicit conversion loses integer precision: 'unsigned long' to 'UInt32' (aka 'unsigned int') [-Wshorten-64-to-32]
+  125 |                         this->rmmioPtr[mmPCIE_INDEX2] = reg;
+      |                                                       ~ ^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:135:36: warning: implicit conversion loses integer precision: 'unsigned long' to 'UInt32' (aka 'unsigned int') [-Wshorten-64-to-32]
+  135 |                         this->rmmioPtr[mmPCIE_INDEX2] = reg;
+      |                                                       ~ ^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:167:26: warning: implicit conversion loses integer precision: 'UInt64' (aka 'unsigned long long') to 'UInt32' (aka 'unsigned int') [-Wshorten-64-to-32]
+  167 |                         this->rmmioPtr[reg] = val;
+      |                                             ~ ^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:169:36: warning: implicit conversion loses integer precision: 'unsigned long' to 'UInt32' (aka 'unsigned int') [-Wshorten-64-to-32]
+  169 |                         this->rmmioPtr[mmPCIE_INDEX2] = reg;
+      |                                                       ~ ^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:170:35: warning: implicit conversion loses integer precision: 'UInt64' (aka 'unsigned long long') to 'UInt32' (aka 'unsigned int') [-Wshorten-64-to-32]
+  170 |                         this->rmmioPtr[mmPCIE_DATA2] = val;
+      |                                                      ~ ^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:252:26: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+  252 |                 wa_write_clr_set( reg, ~0, set);
+      |                 ~~~~~~~~~~~~~~~~       ^~
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/DYLDPatches.cpp:7:
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_devinfo.hpp:12:
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_cpu.hpp:378:17: warning: declaration shadows a local variable [-Wshadow]
+  378 |                         for (uint8_t i = 0; i < package; i++)
+      |                                      ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_cpu.hpp:375:49: note: previous declaration is here
+  375 |                 inline uint8_t numberToPhysicalUnique(uint8_t i) {
+      |                                                               ^
+12 warnings generated.
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/Firmware.cpp:1:
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:445:82: warning: implicit conversion changes signedness: 'int' to 'size_t' (aka 'unsigned long') [-Wsign-conversion]
+  445 |         return (size_t)(version[0] - '0') * 100 + (version[2] - '0') * 10 + (version[4] - '0');
+      |                                                                           ~  ~~~~~~~~~~~^~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:445:63: warning: implicit conversion changes signedness: 'int' to 'size_t' (aka 'unsigned long') [-Wsign-conversion]
+  445 |         return (size_t)(version[0] - '0') * 100 + (version[2] - '0') * 10 + (version[4] - '0');
+      |                                                 ~ ~~~~~~~~~~~~~~~~~~~^~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:1012:16: warning: declaration shadows a field of 'CircularBuffer<T>' [-Wshadow]
+ 1012 |         bool init(T (&storage)[N]) {
+      |                       ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:961:5: note: previous declaration is here
+  961 |         T *storage {nullptr};
+      |            ^
+3 warnings generated.
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/FirmwareADLP.cpp:1:
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:445:82: warning: implicit conversion changes signedness: 'int' to 'size_t' (aka 'unsigned long') [-Wsign-conversion]
+  445 |         return (size_t)(version[0] - '0') * 100 + (version[2] - '0') * 10 + (version[4] - '0');
+      |                                                                           ~  ~~~~~~~~~~~^~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:445:63: warning: implicit conversion changes signedness: 'int' to 'size_t' (aka 'unsigned long') [-Wsign-conversion]
+  445 |         return (size_t)(version[0] - '0') * 100 + (version[2] - '0') * 10 + (version[4] - '0');
+      |                                                 ~ ~~~~~~~~~~~~~~~~~~~^~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:1012:16: warning: declaration shadows a field of 'CircularBuffer<T>' [-Wshadow]
+ 1012 |         bool init(T (&storage)[N]) {
+      |                       ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:961:5: note: previous declaration is here
+  961 |         T *storage {nullptr};
+      |            ^
+3 warnings generated.
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/HDMI.cpp:4:
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/HDMI.hpp:6:
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_patcher.hpp:13:
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:445:82: warning: implicit conversion changes signedness: 'int' to 'size_t' (aka 'unsigned long') [-Wsign-conversion]
+  445 |         return (size_t)(version[0] - '0') * 100 + (version[2] - '0') * 10 + (version[4] - '0');
+      |                                                                           ~  ~~~~~~~~~~~^~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:445:63: warning: implicit conversion changes signedness: 'int' to 'size_t' (aka 'unsigned long') [-Wsign-conversion]
+  445 |         return (size_t)(version[0] - '0') * 100 + (version[2] - '0') * 10 + (version[4] - '0');
+      |                                                 ~ ~~~~~~~~~~~~~~~~~~~^~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:1012:16: warning: declaration shadows a field of 'CircularBuffer<T>' [-Wshadow]
+ 1012 |         bool init(T (&storage)[N]) {
+      |                       ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:961:5: note: previous declaration is here
+  961 |         T *storage {nullptr};
+      |            ^
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/HDMI.cpp:5:
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:84:36: warning: implicit conversion loses integer precision: 'unsigned long' to 'UInt32' (aka 'unsigned int') [-Wshorten-64-to-32]
+   84 |                         this->rmmioPtr[mmPCIE_INDEX2] = reg;
+      |                                                       ~ ^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:125:36: warning: implicit conversion loses integer precision: 'unsigned long' to 'UInt32' (aka 'unsigned int') [-Wshorten-64-to-32]
+  125 |                         this->rmmioPtr[mmPCIE_INDEX2] = reg;
+      |                                                       ~ ^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:135:36: warning: implicit conversion loses integer precision: 'unsigned long' to 'UInt32' (aka 'unsigned int') [-Wshorten-64-to-32]
+  135 |                         this->rmmioPtr[mmPCIE_INDEX2] = reg;
+      |                                                       ~ ^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:167:26: warning: implicit conversion loses integer precision: 'UInt64' (aka 'unsigned long long') to 'UInt32' (aka 'unsigned int') [-Wshorten-64-to-32]
+  167 |                         this->rmmioPtr[reg] = val;
+      |                                             ~ ^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:169:36: warning: implicit conversion loses integer precision: 'unsigned long' to 'UInt32' (aka 'unsigned int') [-Wshorten-64-to-32]
+  169 |                         this->rmmioPtr[mmPCIE_INDEX2] = reg;
+      |                                                       ~ ^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:170:35: warning: implicit conversion loses integer precision: 'UInt64' (aka 'unsigned long long') to 'UInt32' (aka 'unsigned int') [-Wshorten-64-to-32]
+  170 |                         this->rmmioPtr[mmPCIE_DATA2] = val;
+      |                                                      ~ ^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:252:26: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+  252 |                 wa_write_clr_set( reg, ~0, set);
+      |                 ~~~~~~~~~~~~~~~~       ^~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/HDMI.cpp:54:35: warning: declaration shadows a local variable [-Wshadow]
+   54 |             const LookupPatchPlus patches[] = {
+      |                                   ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/HDMI.cpp:40:31: note: previous declaration is here
+   40 |         const LookupPatchPlus patches[] = {
+      |                               ^
+11 warnings generated.
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/IntelDPLinkTraining.cpp:18:
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:6:
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_patcher.hpp:13:
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:445:82: warning: implicit conversion changes signedness: 'int' to 'size_t' (aka 'unsigned long') [-Wsign-conversion]
+  445 |         return (size_t)(version[0] - '0') * 100 + (version[2] - '0') * 10 + (version[4] - '0');
+      |                                                                           ~  ~~~~~~~~~~~^~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:445:63: warning: implicit conversion changes signedness: 'int' to 'size_t' (aka 'unsigned long') [-Wsign-conversion]
+  445 |         return (size_t)(version[0] - '0') * 100 + (version[2] - '0') * 10 + (version[4] - '0');
+      |                                                 ~ ~~~~~~~~~~~~~~~~~~~^~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:1012:16: warning: declaration shadows a field of 'CircularBuffer<T>' [-Wshadow]
+ 1012 |         bool init(T (&storage)[N]) {
+      |                       ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:961:5: note: previous declaration is here
+  961 |         T *storage {nullptr};
+      |            ^
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/IntelDPLinkTraining.cpp:18:
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:84:36: warning: implicit conversion loses integer precision: 'unsigned long' to 'UInt32' (aka 'unsigned int') [-Wshorten-64-to-32]
+   84 |                         this->rmmioPtr[mmPCIE_INDEX2] = reg;
+      |                                                       ~ ^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:125:36: warning: implicit conversion loses integer precision: 'unsigned long' to 'UInt32' (aka 'unsigned int') [-Wshorten-64-to-32]
+  125 |                         this->rmmioPtr[mmPCIE_INDEX2] = reg;
+      |                                                       ~ ^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:135:36: warning: implicit conversion loses integer precision: 'unsigned long' to 'UInt32' (aka 'unsigned int') [-Wshorten-64-to-32]
+  135 |                         this->rmmioPtr[mmPCIE_INDEX2] = reg;
+      |                                                       ~ ^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:167:26: warning: implicit conversion loses integer precision: 'UInt64' (aka 'unsigned long long') to 'UInt32' (aka 'unsigned int') [-Wshorten-64-to-32]
+  167 |                         this->rmmioPtr[reg] = val;
+      |                                             ~ ^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:169:36: warning: implicit conversion loses integer precision: 'unsigned long' to 'UInt32' (aka 'unsigned int') [-Wshorten-64-to-32]
+  169 |                         this->rmmioPtr[mmPCIE_INDEX2] = reg;
+      |                                                       ~ ^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:170:35: warning: implicit conversion loses integer precision: 'UInt64' (aka 'unsigned long long') to 'UInt32' (aka 'unsigned int') [-Wshorten-64-to-32]
+  170 |                         this->rmmioPtr[mmPCIE_DATA2] = val;
+      |                                                      ~ ^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:252:26: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+  252 |                 wa_write_clr_set( reg, ~0, set);
+      |                 ~~~~~~~~~~~~~~~~       ^~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/IntelDPLinkTraining.cpp:77:16: warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+   77 |                SWING_SEL_UPPER(e->dw2_swing_sel) |
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/IntelDPLinkTraining.hpp:65:57: note: expanded from macro 'SWING_SEL_UPPER'
+   65 | #define   SWING_SEL_UPPER(x)                (((x) >> 3) << 15)
+      |                                              ~~~~~~~~~~~^~~~~
+11 warnings generated.
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:3:
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:7:
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:6:
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_patcher.hpp:13:
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:445:82: warning: implicit conversion changes signedness: 'int' to 'size_t' (aka 'unsigned long') [-Wsign-conversion]
+  445 |         return (size_t)(version[0] - '0') * 100 + (version[2] - '0') * 10 + (version[4] - '0');
+      |                                                                           ~  ~~~~~~~~~~~^~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:445:63: warning: implicit conversion changes signedness: 'int' to 'size_t' (aka 'unsigned long') [-Wsign-conversion]
+  445 |         return (size_t)(version[0] - '0') * 100 + (version[2] - '0') * 10 + (version[4] - '0');
+      |                                                 ~ ~~~~~~~~~~~~~~~~~~~^~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:1012:16: warning: declaration shadows a field of 'CircularBuffer<T>' [-Wshadow]
+ 1012 |         bool init(T (&storage)[N]) {
+      |                       ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:961:5: note: previous declaration is here
+  961 |         T *storage {nullptr};
+      |            ^
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:3:
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:7:
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:84:36: warning: implicit conversion loses integer precision: 'unsigned long' to 'UInt32' (aka 'unsigned int') [-Wshorten-64-to-32]
+   84 |                         this->rmmioPtr[mmPCIE_INDEX2] = reg;
+      |                                                       ~ ^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:125:36: warning: implicit conversion loses integer precision: 'unsigned long' to 'UInt32' (aka 'unsigned int') [-Wshorten-64-to-32]
+  125 |                         this->rmmioPtr[mmPCIE_INDEX2] = reg;
+      |                                                       ~ ^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:135:36: warning: implicit conversion loses integer precision: 'unsigned long' to 'UInt32' (aka 'unsigned int') [-Wshorten-64-to-32]
+  135 |                         this->rmmioPtr[mmPCIE_INDEX2] = reg;
+      |                                                       ~ ^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:167:26: warning: implicit conversion loses integer precision: 'UInt64' (aka 'unsigned long long') to 'UInt32' (aka 'unsigned int') [-Wshorten-64-to-32]
+  167 |                         this->rmmioPtr[reg] = val;
+      |                                             ~ ^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:169:36: warning: implicit conversion loses integer precision: 'unsigned long' to 'UInt32' (aka 'unsigned int') [-Wshorten-64-to-32]
+  169 |                         this->rmmioPtr[mmPCIE_INDEX2] = reg;
+      |                                                       ~ ^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:170:35: warning: implicit conversion loses integer precision: 'UInt64' (aka 'unsigned long long') to 'UInt32' (aka 'unsigned int') [-Wshorten-64-to-32]
+  170 |                         this->rmmioPtr[mmPCIE_DATA2] = val;
+      |                                                      ~ ^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:252:26: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+  252 |                 wa_write_clr_set( reg, ~0, set);
+      |                 ~~~~~~~~~~~~~~~~       ^~
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:3:
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:567:9: warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  567 |         return __builtin_ctzl(val);
+      |         ~~~~~~ ^~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:574:9: warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  574 |         return __builtin_ctzl(val);
+      |         ~~~~~~ ^~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:649:31: warning: ISO C++ requires field designators to be specified in declaration order; field 'num_channels' will be initialized after field 'type' [-Wreorder-init-list]
+  649 |         { .num_channels = 1, .type = INTEL_DRAM_DDR4,   .page_mask = 0xF },
+      |                              ~~~~~~~~^~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:649:20: note: previous initialization for field 'num_channels' is here
+  649 |         { .num_channels = 1, .type = INTEL_DRAM_DDR4,   .page_mask = 0xF },
+      |                           ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:649:63: warning: ISO C++ requires field designators to be specified in declaration order; field 'type' will be initialized after field 'page_mask' [-Wreorder-init-list]
+  649 |         { .num_channels = 1, .type = INTEL_DRAM_DDR4,   .page_mask = 0xF },
+      |                                                         ~~~~~~~~~~~~~^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:649:31: note: previous initialization for field 'type' is here
+  649 |         { .num_channels = 1, .type = INTEL_DRAM_DDR4,   .page_mask = 0xF },
+      |                                      ^~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:650:31: warning: ISO C++ requires field designators to be specified in declaration order; field 'num_channels' will be initialized after field 'type' [-Wreorder-init-list]
+  650 |         { .num_channels = 1, .type = INTEL_DRAM_DDR5,   .page_mask = 0xF },
+      |                              ~~~~~~~~^~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:650:20: note: previous initialization for field 'num_channels' is here
+  650 |         { .num_channels = 1, .type = INTEL_DRAM_DDR5,   .page_mask = 0xF },
+      |                           ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:650:61: warning: ISO C++ requires field designators to be specified in declaration order; field 'type' will be initialized after field 'page_mask' [-Wreorder-init-list]
+  650 |         { .num_channels = 1, .type = INTEL_DRAM_DDR5,   .page_mask = 0xF },
+      |                                                         ~~~~~~~~~~~~~^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:650:31: note: previous initialization for field 'type' is here
+  650 |         { .num_channels = 1, .type = INTEL_DRAM_DDR5,   .page_mask = 0xF },
+      |                                      ^~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:651:31: warning: ISO C++ requires field designators to be specified in declaration order; field 'num_channels' will be initialized after field 'type' [-Wreorder-init-list]
+  651 |         { .num_channels = 2, .type = INTEL_DRAM_LPDDR4, .page_mask = 0x1C },
+      |                              ~~~~~~~~^~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:651:20: note: previous initialization for field 'num_channels' is here
+  651 |         { .num_channels = 2, .type = INTEL_DRAM_LPDDR4, .page_mask = 0x1C },
+      |                           ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:651:63: warning: ISO C++ requires field designators to be specified in declaration order; field 'type' will be initialized after field 'page_mask' [-Wreorder-init-list]
+  651 |         { .num_channels = 2, .type = INTEL_DRAM_LPDDR4, .page_mask = 0x1C },
+      |                                                         ~~~~~~~~~~~~~^~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:651:31: note: previous initialization for field 'type' is here
+  651 |         { .num_channels = 2, .type = INTEL_DRAM_LPDDR4, .page_mask = 0x1C },
+      |                                      ^~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:652:31: warning: ISO C++ requires field designators to be specified in declaration order; field 'num_channels' will be initialized after field 'type' [-Wreorder-init-list]
+  652 |         { .num_channels = 2, .type = INTEL_DRAM_LPDDR5, .page_mask = 0x1C },
+      |                              ~~~~~~~~^~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:652:20: note: previous initialization for field 'num_channels' is here
+  652 |         { .num_channels = 2, .type = INTEL_DRAM_LPDDR5, .page_mask = 0x1C },
+      |                           ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:652:63: warning: ISO C++ requires field designators to be specified in declaration order; field 'type' will be initialized after field 'page_mask' [-Wreorder-init-list]
+  652 |         { .num_channels = 2, .type = INTEL_DRAM_LPDDR5, .page_mask = 0x1C },
+      |                                                         ~~~~~~~~~~~~~^~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:652:31: note: previous initialization for field 'type' is here
+  652 |         { .num_channels = 2, .type = INTEL_DRAM_LPDDR5, .page_mask = 0x1C },
+      |                                      ^~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:653:31: warning: ISO C++ requires field designators to be specified in declaration order; field 'num_channels' will be initialized after field 'type' [-Wreorder-init-list]
+  653 |         { .num_channels = 2, .type = INTEL_DRAM_DDR4,   .page_mask = 0x1F },
+      |                              ~~~~~~~~^~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:653:20: note: previous initialization for field 'num_channels' is here
+  653 |         { .num_channels = 2, .type = INTEL_DRAM_DDR4,   .page_mask = 0x1F },
+      |                           ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:653:63: warning: ISO C++ requires field designators to be specified in declaration order; field 'type' will be initialized after field 'page_mask' [-Wreorder-init-list]
+  653 |         { .num_channels = 2, .type = INTEL_DRAM_DDR4,   .page_mask = 0x1F },
+      |                                                         ~~~~~~~~~~~~~^~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:653:31: note: previous initialization for field 'type' is here
+  653 |         { .num_channels = 2, .type = INTEL_DRAM_DDR4,   .page_mask = 0x1F },
+      |                                      ^~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:654:31: warning: ISO C++ requires field designators to be specified in declaration order; field 'num_channels' will be initialized after field 'type' [-Wreorder-init-list]
+  654 |         { .num_channels = 2, .type = INTEL_DRAM_DDR5,   .page_mask = 0x1E },
+      |                              ~~~~~~~~^~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:654:20: note: previous initialization for field 'num_channels' is here
+  654 |         { .num_channels = 2, .type = INTEL_DRAM_DDR5,   .page_mask = 0x1E },
+      |                           ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:654:63: warning: ISO C++ requires field designators to be specified in declaration order; field 'type' will be initialized after field 'page_mask' [-Wreorder-init-list]
+  654 |         { .num_channels = 2, .type = INTEL_DRAM_DDR5,   .page_mask = 0x1E },
+      |                                                         ~~~~~~~~~~~~~^~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:654:31: note: previous initialization for field 'type' is here
+  654 |         { .num_channels = 2, .type = INTEL_DRAM_DDR5,   .page_mask = 0x1E },
+      |                                      ^~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:655:31: warning: ISO C++ requires field designators to be specified in declaration order; field 'num_channels' will be initialized after field 'type' [-Wreorder-init-list]
+  655 |         { .num_channels = 4, .type = INTEL_DRAM_LPDDR4, .page_mask = 0x38 },
+      |                              ~~~~~~~~^~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:655:20: note: previous initialization for field 'num_channels' is here
+  655 |         { .num_channels = 4, .type = INTEL_DRAM_LPDDR4, .page_mask = 0x38 },
+      |                           ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:655:63: warning: ISO C++ requires field designators to be specified in declaration order; field 'type' will be initialized after field 'page_mask' [-Wreorder-init-list]
+  655 |         { .num_channels = 4, .type = INTEL_DRAM_LPDDR4, .page_mask = 0x38 },
+      |                                                         ~~~~~~~~~~~~~^~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:655:31: note: previous initialization for field 'type' is here
+  655 |         { .num_channels = 4, .type = INTEL_DRAM_LPDDR4, .page_mask = 0x38 },
+      |                                      ^~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:656:31: warning: ISO C++ requires field designators to be specified in declaration order; field 'num_channels' will be initialized after field 'type' [-Wreorder-init-list]
+  656 |         { .num_channels = 4, .type = INTEL_DRAM_LPDDR5, .page_mask = 0x38 },
+      |                              ~~~~~~~~^~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:656:20: note: previous initialization for field 'num_channels' is here
+  656 |         { .num_channels = 4, .type = INTEL_DRAM_LPDDR5, .page_mask = 0x38 },
+      |                           ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:656:63: warning: ISO C++ requires field designators to be specified in declaration order; field 'type' will be initialized after field 'page_mask' [-Wreorder-init-list]
+  656 |         { .num_channels = 4, .type = INTEL_DRAM_LPDDR5, .page_mask = 0x38 },
+      |                                                         ~~~~~~~~~~~~~^~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:656:31: note: previous initialization for field 'type' is here
+  656 |         { .num_channels = 4, .type = INTEL_DRAM_LPDDR5, .page_mask = 0x38 },
+      |                                      ^~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:821:9: warning: '_MASKED_FIELD' macro redefined [-Wmacro-redefined]
+  821 | #define _MASKED_FIELD(mask, value) ((mask) << 16 | (value))
+      |         ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:16:9: note: previous definition is here
+   16 | #define _MASKED_FIELD(mask, value) ({ __MASKED_FIELD(mask, value); })
+      |         ^
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:3:
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:822:9: warning: '_MASKED_BIT_ENABLE' macro redefined [-Wmacro-redefined]
+  822 | #define _MASKED_BIT_ENABLE(a)   (_MASKED_FIELD((a), a))
+      |         ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:17:9: note: previous definition is here
+   17 | #define _MASKED_BIT_ENABLE(a)   ({ __typeof(a) _a = (a); _MASKED_FIELD(_a, _a); })
+      |         ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:675:64: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+  674 |                 e.portas = (*reinterpret_cast<void **>(cs + 0x30) != nullptr) << 3 | (*reinterpret_cast<void **>(cs + 0x38) != nullptr) << 2 |
+      |                          ~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  675 |                                    (*reinterpret_cast<void **>(cs + 0x40) != nullptr) << 1 | (*reinterpret_cast<void **>(cs + 0x48) != nullptr);
+      |                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:918:14: warning: declaration shadows a local variable [-Wshadow]
+  918 |                                 uint32_t st = pre, hi = preHi, us = 0;
+      |                                          ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:881:59: note: previous declaration is here
+  881 |                 uint32_t st0 = NGreen::callback->readReg32(eb + 0x234), st = st0, us = 0;
+      |                                                                         ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:918:36: warning: declaration shadows a local variable [-Wshadow]
+  918 |                                 uint32_t st = pre, hi = preHi, us = 0;
+      |                                                                ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:881:69: note: previous declaration is here
+  881 |                 uint32_t st0 = NGreen::callback->readReg32(eb + 0x234), st = st0, us = 0;
+      |                                                                                   ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:1399:21: warning: declaration shadows a local variable [-Wshadow]
+ 1399 |                         RouteRequestPlus requests[] = {
+      |                                          ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:1259:20: note: previous declaration is here
+ 1259 |                 RouteRequestPlus requests[] = {
+      |                                  ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:1418:21: warning: declaration shadows a local variable [-Wshadow]
+ 1418 |                         RouteRequestPlus requests[] = {
+      |                                          ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:1259:20: note: previous declaration is here
+ 1259 |                 RouteRequestPlus requests[] = {
+      |                                  ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:2991:36: warning: data argument not used by format string [-Wformat-extra-args]
+ 2982 |         SYSLOG("ngreen", "V401[%d]: paramsSurfCompare ret=%d | "
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 2983 |                    "OLD: CTL=0x%x tile=%u STRIDE=0x%x SURF=0x%x SRC=0x%x | "
+      |                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 2984 |                    "NEW: CTL=0x%x tile=%u STRIDE=0x%x SURF=0x%x SRC=0x%x | "
+      |                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 2985 |                    "NAT plold: tile_pl1=%u stride_pl1=0x%x surf_pl1=0x%x | "
+      |                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 2986 |                    "NAT: plnew tile_pl2=%u stride_pl2=0x%x surf_pl2=0x%x",
+      |                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 2987 |                    v401Count, ret,
+      |                    ~~~~~~~~~~~~~~~
+ 2988 |                    old_ctl, old_tile, old_stride, old_surf, old_src,
+      |                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 2989 |                    new_ctl, new_tile, new_stride, new_surf, new_src,
+      |                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 2990 |                    nat_tile_pl1, nat_tile_pl2, nat_stride_pl1, nat_surf_pl1,
+      |                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 2991 |                    nat_tile_pl2, nat_stride_pl2, nat_surf_pl2);
+      |                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:89:68: note: expanded from macro 'SYSLOG'
+   89 | #define SYSLOG(module, str, ...) SYSLOG_COND(true, module, str, ## __VA_ARGS__)
+      |                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:80:95: note: expanded from macro 'SYSLOG_COND'
+   80 |                 lilu_os_log( "%s%10s: @ " str "\n", xStringify(PRODUCT_NAME), safeString(module), ## __VA_ARGS__);                \
+      |                              ~~~~~~~~~~~~~~~~~~~~~                                                   ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:3841:28: warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+ 3841 |                 uint32_t lo = R(0x100000 + 8 * f), hi = R(0x100004 + 8 * f);
+      |                               ~~~~~~~~~~~^~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:3832:43: note: expanded from macro 'R'
+ 3832 |         #define R(a) NGreen::callback->readReg32(a)
+      |                                        ~~~~~~~~~ ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:3841:54: warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+ 3841 |                 uint32_t lo = R(0x100000 + 8 * f), hi = R(0x100004 + 8 * f);
+      |                                                         ~~~~~~~~~~~^~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:3832:43: note: expanded from macro 'R'
+ 3832 |         #define R(a) NGreen::callback->readReg32(a)
+      |                                        ~~~~~~~~~ ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:3902:60: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+ 3902 |                 if (gXeBhTimer) { uint64_t d; clock_interval_to_deadline(gXeBhMaxMs, kMillisecondScale, &d); thread_call_enter_delayed(gXeBhTimer, d); }
+      |                                               ~~~~~~~~~~~~~~~~~~~~~~~~~~ ^~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:5016:17: warning: implicit conversion changes signedness: 'int' to 'UInt32' (aka 'unsigned int') [-Wsign-conversion]
+ 5016 |         if (!(squash & BXT_DE_PLL_PLL_ENABLE)) {
+      |                      ~ ^~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:468:37: note: expanded from macro 'BXT_DE_PLL_PLL_ENABLE'
+  468 | #define   BXT_DE_PLL_PLL_ENABLE         (1 << 31)
+      |                                          ~~^~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:5018:60: warning: implicit conversion changes signedness: 'int' to 'UInt32' (aka 'unsigned int') [-Wsign-conversion]
+ 5018 |                 NGreen::callback->writeReg32(BXT_DE_PLL_ENABLE, squash | BXT_DE_PLL_PLL_ENABLE);
+      |                                                                        ~ ^~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:468:37: note: expanded from macro 'BXT_DE_PLL_PLL_ENABLE'
+  468 | #define   BXT_DE_PLL_PLL_ENABLE         (1 << 31)
+      |                                          ~~^~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:5392:32: warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+ 5392 |                         NGreen::callback->readReg32(GGTT_PTE_LO(i)));
+      |                                           ~~~~~~~~~ ^~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:89:68: note: expanded from macro 'SYSLOG'
+   89 | #define SYSLOG(module, str, ...) SYSLOG_COND(true, module, str, ## __VA_ARGS__)
+      |                                                                    ^~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:80:95: note: expanded from macro 'SYSLOG_COND'
+   80 |                 lilu_os_log( "%s%10s: @ " str "\n", xStringify(PRODUCT_NAME), safeString(module), ## __VA_ARGS__);                \
+      |                                                                                                      ^~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:381:48: note: expanded from macro 'GGTT_PTE_LO'
+  381 | #define GGTT_PTE_LO(page)               (GEN8_GGTT_PTE_BASE + (page) * 8)
+      |                                          ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:5391:32: warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+ 5391 |                         NGreen::callback->readReg32(GGTT_PTE_HI(i)),
+      |                                           ~~~~~~~~~ ^~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:89:68: note: expanded from macro 'SYSLOG'
+   89 | #define SYSLOG(module, str, ...) SYSLOG_COND(true, module, str, ## __VA_ARGS__)
+      |                                                                    ^~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:80:95: note: expanded from macro 'SYSLOG_COND'
+   80 |                 lilu_os_log( "%s%10s: @ " str "\n", xStringify(PRODUCT_NAME), safeString(module), ## __VA_ARGS__);                \
+      |                                                                                                      ^~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:382:61: note: expanded from macro 'GGTT_PTE_HI'
+  382 | #define GGTT_PTE_HI(page)               (GEN8_GGTT_PTE_BASE + (page) * 8 + 4)
+      |                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:5401:32: warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+ 5401 |                         NGreen::callback->readReg32(GGTT_PTE_LO(i)));
+      |                                           ~~~~~~~~~ ^~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:89:68: note: expanded from macro 'SYSLOG'
+   89 | #define SYSLOG(module, str, ...) SYSLOG_COND(true, module, str, ## __VA_ARGS__)
+      |                                                                    ^~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:80:95: note: expanded from macro 'SYSLOG_COND'
+   80 |                 lilu_os_log( "%s%10s: @ " str "\n", xStringify(PRODUCT_NAME), safeString(module), ## __VA_ARGS__);                \
+      |                                                                                                      ^~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:381:48: note: expanded from macro 'GGTT_PTE_LO'
+  381 | #define GGTT_PTE_LO(page)               (GEN8_GGTT_PTE_BASE + (page) * 8)
+      |                                          ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:5400:32: warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+ 5400 |                         NGreen::callback->readReg32(GGTT_PTE_HI(i)),
+      |                                           ~~~~~~~~~ ^~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:89:68: note: expanded from macro 'SYSLOG'
+   89 | #define SYSLOG(module, str, ...) SYSLOG_COND(true, module, str, ## __VA_ARGS__)
+      |                                                                    ^~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:80:95: note: expanded from macro 'SYSLOG_COND'
+   80 |                 lilu_os_log( "%s%10s: @ " str "\n", xStringify(PRODUCT_NAME), safeString(module), ## __VA_ARGS__);                \
+      |                                                                                                      ^~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:382:61: note: expanded from macro 'GGTT_PTE_HI'
+  382 | #define GGTT_PTE_HI(page)               (GEN8_GGTT_PTE_BASE + (page) * 8 + 4)
+      |                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:5473:15: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+ 5473 |         misccpctl &= ~GEN12_DOP_CLOCK_GATE_RENDER_ENABLE;
+      |                   ~~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:5511:52: warning: implicit conversion changes signedness: 'int' to 'UInt32' (aka 'unsigned int') [-Wsign-conversion]
+ 5511 |                 NGreen::callback->writeReg32(GEN11_GFX_MSTR_IRQ, GEN11_MASTER_IRQ);
+      |                                   ~~~~~~~~~~                     ^~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:954:31: note: expanded from macro 'GEN11_MASTER_IRQ'
+  954 | #define  GEN11_MASTER_IRQ               (1 << 31)
+      |                                          ~~^~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:5606:52: warning: implicit conversion changes signedness: 'int' to 'UInt32' (aka 'unsigned int') [-Wsign-conversion]
+ 5606 |                 NGreen::callback->writeReg32(GEN11_GFX_MSTR_IRQ, GEN11_MASTER_IRQ);
+      |                                   ~~~~~~~~~~                     ^~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:954:31: note: expanded from macro 'GEN11_MASTER_IRQ'
+  954 | #define  GEN11_MASTER_IRQ               (1 << 31)
+      |                                          ~~^~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:5632:42: warning: format specifies type 'int' but the argument has type 'unsigned long' [-Wformat]
+ 5632 |         SYSLOG("ngreen", "start() returned %d", ret);
+      |                                            ~~   ^~~
+      |                                            %lu
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:89:68: note: expanded from macro 'SYSLOG'
+   89 | #define SYSLOG(module, str, ...) SYSLOG_COND(true, module, str, ## __VA_ARGS__)
+      |                                                            ~~~     ^~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:80:95: note: expanded from macro 'SYSLOG_COND'
+   80 |                 lilu_os_log( "%s%10s: @ " str "\n", xStringify(PRODUCT_NAME), safeString(module), ## __VA_ARGS__);                \
+      |                                           ~~~                                                        ^~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:5764:32: warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+ 5764 |                         NGreen::callback->readReg32(RING_CONTEXT_STATUS_BUF(RENDER_RING_BASE, i)));
+      |                                           ~~~~~~~~~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:89:68: note: expanded from macro 'SYSLOG'
+   89 | #define SYSLOG(module, str, ...) SYSLOG_COND(true, module, str, ## __VA_ARGS__)
+      |                                                                    ^~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:80:95: note: expanded from macro 'SYSLOG_COND'
+   80 |                 lilu_os_log( "%s%10s: @ " str "\n", xStringify(PRODUCT_NAME), safeString(module), ## __VA_ARGS__);                \
+      |                                                                                                      ^~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:357:63: note: expanded from macro 'RING_CONTEXT_STATUS_BUF'
+  357 | #define RING_CONTEXT_STATUS_BUF(base, idx)    ((base) + 0x370 + (idx) * 8)
+      |                                                ~~~~~~~~~~~~~~~^~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:5763:32: warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+ 5763 |                         NGreen::callback->readReg32(RING_CONTEXT_STATUS_BUF_HI(RENDER_RING_BASE, i)),
+      |                                           ~~~~~~~~~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:89:68: note: expanded from macro 'SYSLOG'
+   89 | #define SYSLOG(module, str, ...) SYSLOG_COND(true, module, str, ## __VA_ARGS__)
+      |                                                                    ^~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:80:95: note: expanded from macro 'SYSLOG_COND'
+   80 |                 lilu_os_log( "%s%10s: @ " str "\n", xStringify(PRODUCT_NAME), safeString(module), ## __VA_ARGS__);                \
+      |                                                                                                      ^~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:358:63: note: expanded from macro 'RING_CONTEXT_STATUS_BUF_HI'
+  358 | #define RING_CONTEXT_STATUS_BUF_HI(base, idx) ((base) + 0x374 + (idx) * 8)
+      |                                                ~~~~~~~~~~~~~~~^~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:5816:9: warning: declaration shadows a local variable [-Wshadow]
+ 5816 |                 auto *service = static_cast<IOService *>(that);
+      |                       ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:5260:8: note: previous declaration is here
+ 5260 |         auto *service = static_cast<IOService *>(that);
+      |               ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:6027:95: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+ 6027 |                 SYSLOG("ngreen", "V47: GFX_MSTR_IRQ before enable = 0x%x (bit31=%d)", mstrIrq, !!(mstrIrq & GEN11_MASTER_IRQ));
+      |                                                                                                           ~ ^~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:89:68: note: expanded from macro 'SYSLOG'
+   89 | #define SYSLOG(module, str, ...) SYSLOG_COND(true, module, str, ## __VA_ARGS__)
+      |                                                                    ^~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:80:95: note: expanded from macro 'SYSLOG_COND'
+   80 |                 lilu_os_log( "%s%10s: @ " str "\n", xStringify(PRODUCT_NAME), safeString(module), ## __VA_ARGS__);                \
+      |                                                                                                      ^~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:954:31: note: expanded from macro 'GEN11_MASTER_IRQ'
+  954 | #define  GEN11_MASTER_IRQ               (1 << 31)
+      |                                          ~~^~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:6028:19: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+ 6028 |                 if (!(mstrIrq & GEN11_MASTER_IRQ)) {
+      |                               ~ ^~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:954:31: note: expanded from macro 'GEN11_MASTER_IRQ'
+  954 | #define  GEN11_MASTER_IRQ               (1 << 31)
+      |                                          ~~^~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:6029:53: warning: implicit conversion changes signedness: 'int' to 'UInt32' (aka 'unsigned int') [-Wsign-conversion]
+ 6029 |                         NGreen::callback->writeReg32(GEN11_GFX_MSTR_IRQ, GEN11_MASTER_IRQ);
+      |                                           ~~~~~~~~~~                     ^~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:954:31: note: expanded from macro 'GEN11_MASTER_IRQ'
+  954 | #define  GEN11_MASTER_IRQ               (1 << 31)
+      |                                          ~~^~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:6032:92: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+ 6032 |                         SYSLOG("ngreen", "V47: GFX_MSTR_IRQ after enable  = 0x%x (bit31=%d)", after, !!(after & GEN11_MASTER_IRQ));
+      |                                                                                                               ~ ^~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:89:68: note: expanded from macro 'SYSLOG'
+   89 | #define SYSLOG(module, str, ...) SYSLOG_COND(true, module, str, ## __VA_ARGS__)
+      |                                                                    ^~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:80:95: note: expanded from macro 'SYSLOG_COND'
+   80 |                 lilu_os_log( "%s%10s: @ " str "\n", xStringify(PRODUCT_NAME), safeString(module), ## __VA_ARGS__);                \
+      |                                                                                                      ^~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:954:31: note: expanded from macro 'GEN11_MASTER_IRQ'
+  954 | #define  GEN11_MASTER_IRQ               (1 << 31)
+      |                                          ~~^~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:6044:129: warning: format specifies type 'int' but the argument has type 'unsigned long' [-Wformat]
+ 6044 |         SYSLOG("ngreen", "V50: start() ret=%d — policy: TGL from /Library/Extensions, fallback ICL from /System/Library/Extensions", ret);
+      |                                            ~~                                                                                        ^~~
+      |                                            %lu
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:89:68: note: expanded from macro 'SYSLOG'
+   89 | #define SYSLOG(module, str, ...) SYSLOG_COND(true, module, str, ## __VA_ARGS__)
+      |                                                            ~~~     ^~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:80:95: note: expanded from macro 'SYSLOG_COND'
+   80 |                 lilu_os_log( "%s%10s: @ " str "\n", xStringify(PRODUCT_NAME), safeString(module), ## __VA_ARGS__);                \
+      |                                           ~~~                                                        ^~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:6219:13: warning: declaration shadows a local variable [-Wshadow]
+ 6219 |                         uint32_t rcsHead = NGreen::callback->readReg32(RING_HEAD(RENDER_RING_BASE));
+      |                                  ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:5686:11: note: previous declaration is here
+ 5686 |         uint32_t rcsHead = NGreen::callback->readReg32(RING_HEAD(RENDER_RING_BASE));
+      |                  ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:6220:13: warning: declaration shadows a local variable [-Wshadow]
+ 6220 |                         uint32_t rcsTail = NGreen::callback->readReg32(RING_TAIL(RENDER_RING_BASE));
+      |                                  ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:5687:11: note: previous declaration is here
+ 5687 |         uint32_t rcsTail = NGreen::callback->readReg32(RING_TAIL(RENDER_RING_BASE));
+      |                  ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:6221:13: warning: declaration shadows a local variable [-Wshadow]
+ 6221 |                         uint32_t rcsCtl = NGreen::callback->readReg32(RING_CTL(RENDER_RING_BASE));
+      |                                  ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:5688:11: note: previous declaration is here
+ 5688 |         uint32_t rcsCtl  = NGreen::callback->readReg32(RING_CTL(RENDER_RING_BASE));
+      |                  ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:6933:55: warning: implicit conversion changes signedness: 'int' to 'size_t' (aka 'unsigned long') [-Wsign-conversion]
+ 6933 |                         uint64_t val = getMember<uint64_t>(mappedBufPtr, i * 8);
+      |                                        ~~~~~~~~~                         ~~^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:6982:49: warning: implicit conversion changes signedness: 'int' to 'size_t' (aka 'unsigned long') [-Wsign-conversion]
+ 6982 |                 uint64_t val = getMember<uint64_t>(that, 0xb0 + i * 8);
+      |                                ~~~~~~~~~                 ~~~~~^~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:7463:46: warning: implicit conversion changes signedness: 'int' to 'size_t' (aka 'unsigned long') [-Wsign-conversion]
+ 7463 |                                 uint64_t v = getMember<uint64_t>(fifo, i * 8);
+      |                                              ~~~~~~~~~                 ~~^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:7470:50: warning: implicit conversion changes signedness: 'int' to 'size_t' (aka 'unsigned long') [-Wsign-conversion]
+ 7470 |                                         uint64_t v = getMember<uint64_t>(ringBuf, i * 8);
+      |                                                      ~~~~~~~~~                    ~~^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:7691:9: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+ 7689 |                 NGreen::callback->wa_add(
+      |                                   ~~~~~~
+ 7690 |                                                                 GEN12_FF_MODE2,
+ 7691 |                                                                 ~0,
+      |                                                                 ^~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:8423:43: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+ 8423 |                 getMember<uint32_t>(this_ptr, 0x1128) = iVar3 * uVar1;
+      |                                                         ^~~~~ ~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:8424:61: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+ 8424 |                 getMember<uint32_t>(this_ptr, 0x1144) = (iVar4 - uVar1) * iVar3;
+      |                                                                         ~ ^~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:8424:44: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+ 8424 |                 getMember<uint32_t>(this_ptr, 0x1144) = (iVar4 - uVar1) * iVar3;
+      |                                                          ^~~~~ ~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:8425:43: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+ 8425 |                 getMember<uint32_t>(this_ptr, 0x1140) = iVar2 * uVar1;
+      |                                                         ^~~~~ ~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:8441:4: warning: declaration shadows a typedef in the global namespace [-Wshadow]
+ 8441 |         } IOVirtualRange;
+      |           ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/MacKernelSDK/Headers/IOKit/IOTypes.h:117:3: note: previous declaration is here
+  117 | } IOVirtualRange;
+      |   ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:8535:82: warning: implicit conversion changes signedness: 'int' to 'size_t' (aka 'unsigned long') [-Wsign-conversion]
+ 8535 |                 unsigned long newsize = fwsize > *(unsigned long*)size ? ((fwsize + 0xFFFF) & (~0xFFFF)) : *(unsigned long*)size;
+      |                                                                                             ~  ^~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:9000:49: warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+ 9000 |                         uint32_t csbHi = NGreen::callback->readReg32(RING_CONTEXT_STATUS_BUF_HI(RENDER_RING_BASE, i));
+      |                                                            ~~~~~~~~~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:358:63: note: expanded from macro 'RING_CONTEXT_STATUS_BUF_HI'
+  358 | #define RING_CONTEXT_STATUS_BUF_HI(base, idx) ((base) + 0x374 + (idx) * 8)
+      |                                                ~~~~~~~~~~~~~~~^~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:9001:49: warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+ 9001 |                         uint32_t csbLo = NGreen::callback->readReg32(RING_CONTEXT_STATUS_BUF(RENDER_RING_BASE, i));
+      |                                                            ~~~~~~~~~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:357:63: note: expanded from macro 'RING_CONTEXT_STATUS_BUF'
+  357 | #define RING_CONTEXT_STATUS_BUF(base, idx)    ((base) + 0x370 + (idx) * 8)
+      |                                                ~~~~~~~~~~~~~~~^~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:9078:54: warning: implicit conversion changes signedness: 'int' to 'size_t' (aka 'unsigned long') [-Wsign-conversion]
+ 9078 |                                 uint64_t objPtr = getMember<uint64_t>(svc, 0xe10 + idx * 8);
+      |                                                   ~~~~~~~~~                ~~~~~~^~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:9127:51: warning: implicit conversion changes signedness: 'int' to 'size_t' (aka 'unsigned long') [-Wsign-conversion]
+ 9127 |                                 uint64_t val = getMember<uint64_t>(svc, 0xe00 + i * 8);
+      |                                                ~~~~~~~~~                ~~~~~~^~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:9136:50: warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+ 9136 |                                 uint32_t pteLo = NGreen::callback->readReg32(GGTT_PTE_LO(pg));
+      |                                                                    ~~~~~~~~~ ^~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:381:48: note: expanded from macro 'GGTT_PTE_LO'
+  381 | #define GGTT_PTE_LO(page)               (GEN8_GGTT_PTE_BASE + (page) * 8)
+      |                                          ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:9137:50: warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+ 9137 |                                 uint32_t pteHi = NGreen::callback->readReg32(GGTT_PTE_HI(pg));
+      |                                                                    ~~~~~~~~~ ^~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:382:61: note: expanded from macro 'GGTT_PTE_HI'
+  382 | #define GGTT_PTE_HI(page)               (GEN8_GGTT_PTE_BASE + (page) * 8 + 4)
+      |                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:9144:50: warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+ 9144 |                                 uint32_t pteLo = NGreen::callback->readReg32(GGTT_PTE_LO(pg));
+      |                                                                    ~~~~~~~~~ ^~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:381:48: note: expanded from macro 'GGTT_PTE_LO'
+  381 | #define GGTT_PTE_LO(page)               (GEN8_GGTT_PTE_BASE + (page) * 8)
+      |                                          ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:9145:50: warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+ 9145 |                                 uint32_t pteHi = NGreen::callback->readReg32(GGTT_PTE_HI(pg));
+      |                                                                    ~~~~~~~~~ ^~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:382:61: note: expanded from macro 'GGTT_PTE_HI'
+  382 | #define GGTT_PTE_HI(page)               (GEN8_GGTT_PTE_BASE + (page) * 8 + 4)
+      |                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:9166:35: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+ 9166 |                         uint32_t newPtr = (csbPtrNow & ~0x7) | (writeIdx & 0x7);
+      |                                                      ~ ^~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:9376:13: warning: declaration shadows a local variable [-Wshadow]
+ 9376 |                         uint32_t planSurf = NGreen::callback->readReg32(0x7019C); // PLANE_SURF_A
+      |                                  ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:9326:12: note: previous declaration is here
+ 9326 |                 uint32_t planSurf  = NGreen::callback->readReg32(0x7019C); // PLANE_SURF
+      |                          ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:9428:70: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+ 9428 |                         uint32_t nLo = NGreen::callback->readReg32(GGTT_PTE_LO(surfPage + i));
+      |                                                                                         ~ ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:9429:70: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+ 9429 |                         uint32_t nHi = NGreen::callback->readReg32(GGTT_PTE_HI(surfPage + i));
+      |                                                                                         ~ ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:9566:69: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+ 9566 |                         uint32_t lo = NGreen::callback->readReg32(GGTT_PTE_LO(surfPage + p));
+      |                                                                                        ~ ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:9567:69: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+ 9567 |                         uint32_t hi = NGreen::callback->readReg32(GGTT_PTE_HI(surfPage + p));
+      |                                                                                        ~ ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:9874:30: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+ 9874 |         bool enabled = !!(mstrIrq & GEN11_MASTER_IRQ);
+      |                                   ~ ^~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:954:31: note: expanded from macro 'GEN11_MASTER_IRQ'
+  954 | #define  GEN11_MASTER_IRQ               (1 << 31)
+      |                                          ~~^~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:9878:52: warning: implicit conversion changes signedness: 'int' to 'UInt32' (aka 'unsigned int') [-Wsign-conversion]
+ 9878 |                 NGreen::callback->writeReg32(GEN11_GFX_MSTR_IRQ, GEN11_MASTER_IRQ);
+      |                                   ~~~~~~~~~~                     ^~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:954:31: note: expanded from macro 'GEN11_MASTER_IRQ'
+  954 | #define  GEN11_MASTER_IRQ               (1 << 31)
+      |                                          ~~^~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:10336:51: warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+ 10336 |                                         uint32_t csbHi = NGreen::callback->readReg32(RING_CONTEXT_STATUS_BUF_HI(RENDER_RING_BASE, i));
+       |                                                                            ~~~~~~~~~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:358:63: note: expanded from macro 'RING_CONTEXT_STATUS_BUF_HI'
+  358 | #define RING_CONTEXT_STATUS_BUF_HI(base, idx) ((base) + 0x374 + (idx) * 8)
+      |                                                ~~~~~~~~~~~~~~~^~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:10337:51: warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+ 10337 |                                         uint32_t csbLo = NGreen::callback->readReg32(RING_CONTEXT_STATUS_BUF(RENDER_RING_BASE, i));
+       |                                                                            ~~~~~~~~~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:357:63: note: expanded from macro 'RING_CONTEXT_STATUS_BUF'
+  357 | #define RING_CONTEXT_STATUS_BUF(base, idx)    ((base) + 0x370 + (idx) * 8)
+      |                                                ~~~~~~~~~~~~~~~^~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:10529:87: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+ 10529 |                 SYSLOG("ngreen", "HANGCHECK V47: GFX_MSTR_IRQ=0x%x (bit31=%d)", hcMstr, !!(hcMstr & GEN11_MASTER_IRQ));
+       |                                                                                                   ~ ^~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:89:68: note: expanded from macro 'SYSLOG'
+   89 | #define SYSLOG(module, str, ...) SYSLOG_COND(true, module, str, ## __VA_ARGS__)
+      |                                                                    ^~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:80:95: note: expanded from macro 'SYSLOG_COND'
+   80 |                 lilu_os_log( "%s%10s: @ " str "\n", xStringify(PRODUCT_NAME), safeString(module), ## __VA_ARGS__);                \
+      |                                                                                                      ^~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:954:31: note: expanded from macro 'GEN11_MASTER_IRQ'
+  954 | #define  GEN11_MASTER_IRQ               (1 << 31)
+      |                                          ~~^~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:10530:18: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+ 10530 |                 if (!(hcMstr & GEN11_MASTER_IRQ)) {
+       |                              ~ ^~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:954:31: note: expanded from macro 'GEN11_MASTER_IRQ'
+  954 | #define  GEN11_MASTER_IRQ               (1 << 31)
+      |                                          ~~^~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:10532:53: warning: implicit conversion changes signedness: 'int' to 'UInt32' (aka 'unsigned int') [-Wsign-conversion]
+ 10532 |                         NGreen::callback->writeReg32(GEN11_GFX_MSTR_IRQ, GEN11_MASTER_IRQ);
+       |                                           ~~~~~~~~~~                     ^~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:954:31: note: expanded from macro 'GEN11_MASTER_IRQ'
+  954 | #define  GEN11_MASTER_IRQ               (1 << 31)
+      |                                          ~~^~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:10615:25: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+ 10615 |         uint32_t ack_exp = set << ctx;
+       |                  ~~~~~~~   ~~~~^~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:10617:36: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+ 10617 |         uint32_t wr = ack_exp | (1 << ctx << 16);
+       |                               ~  ~~~~~~~~~^~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:10752:71: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+ 10752 |                 wrapWriteRegister32(callback->framecont, GEN11_RCS0_RSVD_INTR_MASK,     ~0);
+       |                 ~~~~~~~~~~~~~~~~~~~                                                     ^~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:10753:70: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+ 10753 |                 wrapWriteRegister32(callback->framecont, GEN11_BCS_RSVD_INTR_MASK,      ~0);
+       |                 ~~~~~~~~~~~~~~~~~~~                                                     ^~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:10754:71: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+ 10754 |                 wrapWriteRegister32(callback->framecont, GEN11_VCS0_VCS1_INTR_MASK,     ~0);
+       |                 ~~~~~~~~~~~~~~~~~~~                                                     ^~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:10755:71: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+ 10755 |                 wrapWriteRegister32(callback->framecont, GEN11_VCS2_VCS3_INTR_MASK,     ~0);
+       |                 ~~~~~~~~~~~~~~~~~~~                                                     ^~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:10756:73: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+ 10756 |                 wrapWriteRegister32(callback->framecont, GEN11_VECS0_VECS1_INTR_MASK,   ~0);
+       |                 ~~~~~~~~~~~~~~~~~~~                                                     ^~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:10759:76: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+ 10759 |                 wrapWriteRegister32(callback->framecont, GEN11_GPM_WGBOXPERF_INTR_MASK,  ~0);
+       |                 ~~~~~~~~~~~~~~~~~~~                                                      ^~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:10761:69: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+ 10761 |                 wrapWriteRegister32(callback->framecont, GEN11_GUC_SG_INTR_MASK,  ~0);
+       |                 ~~~~~~~~~~~~~~~~~~~                                               ^~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:10798:76: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+ 10798 |                 wrapWriteRegister32(callback->framecont, GEN11_GPM_WGBOXPERF_INTR_MASK,  ~0);
+       |                 ~~~~~~~~~~~~~~~~~~~                                                      ^~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:10802:69: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+ 10802 |                 wrapWriteRegister32(callback->framecont, GEN11_GUC_SG_INTR_MASK,  ~0);
+       |                 ~~~~~~~~~~~~~~~~~~~                                               ^~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:10804:66: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+ 10804 |                 wrapWriteRegister32(callback->framecont,GEN11_DISPLAY_INT_CTL, GEN11_DISPLAY_IRQ_ENABLE);
+       |                 ~~~~~~~~~~~~~~~~~~~                                            ^~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:964:38: note: expanded from macro 'GEN11_DISPLAY_IRQ_ENABLE'
+  964 | #define  GEN11_DISPLAY_IRQ_ENABLE       (1 << 31)
+      |                                          ~~^~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:10805:64: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+ 10805 |                 wrapWriteRegister32(callback->framecont, GEN11_GFX_MSTR_IRQ, GEN11_MASTER_IRQ);
+       |                 ~~~~~~~~~~~~~~~~~~~                                          ^~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:954:31: note: expanded from macro 'GEN11_MASTER_IRQ'
+  954 | #define  GEN11_MASTER_IRQ               (1 << 31)
+      |                                          ~~^~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:10961:6: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+ 10961 |         if (-1 < iVar3) {
+       |             ^~ ~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:11323:18: warning: implicit conversion changes signedness: 'unsigned int' to 'int' [-Wsign-conversion]
+ 11323 |                 *displayMode = 0x80001000;
+       |                              ~ ^~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:11441:7: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+ 11440 |                 NGreen::callback->intel_de_rmw(reg, DBUF_POWER_REQUEST,
+       |                                   ~~~~~~~~~~~~
+ 11441 |                                   DBUF_POWER_REQUEST);
+       |                                   ^~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:178:31: note: expanded from macro 'DBUF_POWER_REQUEST'
+  178 | #define  DBUF_POWER_REQUEST                     REG_BIT(31)
+      |                                                 ^~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:13:22: note: expanded from macro 'REG_BIT'
+   13 | #define REG_BIT(n) (1<< n)
+      |                     ~^~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:11440:39: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+ 11440 |                 NGreen::callback->intel_de_rmw(reg, DBUF_POWER_REQUEST,
+       |                                   ~~~~~~~~~~~~      ^~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:178:31: note: expanded from macro 'DBUF_POWER_REQUEST'
+  178 | #define  DBUF_POWER_REQUEST                     REG_BIT(31)
+      |                                                 ^~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:13:22: note: expanded from macro 'REG_BIT'
+   13 | #define REG_BIT(n) (1<< n)
+      |                     ~^~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:11446:7: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+ 11445 |                 NGreen::callback->intel_de_rmw(reg, DBUF_POWER_REQUEST,
+       |                                   ~~~~~~~~~~~~
+ 11446 |                                   DBUF_POWER_REQUEST);
+       |                                   ^~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:178:31: note: expanded from macro 'DBUF_POWER_REQUEST'
+  178 | #define  DBUF_POWER_REQUEST                     REG_BIT(31)
+      |                                                 ^~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:13:22: note: expanded from macro 'REG_BIT'
+   13 | #define REG_BIT(n) (1<< n)
+      |                     ~^~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:11445:39: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+ 11445 |                 NGreen::callback->intel_de_rmw(reg, DBUF_POWER_REQUEST,
+       |                                   ~~~~~~~~~~~~      ^~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:178:31: note: expanded from macro 'DBUF_POWER_REQUEST'
+  178 | #define  DBUF_POWER_REQUEST                     REG_BIT(31)
+      |                                                 ^~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:13:22: note: expanded from macro 'REG_BIT'
+   13 | #define REG_BIT(n) (1<< n)
+      |                     ~^~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:11451:7: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+ 11450 |                 NGreen::callback->intel_de_rmw(reg, DBUF_POWER_REQUEST,
+       |                                   ~~~~~~~~~~~~
+ 11451 |                                   DBUF_POWER_REQUEST);
+       |                                   ^~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:178:31: note: expanded from macro 'DBUF_POWER_REQUEST'
+  178 | #define  DBUF_POWER_REQUEST                     REG_BIT(31)
+      |                                                 ^~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:13:22: note: expanded from macro 'REG_BIT'
+   13 | #define REG_BIT(n) (1<< n)
+      |                     ~^~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:11450:39: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+ 11450 |                 NGreen::callback->intel_de_rmw(reg, DBUF_POWER_REQUEST,
+       |                                   ~~~~~~~~~~~~      ^~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:178:31: note: expanded from macro 'DBUF_POWER_REQUEST'
+  178 | #define  DBUF_POWER_REQUEST                     REG_BIT(31)
+      |                                                 ^~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:13:22: note: expanded from macro 'REG_BIT'
+   13 | #define REG_BIT(n) (1<< n)
+      |                     ~^~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:11456:7: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+ 11455 |                 NGreen::callback->intel_de_rmw(reg, DBUF_POWER_REQUEST,
+       |                                   ~~~~~~~~~~~~
+ 11456 |                                   DBUF_POWER_REQUEST);
+       |                                   ^~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:178:31: note: expanded from macro 'DBUF_POWER_REQUEST'
+  178 | #define  DBUF_POWER_REQUEST                     REG_BIT(31)
+      |                                                 ^~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:13:22: note: expanded from macro 'REG_BIT'
+   13 | #define REG_BIT(n) (1<< n)
+      |                     ~^~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:11455:39: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+ 11455 |                 NGreen::callback->intel_de_rmw(reg, DBUF_POWER_REQUEST,
+       |                                   ~~~~~~~~~~~~      ^~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:178:31: note: expanded from macro 'DBUF_POWER_REQUEST'
+  178 | #define  DBUF_POWER_REQUEST                     REG_BIT(31)
+      |                                                 ^~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:13:22: note: expanded from macro 'REG_BIT'
+   13 | #define REG_BIT(n) (1<< n)
+      |                     ~^~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:11477:3: warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+ 11477 |                 for_each_set_bit(i, &abox_regs, sizeof(abox_regs))
+       |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:580:48: note: expanded from macro 'for_each_set_bit'
+  580 |                  (bit) = find_next_bit((addr), (size), (bit) + 1))
+      |                          ~~~~~~~~~~~~~                 ~~~~~~^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:11478:35: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+ 11478 |                 NGreen::callback->intel_de_rmw( MBUS_ABOX_CTL(i), mask, val);
+       |                                   ~~~~~~~~~~~~  ^~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:269:3: note: expanded from macro 'MBUS_ABOX_CTL'
+  269 |         (_PICK_EVEN_2RANGES(x, 2,                                               \
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  270 |                                  _MBUS_ABOX0_CTL, _MBUS_ABOX1_CTL,              \
+      |                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  271 |                                  _MBUS_ABOX2_CTL, _MBUS_ABOX2_CTL))
+      |                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:263:8: note: expanded from macro '_PICK_EVEN_2RANGES'
+  263 |                                    _PICK_EVEN((__index) - (__c_index), __c, __d)
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:220:46: note: expanded from macro '_PICK_EVEN'
+  220 | #define _PICK_EVEN(__index, __a, __b) ((__a) + (__index) * ((__b) - (__a)))
+      |                                        ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:11494:3: warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+ 11494 |                 for_each_set_bit(i, &abox_mask, sizeof(abox_mask)) {
+       |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:580:48: note: expanded from macro 'for_each_set_bit'
+  580 |                  (bit) = find_next_bit((addr), (size), (bit) + 1))
+      |                          ~~~~~~~~~~~~~                 ~~~~~~^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:11495:34: warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+ 11495 |                         NGreen::callback->writeReg32( BW_BUDDY_PAGE_MASK(i),
+       |                                           ~~~~~~~~~~  ^~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:229:33: note: expanded from macro 'BW_BUDDY_PAGE_MASK'
+  229 | #define BW_BUDDY_PAGE_MASK(x)           (_PICK_EVEN(x, \
+      |                                          ^~~~~~~~~~~~~~~
+  230 |                                                          _BW_BUDDY0_PAGE_MASK, \
+      |                                                          ~~~~~~~~~~~~~~~~~~~~~~~
+  231 |                                                          _BW_BUDDY1_PAGE_MASK))
+      |                                                          ~~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:220:46: note: expanded from macro '_PICK_EVEN'
+  220 | #define _PICK_EVEN(__index, __a, __b) ((__a) + (__index) * ((__b) - (__a)))
+      |                                        ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:11499:36: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+ 11499 |                         NGreen::callback->intel_de_rmw( BW_BUDDY_CTL(i),
+       |                                           ~~~~~~~~~~~~  ^~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:224:28: note: expanded from macro 'BW_BUDDY_CTL'
+  224 | #define BW_BUDDY_CTL(x)                 (_PICK_EVEN(x, \
+      |                                          ^~~~~~~~~~~~~~~
+  225 |                                                          _BW_BUDDY0_CTL, \
+      |                                                          ~~~~~~~~~~~~~~~~~
+  226 |                                                          _BW_BUDDY1_CTL))
+      |                                                          ~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:220:46: note: expanded from macro '_PICK_EVEN'
+  220 | #define _PICK_EVEN(__index, __a, __b) ((__a) + (__index) * ((__b) - (__a)))
+      |                                        ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:11477:3: warning: implicit conversion loses integer precision: 'unsigned long' to 'int' [-Wshorten-64-to-32]
+ 11477 |                 for_each_set_bit(i, &abox_regs, sizeof(abox_regs))
+       |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:578:15: note: expanded from macro 'for_each_set_bit'
+  578 |         for ((bit) = find_first_bit((addr), (size));            \
+      |                    ~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:11477:3: warning: implicit conversion loses integer precision: 'unsigned long' to 'int' [-Wshorten-64-to-32]
+ 11477 |                 for_each_set_bit(i, &abox_regs, sizeof(abox_regs))
+       |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:580:12: note: expanded from macro 'for_each_set_bit'
+  580 |                  (bit) = find_next_bit((addr), (size), (bit) + 1))
+      |                        ~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:11494:3: warning: implicit conversion loses integer precision: 'unsigned long' to 'int' [-Wshorten-64-to-32]
+ 11494 |                 for_each_set_bit(i, &abox_mask, sizeof(abox_mask)) {
+       |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:578:15: note: expanded from macro 'for_each_set_bit'
+  578 |         for ((bit) = find_first_bit((addr), (size));            \
+      |                    ~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:11494:3: warning: implicit conversion loses integer precision: 'unsigned long' to 'int' [-Wshorten-64-to-32]
+ 11494 |                 for_each_set_bit(i, &abox_mask, sizeof(abox_mask)) {
+       |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:580:12: note: expanded from macro 'for_each_set_bit'
+  580 |                  (bit) = find_next_bit((addr), (size), (bit) + 1))
+      |                        ~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:11568:60: warning: implicit conversion changes signedness: 'int' to 'UInt32' (aka 'unsigned int') [-Wsign-conversion]
+ 11568 |                                         NGreen::callback->writeReg32(desc->mmioErrorIdentity, ~0x1); // I915_ERROR_INSTRUCTION
+       |                                                           ~~~~~~~~~~                          ^~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:11723:59: warning: implicit conversion changes signedness: 'int' to 'UInt32' (aka 'unsigned int') [-Wsign-conversion]
+ 11723 |         NGreen::callback->writeReg32( GEN11_RCS0_RSVD_INTR_MASK,        ~0);
+       |                           ~~~~~~~~~~                                    ^~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:11724:58: warning: implicit conversion changes signedness: 'int' to 'UInt32' (aka 'unsigned int') [-Wsign-conversion]
+ 11724 |         NGreen::callback->writeReg32( GEN11_BCS_RSVD_INTR_MASK, ~0);
+       |                           ~~~~~~~~~~                            ^~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:11726:59: warning: implicit conversion changes signedness: 'int' to 'UInt32' (aka 'unsigned int') [-Wsign-conversion]
+ 11726 |         NGreen::callback->writeReg32( GEN11_VCS0_VCS1_INTR_MASK,        ~0);
+       |                           ~~~~~~~~~~                                    ^~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:11727:59: warning: implicit conversion changes signedness: 'int' to 'UInt32' (aka 'unsigned int') [-Wsign-conversion]
+ 11727 |         NGreen::callback->writeReg32( GEN11_VCS2_VCS3_INTR_MASK,        ~0);
+       |                           ~~~~~~~~~~                                    ^~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:11730:61: warning: implicit conversion changes signedness: 'int' to 'UInt32' (aka 'unsigned int') [-Wsign-conversion]
+ 11730 |         NGreen::callback->writeReg32( GEN12_VECS2_VECS3_INTR_MASK, ~0);
+       |                           ~~~~~~~~~~                               ^~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:11733:64: warning: implicit conversion changes signedness: 'int' to 'UInt32' (aka 'unsigned int') [-Wsign-conversion]
+ 11733 |         NGreen::callback->writeReg32( GEN11_GPM_WGBOXPERF_INTR_MASK,  ~0);
+       |                           ~~~~~~~~~~                                  ^~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:11735:57: warning: implicit conversion changes signedness: 'int' to 'UInt32' (aka 'unsigned int') [-Wsign-conversion]
+ 11735 |         NGreen::callback->writeReg32( GEN11_GUC_SG_INTR_MASK,  ~0);
+       |                           ~~~~~~~~~~                           ^~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:11738:62: warning: implicit conversion changes signedness: 'int' to 'UInt32' (aka 'unsigned int') [-Wsign-conversion]
+ 11738 |         NGreen::callback->writeReg32( GEN11_CRYPTO_RSVD_INTR_MASK,  ~0);
+       |                           ~~~~~~~~~~                                ^~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:11742:52: warning: implicit conversion changes signedness: 'int' to 'UInt32' (aka 'unsigned int') [-Wsign-conversion]
+ 11742 |         NGreen::callback->writeReg32( GEN11_GFX_MSTR_IRQ, ~0);
+       |                           ~~~~~~~~~~                      ^~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:11780:52: warning: implicit conversion changes signedness: 'int' to 'UInt32' (aka 'unsigned int') [-Wsign-conversion]
+ 11780 |         NGreen::callback->writeReg32( GEN11_GFX_MSTR_IRQ, GEN11_MASTER_IRQ);
+       |                           ~~~~~~~~~~                      ^~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:954:31: note: expanded from macro 'GEN11_MASTER_IRQ'
+  954 | #define  GEN11_MASTER_IRQ               (1 << 31)
+      |                                          ~~^~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:11782:52: warning: implicit conversion changes signedness: 'int' to 'UInt32' (aka 'unsigned int') [-Wsign-conversion]
+ 11782 |         NGreen::callback->writeReg32( DG1_MSTR_TILE_INTR, DG1_MSTR_IRQ);
+       |                           ~~~~~~~~~~                      ^~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:176:26: note: expanded from macro 'DG1_MSTR_IRQ'
+  176 | #define   DG1_MSTR_IRQ                  REG_BIT(31)
+      |                                         ^~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:13:22: note: expanded from macro 'REG_BIT'
+   13 | #define REG_BIT(n) (1<< n)
+      |                     ~^~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:12090:44: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+ 12090 |                 uint32_t n = OSIncrementAtomic(&gBfBase) + 1;
+       |                          ~   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:12096:45: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+ 12096 |                 uint32_t n = OSIncrementAtomic(&gBfPitch) + 1;
+       |                          ~   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp:12103:41: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+ 12103 |         uint32_t n = OSIncrementAtomic(&gBf3D) + 1;
+       |                  ~   ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+139 warnings generated.
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_genx.cpp:3:
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_genx.hpp:6:
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:6:
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_patcher.hpp:13:
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:445:82: warning: implicit conversion changes signedness: 'int' to 'size_t' (aka 'unsigned long') [-Wsign-conversion]
+  445 |         return (size_t)(version[0] - '0') * 100 + (version[2] - '0') * 10 + (version[4] - '0');
+      |                                                                           ~  ~~~~~~~~~~~^~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:445:63: warning: implicit conversion changes signedness: 'int' to 'size_t' (aka 'unsigned long') [-Wsign-conversion]
+  445 |         return (size_t)(version[0] - '0') * 100 + (version[2] - '0') * 10 + (version[4] - '0');
+      |                                                 ~ ~~~~~~~~~~~~~~~~~~~^~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:1012:16: warning: declaration shadows a field of 'CircularBuffer<T>' [-Wshadow]
+ 1012 |         bool init(T (&storage)[N]) {
+      |                       ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:961:5: note: previous declaration is here
+  961 |         T *storage {nullptr};
+      |            ^
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_genx.cpp:3:
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_genx.hpp:6:
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:84:36: warning: implicit conversion loses integer precision: 'unsigned long' to 'UInt32' (aka 'unsigned int') [-Wshorten-64-to-32]
+   84 |                         this->rmmioPtr[mmPCIE_INDEX2] = reg;
+      |                                                       ~ ^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:125:36: warning: implicit conversion loses integer precision: 'unsigned long' to 'UInt32' (aka 'unsigned int') [-Wshorten-64-to-32]
+  125 |                         this->rmmioPtr[mmPCIE_INDEX2] = reg;
+      |                                                       ~ ^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:135:36: warning: implicit conversion loses integer precision: 'unsigned long' to 'UInt32' (aka 'unsigned int') [-Wshorten-64-to-32]
+  135 |                         this->rmmioPtr[mmPCIE_INDEX2] = reg;
+      |                                                       ~ ^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:167:26: warning: implicit conversion loses integer precision: 'UInt64' (aka 'unsigned long long') to 'UInt32' (aka 'unsigned int') [-Wshorten-64-to-32]
+  167 |                         this->rmmioPtr[reg] = val;
+      |                                             ~ ^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:169:36: warning: implicit conversion loses integer precision: 'unsigned long' to 'UInt32' (aka 'unsigned int') [-Wshorten-64-to-32]
+  169 |                         this->rmmioPtr[mmPCIE_INDEX2] = reg;
+      |                                                       ~ ^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:170:35: warning: implicit conversion loses integer precision: 'UInt64' (aka 'unsigned long long') to 'UInt32' (aka 'unsigned int') [-Wshorten-64-to-32]
+  170 |                         this->rmmioPtr[mmPCIE_DATA2] = val;
+      |                                                      ~ ^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:252:26: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+  252 |                 wa_write_clr_set( reg, ~0, set);
+      |                 ~~~~~~~~~~~~~~~~       ^~
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_genx.cpp:4:
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:567:9: warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  567 |         return __builtin_ctzl(val);
+      |         ~~~~~~ ^~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:574:9: warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  574 |         return __builtin_ctzl(val);
+      |         ~~~~~~ ^~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:649:31: warning: ISO C++ requires field designators to be specified in declaration order; field 'num_channels' will be initialized after field 'type' [-Wreorder-init-list]
+  649 |         { .num_channels = 1, .type = INTEL_DRAM_DDR4,   .page_mask = 0xF },
+      |                              ~~~~~~~~^~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:649:20: note: previous initialization for field 'num_channels' is here
+  649 |         { .num_channels = 1, .type = INTEL_DRAM_DDR4,   .page_mask = 0xF },
+      |                           ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:649:63: warning: ISO C++ requires field designators to be specified in declaration order; field 'type' will be initialized after field 'page_mask' [-Wreorder-init-list]
+  649 |         { .num_channels = 1, .type = INTEL_DRAM_DDR4,   .page_mask = 0xF },
+      |                                                         ~~~~~~~~~~~~~^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:649:31: note: previous initialization for field 'type' is here
+  649 |         { .num_channels = 1, .type = INTEL_DRAM_DDR4,   .page_mask = 0xF },
+      |                                      ^~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:650:31: warning: ISO C++ requires field designators to be specified in declaration order; field 'num_channels' will be initialized after field 'type' [-Wreorder-init-list]
+  650 |         { .num_channels = 1, .type = INTEL_DRAM_DDR5,   .page_mask = 0xF },
+      |                              ~~~~~~~~^~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:650:20: note: previous initialization for field 'num_channels' is here
+  650 |         { .num_channels = 1, .type = INTEL_DRAM_DDR5,   .page_mask = 0xF },
+      |                           ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:650:61: warning: ISO C++ requires field designators to be specified in declaration order; field 'type' will be initialized after field 'page_mask' [-Wreorder-init-list]
+  650 |         { .num_channels = 1, .type = INTEL_DRAM_DDR5,   .page_mask = 0xF },
+      |                                                         ~~~~~~~~~~~~~^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:650:31: note: previous initialization for field 'type' is here
+  650 |         { .num_channels = 1, .type = INTEL_DRAM_DDR5,   .page_mask = 0xF },
+      |                                      ^~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:651:31: warning: ISO C++ requires field designators to be specified in declaration order; field 'num_channels' will be initialized after field 'type' [-Wreorder-init-list]
+  651 |         { .num_channels = 2, .type = INTEL_DRAM_LPDDR4, .page_mask = 0x1C },
+      |                              ~~~~~~~~^~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:651:20: note: previous initialization for field 'num_channels' is here
+  651 |         { .num_channels = 2, .type = INTEL_DRAM_LPDDR4, .page_mask = 0x1C },
+      |                           ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:651:63: warning: ISO C++ requires field designators to be specified in declaration order; field 'type' will be initialized after field 'page_mask' [-Wreorder-init-list]
+  651 |         { .num_channels = 2, .type = INTEL_DRAM_LPDDR4, .page_mask = 0x1C },
+      |                                                         ~~~~~~~~~~~~~^~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:651:31: note: previous initialization for field 'type' is here
+  651 |         { .num_channels = 2, .type = INTEL_DRAM_LPDDR4, .page_mask = 0x1C },
+      |                                      ^~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:652:31: warning: ISO C++ requires field designators to be specified in declaration order; field 'num_channels' will be initialized after field 'type' [-Wreorder-init-list]
+  652 |         { .num_channels = 2, .type = INTEL_DRAM_LPDDR5, .page_mask = 0x1C },
+      |                              ~~~~~~~~^~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:652:20: note: previous initialization for field 'num_channels' is here
+  652 |         { .num_channels = 2, .type = INTEL_DRAM_LPDDR5, .page_mask = 0x1C },
+      |                           ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:652:63: warning: ISO C++ requires field designators to be specified in declaration order; field 'type' will be initialized after field 'page_mask' [-Wreorder-init-list]
+  652 |         { .num_channels = 2, .type = INTEL_DRAM_LPDDR5, .page_mask = 0x1C },
+      |                                                         ~~~~~~~~~~~~~^~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:652:31: note: previous initialization for field 'type' is here
+  652 |         { .num_channels = 2, .type = INTEL_DRAM_LPDDR5, .page_mask = 0x1C },
+      |                                      ^~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:653:31: warning: ISO C++ requires field designators to be specified in declaration order; field 'num_channels' will be initialized after field 'type' [-Wreorder-init-list]
+  653 |         { .num_channels = 2, .type = INTEL_DRAM_DDR4,   .page_mask = 0x1F },
+      |                              ~~~~~~~~^~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:653:20: note: previous initialization for field 'num_channels' is here
+  653 |         { .num_channels = 2, .type = INTEL_DRAM_DDR4,   .page_mask = 0x1F },
+      |                           ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:653:63: warning: ISO C++ requires field designators to be specified in declaration order; field 'type' will be initialized after field 'page_mask' [-Wreorder-init-list]
+  653 |         { .num_channels = 2, .type = INTEL_DRAM_DDR4,   .page_mask = 0x1F },
+      |                                                         ~~~~~~~~~~~~~^~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:653:31: note: previous initialization for field 'type' is here
+  653 |         { .num_channels = 2, .type = INTEL_DRAM_DDR4,   .page_mask = 0x1F },
+      |                                      ^~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:654:31: warning: ISO C++ requires field designators to be specified in declaration order; field 'num_channels' will be initialized after field 'type' [-Wreorder-init-list]
+  654 |         { .num_channels = 2, .type = INTEL_DRAM_DDR5,   .page_mask = 0x1E },
+      |                              ~~~~~~~~^~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:654:20: note: previous initialization for field 'num_channels' is here
+  654 |         { .num_channels = 2, .type = INTEL_DRAM_DDR5,   .page_mask = 0x1E },
+      |                           ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:654:63: warning: ISO C++ requires field designators to be specified in declaration order; field 'type' will be initialized after field 'page_mask' [-Wreorder-init-list]
+  654 |         { .num_channels = 2, .type = INTEL_DRAM_DDR5,   .page_mask = 0x1E },
+      |                                                         ~~~~~~~~~~~~~^~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:654:31: note: previous initialization for field 'type' is here
+  654 |         { .num_channels = 2, .type = INTEL_DRAM_DDR5,   .page_mask = 0x1E },
+      |                                      ^~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:655:31: warning: ISO C++ requires field designators to be specified in declaration order; field 'num_channels' will be initialized after field 'type' [-Wreorder-init-list]
+  655 |         { .num_channels = 4, .type = INTEL_DRAM_LPDDR4, .page_mask = 0x38 },
+      |                              ~~~~~~~~^~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:655:20: note: previous initialization for field 'num_channels' is here
+  655 |         { .num_channels = 4, .type = INTEL_DRAM_LPDDR4, .page_mask = 0x38 },
+      |                           ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:655:63: warning: ISO C++ requires field designators to be specified in declaration order; field 'type' will be initialized after field 'page_mask' [-Wreorder-init-list]
+  655 |         { .num_channels = 4, .type = INTEL_DRAM_LPDDR4, .page_mask = 0x38 },
+      |                                                         ~~~~~~~~~~~~~^~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:655:31: note: previous initialization for field 'type' is here
+  655 |         { .num_channels = 4, .type = INTEL_DRAM_LPDDR4, .page_mask = 0x38 },
+      |                                      ^~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:656:31: warning: ISO C++ requires field designators to be specified in declaration order; field 'num_channels' will be initialized after field 'type' [-Wreorder-init-list]
+  656 |         { .num_channels = 4, .type = INTEL_DRAM_LPDDR5, .page_mask = 0x38 },
+      |                              ~~~~~~~~^~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:656:20: note: previous initialization for field 'num_channels' is here
+  656 |         { .num_channels = 4, .type = INTEL_DRAM_LPDDR5, .page_mask = 0x38 },
+      |                           ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:656:63: warning: ISO C++ requires field designators to be specified in declaration order; field 'type' will be initialized after field 'page_mask' [-Wreorder-init-list]
+  656 |         { .num_channels = 4, .type = INTEL_DRAM_LPDDR5, .page_mask = 0x38 },
+      |                                                         ~~~~~~~~~~~~~^~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:656:31: note: previous initialization for field 'type' is here
+  656 |         { .num_channels = 4, .type = INTEL_DRAM_LPDDR5, .page_mask = 0x38 },
+      |                                      ^~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:821:9: warning: '_MASKED_FIELD' macro redefined [-Wmacro-redefined]
+  821 | #define _MASKED_FIELD(mask, value) ((mask) << 16 | (value))
+      |         ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:16:9: note: previous definition is here
+   16 | #define _MASKED_FIELD(mask, value) ({ __MASKED_FIELD(mask, value); })
+      |         ^
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_genx.cpp:4:
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:822:9: warning: '_MASKED_BIT_ENABLE' macro redefined [-Wmacro-redefined]
+  822 | #define _MASKED_BIT_ENABLE(a)   (_MASKED_FIELD((a), a))
+      |         ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:17:9: note: previous definition is here
+   17 | #define _MASKED_BIT_ENABLE(a)   ({ __typeof(a) _a = (a); _MASKED_FIELD(_a, _a); })
+      |         ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_genx.cpp:279:15: warning: declaration shadows a local variable [-Wshadow]
+  279 |                                 for (auto index = 0; index < 64; index += 1) {
+      |                                           ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_genx.cpp:25:55: note: previous declaration is here
+   25 | bool Genx::processKext(KernelPatcher &patcher, size_t index, mach_vm_address_t address, size_t size) {
+      |                                                       ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_genx.cpp:280:11: warning: declaration shadows a local variable [-Wshadow]
+  280 |                                         auto size = Disassembler::hdeDisasm(startAddress, &handle);
+      |                                              ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_genx.cpp:25:96: note: previous declaration is here
+   25 | bool Genx::processKext(KernelPatcher &patcher, size_t index, mach_vm_address_t address, size_t size) {
+      |                                                                                                ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_genx.cpp:291:38: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+  291 |                                                 shllDstr = (handle.rex_b << 3) | handle.modrm_rm;
+      |                                                          ~ ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_genx.cpp:299:38: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+  299 |                                                 andlDstr = (handle.rex_b << 3) | handle.modrm_rm;
+      |                                                          ~ ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+34 warnings generated.
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.cpp:4:
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:6:
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_patcher.hpp:13:
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:445:82: warning: implicit conversion changes signedness: 'int' to 'size_t' (aka 'unsigned long') [-Wsign-conversion]
+  445 |         return (size_t)(version[0] - '0') * 100 + (version[2] - '0') * 10 + (version[4] - '0');
+      |                                                                           ~  ~~~~~~~~~~~^~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:445:63: warning: implicit conversion changes signedness: 'int' to 'size_t' (aka 'unsigned long') [-Wsign-conversion]
+  445 |         return (size_t)(version[0] - '0') * 100 + (version[2] - '0') * 10 + (version[4] - '0');
+      |                                                 ~ ~~~~~~~~~~~~~~~~~~~^~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:1012:16: warning: declaration shadows a field of 'CircularBuffer<T>' [-Wshadow]
+ 1012 |         bool init(T (&storage)[N]) {
+      |                       ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:961:5: note: previous declaration is here
+  961 |         T *storage {nullptr};
+      |            ^
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.cpp:4:
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:84:36: warning: implicit conversion loses integer precision: 'unsigned long' to 'UInt32' (aka 'unsigned int') [-Wshorten-64-to-32]
+   84 |                         this->rmmioPtr[mmPCIE_INDEX2] = reg;
+      |                                                       ~ ^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:125:36: warning: implicit conversion loses integer precision: 'unsigned long' to 'UInt32' (aka 'unsigned int') [-Wshorten-64-to-32]
+  125 |                         this->rmmioPtr[mmPCIE_INDEX2] = reg;
+      |                                                       ~ ^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:135:36: warning: implicit conversion loses integer precision: 'unsigned long' to 'UInt32' (aka 'unsigned int') [-Wshorten-64-to-32]
+  135 |                         this->rmmioPtr[mmPCIE_INDEX2] = reg;
+      |                                                       ~ ^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:167:26: warning: implicit conversion loses integer precision: 'UInt64' (aka 'unsigned long long') to 'UInt32' (aka 'unsigned int') [-Wshorten-64-to-32]
+  167 |                         this->rmmioPtr[reg] = val;
+      |                                             ~ ^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:169:36: warning: implicit conversion loses integer precision: 'unsigned long' to 'UInt32' (aka 'unsigned int') [-Wshorten-64-to-32]
+  169 |                         this->rmmioPtr[mmPCIE_INDEX2] = reg;
+      |                                                       ~ ^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:170:35: warning: implicit conversion loses integer precision: 'UInt64' (aka 'unsigned long long') to 'UInt32' (aka 'unsigned int') [-Wshorten-64-to-32]
+  170 |                         this->rmmioPtr[mmPCIE_DATA2] = val;
+      |                                                      ~ ^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:252:26: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+  252 |                 wa_write_clr_set( reg, ~0, set);
+      |                 ~~~~~~~~~~~~~~~~       ^~
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.cpp:5:
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:567:9: warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  567 |         return __builtin_ctzl(val);
+      |         ~~~~~~ ^~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:574:9: warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  574 |         return __builtin_ctzl(val);
+      |         ~~~~~~ ^~~~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:649:31: warning: ISO C++ requires field designators to be specified in declaration order; field 'num_channels' will be initialized after field 'type' [-Wreorder-init-list]
+  649 |         { .num_channels = 1, .type = INTEL_DRAM_DDR4,   .page_mask = 0xF },
+      |                              ~~~~~~~~^~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:649:20: note: previous initialization for field 'num_channels' is here
+  649 |         { .num_channels = 1, .type = INTEL_DRAM_DDR4,   .page_mask = 0xF },
+      |                           ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:649:63: warning: ISO C++ requires field designators to be specified in declaration order; field 'type' will be initialized after field 'page_mask' [-Wreorder-init-list]
+  649 |         { .num_channels = 1, .type = INTEL_DRAM_DDR4,   .page_mask = 0xF },
+      |                                                         ~~~~~~~~~~~~~^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:649:31: note: previous initialization for field 'type' is here
+  649 |         { .num_channels = 1, .type = INTEL_DRAM_DDR4,   .page_mask = 0xF },
+      |                                      ^~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:650:31: warning: ISO C++ requires field designators to be specified in declaration order; field 'num_channels' will be initialized after field 'type' [-Wreorder-init-list]
+  650 |         { .num_channels = 1, .type = INTEL_DRAM_DDR5,   .page_mask = 0xF },
+      |                              ~~~~~~~~^~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:650:20: note: previous initialization for field 'num_channels' is here
+  650 |         { .num_channels = 1, .type = INTEL_DRAM_DDR5,   .page_mask = 0xF },
+      |                           ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:650:61: warning: ISO C++ requires field designators to be specified in declaration order; field 'type' will be initialized after field 'page_mask' [-Wreorder-init-list]
+  650 |         { .num_channels = 1, .type = INTEL_DRAM_DDR5,   .page_mask = 0xF },
+      |                                                         ~~~~~~~~~~~~~^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:650:31: note: previous initialization for field 'type' is here
+  650 |         { .num_channels = 1, .type = INTEL_DRAM_DDR5,   .page_mask = 0xF },
+      |                                      ^~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:651:31: warning: ISO C++ requires field designators to be specified in declaration order; field 'num_channels' will be initialized after field 'type' [-Wreorder-init-list]
+  651 |         { .num_channels = 2, .type = INTEL_DRAM_LPDDR4, .page_mask = 0x1C },
+      |                              ~~~~~~~~^~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:651:20: note: previous initialization for field 'num_channels' is here
+  651 |         { .num_channels = 2, .type = INTEL_DRAM_LPDDR4, .page_mask = 0x1C },
+      |                           ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:651:63: warning: ISO C++ requires field designators to be specified in declaration order; field 'type' will be initialized after field 'page_mask' [-Wreorder-init-list]
+  651 |         { .num_channels = 2, .type = INTEL_DRAM_LPDDR4, .page_mask = 0x1C },
+      |                                                         ~~~~~~~~~~~~~^~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:651:31: note: previous initialization for field 'type' is here
+  651 |         { .num_channels = 2, .type = INTEL_DRAM_LPDDR4, .page_mask = 0x1C },
+      |                                      ^~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:652:31: warning: ISO C++ requires field designators to be specified in declaration order; field 'num_channels' will be initialized after field 'type' [-Wreorder-init-list]
+  652 |         { .num_channels = 2, .type = INTEL_DRAM_LPDDR5, .page_mask = 0x1C },
+      |                              ~~~~~~~~^~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:652:20: note: previous initialization for field 'num_channels' is here
+  652 |         { .num_channels = 2, .type = INTEL_DRAM_LPDDR5, .page_mask = 0x1C },
+      |                           ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:652:63: warning: ISO C++ requires field designators to be specified in declaration order; field 'type' will be initialized after field 'page_mask' [-Wreorder-init-list]
+  652 |         { .num_channels = 2, .type = INTEL_DRAM_LPDDR5, .page_mask = 0x1C },
+      |                                                         ~~~~~~~~~~~~~^~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:652:31: note: previous initialization for field 'type' is here
+  652 |         { .num_channels = 2, .type = INTEL_DRAM_LPDDR5, .page_mask = 0x1C },
+      |                                      ^~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:653:31: warning: ISO C++ requires field designators to be specified in declaration order; field 'num_channels' will be initialized after field 'type' [-Wreorder-init-list]
+  653 |         { .num_channels = 2, .type = INTEL_DRAM_DDR4,   .page_mask = 0x1F },
+      |                              ~~~~~~~~^~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:653:20: note: previous initialization for field 'num_channels' is here
+  653 |         { .num_channels = 2, .type = INTEL_DRAM_DDR4,   .page_mask = 0x1F },
+      |                           ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:653:63: warning: ISO C++ requires field designators to be specified in declaration order; field 'type' will be initialized after field 'page_mask' [-Wreorder-init-list]
+  653 |         { .num_channels = 2, .type = INTEL_DRAM_DDR4,   .page_mask = 0x1F },
+      |                                                         ~~~~~~~~~~~~~^~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:653:31: note: previous initialization for field 'type' is here
+  653 |         { .num_channels = 2, .type = INTEL_DRAM_DDR4,   .page_mask = 0x1F },
+      |                                      ^~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:654:31: warning: ISO C++ requires field designators to be specified in declaration order; field 'num_channels' will be initialized after field 'type' [-Wreorder-init-list]
+  654 |         { .num_channels = 2, .type = INTEL_DRAM_DDR5,   .page_mask = 0x1E },
+      |                              ~~~~~~~~^~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:654:20: note: previous initialization for field 'num_channels' is here
+  654 |         { .num_channels = 2, .type = INTEL_DRAM_DDR5,   .page_mask = 0x1E },
+      |                           ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:654:63: warning: ISO C++ requires field designators to be specified in declaration order; field 'type' will be initialized after field 'page_mask' [-Wreorder-init-list]
+  654 |         { .num_channels = 2, .type = INTEL_DRAM_DDR5,   .page_mask = 0x1E },
+      |                                                         ~~~~~~~~~~~~~^~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:654:31: note: previous initialization for field 'type' is here
+  654 |         { .num_channels = 2, .type = INTEL_DRAM_DDR5,   .page_mask = 0x1E },
+      |                                      ^~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:655:31: warning: ISO C++ requires field designators to be specified in declaration order; field 'num_channels' will be initialized after field 'type' [-Wreorder-init-list]
+  655 |         { .num_channels = 4, .type = INTEL_DRAM_LPDDR4, .page_mask = 0x38 },
+      |                              ~~~~~~~~^~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:655:20: note: previous initialization for field 'num_channels' is here
+  655 |         { .num_channels = 4, .type = INTEL_DRAM_LPDDR4, .page_mask = 0x38 },
+      |                           ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:655:63: warning: ISO C++ requires field designators to be specified in declaration order; field 'type' will be initialized after field 'page_mask' [-Wreorder-init-list]
+  655 |         { .num_channels = 4, .type = INTEL_DRAM_LPDDR4, .page_mask = 0x38 },
+      |                                                         ~~~~~~~~~~~~~^~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:655:31: note: previous initialization for field 'type' is here
+  655 |         { .num_channels = 4, .type = INTEL_DRAM_LPDDR4, .page_mask = 0x38 },
+      |                                      ^~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:656:31: warning: ISO C++ requires field designators to be specified in declaration order; field 'num_channels' will be initialized after field 'type' [-Wreorder-init-list]
+  656 |         { .num_channels = 4, .type = INTEL_DRAM_LPDDR5, .page_mask = 0x38 },
+      |                              ~~~~~~~~^~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:656:20: note: previous initialization for field 'num_channels' is here
+  656 |         { .num_channels = 4, .type = INTEL_DRAM_LPDDR5, .page_mask = 0x38 },
+      |                           ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:656:63: warning: ISO C++ requires field designators to be specified in declaration order; field 'type' will be initialized after field 'page_mask' [-Wreorder-init-list]
+  656 |         { .num_channels = 4, .type = INTEL_DRAM_LPDDR5, .page_mask = 0x38 },
+      |                                                         ~~~~~~~~~~~~~^~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:656:31: note: previous initialization for field 'type' is here
+  656 |         { .num_channels = 4, .type = INTEL_DRAM_LPDDR5, .page_mask = 0x38 },
+      |                                      ^~~~~~~~~~~~~~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:821:9: warning: '_MASKED_FIELD' macro redefined [-Wmacro-redefined]
+  821 | #define _MASKED_FIELD(mask, value) ((mask) << 16 | (value))
+      |         ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:16:9: note: previous definition is here
+   16 | #define _MASKED_FIELD(mask, value) ({ __MASKED_FIELD(mask, value); })
+      |         ^
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.cpp:5:
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp:822:9: warning: '_MASKED_BIT_ENABLE' macro redefined [-Wmacro-redefined]
+  822 | #define _MASKED_BIT_ENABLE(a)   (_MASKED_FIELD((a), a))
+      |         ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:17:9: note: previous definition is here
+   17 | #define _MASKED_BIT_ENABLE(a)   ({ __typeof(a) _a = (a); _MASKED_FIELD(_a, _a); })
+      |         ^
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.cpp:8:
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/DYLDPatches.hpp:39:42: warning: declaration shadows a field of 'DYLDPatch' [-Wshadow]
+   39 |     inline void apply(void *data, size_t size) const {
+      |                                          ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/DYLDPatches.hpp:11:18: note: previous declaration is here
+   11 |     const size_t size {0};
+      |                  ^
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.cpp:12:
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_devinfo.hpp:12:
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_cpu.hpp:378:17: warning: declaration shadows a local variable [-Wshadow]
+  378 |                         for (uint8_t i = 0; i < package; i++)
+      |                                      ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_cpu.hpp:375:49: note: previous declaration is here
+  375 |                 inline uint8_t numberToPhysicalUnique(uint8_t i) {
+      |                                                               ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.cpp:695:13: warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+  695 |                                         return device;
+      |                                         ~~~~~~ ^~~~~~
+33 warnings generated.
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_patcherplus.cpp:4:
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_patcherplus.hpp:5:
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_patcher.hpp:13:
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:445:82: warning: implicit conversion changes signedness: 'int' to 'size_t' (aka 'unsigned long') [-Wsign-conversion]
+  445 |         return (size_t)(version[0] - '0') * 100 + (version[2] - '0') * 10 + (version[4] - '0');
+      |                                                                           ~  ~~~~~~~~~~~^~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:445:63: warning: implicit conversion changes signedness: 'int' to 'size_t' (aka 'unsigned long') [-Wsign-conversion]
+  445 |         return (size_t)(version[0] - '0') * 100 + (version[2] - '0') * 10 + (version[4] - '0');
+      |                                                 ~ ~~~~~~~~~~~~~~~~~~~^~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:1012:16: warning: declaration shadows a field of 'CircularBuffer<T>' [-Wshadow]
+ 1012 |         bool init(T (&storage)[N]) {
+      |                       ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:961:5: note: previous declaration is here
+  961 |         T *storage {nullptr};
+      |            ^
+3 warnings generated.
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_start.cpp:4:
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:6:
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_patcher.hpp:13:
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:445:82: warning: implicit conversion changes signedness: 'int' to 'size_t' (aka 'unsigned long') [-Wsign-conversion]
+  445 |         return (size_t)(version[0] - '0') * 100 + (version[2] - '0') * 10 + (version[4] - '0');
+      |                                                                           ~  ~~~~~~~~~~~^~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:445:63: warning: implicit conversion changes signedness: 'int' to 'size_t' (aka 'unsigned long') [-Wsign-conversion]
+  445 |         return (size_t)(version[0] - '0') * 100 + (version[2] - '0') * 10 + (version[4] - '0');
+      |                                                 ~ ~~~~~~~~~~~~~~~~~~~^~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:1012:16: warning: declaration shadows a field of 'CircularBuffer<T>' [-Wshadow]
+ 1012 |         bool init(T (&storage)[N]) {
+      |                       ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:961:5: note: previous declaration is here
+  961 |         T *storage {nullptr};
+      |            ^
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_start.cpp:4:
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:84:36: warning: implicit conversion loses integer precision: 'unsigned long' to 'UInt32' (aka 'unsigned int') [-Wshorten-64-to-32]
+   84 |                         this->rmmioPtr[mmPCIE_INDEX2] = reg;
+      |                                                       ~ ^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:125:36: warning: implicit conversion loses integer precision: 'unsigned long' to 'UInt32' (aka 'unsigned int') [-Wshorten-64-to-32]
+  125 |                         this->rmmioPtr[mmPCIE_INDEX2] = reg;
+      |                                                       ~ ^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:135:36: warning: implicit conversion loses integer precision: 'unsigned long' to 'UInt32' (aka 'unsigned int') [-Wshorten-64-to-32]
+  135 |                         this->rmmioPtr[mmPCIE_INDEX2] = reg;
+      |                                                       ~ ^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:167:26: warning: implicit conversion loses integer precision: 'UInt64' (aka 'unsigned long long') to 'UInt32' (aka 'unsigned int') [-Wshorten-64-to-32]
+  167 |                         this->rmmioPtr[reg] = val;
+      |                                             ~ ^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:169:36: warning: implicit conversion loses integer precision: 'unsigned long' to 'UInt32' (aka 'unsigned int') [-Wshorten-64-to-32]
+  169 |                         this->rmmioPtr[mmPCIE_INDEX2] = reg;
+      |                                                       ~ ^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:170:35: warning: implicit conversion loses integer precision: 'UInt64' (aka 'unsigned long long') to 'UInt32' (aka 'unsigned int') [-Wshorten-64-to-32]
+  170 |                         this->rmmioPtr[mmPCIE_DATA2] = val;
+      |                                                      ~ ^~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/src/NootedGreen/kern_green.hpp:252:26: warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+  252 |                 wa_write_clr_set( reg, ~0, set);
+      |                 ~~~~~~~~~~~~~~~~       ^~
+10 warnings generated.
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Library/plugin_start.cpp:8:
+In file included from /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/plugin_start.hpp:11:
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:445:82: warning: implicit conversion changes signedness: 'int' to 'size_t' (aka 'unsigned long') [-Wsign-conversion]
+  445 |         return (size_t)(version[0] - '0') * 100 + (version[2] - '0') * 10 + (version[4] - '0');
+      |                                                                           ~  ~~~~~~~~~~~^~~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:445:63: warning: implicit conversion changes signedness: 'int' to 'size_t' (aka 'unsigned long') [-Wsign-conversion]
+  445 |         return (size_t)(version[0] - '0') * 100 + (version[2] - '0') * 10 + (version[4] - '0');
+      |                                                 ~ ~~~~~~~~~~~~~~~~~~~^~~~
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:1012:16: warning: declaration shadows a field of 'CircularBuffer<T>' [-Wshadow]
+ 1012 |         bool init(T (&storage)[N]) {
+      |                       ^
+/Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/deps/Lilu.kext/Contents/Resources/Headers/kern_util.hpp:961:5: note: previous declaration is here
+  961 |         T *storage {nullptr};
+      |            ^
+3 warnings generated.
+built /Users/kxt/Documents/gen5_igpu_driver/vendor/iris-xe/build/NootedGreen.kext

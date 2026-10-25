@@ -1,0 +1,1 @@
+PASS: two-component installation and partial-failure rollback, temporary bundles only; no live EFI/system writes.

@@ -1,0 +1,189 @@
++-o AppleHDAEngineOutput@1F,3,0,1,1  <class AppleHDAEngineOutput, id 0x1000006d5, registered, matched, active, busy 0 (5071 ms), retain 28>
+  | {
+  |   "IOAudioEngineGlobalUniqueID" = "AppleHDAEngineOutput:1F,3,0,1,1:0"
+  |   "IOAudioEngineGlobalUniqueIDLegacy" = "AppleHDAEngineOutput:0"
+  |   "IOAudioEngineNumActiveUserClients" = 0
+  |   "IOAudioEngineInputSampleOffset" = 1
+  |   "IOGeneralInterest" = "IOCommand is not serializable"
+  |   "IOAudioEngineState" = 0
+  |   "IOAudioEngineInputSampleLatency" = 0
+  |   "IOAudioEngineDescription" = 
+  |   "IOAudioEngineClientDescription" = {"kind"=0}
+  |   "IOAudioDeviceCanBeDefaults" = 6
+  |   "IOAudioEngineDisableClockBoundsCheck" = Yes
+  |   "IOAudioEngineNumSampleFramesPerBuffer" = 49152
+  |   "SupportAudioAUUC" = 1
+  |   "IOAudioEngineClockDomain" = 7567731
+  |   "SimpleHDAHALAvailable" = No
+  |   "IOAudioEngineSampleOffset" = 96
+  |   "IOAudioEngineFlavor" = 1
+  |   "IOAudioEngineOutputSampleLatency" = 16
+  |   "IOAudioSampleRate" = {"IOAudioSampleRateWholeNumber"=48000,"IOAudioSampleRateFraction"=0}
+  | }
+  | 
+  +-o IOAudioToggleControl  <class IOAudioToggleControl, id 0x1000006d4, !registered, !matched, active, busy 0, retain 8>
+  |   {
+  |     "IOAudioControlType" = 1953458028
+  |     "IOAudioControlChannelNumber" = 0
+  |     "IOAudioControlChannelID" = 0
+  |     "IOAudioControlUsage" = 1768845428
+  |     "IOAudioControlChannelName" = "All Channels"
+  |     "IOAudioControlValue" = 1
+  |     "IOAudioControlID" = 1769173099
+  |     "IOAudioControlSubType" = 1685024378
+  |   }
+  |   
+  +-o AppleHDAStream  <class AppleHDAStream, id 0x1000006d6, registered, matched, active, busy 0 (5071 ms), retain 8>
+  |   {
+  |     "IOAudioStreamAvailableFormats" = ({"IOAudioStreamMaximumSampleRate"={"IOAudioSampleRateWholeNumber"=48000,"IOAudioSampleRateFraction"=0},"IOAudioStreamAlignment"=0,"IOAudioStreamNumericRepresentation"=1718382452,"IOAudioStreamIsMixable"=1,"IOAudioStreamFormatFlags"=0,"IOAudioStreamByteOrder"=1,"IOAudioStreamBitDepth"=32,"IOAudioStreamSampleFormat"=1819304813,"IOAudioStreamDriverTag"=0,"IOAudioStreamNumChannels"=10,"IOAudioStreamBytesPerPacket"=40,"IOAudioStreamBitWidth"=32,"IOAudioStreamFramesPerPacket"=1,"IOAudioStreamMinimumSampleRate"={"IOAudioSampleRateWholeNumber"=48000,"IOAudioSampleRateFraction"=0}},{"IOAudioStreamMaximumSampleRate"={"IOAudioSampleRateWholeNumber"=48000,"IOAudioSampleRateFraction"=0},"IOAudioStreamAlignment"=0,"IOAudioStreamNumericRepresentation"=1718382452,"IOAudioStreamIsMixable"=1,"IOAudioStreamFormatFlags"=0,"IOAudioStreamByteOrder"=1,"IOAudioStreamBitDepth"=32,"IOAudioStreamSampleFormat"=1819304813,"IOAudioStreamDriverTag"=0,"IOAudioStreamNumChannels"=2,"IOAudioStreamBytesPerPacket"=8,"IOAudioStreamBitWidth"=32,"IOAudioStreamFramesPerPacket"=1,"IOAudioStreamMinimumSampleRate"={"IOAudioSampleRateWholeNumber"=48000,"IOAudioSampleRateFraction"=0}},{"IOAudioStreamMaximumSampleRate"={"IOAudioSampleRateWholeNumber"=48000,"IOAudioSampleRateFraction"=0},"IOAudioStreamAlignment"=0,"IOAudioStreamNumericRepresentation"=1718382452,"IOAudioStreamIsMixable"=1,"IOAudioStreamFormatFlags"=0,"IOAudioStreamByteOrder"=1,"IOAudioStreamBitDepth"=32,"IOAudioStreamSampleFormat"=1819304813,"IOAudioStreamDriverTag"=0,"IOAudioStreamNumChannels"=1,"IOAudioStreamBytesPerPacket"=4,"IOAudioStreamBitWidth"=32,"IOAudioStreamFramesPerPacket"=1,"IOAudioStreamMinimumSampleRate"={"IOAudioSampleRateWholeNumber"=48000,"IOAudioSampleRateFraction"=0}})
+  |     "IOAudioStreamTap" = 1
+  |     "IOAudioStreamDirection" = 1
+  |     "IOAudioStreamID" = 1
+  |     "IOAudioStreamStartingChannelID" = 1
+  |     "IOAudioStreamTerminalType" = 512
+  |     "IOAudioStreamFormat" = {"IOAudioStreamSampleFormat"=1819304813,"IOAudioStreamIsMixable"=1,"IOAudioStreamNumChannels"=1,"IOAudioStreamNumericRepresentation"=1718382452,"IOAudioStreamBitWidth"=32,"IOAudioStreamDriverTag"=0,"IOAudioStreamAlignment"=0,"IOAudioStreamBitDepth"=32,"IOAudioStreamByteOrder"=1}
+  |     "IOAudioStreamAvailable" = 0
+  |     "IOAudioStreamNumClients" = 0
+  |     "IOAudioStreamStartingChannelNumber" = 0
+  |   }
+  |   
+  +-o IOAudioToggleControl  <class IOAudioToggleControl, id 0x1000006d7, !registered, !matched, active, busy 0, retain 8>
+  |   {
+  |     "IOAudioControlType" = 1953458028
+  |     "IOAudioControlChannelNumber" = 0
+  |     "IOAudioControlChannelID" = 0
+  |     "IOAudioControlUsage" = 1869968496
+  |     "IOAudioControlChannelName" = "All Channels"
+  |     "IOAudioControlValue" = 0
+  |     "IOAudioControlID" = 0
+  |     "IOAudioControlSubType" = 1702259059
+  |   }
+  |   
+  +-o AppleHDAStream  <class AppleHDAStream, id 0x1000006d8, registered, matched, active, busy 0 (5071 ms), retain 8>
+  |   {
+  |     "IOAudioStreamAvailableFormats" = ({"IOAudioStreamMaximumSampleRate"={"IOAudioSampleRateWholeNumber"=48000,"IOAudioSampleRateFraction"=0},"IOAudioStreamAlignment"=0,"IOAudioStreamNumericRepresentation"=1936289396,"IOAudioStreamIsMixable"=1,"IOAudioStreamFormatFlags"=0,"IOAudioStreamByteOrder"=1,"IOAudioStreamBitDepth"=16,"IOAudioStreamSampleFormat"=1819304813,"IOAudioStreamDriverTag"=0,"IOAudioStreamNumChannels"=2,"IOAudioStreamBytesPerPacket"=4,"IOAudioStreamBitWidth"=16,"IOAudioStreamFramesPerPacket"=1,"IOAudioStreamMinimumSampleRate"={"IOAudioSampleRateWholeNumber"=48000,"IOAudioSampleRateFraction"=0}},{"IOAudioStreamMaximumSampleRate"={"IOAudioSampleRateWholeNumber"=48000,"IOAudioSampleRateFraction"=0},"IOAudioStreamAlignment"=0,"IOAudioStreamNumericRepresentation"=1936289396,"IOAudioStreamIsMixable"=1,"IOAudioStreamFormatFlags"=0,"IOAudioStreamByteOrder"=1,"IOAudioStreamBitDepth"=20,"IOAudioStreamSampleFormat"=1819304813,"IOAudioStreamDriverTag"=0,"IOAudioStreamNumChannels"=2,"IOAudioStreamBytesPerPacket"=8,"IOAudioStreamBitWidth"=32,"IOAudioStreamFramesPerPacket"=1,"IOAudioStreamMinimumSampleRate"={"IOAudioSampleRateWholeNumber"=48000,"IOAudioSampleRateFraction"=0}},{"IOAudioStreamMaximumSampleRate"={"IOAudioSampleRateWholeNumber"=48000,"IOAudioSampleRateFraction"=0},"IOAudioStreamAlignment"=0,"IOAudioStreamNumericRepresentation"=1936289396,"IOAudioStreamIsMixable"=1,"IOAudioStreamFormatFlags"=0,"IOAudioStreamByteOrder"=1,"IOAudioStreamBitDepth"=24,"IOAudioStreamSampleFormat"=1819304813,"IOAudioStreamDriverTag"=0,"IOAudioStreamNumChannels"=2,"IOAudioStreamBytesPerPacket"=8,"IOAudioStreamBitWidth"=32,"IOAudioStreamFramesPerPacket"=1,"IOAudioStreamMinimumSampleRate"={"IOAudioSampleRateWholeNumber"=48000,"IOAudioSampleRateFraction"=0}})
+  |     "IOAudioStreamDirection" = 0
+  |     "IOAudioStreamID" = 0
+  |     "IOAudioStreamStartingChannelID" = 1
+  |     "IOAudioStreamTerminalType" = 769
+  |     "IOAudioStreamFormat" = {"IOAudioStreamAlignment"=0,"IOAudioStreamNumericRepresentation"=1936289396,"IOAudioStreamIsMixable"=1,"IOAudioStreamFormatFlags"=0,"IOAudioStreamByteOrder"=1,"IOAudioStreamBitDepth"=24,"IOAudioStreamSampleFormat"=1819304813,"IOAudioStreamDriverTag"=0,"IOAudioStreamNumChannels"=2,"IOAudioStreamBytesPerPacket"=8,"IOAudioStreamBitWidth"=32,"IOAudioStreamFramesPerPacket"=1}
+  |     "IOAudioStreamAvailable" = 1
+  |     "IOAudioStreamNumClients" = 0
+  |     "IOAudioStreamStartingChannelNumber" = 1
+  |   }
+  |   
+  +-o IOAudioSelectorControl  <class IOAudioSelectorControl, id 0x1000006d9, !registered, !matched, active, busy 0, retain 8>
+  |   {
+  |     "IOAudioControlType" = 1936483188
+  |     "IOAudioSelectorControlAvailableSelections" = ({"IOAudioSelectorControlSelectionValue"=1769173099,"IOAudioSelectorControlSelectionDescriptionKey"=})
+  |     "SimpleHDALocalizeSelections" = Yes
+  |     "IOAudioControlChannelNumber" = 0
+  |     "IOAudioControlChannelID" = 0
+  |     "IOAudioControlUsage" = 1869968496
+  |     "IOAudioControlValue" = 1769173099
+  |     "IOAudioControlID" = 0
+  |     "IOAudioControlSubType" = 1869968496
+  |   }
+  |   
+  +-o IOAudioLevelControl  <class IOAudioLevelControl, id 0x1000006da, !registered, !matched, active, busy 0, retain 8>
+  |   {
+  |     "IOAudioLevelControlMinValue" = 0
+  |     "IOAudioLevelControlMinDB" = 18446744073705275392
+  |     "IOAudioControlChannelNumber" = 2
+  |     "IOAudioLevelControlMaxValue" = 87
+  |     "IOAudioControlID" = 2
+  |     "IOAudioControlValue" = 70
+  |     "IOAudioLevelControlMaxDB" = 0
+  |     "IOAudioControlType" = 1818588780
+  |     "IOAudioControlChannelID" = 2
+  |     "IOAudioControlSubType" = 1986817381
+  |     "IOAudioControlChannelName" = "Right"
+  |     "IOAudioControlUsage" = 1869968496
+  |   }
+  |   
+  +-o IOAudioLevelControl  <class IOAudioLevelControl, id 0x1000006db, !registered, !matched, active, busy 0, retain 8>
+  |   {
+  |     "IOAudioLevelControlMinValue" = 0
+  |     "IOAudioLevelControlMinDB" = 18446744073705275392
+  |     "IOAudioControlChannelNumber" = 1
+  |     "IOAudioLevelControlMaxValue" = 87
+  |     "IOAudioControlID" = 0
+  |     "IOAudioControlValue" = 70
+  |     "IOAudioLevelControlMaxDB" = 0
+  |     "IOAudioControlType" = 1818588780
+  |     "IOAudioControlChannelID" = 1
+  |     "IOAudioControlSubType" = 1986817381
+  |     "IOAudioControlChannelName" = "Left"
+  |     "IOAudioControlUsage" = 1869968496
+  |   }
+  |   
+  +-o IOAudioToggleControl  <class IOAudioToggleControl, id 0x1000006dc, !registered, !matched, active, busy 0, retain 8>
+  |   {
+  |     "IOAudioControlType" = 1953458028
+  |     "IOAudioControlChannelNumber" = 2
+  |     "IOAudioControlChannelID" = 2
+  |     "IOAudioControlUsage" = 1869968496
+  |     "IOAudioControlChannelName" = "Right"
+  |     "IOAudioControlValue" = 0
+  |     "IOAudioControlID" = 3
+  |     "IOAudioControlSubType" = 1836414053
+  |   }
+  |   
+  +-o IOAudioToggleControl  <class IOAudioToggleControl, id 0x1000006dd, !registered, !matched, active, busy 0, retain 8>
+  |   {
+  |     "IOAudioControlType" = 1953458028
+  |     "IOAudioControlChannelNumber" = 1
+  |     "IOAudioControlChannelID" = 1
+  |     "IOAudioControlUsage" = 1869968496
+  |     "IOAudioControlChannelName" = "Left"
+  |     "IOAudioControlValue" = 0
+  |     "IOAudioControlID" = 1
+  |     "IOAudioControlSubType" = 1836414053
+  |   }
+  |   
+  +-o IOAudioToggleControl  <class IOAudioToggleControl, id 0x1000006de, !registered, !matched, active, busy 0, retain 8>
+  |   {
+  |     "IOAudioControlType" = 1953458028
+  |     "IOAudioControlChannelNumber" = 0
+  |     "IOAudioControlChannelID" = 0
+  |     "IOAudioControlUsage" = 1869968496
+  |     "IOAudioControlChannelName" = "All Channels"
+  |     "IOAudioControlValue" = 0
+  |     "IOAudioControlID" = 4
+  |     "IOAudioControlSubType" = 1836414053
+  |   }
+  |   
+  +-o IOAudioToggleControl  <class IOAudioToggleControl, id 0x1000006df, !registered, !matched, active, busy 0, retain 8>
+  |   {
+  |     "IOAudioControlType" = 1953458028
+  |     "IOAudioControlChannelNumber" = 0
+  |     "IOAudioControlChannelID" = 0
+  |     "IOAudioControlUsage" = 1869968496
+  |     "IOAudioControlChannelName" = "All Channels"
+  |     "IOAudioControlValue" = 0
+  |     "IOAudioControlID" = 0
+  |     "IOAudioControlSubType" = 1784767339
+  |     "IOAudioControlValueIsReadOnly" = Yes
+  |   }
+  |   
+  +-o IOAudioEngineUserClient  <class IOAudioEngineUserClient, id 0x1000006ea, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOAudioEngineUserClientActive" = 0
+  |     "IOUserClientCreator" = "pid 231, coreaudiod"
+  |     "IOUserClientDefaultLocking" = Yes
+  |   }
+  |   
+  +-o AudioAUUCDriver  <class AudioAUUCDriver, id 0x1000006ec, registered, matched, active, busy 0 (1 ms), retain 5>
+      {
+        "IOProbeScore" = 0
+        "CFBundleIdentifier" = "com.apple.driver.AudioAUUC"
+        "IOMatchCategory" = "AudioAUUCDriver"
+        "IOClass" = "AudioAUUCDriver"
+        "IOPersonalityPublisher" = "com.apple.driver.AudioAUUC"
+        "IOProviderClass" = "IOAudioEngine"
+        "CFBundleIdentifierKernel" = "com.apple.driver.AudioAUUC"
+        "IOUserClientClass" = "AudioAUUC"
+        "IOResourceMatch" = "IOKit"
+      }
+      
+

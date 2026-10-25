@@ -1,0 +1,55 @@
++-o VoodooI2CPrecisionTouchpadHIDEventDriver  <class VoodooI2CPrecisionTouchpadHIDEventDriver, id 0x100000474, registered, matched, active, busy 0 (210 ms), retain 25>
+  | {
+  |   "IOClass" = "VoodooI2CPrecisionTouchpadHIDEventDriver"
+  |   "Transport" = "I2C"
+  |   "Digitizer" = {"Transducer Count"=5,"Input Mode Element"={"VariableSize"=0,"UnitExponent"=12,"IsRelative"=No,"UsagePage"=13,"Max"=10,"IsArray"=No,"Type"=257,"Size"=8,"Min"=0,"Flags"=2,"ReportID"=4,"Usage"=82,"ReportCount"=1,"Unit"=4097,"HasNullState"=No,"ReportSize"=8,"HasPreferredState"=Yes,"IsNonLinear"=No,"ScaledMin"=0,"IsWrapping"=No,"ScaledMax"=65535,"ElementCookie"=85},"Primary Button Element"={"VariableSize"=0,"UnitExponent"=12,"IsRelative"=No,"UsagePage"=9,"Max"=1,"IsArray"=No,"Type"=2,"Size"=1,"Min"=0,"Flags"=2,"ReportID"=3,"Usage"=1,"ReportCount"=1,"Unit"=4097,"HasNullState"=No,"ReportSize"=1,"HasPreferredState"=Yes,"IsNonLinear"=No,"ScaledMin"=0,"IsWrapping"=No,"ScaledMax"=1,"ElementCookie"=55},"Contact Count Maximum Element"={"VariableSize"=0,"UnitExponent"=12,"IsRelative"=No,"UsagePage"=13,"Max"=15,"IsArray"=No,"Type"=257,"Size"=4,"Min"=0,"Flags"=2,"ReportID"=8,"Usage"=85,"ReportCount"=1,"Unit"=4097,"HasNullState"=No,"ReportSize"=4,"HasPreferredState"=Yes,"IsNonLinear"=No,"ScaledMin"=0,"IsWrapping"=No,"ScaledMax"=65535,"ElementCookie"=82},"Contact Count Element"={"VariableSize"=0,"UnitExponent"=12,"IsRelative"=No,"UsagePage"=13,"Max"=127,"IsArray"=No,"Type"=1,"Size"=8,"Min"=0,"Flags"=2,"ReportID"=3,"Usage"=84,"ReportCount"=1,"Unit"=4097,"HasNullState"=No,"ReportSize"=8,"HasPreferredState"=Yes,"IsNonLinear"=No,"ScaledMin"=0,"IsWrapping"=No,"ScaledMax"=65535,"ElementCookie"=77}}
+  |   "IOMatchedAtBoot" = Yes
+  |   "IOPowerManagement" = {"ChildrenPowerState"=1,"CurrentPowerState"=1,"CapabilityFlags"=2,"MaxPowerState"=1}
+  |   "IOProviderClass" = "IOHIDInterface"
+  |   "Manufacturer" = "Apple"
+  |   "DeviceUsagePairs" = ({"DeviceUsagePage"=1,"DeviceUsage"=2},{"DeviceUsagePage"=1,"DeviceUsage"=1},{"DeviceUsagePage"=13,"DeviceUsage"=5},{"DeviceUsagePage"=13,"DeviceUsage"=14},{"DeviceUsagePage"=13,"DeviceUsage"=34},{"DeviceUsagePage"=65280,"DeviceUsage"=1})
+  |   "IOProbeScore" = 1500
+  |   "VendorIDSource" = 0
+  |   "IOUserClientClass" = "IOHIDEventServiceUserClient"
+  |   "HIDServiceSupport" = Yes
+  |   "IOCFPlugInTypes" = {"7DDEECA8-A7B4-11DA-8A0E-0014519758EF"="IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin","FA12FA38-6F1A-11D4-BA0C-0005028F18D5"="IOHIDFamily.kext/Contents/PlugIns/IOHIDLib.plugin"}
+  |   "CountryCode" = 0
+  |   "CFBundleIdentifierKernel" = "com.alexandred.VoodooI2CHID"
+  |   "VendorID" = 1739
+  |   "VersionNumber" = 4097
+  |   "IOMatchCategory" = "IODefaultMatchCategory"
+  |   "CFBundleIdentifier" = "com.alexandred.VoodooI2CHID"
+  |   "RM,deliverNotifications" = Yes
+  |   "PrimaryUsage" = 2
+  |   "ProcessUSBMouseStopsTrackpad" = No
+  |   "ProcessBluetoothMouseStopsTrackpad" = No
+  |   "LocationID" = 0
+  |   "ProductID" = 52937
+  |   "QuietTimeAfterTyping" = 100
+  |   "ReportInterval" = 8000
+  |   "PrimaryUsagePage" = 1
+  |   "HIDRMDeviceState" = "Unknown"
+  |   "IOGeneralInterest" = "IOCommand is not serializable"
+  |   "HIDEventServiceProperties" = {"HIDMouseKeysOptionToggles"=0,"JitterNoClick"=1,"ActuateDetents"=1,"Dragging"=0,"HIDSlowKeysDelay"=0,"JitterNoMove"=1,"FlipLeftAndRightEdgeGestures"=No,"HIDTrackpadScrollAcceleration"=20480,"HIDInitialKeyRepeat"=500000000,"TrackpadThreeFingerHorizSwipeGesture"=2,"TrackpadThreeFingerDrag"=No,"MTGestureConfiguration"={"Version"=1,"Behaviors"=({"BehaviorID"=5})},"HIDPointerAcceleration"=45056,"UserPreferences"=Yes,"HIDDefaultParameters"=Yes,"HIDMouseKeysOn"=0,"HIDF12EjectDelay"=250,"TrackpadHorizScroll"=1,"TrackpadFourFingerVertSwipeGesture"=2,"TrackpadTwoFingerFromRightEdgeSwipeGesture"=3,"USBMouseStopsTrackpad"=0,"HIDMouseScrollAcceleration"=20480,"TrackpadThreeFingerTapGesture"=2,"MouseOneFingerDoubleTapGesture"=0,"HIDScrollZoomModifierMask"=0,"UniversalControlFilterState"=<0a010002000000000000000000000000000000000000000000000000>,"TrackpadScroll"=Yes,"HIDUseLinearScalingMouseAcceleration"=1,"Trackpad Jitter Milliseconds"=192,"HIDPointerButtonMode"=2,"HIDKeyboardModifierMappingPairs"=(),"LogLevel"=6,"TrackpadFourFingerHorizSwipeGesture"=2,"HIDTrackpadAcceleration"=45056,"DragLock"=0,"DeviceOpenedByEventSystem"=Yes,"TwofingerNoAction"=1,"MouseTwoFingerDoubleTapGesture"=3,"HIDClickTime"=500000000,"HIDMouseAcceleration"=45056,"SecondClickThreshold"=1,"HIDStickyKeysShiftToggles"=0,"TrackpadHandResting"=Yes,"TrackpadFourFingerPinchGesture"=2,"MouseMomentumScroll"=Yes,"TrackpadFiveFingerPinchGesture"=2,"PalmNoAction Permanent"=1,"MouseButtonMode"="OneButton","TrackpadThreeFingerVertSwipeGesture"=2,"OutsidezoneNoAction When Typing"=1,"ForceSuppressed"=No,"TrackpadCornerSecondaryClick"=0,"MouseButtonDivision"=55,"HIDStickyKeysOn"=0,"HIDStickyKeysDisabled"=0,"EjectDelay"=0,"TrackpadPinch"=1,"FirstClickThreshold"=1,"HIDClickSpace"=(0,0),"PalmNoAction When Typing"=1,"MouseVerticalScroll"=Yes,"version"=1,"MouseHorizontalScroll"=Yes,"BatchInterval"=1,"MouseKeysStopsTrackpad"=0,"TrackpadMomentumScroll"=Yes,"MouseTwoFingerHorizSwipeGesture"=2,"HIDKeyRepeat"=83333333,"HIDScrollReset"=Yes,"TrackpadRightClick"=Yes,"TrackpadTwoFingerDoubleTapGesture"=1,"Clicking"=Yes,"TrackpadRotate"=1,"Use Panther Settings for W"=0,"HIDScrollAcceleration"=20480,"HIDFKeyMode"=0}
+  | }
+  | 
+  +-o VoodooI2CMultitouchInterface  <class VoodooI2CMultitouchInterface, id 0x100000477, registered, matched, active, busy 0 (210 ms), retain 9>
+  |   {
+  |     "IOFBTransform" = 0
+  |     "VendorID" = 1739
+  |     "DisplayIntegrated" = No
+  |     "VoodooI2CServices Supported" = Yes
+  |     "ProductID" = 52937
+  |   }
+  |   
+  +-o IOHIDEventServiceUserClient  <class IOHIDEventServiceUserClient, id 0x100000730, !registered, !matched, active, busy 0, retain 6>
+      {
+        "IOUserClientDefaultLockingSetProperties" = Yes
+        "IOUserClientDefaultLocking" = Yes
+        "IOUserClientCreator" = "pid 201, WindowServer"
+        "IOUserClientDefaultLockingSingleThreadExternalMethod" = No
+        "IOUserClientEntitlements" = No
+        "DebugState" = {"EventQueue"={"NoFullMsg"=0,"tail"=0,"NotificationForce"=0,"NotificationCount"=0,"head"=0}}
+      }
+      
+

@@ -1,0 +1,14 @@
+{
+  "efi-sha256.json": {
+    "files_checked": 155,
+    "mismatches": []
+  },
+  "upstream-efi-sha256.json": {
+    "files_checked": 155,
+    "mismatches": []
+  },
+  "payload-sha256.json": {
+    "files_checked": 93,
+    "mismatches": []
+  }
+}

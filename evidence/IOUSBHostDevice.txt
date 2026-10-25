@@ -1,0 +1,175 @@
++-o Goodix USB2.0 MISC@14600000  <class IOUSBHostDevice, id 0x100000522, registered, matched, active, busy 0 (3 ms), retain 19>
+    {
+      "sessionID" = 7651956380
+      "USBSpeed" = 1
+      "UsbLinkSpeed" = 12000000
+      "idProduct" = 26004
+      "iManufacturer" = 1
+      "bDeviceClass" = 239
+      "IOPowerManagement" = {"PowerOverrideOn"=Yes,"DevicePowerState"=2,"CurrentPowerState"=2,"CapabilityFlags"=32768,"MaxPowerState"=2,"DriverPowerState"=0}
+      "bcdDevice" = 256
+      "bMaxPacketSize0" = 64
+      "iProduct" = 2
+      "iSerialNumber" = 3
+      "bNumConfigurations" = 1
+      "UsbDeviceSignature" = <c6279465000155494437424433354442465f585858585f4d4f435f4230ef0000ff0000>
+      "USB Product Name" = "Goodix USB2.0 MISC"
+      "locationID" = 341835776
+      "bDeviceSubClass" = 0
+      "bcdUSB" = 512
+      "kUSBSerialNumberString" = "UID7BD35DBF_XXXX_MOC_B0"
+      "USB Address" = 1
+      "IOCFPlugInTypes" = {"9dc7b780-9ec0-11d4-a54f-000a27052861"="IOUSBHostFamily.kext/Contents/PlugIns/IOUSBLib.bundle"}
+      "kUSBCurrentConfiguration" = 1
+      "bDeviceProtocol" = 0
+      "USBPortType" = 0
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.usb"))
+      "USB Vendor Name" = "Goodix Technology Co., Ltd."
+      "Device Speed" = 1
+      "idVendor" = 10182
+      "kUSBProductString" = "Goodix USB2.0 MISC"
+      "USB Serial Number" = "UID7BD35DBF_XXXX_MOC_B0"
+      "kUSBAddress" = 1
+      "kUSBVendorString" = "Goodix Technology Co., Ltd."
+    }
+    
+
++-o USB_0114@14700000  <class IOUSBHostDevice, id 0x100000524, registered, matched, active, busy 0 (4802 ms), retain 26>
+    {
+      "sessionID" = 7804892956
+      "USBSpeed" = 3
+      "UsbLinkSpeed" = 480000000
+      "idProduct" = 8282
+      "iManufacturer" = 2
+      "bDeviceClass" = 0
+      "IOPowerManagement" = {"PowerOverrideOn"=Yes,"CapabilityFlags"=32768,"MaxPowerState"=2,"DevicePowerState"=2,"DriverPowerState"=0,"ChildrenPowerState"=2,"CurrentPowerState"=2}
+      "bcdDevice" = 512
+      "bMaxPacketSize0" = 64
+      "iProduct" = 3
+      "iSerialNumber" = 4
+      "bNumConfigurations" = 1
+      "UsbDeviceSignature" = <a9245a2000023630333135303237000000080650>
+      "USB Product Name" = "USB_0114"
+      "locationID" = 342884352
+      "bDeviceSubClass" = 0
+      "bcdUSB" = 528
+      "kUSBSerialNumberString" = "60315027"
+      "USB Address" = 2
+      "IOCFPlugInTypes" = {"9dc7b780-9ec0-11d4-a54f-000a27052861"="IOUSBHostFamily.kext/Contents/PlugIns/IOUSBLib.bundle"}
+      "UsbPowerSinkAllocation" = 200
+      "bDeviceProtocol" = 0
+      "USBPortType" = 0
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.usb"))
+      "kUSBCurrentConfiguration" = 1
+      "USB Vendor Name" = "ASolid"
+      "Device Speed" = 2
+      "idVendor" = 9385
+      "kUSBProductString" = "USB_0114"
+      "USB Serial Number" = "60315027"
+      "kUSBAddress" = 2
+      "kUSBVendorString" = "ASolid"
+    }
+    
+
++-o Integrated Camera@14800000  <class IOUSBHostDevice, id 0x100000526, registered, matched, active, busy 0 (4698 ms), retain 34>
+    {
+      "sessionID" = 7797367613
+      "USBSpeed" = 3
+      "UsbLinkSpeed" = 480000000
+      "idProduct" = 6162
+      "iManufacturer" = 3
+      "bDeviceClass" = 239
+      "IOPowerManagement" = {"PowerOverrideOn"=Yes,"DevicePowerState"=2,"CurrentPowerState"=2,"CapabilityFlags"=32768,"MaxPowerState"=2,"DriverPowerState"=0}
+      "bcdDevice" = 4128
+      "bMaxPacketSize0" = 64
+      "iProduct" = 1
+      "iSerialNumber" = 2
+      "bNumConfigurations" = 1
+      "UsbDeviceSignature" = <4f171218201030303031ef02010e01000e02000e01010e0201fe0101>
+      "USB Product Name" = "Integrated Camera"
+      "locationID" = 343932928
+      "bDeviceSubClass" = 2
+      "bcdUSB" = 513
+      "kUSBSerialNumberString" = "0001"
+      "USB Address" = 3
+      "IOCFPlugInTypes" = {"9dc7b780-9ec0-11d4-a54f-000a27052861"="IOUSBHostFamily.kext/Contents/PlugIns/IOUSBLib.bundle"}
+      "UsbPowerSinkAllocation" = 500
+      "bDeviceProtocol" = 1
+      "USBPortType" = 0
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.usb"))
+      "kUSBCurrentConfiguration" = 1
+      "Device Speed" = 2
+      "idVendor" = 5967
+      "kUSBProductString" = "Integrated Camera"
+      "USB Serial Number" = "0001"
+      "kUSBAddress" = 3
+    }
+    
+
++-o Wireless Device@14900000  <class IOUSBHostDevice, id 0x100000541, registered, matched, active, busy 0 (7699 ms), retain 32>
+    {
+      "sessionID" = 7891096351
+      "USBSpeed" = 1
+      "UsbLinkSpeed" = 12000000
+      "idProduct" = 12320
+      "iManufacturer" = 1
+      "bDeviceClass" = 0
+      "IOPowerManagement" = {"PowerOverrideOn"=Yes,"CapabilityFlags"=32768,"MaxPowerState"=2,"DevicePowerState"=2,"DriverPowerState"=0,"ChildrenPowerState"=2,"CurrentPowerState"=2}
+      "bcdDevice" = 2
+      "bMaxPacketSize0" = 64
+      "iProduct" = 2
+      "iSerialNumber" = 0
+      "bNumConfigurations" = 1
+      "UsbDeviceSignature" = <513120300200000000030101030102>
+      "USB Product Name" = "Wireless Device"
+      "locationID" = 344981504
+      "bDeviceSubClass" = 0
+      "bcdUSB" = 512
+      "USB Address" = 4
+      "kUSBCurrentConfiguration" = 1
+      "IOCFPlugInTypes" = {"9dc7b780-9ec0-11d4-a54f-000a27052861"="IOUSBHostFamily.kext/Contents/PlugIns/IOUSBLib.bundle"}
+      "bDeviceProtocol" = 0
+      "USBPortType" = 0
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.usb"))
+      "USB Vendor Name" = "YICHIP"
+      "Device Speed" = 1
+      "idVendor" = 12625
+      "kUSBProductString" = "Wireless Device"
+      "kUSBAddress" = 4
+      "kUSBVendorString" = "YICHIP"
+    }
+    
+
++-o Bluetooth USB Host Controller@14a00000  <class IOUSBHostDevice, id 0x10000054e, registered, matched, active, busy 0 (8350 ms), retain 34>
+    {
+      "sessionID" = 7939738090
+      "USBSpeed" = 1
+      "UsbLinkSpeed" = 12000000
+      "idProduct" = 51
+      "iManufacturer" = 0
+      "bDeviceClass" = 224
+      "IOPowerManagement" = {"PowerOverrideOn"=Yes,"CapabilityFlags"=32768,"MaxPowerState"=2,"DevicePowerState"=2,"DriverPowerState"=0,"ChildrenPowerState"=2,"CurrentPowerState"=2}
+      "bcdDevice" = 0
+      "bMaxPacketSize0" = 64
+      "iProduct" = 0
+      "iSerialNumber" = 0
+      "bNumConfigurations" = 1
+      "UsbDeviceSignature" = <878033000000e00101e00101>
+      "USB Address" = 5
+      "locationID" = 346030080
+      "bDeviceSubClass" = 1
+      "bcdUSB" = 513
+      "UsbExclusiveOwner" = "pid 161, bluetoothd"
+      "kUSBCurrentConfiguration" = 1
+      "IOCFPlugInTypes" = {"9dc7b780-9ec0-11d4-a54f-000a27052861"="IOUSBHostFamily.kext/Contents/PlugIns/IOUSBLib.bundle"}
+      "bDeviceProtocol" = 1
+      "USBPortType" = 0
+      "IOServiceDEXTEntitlements" = (("com.apple.developer.driverkit.transport.usb"))
+      "FirmwareLoaded" = Yes
+      "Device Speed" = 1
+      "idVendor" = 32903
+      "IOGeneralInterest" = "IOCommand is not serializable"
+      "kUSBAddress" = 5
+    }
+    
+

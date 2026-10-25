@@ -1,0 +1,33 @@
++-o AppleHDAController@1F,3  <class AppleHDAController, id 0x10000065a, registered, matched, active, busy 0 (5215 ms), retain 9>
+  | {
+  |   "IOClass" = "AppleHDAController"
+  |   "HighFIFOLimitSupport" = ()
+  |   "RequireMaxBusStall" = ({"Layouts"=(),"MaxBusStall"=15000})
+  |   "IOMatchedAtBoot" = Yes
+  |   "HDAControllerIndex" = 0
+  |   "IOPowerManagement" = {"ChildrenPowerState"=2,"DevicePowerState"=2,"CurrentPowerState"=2,"CapabilityFlags"=32768,"MaxPowerState"=2}
+  |   "IOProviderClass" = "IOPCIDevice"
+  |   "InputLowPower" = No
+  |   "status-mask" = 1
+  |   "IOProbeScore" = 1
+  |   "IOPCIUseDeviceMapper" = Yes
+  |   "CodecList" = ({"RevisionID"=1048578,"VendorProductID"=283902599})
+  |   "CFBundleIdentifierKernel" = "com.apple.driver.AppleHDAController"
+  |   "IOMatchCategory" = "IODefaultMatchCategory"
+  |   "CFBundleIdentifier" = "com.apple.driver.AppleHDAController"
+  |   "DPAlwaysDisplayRouting" = (3,33,35,88)
+  |   "DPAudioDeviceExclusion" = ({"ManufacturerID"=1552,"ProductID"=10130})
+  |   "OutputLowPower" = Yes
+  |   "CodecAddressFilterArray" = ({"CodecAddressMask"=<01000000>,"PCIVendorDeviceID"=282987200,"LayoutID"=16392},{"CodecAddressMask"=<01000000>,"PCIVendorDeviceID"=282987200,"LayoutID"=0},{"CodecAddressMask"=<09000000>,"PCIVendorDeviceID"=282987200,"LayoutID"=65},{"CodecAddressMask"=<01000000>,"PCIVendorDeviceID"=282987200,"LayoutID"=73})
+  |   "HwFactoryPrefixTranslation" = ({"LayoutID"=78,"SourceDID"=43584,"StandInDID"=43568,"VID"=4098},{"LayoutID"=78,"SourceDID"=43576,"StandInDID"=43568,"VID"=4098},{"LayoutID"=79,"SourceDID"=43584,"StandInDID"=43568,"VID"=4098},{"LayoutID"=79,"SourceDID"=43576,"StandInDID"=43568,"VID"=4098})
+  |   "IOPCIClassMatch" = "0x04010000&0xFFFD0000"
+  | }
+  | 
+  +-o IOHDACodecDevice@1F,3,0  <class IOHDACodecDevice, id 0x100000694, registered, matched, active, busy 0 (5215 ms), retain 7>
+      {
+        "IOHDACodecVendorID" = 283902599
+        "IOHDACodecRevisionID" = 1048578
+        "IOHDACodecAddress" = 0
+      }
+      
+

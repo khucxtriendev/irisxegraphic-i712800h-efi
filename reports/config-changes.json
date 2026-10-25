@@ -1,0 +1,27 @@
+{
+  "config-baseline.plist": [],
+  "config-thinkpad.plist": [
+    "/DeviceProperties/Add/PciRoot(0x0)/Pci(0x1F,0x3)",
+    "/Kernel/Add",
+    "/NVRAM/Add/4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102/revcpuname",
+    "/NVRAM/Add/7C436110-AB2A-4BBB-A880-FE41995C9F82/boot-args"
+  ],
+  "config-sensors-trial.plist": [
+    "/DeviceProperties/Add/PciRoot(0x0)/Pci(0x1F,0x3)",
+    "/Kernel/Add",
+    "/NVRAM/Add/4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102/revcpuname",
+    "/NVRAM/Add/7C436110-AB2A-4BBB-A880-FE41995C9F82/boot-args"
+  ],
+  "config-decode-trial.plist": [
+    "/DeviceProperties/Add/PciRoot(0x0)/Pci(0x1F,0x3)",
+    "/Kernel/Add",
+    "/NVRAM/Add/4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102/revcpuname",
+    "/NVRAM/Add/7C436110-AB2A-4BBB-A880-FE41995C9F82/boot-args"
+  ],
+  "config-install-trial.plist": [
+    "/DeviceProperties/Add/PciRoot(0x0)/Pci(0x2,0x0)/AAPL,ig-platform-id",
+    "/DeviceProperties/Add/PciRoot(0x0)/Pci(0x2,0x0)/device-id",
+    "/Kernel/Add",
+    "/NVRAM/Add/7C436110-AB2A-4BBB-A880-FE41995C9F82/boot-args"
+  ]
+}

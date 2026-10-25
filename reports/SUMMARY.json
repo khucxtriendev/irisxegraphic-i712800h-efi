@@ -1,0 +1,17 @@
+{
+  "efi_structure": "passed",
+  "ocvalidate": "not available; not run",
+  "command_line_tools": "built with warnings as errors",
+  "cpuid_brand": "12th Gen Intel(R) Core(TM) i7-12800H",
+  "logical_cpus_observed": 20,
+  "ram_bytes_observed": 34359738368,
+  "upstream_nootedgreen_build": "passed",
+  "hookcase_build": "passed",
+  "metal_userland_and_shader_build": "passed",
+  "va_decode_build": "passed; input hash and byte checks passed",
+  "five_bundle_deep_signature_checks": "passed",
+  "windowserver_and_metal_runtime": "not accessible from this session",
+  "new_efi_boot_test": "not performed",
+  "full_feature_parity": "not verified",
+  "system_deployment": "not performed"
+}

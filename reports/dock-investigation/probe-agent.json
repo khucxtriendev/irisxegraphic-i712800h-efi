@@ -1,0 +1,7 @@
+{
+  "purpose" : "Isolated alpha sampling and CoreAnimation number rendering; not a driver installation",
+  "device" : "none accessible",
+  "next_action" : "Run scripts\/probe-dock.command in your ordinary Terminal login session to access the GPU.",
+  "pid" : 3408,
+  "date" : "2026-10-25 10:28:24 +0000"
+}

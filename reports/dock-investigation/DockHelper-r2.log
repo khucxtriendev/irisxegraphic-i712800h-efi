@@ -1,0 +1,66 @@
+1792923634 sem compressão: dev=1 ios=1 heap=1 heapoff=1 heapsize=1
+1792923634 registrador de pipelines: 1 1 1 1 1
+1792923634 nocopyfix: 1 1
+1792923634 fillfix: fill=1 fill4=1 cópia2D->3D=1
+1792923634 12 métodos adicionados, caps/dynlib/archive desligados (índice inválido=0, driver base=0x127679000)
+1792923634 layout: RPDInternal size=0x338 _private@0x30; attInternal size=0x10 _private@0x8
+1792923634 layout: sonda sampleCount@0xb8=4 vertexDescriptor@0x110 ok -> conversão ligada
+1792923634 carregada em DockHelper[2114]: entries=1 pd=1 rhm=1 layout=1 lab=0
+1792923635 TEX via=iosurface fmt=115 662x582 mips=1 usage=0x5 storage=1 type=2 ios=0x52476841 plano=0 -> ok (n=1)
+1792923635 TEX via=dev fmt=25 672x608 mips=1 usage=0x5 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=1)
+1792923635 TEX via=dev fmt=65 672x608 mips=1 usage=0x4 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=1)
+1792923635 TEX via=heap fmt=253 672x608 mips=1 usage=0x4 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=1)
+1792923635 STENCIL64K 672x608 fmt=253 estava em 0x4072a000 (não alinhado a 64 KB) -> heap próprio em 0x407d0000 (n=1)
+1792923635 TEX via=dev fmt=253 672x608 mips=1 usage=0x4 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=1)
+1792923635 hashMap[0] nó=0x7fa193ff9f30 k0=3 k1=3 valor=0x7fa193fa72c0 isa=11dfff84e2076f1
+1792923635 hashMap[1] nó=0x7fa193ffa2d0 k0=6 k1=6 valor=0x7fa193ff7210 isa=11dfff84e2076f1
+1792923635 hashMap[2] nó=0x7fa193ffa230 k0=1 k1=1 valor=0x7fa193ff2f50 isa=11dfff84e2076f1
+1792923635 hashMap[3] nó=0x7fa193ffa1c0 k0=0 k1=0 valor=0x7fa193ff2de0 isa=11dfff84e2076f1
+1792923635 hashMap[4] nó=0x7fa193ffa150 k0=2 k1=2 valor=0x7fa193ff7fa0 isa=11dfff84e2076f1
+1792923635 hashMap[0] nó=0x7fa194f4ce20 k0=3 k1=3 valor=0x7fa194f4ca30 isa=11dfff84e2076f1
+1792923635 hashMap[1] nó=0x7fa194f4e890 k0=6 k1=6 valor=0x7fa194f44f60 isa=11dfff84e2076f1
+1792923635 hashMap[2] nó=0x7fa194f4b9d0 k0=1 k1=1 valor=0x7fa194f48500 isa=11dfff84e2076f1
+1792923635 hashMap[3] nó=0x7fa194f4bc00 k0=0 k1=0 valor=0x7fa194f44780 isa=11dfff84e2076f1
+1792923635 hashMap[4] nó=0x7fa194f4dc30 k0=2 k1=2 valor=0x7fa194f484d0 isa=11dfff84e2076f1
+1792923635 _descriptorPrivate(pipeline) convertido p/ layout antigo
+1792923635 _descriptorPrivate(attachment) convertido p/ bits antigos
+1792923635 PIPE sync-opt ok vf=plane__vertex ff=fca15jbefia3 cor0=25 blend=0 ok=1 falhas=0 
+1792923635 hashMap[0] nó=0x7fa194a3ea30 k0=3 k1=3 valor=0x7fa194a28b80 isa=11dfff84e2076f1
+1792923635 hashMap[1] nó=0x7fa194a3ed50 k0=6 k1=6 valor=0x7fa194a165e0 isa=11dfff84e2076f1
+1792923635 hashMap[2] nó=0x7fa194a3ecb0 k0=1 k1=1 valor=0x7fa194a14b40 isa=11dfff84e2076f1
+1792923635 hashMap[3] nó=0x7fa194a3ea50 k0=0 k1=0 valor=0x7fa194a1b8e0 isa=11dfff84e2076f1
+1792923635 hashMap[4] nó=0x7fa194a3e9c0 k0=2 k1=2 valor=0x7fa194a3c8b0 isa=11dfff84e2076f1
+1792923635 hashMap[0] nó=0x7fa193ff9160 k0=3 k1=3 valor=0x7fa193ffa270 isa=11dfff84e2076f1
+1792923635 hashMap[1] nó=0x7fa193ffa350 k0=6 k1=6 valor=0x7fa193fd0540 isa=11dfff84e2076f1
+1792923635 hashMap[2] nó=0x7fa193ff9f30 k0=1 k1=1 valor=0x7fa193f11a60 isa=11dfff84e2076f1
+1792923635 hashMap[3] nó=0x7fa193ff8a30 k0=0 k1=0 valor=0x7fa193fa72f0 isa=11dfff84e2076f1
+1792923635 hashMap[4] nó=0x7fa193ffa2d0 k0=2 k1=2 valor=0x7fa193ff9ba0 isa=11dfff84e2076f1
+1792923635 PIPE sync-opt ok vf=vkba6pa7jbefia3 ff=path_distance_fragment cor0=25 blend=0 ok=2 falhas=0 
+1792923635 hashMap[0] nó=0x7fa193ffc900 k0=3 k1=3 valor=0x7fa193ff9350 isa=11dfff84e2076f1
+1792923635 hashMap[1] nó=0x7fa193ffc970 k0=6 k1=6 valor=0x7fa193ffc6b0 isa=11dfff84e2076f1
+1792923635 hashMap[2] nó=0x7fa193f5a400 k0=1 k1=1 valor=0x7fa193ffa0f0 isa=11dfff84e2076f1
+1792923635 hashMap[3] nó=0x7fa193f99380 k0=0 k1=0 valor=0x7fa193ffb370 isa=11dfff84e2076f1
+1792923635 hashMap[4] nó=0x7fa193ffaf00 k0=2 k1=2 valor=0x7fa193ff9eb0 isa=11dfff84e2076f1
+1792923635 hashMap[0] nó=0x7fa193ffccf0 k0=3 k1=3 valor=0x7fa193ff2c20 isa=11dfff84e2076f1
+1792923635 hashMap[1] nó=0x7fa193ffcfa0 k0=6 k1=6 valor=0x7fa193ffc6a0 isa=11dfff84e2076f1
+1792923635 hashMap[2] nó=0x7fa193ffc680 k0=1 k1=1 valor=0x7fa193ffaf10 isa=11dfff84e2076f1
+1792923635 hashMap[3] nó=0x7fa193ffaef0 k0=0 k1=0 valor=0x7fa193ff13e0 isa=11dfff84e2076f1
+1792923635 hashMap[4] nó=0x7fa193ffc610 k0=2 k1=2 valor=0x7fa193ffb190 isa=11dfff84e2076f1
+1792923635 PIPE sync-opt ok vf=viba6la7jbefia3 ff=path_interior_fragment cor0=25 blend=0 ok=3 falhas=0 
+1792923635 hashMap[0] nó=0x7fa194a42ce0 k0=3 k1=3 valor=0x7fa194a26260 isa=11dfff84e2076f1
+1792923635 hashMap[1] nó=0x7fa194a43000 k0=6 k1=6 valor=0x7fa194a22f50 isa=11dfff84e2076f1
+1792923635 hashMap[2] nó=0x7fa194a42f60 k0=1 k1=1 valor=0x7fa194a21650 isa=11dfff84e2076f1
+1792923635 hashMap[3] nó=0x7fa194a42d00 k0=0 k1=0 valor=0x7fa194a24d10 isa=11dfff84e2076f1
+1792923635 hashMap[4] nó=0x7fa194a42c70 k0=2 k1=2 valor=0x7fa194a2a840 isa=11dfff84e2076f1
+1792923635 PIPE sync-opt ok vf=plane__vertex ff=fcja6ca7jbefia3 cor0=25 blend=1 ok=4 falhas=0 
+1792923635 hashMap[0] nó=0x7fa194c0a050 k0=3 k1=3 valor=0x7fa194c064f0 isa=11dfff84e2076f1
+1792923635 hashMap[1] nó=0x7fa194c052d0 k0=6 k1=6 valor=0x7fa194c040c0 isa=11dfff84e2076f1
+1792923635 hashMap[2] nó=0x7fa194c0a2d0 k0=1 k1=1 valor=0x7fa194c04770 isa=11dfff84e2076f1
+1792923635 hashMap[3] nó=0x7fa194c0a260 k0=0 k1=0 valor=0x7fa194c05ff0 isa=11dfff84e2076f1
+1792923635 hashMap[4] nó=0x7fa194c09fe0 k0=2 k1=2 valor=0x7fa194c06080 isa=11dfff84e2076f1
+1792923635 PIPE sync-opt ok vf=plane__vertex ff=fcjba5lca6jbefia3 cor0=25 blend=0 ok=5 falhas=0 
+1792923635 TEX via=dev fmt=65 662x582 mips=1 usage=0x4 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=2)
+1792923635 TEX via=heap fmt=253 662x582 mips=1 usage=0x4 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=2)
+1792923635 STENCIL64K 662x582 fmt=253 estava em 0x4072a000 (não alinhado a 64 KB) -> heap próprio em 0x41160000 (n=2)
+1792923635 TEX via=dev fmt=253 662x582 mips=1 usage=0x4 storage=2 type=2 ios=0x00000000 plano=0 -> ok (n=2)
+1792923635 PIPE sync-opt ok vf=plane__vertex ff=fca15dhefa4 cor0=115 blend=0 ok=6 falhas=0 

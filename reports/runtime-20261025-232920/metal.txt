@@ -1,0 +1,2 @@
+Metal device: Intel(R) TGL Unknown
+PASS: shader compile, compute dispatch and 256-value GPU readback.

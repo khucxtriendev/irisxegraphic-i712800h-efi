@@ -1,0 +1,14 @@
+{
+  "created_at": "2026-10-25T08:06:23.665357+00:00",
+  "base_efi": "/Volumes/1401/EFI",
+  "base_config_sha256": "224e24654d7e6529a21bdb13ebea9864bcac0bdd6136759c364f56ed82e6ede3",
+  "upstream_url": "https://github.com/JulioNectar/Hackintosh-XPS13Plus-IrisXe-Tahoe",
+  "upstream_local_commit": "c3ea92670cd043979784fc22c1aab8b137f020f4",
+  "upstream_local_worktree_clean": true,
+  "upstream_network_refresh": "Shell DNS unavailable; use pinned local snapshot; README/STATUS checked through web tool.",
+  "boot_tested": false,
+  "all_features_verified": false,
+  "base_nootedgreen_sha256": "08fd9e5dcc83e28b5b607f9ee83136b49dfde1f95166ec787e59352cb1cccf91",
+  "built_upstream_nootedgreen_sha256": "b7c35752fc2af0a693b180c8a86476929fe768fac824120f0642ce7aaa55e3b6",
+  "installed_hookcase_sha256": "d9fbc949c966b7603f3c108ec0a91b07a42a28f4c0f8cad03ed2c13f82252fb3"
+}

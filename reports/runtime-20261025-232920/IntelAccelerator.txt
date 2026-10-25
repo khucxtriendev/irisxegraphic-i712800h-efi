@@ -1,0 +1,618 @@
++-o IntelAccelerator  <class IntelAccelerator, id 0x10000065b, registered, matched, active, busy 0 (552 ms), retain 107>
+  | {
+  |   "IODVDBundleName" = "AppleIntelTGLGraphicsVADriver"
+  |   "InternalStatisticsAccm" = {}
+  |   "xe-fw-leakdom" = 7
+  |   "xe-blitfix-pitch" = 98
+  |   "InternalStatistics" = {}
+  |   "GraphicsSchedulerSelect" = 4
+  |   "xe-topo" = 24584
+  |   "AGCInfo" = {"fBusyCount"=0,"poweredOffByAGC"=No,"fSubmissionsSinceLastCheck"=904227,"fLastSubmissionPID"=201}
+  |   "xe-fw-count" = 0
+  |   "MetalPluginName" = "AppleIntelTGLGraphicsMTLDriver"
+  |   "PerformanceStatisticsAccum" = {"orphanedReusableVidMemoryHitRate"=0,"texturePageOutBytes"=0,"swapCompleteVideoWaitTime"=0,"orphanedReusableSysMemoryHitRate"=0,"dataBufferCount"=0,"oolTexturePageInBytes"=0,"textureCount"=1943,"iosurfaceTextureCreationCount"=0,"surfaceReadLockIdleWaitTime"=0,"freeDataBufferWaitTime"=0,"orphanedReusableSysMemoryBytes"=7180013568,"ioSurfaceReadOutBytes"=0,"agprefTextureCreationCount"=0,"orphanedReusableSysMemoryCount"=8808,"finishAll2DWaitTime"=0,"orphanedNonReusableSysMemoryCount"=0,"ioSurfacePageOutBytes"=0,"surfaceBufferReadOutBytes"=0,"surfaceTextureCreationCount"=0,"textureReadOutBytes"=0,"gartMapInBytesPerSample"=0,"swapBytesPerSample"=0,"dataBytesPerSample"=0,"surfaceCount"=15,"clientGLWaitTime"=0,"surfaceCopyInWaitTime"=0,"clientSharedAllocatedBytes"=1396736,"surfaceCopyOutWaitTime"=0,"gartMapOutBytesPerSample"=0,"ioSurfacePageInBytes"=0,"gartCacheBytes"=134217728,"volatileSurfaceCount"=0,"vramEvictionWaitTime"=0,"oolTextureCreationBytes"=0,"freeToAllocGPUAddressWaitTime"=0,"oolTextureCreationCount"=0,"orphanedReusableVidMemoryCount"=0,"orphanedReusableVidMemoryBytes"=0,"context2DCount"=3,"inUseSysMemoryBytes"=18446744066967539072,"bufferSwapCount"=0,"orphanedNonReusableVidMemoryBytes"=0,"contextGLCount"=0,"finish2DWaitTime"=0,"gartSizeBytes"=7516192768,"recoveryCount"=0,"stdTexturePageInBytes"=0,"agprefTextureCreationBytes"=0,"gartUsedBytes"=438001024,"surfaceWriteLockIdleWaitTime"=0,"surfaceBufferPageInBytes"=0,"finishGLWaitTime"=0,"iosurfaceTextureCreationBytes"=0,"finishCLWaitTime"=0,"finishVideoWaitTime"=0,"contextCLCount"=0,"freeSurfaceBackingWaitTime"=0,"swapCompleteGLWaitTime"=0,"orphanedNonReusableSysMemoryBytes"=0,"inUseVidMemoryBytes"=0,"agpTextureCreationBytes"=0,"stdTextureCreationBytes"=0,"agpTextureCreationCount"=0,"stdTextureCreationCount"=0,"surfaceSetShapeIdleWaitTime"=0,"gartFreeBytes"=7078191744,"textureVolunteerUnloadBytes"=0,"bufferFlipCount"=0,"hardwareSubmitWaitTime"=0,"swapComplete2DWaitTime"=0,"surfaceBufferPageOutBytes"=0,"surfaceBufferTextureCreationCount"=0,"hardwareWaitTime"=0,"contextVideoCount"=0,"freeSurfaceSwapBufferWaitTime"=0,"orphanedNonReusableVidMemoryCount"=0}
+  |   "xe-blitfix-base" = 32
+  |   "PerformanceStatistics" = {"orphanedReusableVidMemoryHitRate"=0,"texturePageOutBytes"=0,"Device Unit 5 Utilization %"=0,"swapCompleteVideoWaitTime"=0,"orphanedReusableSysMemoryHitRate"=0,"dataBufferCount"=0,"oolTexturePageInBytes"=0,"textureCount"=1943,"Device Utilization % at cur p-state"=0,"iosurfaceTextureCreationCount"=236,"freeDataBufferWaitTime"=0,"surfaceReadLockIdleWaitTime"=0,"orphanedReusableSysMemoryBytes"=7180013568,"ioSurfaceReadOutBytes"=0,"agprefTextureCreationCount"=0,"orphanedReusableSysMemoryCount"=8808,"finishAll2DWaitTime"=0,"orphanedNonReusableSysMemoryCount"=0,"ioSurfacePageOutBytes"=0,"surfaceBufferReadOutBytes"=0,"surfaceTextureCreationCount"=0,"textureReadOutBytes"=0,"gartMapInBytesPerSample"=0,"swapBytesPerSample"=0,"dataBytesPerSample"=0,"surfaceCount"=15,"Device Unit 0 Utilization %"=0,"clientGLWaitTime"=0,"clientSharedAllocatedBytes"=1396736,"surfaceCopyInWaitTime"=0,"gartMapOutBytesPerSample"=0,"ioSurfacePageInBytes"=0,"surfaceCopyOutWaitTime"=0,"gartCacheBytes"=134217728,"volatileSurfaceCount"=0,"vramEvictionWaitTime"=0,"oolTextureCreationBytes"=0,"freeToAllocGPUAddressWaitTime"=0,"oolTextureCreationCount"=0,"Device Unit 1 Utilization %"=0,"orphanedReusableVidMemoryCount"=0,"orphanedReusableVidMemoryBytes"=0,"context2DCount"=3,"inUseSysMemoryBytes"=18446744066967539072,"bufferSwapCount"=0,"orphanedNonReusableVidMemoryBytes"=0,"contextGLCount"=0,"finish2DWaitTime"=0,"Device Unit 2 Utilization %"=0,"gartSizeBytes"=7516192768,"recoveryCount"=0,"stdTexturePageInBytes"=0,"agprefTextureCreationBytes"=0,"gartUsedBytes"=438001024,"surfaceWriteLockIdleWaitTime"=0,"surfaceBufferPageInBytes"=0,"finishGLWaitTime"=0,"iosurfaceTextureCreationBytes"=0,"finishCLWaitTime"=0,"finishVideoWaitTime"=0,"contextCLCount"=0,"Device Unit 3 Utilization %"=0,"freeSurfaceBackingWaitTime"=0,"swapCompleteGLWaitTime"=0,"orphanedNonReusableSysMemoryBytes"=0,"inUseVidMemoryBytes"=0,"agpTextureCreationBytes"=38510592,"stdTextureCreationBytes"=0,"agpTextureCreationCount"=487,"stdTextureCreationCount"=0,"surfaceSetShapeIdleWaitTime"=0,"gartFreeBytes"=7078191744,"textureVolunteerUnloadBytes"=0,"Device Unit 4 Utilization %"=0,"bufferFlipCount"=0,"hardwareSubmitWaitTime"=0,"surfaceBufferPageOutBytes"=0,"Device Utilization %"=0,"hardwareWaitTime"=0,"surfaceBufferTextureCreationCount"=0,"contextVideoCount"=0,"freeSurfaceSwapBufferWaitTime"=0,"swapComplete2DWaitTime"=0,"orphanedNonReusableVidMemoryCount"=0}
+  |   "IOGLBundleName" = "AppleIntelTGLGraphicsGLDriver"
+  |   "AllowIOSurfaceRenderCompression" = 0
+  |   "xe-fw-underflow" = 3
+  |   "IOPCIClassMatch" = "0x03000000&0xff000000"
+  |   "xe-fw-underflowcaller" = 154878
+  |   "IOSourceVersion" = "0.0.0.0.0"
+  |   "IOPersonalityPublisher" = "com.xxxxx.driver.AppleIntelTGLGraphics"
+  |   "Development" = {"SignalStampRange"=1,"CsbProcModeSelect"=0,"PreemptionTimerIntervalUS"=2000,"EUThrottle"=0,"PageTableMode"=64,"SamplerPipeThrottle"=0,"DisablePageFaultHandling"=0,"GraphicsSchedulerSelect"=0,"EnablePlaneRotation"=0,"AddressMode"=64,"SemaphoreWaitPoll"=1,"SingleChannelIndex"=0,"WaitForComplete"=0,"PPGTT"=1,"AllowIOSurfaceRenderCompression"=0,"TelemetryDisable"=0,"PixelBackendThrottle"=0,"SeparateAddressSpace"=1,"RingSizeKB"=32,"SamplerDataFetchThrottle"=0,"RenderCompressionMode"=0,"PreemptionDelayIntervalUS"=160,"AddressSpaceEnableMask"=3,"EnableMultiContext"=1,"ForceDisableEDRAM"=0,"MetalCoalesce"=1,"DisplaySurfaceInEDRAM"=1,"PanicOnGPUHang"=0,"MultiForceWakeSelect"=1,"NewUtilizationAlgorithmEnable"=1,"SchedPmNotifyEnable"=1,"SchedThrottleCapMS"=100,"SchedulerFallbackOnFirmwareFail"=1,"EnablePreemption"=1,"SignalStampsPrimary"=0}
+  |   "xe-fw-leakcaller" = 151850
+  |   "IOPCIPrimaryMatch" = "0x9a498086"
+  |   "RenderCompressionMode" = 0
+  |   "VRAM,totalMB" = 1536
+  |   "xe-fw-leakdrops" = 1
+  |   "CFBundleIdentifier" = "com.xxxxx.driver.AppleIntelTGLGraphics"
+  |   "IOAccelRevision" = 2
+  |   "IOCFPlugInTypes" = {"ACCF0000-0000-0000-0000-000a2789904e"="IOAccelerator2D.plugin"}
+  |   "IOProviderClass" = "IOPCIDevice"
+  |   "IOVARendererID" = 17301568
+  |   "xe-blitfix-last" = 24117632
+  |   "IOReportLegendPublic" = Yes
+  |   "Debug" = {"LogEnable"=Yes,"LogHeader"={"Indent"=Yes,"Module"=Yes,"Tag"=No,"File"=No,"StackLevel"=No,"Stamp"=No,"ThreadId"=No,"Line"=No,"Function"=Yes,"LogLevel"=Yes},"LogLevel"={"RESLIST"=3,"GUCQ"=3,"SHAREDUSER"=3,"TELEMETRY_USAGE"=3,"OAPATCHING"=3,"LOCK"=3,"BLIT"=3,"FB"=3,"RESOURCE"=3,"DISPLAY"=3,"RC_MEM"=3,"TELEMETRY_KTRACE"=3,"TEXTURE"=3,"FORCEWAKE"=3,"CTX_2D"=3,"ACCEL"=3,"GC"=3,"FENCE"=3,"MAPPING"=3,"PATCH"=3,"TASK"=3,"RC"=3,"GST"=3,"GUC"=3,"TELEMETRY_CONFIG"=3,"TELEMETRY_REPORT"=3,"BRIDGE"=3,"CHANNEL"=3,"CTX_GL"=3,"GUCLOG"=3,"CL"=3,"EVENT"=3,"SEMQ"=3,"GST_PER_CONTEXT"=3,"TELEMETRY_MEMORY"=3,"SURFACE"=3,"LAYOUT"=3,"QUEUE"=3,"TELEMETRY"=3,"GCOBJ"=3,"HWCS"=3,"RING"=3,"TELEMETRY_WRITE_STATISTICS"=3,"HWCTXT"=3,"UTIL"=3,"AUB"=3,"DEFAULT"=3,"SYSCTL"=3,"MEM"=3,"SCHED"=3},"LogListener"={"Printf"={}}}
+  |   "IOClass" = "IntelAccelerator"
+  |   "CFBundleIdentifierKernel" = "com.xxxxx.driver.AppleIntelTGLGraphics"
+  |   "xe-blitfix-3d" = 0
+  |   "IOGeneralInterest" = "IOCommand is not serializable"
+  |   "IOReportLegend" = ({"IOReportChannels"=((4000,6442450945,"Overall GPU Busy"),(4001,6442450945,"Overall GPU total time"),(0,6442450945,"Command Buffer Bytes"),(1,6442450945,"GL Command Buffer Bytes"),(2,6442450945,"CL Command Buffer Bytes"),(3,6442450945,"2D Command Buffer Bytes"),(4,6442450945,"Video Command Buffer Bytes"),(5,6442450945,"Out-Of-Line Texture Creation Bytes"),(6,6442450945,"Shared System Memory Texture Creation Bytes"),(7,6442450945,"Private Video Memory Texture Creation Bytes"),(8,6442450945,"Private System Memory Texture Creation Bytes"),(9,6442450945,"IOSurface Backed Texture Creation Bytes"),(10,6442450945,"Out-Of-Line Texture Creation Count"),(11,6442450945,"Private Video Memory Texture Creation Count"),(12,6442450945,"Private System Memory Texture Creation Count"),(13,6442450945,"Shared System Memory Texture Creation Count"),(14,6442450945,"IOAccelSurfaceRef Texture Creation Count"),(15,6442450945,"IOAccelSurfaceBufferRef Texture Creation Count"),(16,6442450945,"IOSurface Backed Texture Creation Count"),(17,6442450945,"Texture Count"),(20,6442450945,"Bytes mapped into the GPU"),(21,6442450945,"Bytes unmapped from the GPU"),(82,6442450945,"IOAccelClientShared allocated bytes"),(22,6442450945,"Private textures bytes paged on"),(23,6442450945,"Out of line texture bytes paged on"),(24,6442450945,"IOAccelSurface bytes paged on"),(25,6442450945,"IOSurface bytes paged on"),(26,6442450945,"IOSurface bytes evicted"),(27,6442450945,"IOAccelSurface bytes evicted"),(28,6442450945,"Texture bytes evicted"),(29,6442450945,"IOSurface bytes paged off"),(30,6442450945,"IOAccelSurface bytes paged off"),(31,6442450945,"Texture bytes paged off"),(32,6442450945,"Texture bytes voluntarily paged off"),(33,6442450945,"IOAccelSurface count"),(34,6442450945,"Volatile IOAccelSurface count"),(35,6442450945,"2D context count"),(36,6442450945,"Video context count"),(37,6442450945,"OpenGL context count"),(38,6442450945,"OpenCL context count"),(39,6442450945,"Buffer swap count"),(40,6442450945,"Buffer flip count"),(41,6442450945,"Databuffer count"),(42,6442450945,"VRAM eviction wait time"),(43,6442450945,"CPU wait on GPU"),(44,6442450945,"CPU wait to submit to GPU"),(45,6442450945,"GL Client wait on GPU"),(46,6442450945,"CL Client wait on GPU"),(47,6442450945,"CPU Wait to evict resource"),(49,6442450945,"CPU wait for free databuffer"),(53,6442450945,"GL Client wait for swap complete"),(55,6442450945,"CPU Wait to copy in surface"),(56,6442450945,"CPU Wait to copy out surface"),(59,6442450945,"CPU Wait for surface idle"),(60,6442450945,"CPU Wait for resource read"),(61,6442450945,"CPU Wait for resource write"),(62,6442450945,"CPU Wait for all 2D finish"),(63,6442450945,"CPU Wait for 2D finish"),(64,6442450945,"CPU Wait for video finish"),(65,6442450945,"CPU Wait for GL finish"),(66,6442450945,"CPU Wait for CL finish"),(106,6442450945,"In use system memory"),(105,6442450945,"In use video memory"),(103,6442450945,"Command Queue Count"),(104,6442450945,"GPU Restart Count")),"IOReportGroupName"="Internal Statistics","IOReportChannelInfo"={"IOReportChannelUnit"=0}})
+  |   "IOMatchCategory" = "IOAccelerator"
+  |   "AccelCaps" = 15
+  |   "IOAccelDisplayPipeCapabilities" = {"DisplayPipeSupported"=Yes,"TransactionsSupported"=Yes}
+  |   "IOProbeScore" = 1000
+  |   "SurfaceList" = ()
+  | }
+  | 
+  +-o IGAccel2DContext  <class IGAccel2DContext, id 0x100000752, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "lastSubmittedTime" = 0
+  |     "accumulatedGPUTime" = 0
+  |     "IOUserClientCreator" = "pid 201, WindowServer"
+  |   }
+  |   
+  +-o IOAccelDisplayPipeUserClient2  <class IOAccelDisplayPipeUserClient2, id 0x10000075a, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 201, WindowServer"
+  |   }
+  |   
+  +-o IGAccel2DContext  <class IGAccel2DContext, id 0x10000075d, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "lastSubmittedTime" = 0
+  |     "accumulatedGPUTime" = 0
+  |     "IOUserClientCreator" = "pid 201, WindowServer"
+  |   }
+  |   
+  +-o IOAccelDisplayPipeUserClient2  <class IOAccelDisplayPipeUserClient2, id 0x100000765, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 201, WindowServer"
+  |   }
+  |   
+  +-o IGAccel2DContext  <class IGAccel2DContext, id 0x100000767, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "lastSubmittedTime" = 0
+  |     "accumulatedGPUTime" = 0
+  |     "IOUserClientCreator" = "pid 201, WindowServer"
+  |   }
+  |   
+  +-o IOAccelDisplayPipeUserClient2  <class IOAccelDisplayPipeUserClient2, id 0x10000076f, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 201, WindowServer"
+  |   }
+  |   
+  +-o IGAccelDevice  <class IGAccelDevice, id 0x100000771, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "API" = "Metal"
+  |     "IOUserClientCreator" = "pid 201, WindowServer"
+  |   }
+  |   
+  +-o IGAccelSharedUserClient  <class IGAccelSharedUserClient, id 0x100000772, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 201, WindowServer"
+  |   }
+  |   
+  +-o IGAccelSurface  <class IGAccelSurface, id 0x100000777, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 201, WindowServer"
+  |   }
+  |   
+  +-o IGAccelSurface  <class IGAccelSurface, id 0x100000778, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 201, WindowServer"
+  |   }
+  |   
+  +-o IGAccelSurface  <class IGAccelSurface, id 0x100000779, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 201, WindowServer"
+  |   }
+  |   
+  +-o IGAccelSurface  <class IGAccelSurface, id 0x10000077a, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 201, WindowServer"
+  |   }
+  |   
+  +-o IGAccelSurface  <class IGAccelSurface, id 0x10000077b, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 201, WindowServer"
+  |   }
+  |   
+  +-o IGAccelSurface  <class IGAccelSurface, id 0x10000077d, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 201, WindowServer"
+  |   }
+  |   
+  +-o IGAccelSurface  <class IGAccelSurface, id 0x10000077e, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 201, WindowServer"
+  |   }
+  |   
+  +-o IGAccelSurface  <class IGAccelSurface, id 0x10000077f, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 201, WindowServer"
+  |   }
+  |   
+  +-o IGAccelSurface  <class IGAccelSurface, id 0x100000780, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 201, WindowServer"
+  |   }
+  |   
+  +-o IGAccelSurface  <class IGAccelSurface, id 0x100000781, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 201, WindowServer"
+  |   }
+  |   
+  +-o IGAccelSurface  <class IGAccelSurface, id 0x100000782, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 201, WindowServer"
+  |   }
+  |   
+  +-o IGAccelSurface  <class IGAccelSurface, id 0x100000783, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 201, WindowServer"
+  |   }
+  |   
+  +-o IGAccelSurface  <class IGAccelSurface, id 0x100000784, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 201, WindowServer"
+  |   }
+  |   
+  +-o IGAccelCommandQueue  <class IGAccelCommandQueue, id 0x100000787, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "lastSubmittedTime" = 4405570992452
+  |     "IOUserClientCreator" = "pid 201, WindowServer"
+  |     "accumulatedGPUTime" = 161800792266
+  |   }
+  |   
+  +-o IGAccelCommandQueue  <class IGAccelCommandQueue, id 0x100000791, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "lastSubmittedTime" = 4405569723421
+  |     "IOUserClientCreator" = "pid 201, WindowServer"
+  |     "accumulatedGPUTime" = 492800839
+  |   }
+  |   
+  +-o IGAccelDevice  <class IGAccelDevice, id 0x1000007db, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "API" = "Metal"
+  |     "IOUserClientCreator" = "pid 207, loginwindow"
+  |   }
+  |   
+  +-o IGAccelSharedUserClient  <class IGAccelSharedUserClient, id 0x1000007dc, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 207, loginwindow"
+  |   }
+  |   
+  +-o IGAccelDevice  <class IGAccelDevice, id 0x100000864, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "API" = "Metal"
+  |     "IOUserClientCreator" = "pid 527, iconservicesagen"
+  |   }
+  |   
+  +-o IGAccelSharedUserClient  <class IGAccelSharedUserClient, id 0x100000865, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 527, iconservicesagen"
+  |   }
+  |   
+  +-o IGAccelDevice  <class IGAccelDevice, id 0x100000875, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "API" = "Metal"
+  |     "IOUserClientCreator" = "pid 491, AccessibilityUIS"
+  |   }
+  |   
+  +-o IGAccelSharedUserClient  <class IGAccelSharedUserClient, id 0x100000876, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 491, AccessibilityUIS"
+  |   }
+  |   
+  +-o IGAccelDevice  <class IGAccelDevice, id 0x100000883, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "API" = "Metal"
+  |     "IOUserClientCreator" = "pid 483, ControlCenter"
+  |   }
+  |   
+  +-o IGAccelSharedUserClient  <class IGAccelSharedUserClient, id 0x100000884, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 483, ControlCenter"
+  |   }
+  |   
+  +-o IGAccelDevice  <class IGAccelDevice, id 0x100000892, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "API" = "Metal"
+  |     "IOUserClientCreator" = "pid 564, NotificationCent"
+  |   }
+  |   
+  +-o IGAccelSharedUserClient  <class IGAccelSharedUserClient, id 0x100000893, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 564, NotificationCent"
+  |   }
+  |   
+  +-o IGAccelDevice  <class IGAccelDevice, id 0x100000894, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "API" = "Metal"
+  |     "IOUserClientCreator" = "pid 486, Finder"
+  |   }
+  |   
+  +-o IGAccelSharedUserClient  <class IGAccelSharedUserClient, id 0x100000895, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 486, Finder"
+  |   }
+  |   
+  +-o IGAccelDevice  <class IGAccelDevice, id 0x1000008a1, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "API" = "Metal"
+  |     "IOUserClientCreator" = "pid 548, WallpaperAerials"
+  |   }
+  |   
+  +-o IGAccelSharedUserClient  <class IGAccelSharedUserClient, id 0x1000008a2, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 548, WallpaperAerials"
+  |   }
+  |   
+  +-o IGAccelDevice  <class IGAccelDevice, id 0x1000008a5, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "API" = "Metal"
+  |     "IOUserClientCreator" = "pid 588, VTDecoderXPCServ"
+  |   }
+  |   
+  +-o IGAccelSharedUserClient  <class IGAccelSharedUserClient, id 0x1000008a6, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 588, VTDecoderXPCServ"
+  |   }
+  |   
+  +-o IGAccelCommandQueue  <class IGAccelCommandQueue, id 0x1000008ab, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "lastSubmittedTime" = 4123534717216
+  |     "IOUserClientCreator" = "pid 527, iconservicesagen"
+  |     "accumulatedGPUTime" = 40643541
+  |   }
+  |   
+  +-o IGAccelDevice  <class IGAccelDevice, id 0x1000008b8, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "API" = "Metal"
+  |     "IOUserClientCreator" = "pid 624, avconferenced"
+  |   }
+  |   
+  +-o IGAccelSharedUserClient  <class IGAccelSharedUserClient, id 0x1000008b9, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 624, avconferenced"
+  |   }
+  |   
+  +-o IGAccelDevice  <class IGAccelDevice, id 0x1000008c2, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "API" = "Metal"
+  |     "IOUserClientCreator" = "pid 471, Terminal"
+  |   }
+  |   
+  +-o IGAccelSharedUserClient  <class IGAccelSharedUserClient, id 0x1000008c3, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 471, Terminal"
+  |   }
+  |   
+  +-o IGAccelDevice  <class IGAccelDevice, id 0x1000008ce, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "API" = "Metal"
+  |     "IOUserClientCreator" = "pid 1059, Google Chrome He"
+  |   }
+  |   
+  +-o IGAccelSharedUserClient  <class IGAccelSharedUserClient, id 0x1000008cf, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 1059, Google Chrome He"
+  |   }
+  |   
+  +-o IGAccelCommandQueue  <class IGAccelCommandQueue, id 0x1000008d0, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "lastSubmittedTime" = 4182095829469
+  |     "IOUserClientCreator" = "pid 1059, Google Chrome He"
+  |     "accumulatedGPUTime" = 993483
+  |   }
+  |   
+  +-o IGAccelCommandQueue  <class IGAccelCommandQueue, id 0x1000008d2, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "lastSubmittedTime" = 4381577472423
+  |     "IOUserClientCreator" = "pid 1059, Google Chrome He"
+  |     "accumulatedGPUTime" = 7220979379
+  |   }
+  |   
+  +-o IGAccelCommandQueue  <class IGAccelCommandQueue, id 0x1000008d5, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "lastSubmittedTime" = 4397711487713
+  |     "IOUserClientCreator" = "pid 471, Terminal"
+  |     "accumulatedGPUTime" = 2671261031
+  |   }
+  |   
+  +-o IGAccelDevice  <class IGAccelDevice, id 0x1000008da, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "API" = "Metal"
+  |     "IOUserClientCreator" = "pid 1388, SafeEjectGPUServ"
+  |   }
+  |   
+  +-o IGAccelSharedUserClient  <class IGAccelSharedUserClient, id 0x1000008db, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 1388, SafeEjectGPUServ"
+  |   }
+  |   
+  +-o IGAccelDevice  <class IGAccelDevice, id 0x1000008dd, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "API" = "Metal"
+  |     "IOUserClientCreator" = "pid 485, SystemUIServer"
+  |   }
+  |   
+  +-o IGAccelSharedUserClient  <class IGAccelSharedUserClient, id 0x1000008de, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 485, SystemUIServer"
+  |   }
+  |   
+  +-o IGAccelDevice  <class IGAccelDevice, id 0x1000008e0, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "API" = "Metal"
+  |     "IOUserClientCreator" = "pid 1334, Spotlight"
+  |   }
+  |   
+  +-o IGAccelSharedUserClient  <class IGAccelSharedUserClient, id 0x1000008e1, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 1334, Spotlight"
+  |   }
+  |   
+  +-o IGAccelCommandQueue  <class IGAccelCommandQueue, id 0x1000008f9, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "lastSubmittedTime" = 4310661603322
+  |     "IOUserClientCreator" = "pid 564, NotificationCent"
+  |     "accumulatedGPUTime" = 312709106
+  |   }
+  |   
+  +-o IGAccelCommandQueue  <class IGAccelCommandQueue, id 0x10000090e, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "lastSubmittedTime" = 4272971049479
+  |     "IOUserClientCreator" = "pid 486, Finder"
+  |     "accumulatedGPUTime" = 1092446
+  |   }
+  |   
+  +-o IGAccelDevice  <class IGAccelDevice, id 0x100000912, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "API" = "Metal"
+  |     "IOUserClientCreator" = "pid 1955, CursorUIViewServ"
+  |   }
+  |   
+  +-o IGAccelSharedUserClient  <class IGAccelSharedUserClient, id 0x100000913, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 1955, CursorUIViewServ"
+  |   }
+  |   
+  +-o IGAccelDevice  <class IGAccelDevice, id 0x100000915, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "API" = "Metal"
+  |     "IOUserClientCreator" = "pid 459, Antigravity"
+  |   }
+  |   
+  +-o IGAccelSharedUserClient  <class IGAccelSharedUserClient, id 0x100000916, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 459, Antigravity"
+  |   }
+  |   
+  +-o IGAccelDevice  <class IGAccelDevice, id 0x10000092e, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "API" = "Metal"
+  |     "IOUserClientCreator" = "pid 2408, VTDecoderXPCServ"
+  |   }
+  |   
+  +-o IGAccelSharedUserClient  <class IGAccelSharedUserClient, id 0x10000092f, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 2408, VTDecoderXPCServ"
+  |   }
+  |   
+  +-o IGAccelCommandQueue  <class IGAccelCommandQueue, id 0x100000937, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "lastSubmittedTime" = 953221771348
+  |     "IOUserClientCreator" = "pid 1334, Spotlight"
+  |     "accumulatedGPUTime" = 13487138
+  |   }
+  |   
+  +-o IGAccelDevice  <class IGAccelDevice, id 0x10000093e, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "API" = "Metal"
+  |     "IOUserClientCreator" = "pid 481, Google Chrome"
+  |   }
+  |   
+  +-o IGAccelSharedUserClient  <class IGAccelSharedUserClient, id 0x10000093f, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 481, Google Chrome"
+  |   }
+  |   
+  +-o IGAccelDevice  <class IGAccelDevice, id 0x100000943, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "API" = "Metal"
+  |     "IOUserClientCreator" = "pid 2433, TextInputMenuAge"
+  |   }
+  |   
+  +-o IGAccelSharedUserClient  <class IGAccelSharedUserClient, id 0x100000944, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 2433, TextInputMenuAge"
+  |   }
+  |   
+  +-o IGAccelDevice  <class IGAccelDevice, id 0x100000946, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "API" = "Metal"
+  |     "IOUserClientCreator" = "pid 2438, EVKey"
+  |   }
+  |   
+  +-o IGAccelSharedUserClient  <class IGAccelSharedUserClient, id 0x100000947, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 2438, EVKey"
+  |   }
+  |   
+  +-o IGAccelDevice  <class IGAccelDevice, id 0x10000098b, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "API" = "Metal"
+  |     "IOUserClientCreator" = "pid 2445, TextInputSwitche"
+  |   }
+  |   
+  +-o IGAccelSharedUserClient  <class IGAccelSharedUserClient, id 0x10000098c, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 2445, TextInputSwitche"
+  |   }
+  |   
+  +-o IGAccelCommandQueue  <class IGAccelCommandQueue, id 0x1000009c3, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "lastSubmittedTime" = 2695517546130
+  |     "IOUserClientCreator" = "pid 201, WindowServer"
+  |     "accumulatedGPUTime" = 205259
+  |   }
+  |   
+  +-o IGAccelDevice  <class IGAccelDevice, id 0x1000009cb, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "API" = "Metal"
+  |     "IOUserClientCreator" = "pid 2491, mediaanalysisd"
+  |   }
+  |   
+  +-o IGAccelSharedUserClient  <class IGAccelSharedUserClient, id 0x1000009cc, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 2491, mediaanalysisd"
+  |   }
+  |   
+  +-o IGAccelDevice  <class IGAccelDevice, id 0x100000af1, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "API" = "Metal"
+  |     "IOUserClientCreator" = "pid 2353, photolibraryd"
+  |   }
+  |   
+  +-o IGAccelSharedUserClient  <class IGAccelSharedUserClient, id 0x100000af2, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 2353, photolibraryd"
+  |   }
+  |   
+  +-o IGAccelDevice  <class IGAccelDevice, id 0x100000b8b, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "API" = "Metal"
+  |     "IOUserClientCreator" = "pid 3546, com.apple.Safari"
+  |   }
+  |   
+  +-o IGAccelSharedUserClient  <class IGAccelSharedUserClient, id 0x100000b8c, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 3546, com.apple.Safari"
+  |   }
+  |   
+  +-o IGAccelDevice  <class IGAccelDevice, id 0x100000ba8, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "API" = "Metal"
+  |     "IOUserClientCreator" = "pid 4023, com.apple.Safari"
+  |   }
+  |   
+  +-o IGAccelSharedUserClient  <class IGAccelSharedUserClient, id 0x100000ba9, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 4023, com.apple.Safari"
+  |   }
+  |   
+  +-o IGAccelDevice  <class IGAccelDevice, id 0x100000bea, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "API" = "Metal"
+  |     "IOUserClientCreator" = "pid 482, Dock"
+  |   }
+  |   
+  +-o IGAccelSharedUserClient  <class IGAccelSharedUserClient, id 0x100000beb, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 482, Dock"
+  |   }
+  |   
+  +-o IGAccelCommandQueue  <class IGAccelCommandQueue, id 0x100000bec, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "lastSubmittedTime" = 648411549232
+  |     "IOUserClientCreator" = "pid 482, Dock"
+  |     "accumulatedGPUTime" = 382604
+  |   }
+  |   
+  +-o IGAccelDevice  <class IGAccelDevice, id 0x100000c1a, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "API" = "Metal"
+  |     "IOUserClientCreator" = "pid 6697, UserNotification"
+  |   }
+  |   
+  +-o IGAccelSharedUserClient  <class IGAccelSharedUserClient, id 0x100000c1b, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 6697, UserNotification"
+  |   }
+  |   
+  +-o IGAccelDevice  <class IGAccelDevice, id 0x100000c82, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "API" = "Metal"
+  |     "IOUserClientCreator" = "pid 6795, Photos"
+  |   }
+  |   
+  +-o IGAccelSharedUserClient  <class IGAccelSharedUserClient, id 0x100000c83, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 6795, Photos"
+  |   }
+  |   
+  +-o IGAccelDevice  <class IGAccelDevice, id 0x100000c8d, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "API" = "Metal"
+  |     "IOUserClientCreator" = "pid 6797, com.apple.appkit"
+  |   }
+  |   
+  +-o IGAccelSharedUserClient  <class IGAccelSharedUserClient, id 0x100000c8e, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 6797, com.apple.appkit"
+  |   }
+  |   
+  +-o IGAccelCommandQueue  <class IGAccelCommandQueue, id 0x100000c8f, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "lastSubmittedTime" = 1058209397321
+  |     "IOUserClientCreator" = "pid 6795, Photos"
+  |     "accumulatedGPUTime" = 17690463
+  |   }
+  |   
+  +-o IGAccelDevice  <class IGAccelDevice, id 0x100000c95, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "API" = "Metal"
+  |     "IOUserClientCreator" = "pid 6805, PhotosReliveWidg"
+  |   }
+  |   
+  +-o IGAccelSharedUserClient  <class IGAccelSharedUserClient, id 0x100000c96, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 6805, PhotosReliveWidg"
+  |   }
+  |   
+  +-o IGAccelDevice  <class IGAccelDevice, id 0x100000c98, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "API" = "Metal"
+  |     "IOUserClientCreator" = "pid 6807, VTDecoderXPCServ"
+  |   }
+  |   
+  +-o IGAccelSharedUserClient  <class IGAccelSharedUserClient, id 0x100000c99, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 6807, VTDecoderXPCServ"
+  |   }
+  |   
+  +-o IGAccelDevice  <class IGAccelDevice, id 0x100000ce1, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "API" = "Metal"
+  |     "IOUserClientCreator" = "pid 7294, Antigravity Help"
+  |   }
+  |   
+  +-o IGAccelSharedUserClient  <class IGAccelSharedUserClient, id 0x100000ce2, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "IOUserClientCreator" = "pid 7294, Antigravity Help"
+  |   }
+  |   
+  +-o IGAccelCommandQueue  <class IGAccelCommandQueue, id 0x100000ce3, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "lastSubmittedTime" = 0
+  |     "IOUserClientCreator" = "pid 7294, Antigravity Help"
+  |     "accumulatedGPUTime" = 0
+  |   }
+  |   
+  +-o IGAccelCommandQueue  <class IGAccelCommandQueue, id 0x100000ce4, !registered, !matched, active, busy 0, retain 6>
+  |   {
+  |     "lastSubmittedTime" = 4393908402121
+  |     "IOUserClientCreator" = "pid 7294, Antigravity Help"
+  |     "accumulatedGPUTime" = 8790204052
+  |   }
+  |   
+  +-o IGAccelCommandQueue  <class IGAccelCommandQueue, id 0x100000e57, !registered, !matched, active, busy 0, retain 6>
+      {
+        "lastSubmittedTime" = 3672114447188
+        "IOUserClientCreator" = "pid 486, Finder"
+        "accumulatedGPUTime" = 259739
+      }
+      
+

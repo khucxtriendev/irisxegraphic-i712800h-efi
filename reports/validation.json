@@ -1,0 +1,8 @@
+{
+  "checks": 1079,
+  "errors": [],
+  "passed": true,
+  "ocvalidate": "not available in local tools; not run",
+  "boot_tested": false,
+  "hardware_feature_parity_verified": false
+}

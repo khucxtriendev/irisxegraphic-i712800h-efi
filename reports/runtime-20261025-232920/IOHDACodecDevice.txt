@@ -1,0 +1,19 @@
++-o IOHDACodecDevice@1F,3,0  <class IOHDACodecDevice, id 0x100000694, registered, matched, active, busy 0 (5215 ms), retain 7>
+  | {
+  |   "IOHDACodecVendorID" = 283902599
+  |   "IOHDACodecRevisionID" = 1048578
+  |   "IOHDACodecAddress" = 0
+  | }
+  | 
+  +-o IOHDACodecDriver  <class IOHDACodecDriver, id 0x100000697, !registered, !matched, active, busy 0 (5214 ms), retain 5>
+      {
+        "IOProbeScore" = 0
+        "CFBundleIdentifier" = "com.apple.iokit.IOHDAFamily"
+        "IOProviderClass" = "IOHDACodecDevice"
+        "IOClass" = "IOHDACodecDriver"
+        "IOMatchCategory" = "IODefaultMatchCategory"
+        "CFBundleIdentifierKernel" = "com.apple.iokit.IOHDAFamily"
+        "IOMatchedAtBoot" = Yes
+      }
+      
+

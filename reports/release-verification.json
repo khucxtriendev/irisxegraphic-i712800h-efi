@@ -1,0 +1,15 @@
+{
+  "created_at": "2026-10-25T09:51:37.229786+00:00",
+  "checks": 1079,
+  "config_validation": "PASS",
+  "release_manifest_files": 283,
+  "word_docx_xml": "PASS",
+  "zip_crc_and_sha256": "PASS",
+  "new_kext_and_metal_codesign": "PASS",
+  "installer_preflight_only": "PASS; no installation",
+  "ocvalidate": "not available; not run",
+  "boot_tested": false,
+  "zip": "/Users/kxt/Documents/gen5_igpu_driver/release/P1-Gen5-20261025.zip",
+  "zip_bytes": 75831575,
+  "zip_sha256": "bbf3d53e7064d7f163faf2c01f7b11bc5d8db148d8e297346617c4386f6ddfa7"
+}
