@@ -1,5 +1,6 @@
 # ThinkPad P1 Gen 5 — EFI và Stack Iris Xe macOS Tahoe
 
+> **Nguồn gốc / Base Project:** Dự án này được phát triển, tùy biến và chuyển đổi (ported) dựa trên [JulioNectar/Hackintosh-XPS13Plus-IrisXe-Tahoe](https://github.com/JulioNectar/Hackintosh-XPS13Plus-IrisXe-Tahoe), được tinh chỉnh chuyên sâu để tương thích hoàn hảo với phần cứng máy trạm **Lenovo ThinkPad P1 Gen 5**.  
 > **Trạng thái:** **Bản build R3 đã boot thành công và đang hoạt động trên hệ thống** (Xác nhận boot: 22:16 +0700, 25/10/2026).  
 > **Hệ điều hành:** macOS Tahoe 26.7.1 (Build **25G241** / Darwin 25.6.0).  
 > **Stack đồ họa:** NootedGreen R3 + Apple Tiger Lake **16.0.32** + Metal Bundle MTL18 + `libxedrv` R3 + `xe.bundle`.  
@@ -91,9 +92,27 @@ sudo ditto "Backups/graphics-YYYYMMDD-HHMMSS/AppleIntelTGLGraphicsMTLDriver.bund
 
 ---
 
-## 5. Tài Liệu Tham Khảo Kèm Theo
+## 5. Nguồn Gốc, Ghi Công & Giấy Phép (Credits & Upstream Base)
 
-- [roadmap-igpu.md](roadmap-igpu.md): Bảng phân tích 11 nhóm tiêu chuẩn và 6 yêu cầu Daily Driver.
+Dự án này kế thừa và phát triển từ công trình đột phá của cộng đồng Hackintosh Intel Gen 12:
+
+* **Repo gốc (Upstream Base):** [JulioNectar/Hackintosh-XPS13Plus-IrisXe-Tahoe](https://github.com/JulioNectar/Hackintosh-XPS13Plus-IrisXe-Tahoe) — Dự án tiên phong chạy Metal GUI Iris Xe trên macOS Tahoe (Dell XPS 13 Plus 9320).
+* **NootedGreen:** do **StezzaPilot** ([sgiammori/NootedGreen](https://github.com/sgiammori/NootedGreen)) khởi xướng, nguồn driver gốc cho Intel Tiger Lake Gen12.
+* **WhateverXe & OCLP Fork:** của **b00t0x** và **jkbuha** — tài liệu tham khảo cho Gen12 trên macOS và payload header fix.
+* **AppleALC & SimpleHDA:** **vit9696** (Acidanthera) và **laobamac** ([SimpleHDA](https://github.com/laobamac/SimpleHDA)) giúp phục hồi âm thanh AppleHDA cho codec Realtek ALC287 trên macOS Tahoe.
+
+### Những điểm chuyển đổi (Porting) chính từ Dell XPS sang ThinkPad P1 Gen 5:
+1. **Tấm nền 16:10 2560 × 1600 (BOE NE160QDM-NY1):** Cấu hình lại scanout allocator và profile hiển thị native thay vì ép theo panel 2880 × 1800 của Dell.
+2. **Âm thanh Realtek ALC287:** Thay thế toàn bộ driver `AudShim` SoundWire (vốn dành riêng cho chip RT1316/RT714 của Dell) bằng stack AppleALC Layout 11 + SimpleHDA tương thích PCH ThinkPad.
+3. **Card đồ họa kép:** Bổ sung cơ chế vô hiệu hóa card rời NVIDIA GeForce RTX A1000 (`0x10DE:0x25B9`) để nhường toàn bộ không gian đồ họa cho iGPU Iris Xe.
+4. **Nhập liệu ThinkPad:** Tích hợp VoodooI2C GPIO pin 332 cho Synaptics SYNA801D và VoodooPS2 cho TrackPoint + Bàn phím ThinkPad.
+5. **Đồ họa R3:** Tinh chỉnh `libxedrv` R3 (`managed upload` texture 2D NoCopy) để khắc phục lỗi mất số trên Dock Badge.
+
+---
+
+## 6. Tài Liệu Tham Khảo Kèm Theo
+
+- [roadmap-igpu.md](roadmap-igpu.md): Bảng phân tích 11 nhóm tiêu chuẩn Apple và 6 yêu cầu Daily Driver.
 - [CHANGELOG.md](CHANGELOG.md): Lịch sử thay đổi chi tiết giữa các bản R1, R2 và R3.
 - [docs/CAI-DAT.md](docs/CAI-DAT.md): Hướng dẫn cài đặt và nâng cấp driver.
 - [docs/AM-THANH-BLUETOOTH-TOUCHPAD.md](docs/AM-THANH-BLUETOOTH-TOUCHPAD.md): Chi tiết cấu hình ngoại vi ThinkPad P1 Gen 5.

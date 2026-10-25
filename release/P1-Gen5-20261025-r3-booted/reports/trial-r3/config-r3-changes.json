@@ -1,0 +1,27 @@
+{
+  "base_config_sha256": "9474c23b24a11804588b9cc3297350b85bd7e312a50f0b2e856fbf8383ff33d9",
+  "r3_config_sha256": "67b1adecb56af0b1b4ebef210fe747e78da10c25ad423fc5cbfed1037951867d",
+  "changes": [
+    {
+      "path": "DeviceProperties/Add/PciRoot(0x0)/Pci(0x2,0x0)/AAPL00,override-no-connect",
+      "before": null,
+      "after": {
+        "type": "DATA",
+        "bytes": 256,
+        "sha256": "088bd08b9b569f571462bcaf28eff70b920bb79cf60479daabc3a3e14cd4fd01"
+      }
+    },
+    {
+      "path": "NVRAM/Add/7C436110-AB2A-4BBB-A880-FE41995C9F82/boot-args",
+      "removed_tokens": [
+        "ngreen-dmc=adlp"
+      ]
+    }
+  ],
+  "connector_type_in_driver": "0x2 (LVDS/eDP)",
+  "connector_flags_in_driver": "0x18",
+  "connector_properties_added": false,
+  "unindexed_edid_property_added": false,
+  "nvram_delete_boot_args_present": true,
+  "binaries_rebuilt": false
+}

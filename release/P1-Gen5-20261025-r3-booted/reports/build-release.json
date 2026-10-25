@@ -1,0 +1,21 @@
+{
+  "updated_at": "2026-10-25T15:24:27.273895+00:00",
+  "target_os_build": "25G241",
+  "target_driver_version": "16.0.32",
+  "artifact_lineage": "EFI/kernel and compiler reused from R3-booted; Metal shim rebuilt with NoCopy mip fix",
+  "previous_full_build_record": "before-dockfix/build-release.json",
+  "dock_fix_build_record": "dock-fix/mip-fix-build.json",
+  "artifacts": {
+    "EFI/OC/Kexts/NootedGreen.kext/Contents/MacOS/NootedGreen": "6b99b13c5ca22f7314e960a3bb6a95b8d4421c0728c06c436515fcd73ea0bb5d",
+    "Graphics/libxedrv.dylib": "dea952d4b4d4bfd0c146aba71d82245476f63d38149cc6a4c1eb4165ab54bf04",
+    "Graphics/AppleIntelTGLGraphicsMTLDriver.bundle/Contents/MacOS/AppleIntelTGLGraphicsMTLDriver": "a303cbd4f9fcd6100f2c6faa0065247e11c5d4daf5d7473a22db28ff8361250f"
+  },
+  "sources": {
+    "libxedrv.m": "1fa3a2b2f339745b3add28a9d21e2e35ae570beb8d44c7482096e8cd8b3ab387",
+    "xe_image_span.h": "c595b505913202004f58b17a3fb2d669f281ac9d60010b8fe84ccb823d4b3d50",
+    "xe_mip_upload.h": "1d0d32620a9ff5d6db8bed88ec68e327c9b46401e313b64082516eaaefe9f2e2"
+  },
+  "boot_tested": "user reported",
+  "dock_badge_visual_fix_verified": true,
+  "installed_during_packaging": false
+}

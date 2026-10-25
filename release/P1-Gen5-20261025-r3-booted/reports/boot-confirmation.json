@@ -1,0 +1,33 @@
+{
+  "release": "P1-Gen5-20261025-r3-booted",
+  "role": "current R3 baseline; user-reported successful desktop boot",
+  "created_at": "2026-10-25T14:28:14.947411+00:00",
+  "source_efi": "/Volumes/1401/EFI",
+  "source_config_sha256": "0a76fa1e1e8418c8fe77fd824cf54feab587e464ce0ad89a53e0678859233c90",
+  "source_efi_files": 156,
+  "all_efi_files_equal_usb": true,
+  "user_report": "t vừa boot từ EFI trong usb lên, thấy nó lên được",
+  "desktop_boot": "reported successful by user; not observed by agent",
+  "current_nvram_boot_args_equal_usb_config": true,
+  "boot_device_independently_verified": false,
+  "root_cause_confirmed": false,
+  "metal_acceleration_verified": false,
+  "dock_badge_fix_verified": false,
+  "hz_165_verified": false,
+  "cold_boot_and_repeat_boot_verified": false,
+  "binary_changes_from_trial_r3": [],
+  "config_kept_byte_for_byte": true,
+  "config_changes_from_trial_r3": {
+    "added_properties": [
+      "AAPL,override-no-connect",
+      "framebuffer-con0-enable",
+      "framebuffer-con0-type",
+      "framebuffer-con0-flags"
+    ],
+    "NVRAM/LegacyOverwrite": {
+      "trial": false,
+      "booted_usb": true
+    }
+  },
+  "wrote_usb_or_system": false
+}

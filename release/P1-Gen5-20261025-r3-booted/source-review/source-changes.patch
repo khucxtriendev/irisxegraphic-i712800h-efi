@@ -1,0 +1,783 @@
+--- a/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp
++++ b/vendor/iris-xe/src/NootedGreen/kern_gen11.cpp
+@@ -11,6 +11,48 @@
+ #include <IOKit/IOCatalogue.h>
+ #include <IOKit/IOLib.h>
+ #include <kern/thread_call.h>
++#include <IOKit/IORangeAllocator.h>
++static volatile uint32_t gP1ScanoutEpoch = 1;
++static volatile bool gP1AllocatorHookReady = false;
++static volatile bool gP1ReservationFailed = false;
++static volatile bool gP1ReservationCompleted = false;
++static P1Scanout::Cache gP1ScanoutCache;
++static bool p1LegacyScanoutEnabled() {
++    static int enabled = -1;
++    if (enabled < 0) enabled = (checkKernelArgument("-ngreenv99g") ||
++        !checkKernelArgument("-ngreenxefix")) ? 1 : 0;
++    return enabled == 1;
++}
++struct P1ScanoutIO {
++    NGreen *device;
++    uint32_t read32(uint64_t reg) { return device->readReg32(reg); }
++    void write32(uint64_t reg, uint32_t value) { device->writeReg32(reg, value); }
++    uint64_t mmioBytes() const { return device->mmioLength(); }
++    uint64_t apertureBytes() const { return device->apertureLength(); }
++    uintptr_t owner() const { return reinterpret_cast<uintptr_t>(device); }
++    uint32_t epoch() const { return __atomic_load_n(&gP1ScanoutEpoch, __ATOMIC_ACQUIRE); }
++    bool reserved() const {
++        return __atomic_load_n(&gP1AllocatorHookReady, __ATOMIC_ACQUIRE) &&
++            __atomic_load_n(&gP1ReservationCompleted, __ATOMIC_ACQUIRE) &&
++            !__atomic_load_n(&gP1ReservationFailed, __ATOMIC_ACQUIRE);
++    }
++};
++
++bool Gen11::p1InitRangeAllocator(void *that, P1Scanout::AddressRange range, uint64_t alignment) {
++    const bool ok = FunctionCast(p1InitRangeAllocator, callback->op1InitRangeAllocator)(that, range, alignment);
++    if (!ok || !NGreen::callback || NGreen::callback->isRealTGL || !p1LegacyScanoutEnabled()) return ok;
++    const auto part = P1Scanout::overlap(range);
++    if (!part.length) return ok;
++    auto *allocator = static_cast<IORangeAllocator *>(that);
++    if (!allocator->allocateRange(part.start, part.length)) {
++        __atomic_store_n(&gP1ReservationFailed, true, __ATOMIC_RELEASE);
++        __sync_add_and_fetch(&gP1ScanoutEpoch, 1);
++        SYSLOG("ngreen", "P1-SCANOUT: refusing allocator with unreserved alias range");
++        return false; // Factory destroys it; do not publish an unsafe allocator.
++    }
++    __atomic_store_n(&gP1ReservationCompleted, true, __ATOMIC_RELEASE);
++    return true;
++}
+ // xe/blitscratch2: definidos em kern_green.cpp (wrapLockCpu)
+ extern void *volatile gXeBlitMem, *volatile gXeBlitCpu;
+ static volatile uint32_t gXeGtFreqApple = 0, gXeGtFreqN = 0;  // XE-GTFREQ: último pedido da Apple, nº de pedidos
+@@ -1957,6 +1999,20 @@
+ 		SYSLOG("ngreen", "V165: routing %zu HW accelerator symbols", sizeof(requests)/sizeof(requests[0]));
+ 		PANIC_COND(!RouteRequestPlus::routeAll(patcher, index, requests, address, size), "ngreen","Failed to route symbols");
+ 		SYSLOG("ngreen", "V165: HW accelerator symbols routed OK");
++
++        // IGRangeAllocator derives from IORangeAllocator. Reserve every overlap
++        // before a new allocator is published, including the stolen-memory pool's
++        // allocator. Never infer ownership from free-looking GGTT PTEs.
++        if (!NGreen::callback->isRealTGL && p1LegacyScanoutEnabled()) {
++            RouteRequestPlus reserve[] = {
++                {"__ZN16IGRangeAllocator13initWithRangeE14IGAddressRangey",
++                    p1InitRangeAllocator, this->op1InitRangeAllocator},
++            };
++            const bool routed = RouteRequestPlus::routeAll(patcher, index, reserve, address, size);
++            __atomic_store_n(&gP1AllocatorHookReady, routed, __ATOMIC_RELEASE);
++            if (!routed) patcher.clearError();
++            SYSLOG("ngreen", "P1-SCANOUT: allocator reservation hook=%d", routed);
++        }
+ 
+ 		if (checkKernelArgument("-ngreenxefix")) {  // xe/flipdiag: só contadores, sem mudar comportamento
+ 			RouteRequestPlus flipDiag[] = {
+@@ -4191,42 +4247,16 @@
+ 		}
+ 	}
+ 
+-	// V99S: PLANE_SURF arm — force correct STRIDE/CTL immediately before latching.
+-	// raWriteRegister32/WriteRegister32 is a CACHE-ONLY update; hardware MMIO for
+-	// double-buffered PLANE_STRIDE is written via a volatile* path not caught by
+-	// FastWriteRegister32. Forcing writeReg32 here ensures the hardware shadow is
+-	// correct right before SURF arms the double-buffer flip.
+-	//
+-	// dp0 path: redirect non-aperture SURF to 0x0 AND remap GGTT[0..] to the same
+-	// physical pages (V99G).  setupScanoutMemory migrates SURF from aperture to
+-	// ≥0x10000000 (non-aperture stolen RAM, phys ~0x7f…) when WindowServer sets
+-	// kIOWindowServerActiveAttribute=3. After migration WS writes to the non-aperture
+-	// physical pages; PLANE_SURF must also scan them. V99G copies the GGTT PTEs from the
+-	// non-aperture range down to GGTT[0..3999] so SURF=0x0 scans the same pages.
++    // Primary-plane SURF arm. Diagnostics are limited to initial flips; P1's
++    // optional V99 aliases use an allocator-reserved six-slot bank below.
+ 	if ((param_1 & 0xFFFFF) == 0x7019C && NGreen::callback) {
+-		uint32_t hwStride = NGreen::callback->readReg32(0x70188);
+-		uint32_t hwCtl    = NGreen::callback->readReg32(0x70180);
+ 		static int v99SCount = 0;
+ 		if (v99SCount < 8) {
+ 			++v99SCount;
+-			// V201B: read TOP-LEFT (gray border) AND CENTER (Apple logo / loading bar
+-			// area) of the buffer. Linear byte offset of pixel (x,y) = y*10240 + x*4.
+-			// Sample points (BGRA, 2560×1600):
+-			//  - (0,0)         offset 0          → top-left, gray bg
+-			//  - (1280,800)    offset 0x7D2800   → screen center, Apple logo
+-			//  - (1280,1000)   offset 0x9C7800   → loading-bar row
+-			//  - (640,800)     offset 0x7D1A00   → mid-left of logo area
+-			NGreen::callback->setApertureIfNecessary();
+-			uint32_t tlCtr = 0xDEADBEEF, ctr = 0xDEADBEEF, bar = 0xDEADBEEF, mid = 0xDEADBEEF;
+-			if (NGreen::callback->aperturePtr && NGreen::callback->apertureLen >= 0xA00000) {
+-				volatile uint32_t *fb32 = NGreen::callback->aperturePtr;
+-				tlCtr = fb32[0];             // top-left
+-				ctr   = fb32[0x7D2800 / 4];  // center (Apple logo)
+-				bar   = fb32[0x9C7800 / 4];  // loading bar row
+-				mid   = fb32[0x7D1A00 / 4];  // mid-left of logo area
+-			}
+-			SYSLOG("ngreen", "V99S[%d]: SURF arm 0x%x STRIDE=0x%x CTL=0x%x | tl=%08x ctr(1280,800)=%08x bar(1280,1000)=%08x mid(640,800)=%08x",
+-				   v99SCount, (uint32_t)param_2, hwStride, hwCtl, tlCtr, ctr, bar, mid);
++            const uint32_t hwStride = NGreen::callback->readReg32(0x70188);
++            const uint32_t hwCtl = NGreen::callback->readReg32(0x70180);
++            SYSLOG("ngreen", "P1-SURF[%d]: SURF=0x%x STRIDE=0x%x CTL=0x%x",
++                v99SCount, uint32_t(param_2), hwStride, hwCtl);
+ 
+ 			// V203: on the LAST sampled SURF arm, dump every pipe/transcoder/DSC/scaler
+ 			// register relevant to the duplicated-content symptom. We're hunting an
+@@ -4268,131 +4298,34 @@
+ 				#undef R
+ 			}
+ 		}
+-		// ------ MAN IN THE MIDDLE CHIP HACK ------- (V99R/V99G ativo: teste xtile2)
+-		// V99R[P] + V99G + linear CTL/STRIDE forces — CORE scanout coherence (!isRealTGL).
+-		// Confirmed load-bearing for visible scanout on spoofed RPL/ADL-P in dp0, dp1, AND
+-		// without any -ngreendp* boot arg. Real TGL hardware programs these correctly via
+-		// Apple's native code path — gating the entire triad on !isRealTGL.
+-		//
+-		// Friend's architectural feedback (Visual Ehrmanntraut, NootedBlue lineage):
+-		// the right long-term fix is intercepting CRTCParams / PLANEPARAMS / SCALERPARAMS
+-		// at hwSetupMemory / paramsSurfCompare / hwRegsNeedUpdate (already partial via
+-		// V97P / V97C) instead of hooking MMIO writes after-the-fact. "Hacking regs only
+-		// won't work — leave WS alone, problem is in apple code."
+-		//
+-		//   1. SURF redirect: non-aperture writes (>=0x10000000) → 0, so the display engine
+-		//      always scans from the same GGTT page range (GGTT[0..3999]) no matter where
+-		//      Apple's setupScanoutMemory chose to migrate the surface.
+-		//   2. V99G: per-flip GGTT remap — copies the PTEs at the migrated surface pages
+-		//      down to GGTT[0..3999] so SURF=0 fetches the same physical memory WS's CPU
+-		//      compositor is writing into. Re-runs whenever Apple's SURF address changes
+-		//      (handles double/triple buffering — WS rotates between 2-3 IOSurfaces per flip).
+-		//   3. Linear CTL/STRIDE forces (tiling→0, STRIDE=0xa0): required for visible
+-		//      output. Removing them produces a black screen with no scanout activity,
+-		//      confirmed empirically. Side effect: produces the fragmented/repeated
+-		//      pattern when Apple's allocator stores buffer in non-linear physical layout
+-		//      — known cost of this path, removable only by struct-level fix.
+-		// xe (19/10): com -ngreenxefix o V99R/V99G fica desligado (religar com -ngreenv99g). Os slots fixos de 4000
+-		// páginas (feitos para 2560x1600) só cobriam 16 MB dos 36,9 MB de 3840x2400: o resto da tela lia a memória
+-		// stolen (glitch embaixo), e o slot 0 (GGTT[0..3999]) pisava no LRCA do contexto em GGTT 0x18000.
+-		// Sem o desvio, o plano lê a superfície que o driver da Apple aponta (GGTT já mapeada por ele).
+-		static int v99Arg = -1;  // sem guard variable no kernel: calcula uma vez na mão
+-		if (v99Arg < 0) v99Arg = (checkKernelArgument("-ngreenv99g") || !checkKernelArgument("-ngreenxefix")) ? 1 : 0;
+-		const bool v99On = v99Arg == 1;
++        // Legacy non-TGL scanout requires a real allocator reservation. The bank
++        // starts at 16 MiB, never shifts slot metadata, and is bounded by BAR2/MMIO.
++        // Cache hits validate source backing against the installed PTEs saved
++        // in RAM; no destination reads/writes, but source MMIO reads remain.
++		const bool v99On = p1LegacyScanoutEnabled();
+ 		if (!v99On && param_2 >= 0x10000000u) {
+ 			static int v99OffCount = 0;
+ 			if (v99OffCount < 4) IOLog("XeNG V99 off: SURF 0x%x direto\n", (uint32_t)param_2), ++v99OffCount;
+ 		}
+ 		if (v99On && NGreen::callback && !NGreen::callback->isRealTGL && param_2 >= 0x10000000u) {
+-			static int v99PCount = 0;
+-			if (v99PCount < 8)
+-				SYSLOG("ngreen", "V99R[P%d]: SURF 0x%x->aperture (non-aperture redirect)",
+-					   ++v99PCount, (uint32_t)param_2);
+-
+-			// ngreen-buf=N: 1=single, 2=double (default), 3=triple buffering.
+-			// Each buffer slot occupies 4000 GGTT pages = 0xFA0000 bytes of aperture:
+-			//   slot 0 → GGTT[0..3999],      SURF=0x0
+-			//   slot 1 → GGTT[4000..7999],   SURF=0xFA0000
+-			//   slot 2 → GGTT[8000..11999],  SURF=0x1F40000
+-			// Each unique non-aperture srcPage Apple presents is assigned a fixed slot.
+-			// The GGTT PTEs for that slot are remapped to point at the IOSurface's
+-			// physical pages. SURF is rewritten to the matching aperture slot address
+-			// so the display engine scans the correct physical memory.
+-			// With single buffering all flips always land on slot 0 (SURF=0x0).
+-			static int  bufCount       = -1;
+-			static uint32_t slotPages[3] = {0, 0, 0}; // srcPage assigned to each slot
+-			static int  slotCount      = 0;
+-			static int  v99GCount      = 0;
+-
+-			if (bufCount < 0) {
+-				int val = 2;
+-				PE_parse_boot_argn("ngreen-buf", &val, sizeof(val));
+-				bufCount = (val >= 1 && val <= 3) ? val : 2;
+-				SYSLOG("ngreen", "V99G: ngreen-buf=%d (buffering slots)", bufCount);
+-			}
+-
+-			uint32_t srcPage = (uint32_t)param_2 >> 12;
+-
+-			// Find existing slot or assign a new one.
+-			int slot = -1;
+-			for (int s = 0; s < slotCount; s++) {
+-				if (slotPages[s] == srcPage) { slot = s; break; }
+-			}
+-			if (slot < 0) {
+-				if (slotCount < bufCount) {
+-					slot = slotCount++;
+-				} else {
+-					// All slots occupied — evict oldest (slot 0), shift down.
+-					for (int s = 0; s < bufCount - 1; s++) slotPages[s] = slotPages[s + 1];
+-					slot = bufCount - 1;
+-				}
+-				slotPages[slot] = srcPage;
+-			}
+-
+-			// Remap GGTT[slot*4000 .. slot*4000+3999] from srcPage..srcPage+3999.
+-			{
+-				int base = slot * 4000;
+-				int remapped = 0, remapSkipped = 0, firstSkip = -1, lastSkip = -1;
+-				for (int i = 0; i < 4000; i++) {
+-					uint32_t lo = NGreen::callback->readReg32(GGTT_PTE_LO(srcPage + i));
+-					uint32_t hi = NGreen::callback->readReg32(GGTT_PTE_HI(srcPage + i));
+-					if (!(lo & 1)) { if (remapSkipped == 0) firstSkip = i; lastSkip = i; remapSkipped++; continue; }
+-					NGreen::callback->writeReg32(GGTT_PTE_LO(base + i), lo);
+-					NGreen::callback->writeReg32(GGTT_PTE_HI(base + i), hi);
+-					remapped++;
+-				}
+-				NGreen::callback->writeReg32(0x101008, 0x1); // flush GGTT TLB
+-				if (++v99GCount <= 8 || (v99GCount & 0x3F) == 0)
+-					SYSLOG("ngreen", "V99G[%d]: GGTT[%d..%d] <- srcPage=0x%x slot=%d remapped=%d skip=%d",
+-						   v99GCount, base, base + 3999, srcPage, slot, remapped, remapSkipped);
+-					// xe/diag: IOLog reaches the kernel log (SYSLOG does not reach the unified log).
+-					if (v99GCount <= 16 || (v99GCount & 0x3F) == 0)
+-						IOLog("XeNG V99G[%d] slot=%d srcPage=0x%x remapped=%d skip=%d firstSkip=%d lastSkip=%d\n",
+-							  v99GCount, slot, srcPage, remapped, remapSkipped, firstSkip, lastSkip);
+-			}
+-
+-			// Redirect SURF to the aperture address of the assigned slot.
+-			// slot 0 → 0x0, slot 1 → 0xFA0000, slot 2 → 0x1F40000.
+-			param_2 = (uint32_t)slot * 0xFA0000u;
+-		}
+-		// CTL/STRIDE forces — MATCH APPLE'S NATURAL INTENT.
+-		// V401 paramsSurfCompare logs prove Apple wants: CTL bits[12:10]=001 (X-tiled),
+-		// STRIDE=0x14 (20 X-tile units = 10240B/row = 2560*4bpp). Apple's IOSurface
+-		// allocator produces X-tiled physical buffers — Y-tile and linear forces both
+-		// scan wrong bytes from an X-tile buffer. Match Apple = same tile mode as the
+-		// buffer = correct scanout, IF the SURF address reaches the right pages
+-		// (V99R[P]+V99G handle the SURF redirect / GGTT remap unconditionally).
+-		//
+-		// Gated on !isRealTGL. Real TGL programs natively.
+-		/* linear forces com STRIDE=0xa0 (2560 px) ficam desligados: o paramsSurfCompare já força linear com stride do modo real.
+-		if (NGreen::callback && !NGreen::callback->isRealTGL) {
+-			// force CTL linear and STRIDE=0xa0 (CPU compositor writes linearly via BAR2).
+-			uint32_t hwTiling = (hwCtl >> 10) & 0x7;
+-			if (hwTiling != 0)
+-				NGreen::callback->writeReg32(0x70180, hwCtl & ~(0x7u << 10));
+-			if (hwStride != 0xa0)
+-				NGreen::callback->writeReg32(0x70188, 0xa0);
+-		}*/
++            // P1: stable six-slot aliases, allocator-owned before the first mapping.
++            // The helper uses actual stride/tile height, rejects oversized/incomplete
++            // mappings, validates hits, and never rewrites an active/pending slot.
++            NGreen::callback->setApertureIfNecessary();
++            P1ScanoutIO io {NGreen::callback};
++            uint32_t redirected = uint32_t(param_2);
++            if (gP1ScanoutCache.redirect(io, uint32_t(param_2), redirected)) {
++                static unsigned redirects = 0;
++                if (redirects++ < 8)
++                    SYSLOG("ngreen", "P1-SCANOUT: SURF 0x%x -> reserved alias 0x%x", uint32_t(param_2), redirected);
++                param_2 = redirected;
++            } else {
++                static unsigned refused = 0;
++                if (refused++ < 4)
++                    SYSLOG("ngreen", "P1-SCANOUT: no safe alias; keeping native SURF=0x%x", uint32_t(param_2));
++            }
++		}
++
+ 	}
+ 
+ 	if (reinterpret_cast<volatile uint64_t*>(that)==nullptr) return NGreen::callback->writeReg32(param_1,param_2);
+@@ -11592,6 +11525,8 @@
+ }
+ 	
+ void Gen11::IGScheduler5resume(void *that) {
++    __sync_add_and_fetch(&gP1ScanoutEpoch, 1); // Invalidate aliases after reset/resume.
++
+ 		
+ 		void *accelerator = getMember<void *>(that, 0x10);
+ 		struct IGHwCsDesc *descArray = (struct IGHwCsDesc *)callback->kIGHwCsDesc;
+@@ -11754,6 +11689,8 @@
+ 
+ uint8_t Gen11::beginReset(void *that)
+ {
++    __sync_add_and_fetch(&gP1ScanoutEpoch, 1); // Invalidate aliases after reset/resume.
++
+ 	auto ret= FunctionCast(beginReset, callback->obeginReset)(that);
+ 	
+ 	/*static const struct intel_device_info tgl_info = {
+@@ -11809,6 +11746,8 @@
+ 											
+ void Gen11::endReset(void *that)
+ {
++    __sync_add_and_fetch(&gP1ScanoutEpoch, 1); // Invalidate aliases after reset/resume.
++
+ 	FunctionCast(endReset, callback->oendReset)(that);
+ 	
+ 	//void gen11_gt_irq_postinstall(struct intel_gt *gt)
+--- a/vendor/iris-xe/macos/src/libxedrv.m
++++ b/vendor/iris-xe/macos/src/libxedrv.m
+@@ -27,6 +27,7 @@
+ #import <stdarg.h>
+ #import <time.h>
+ #import <IOSurface/IOSurface.h>
++#include "xe_image_span.h"
+ 
+ // v13 (20/10): além do syslog, grava em /tmp/xedrv-<processo>.log (o log show não funciona sem privilégio).
+ static FILE* g_logf;
+@@ -302,6 +303,7 @@
+ static MTLTextureDescriptor* sem_compressao(MTLTextureDescriptor* d) {
+   if (!d || ![d respondsToSelector:@selector(setAllowGPUOptimizedContents:)]) return d;
+   MTLTextureDescriptor* c = [[d copy] autorelease];
++  if (!c) return nil;
+   c.allowGPUOptimizedContents = NO;
+   if (0 && g_nocomp_logs < 8) { g_nocomp_logs++; LOG("textura %lux%lu fmt=%lu usage=0x%lx: allowGPUOptimizedContents -> NO",
+       (unsigned long)d.width, (unsigned long)d.height, (unsigned long)d.pixelFormat, (unsigned long)d.usage); }
+@@ -380,15 +382,25 @@
+ // para a própria memória da IOSurface, sem cache nem blit. Só 2D, 1 mip, 1 amostra, pitch/offset alinhados ao que o
+ // driver exige. Desliga com XE_NOWIDEPITCH.
+ static long g_wide_n;
++static NSUInteger nc_pixel_size(MTLPixelFormat format);
+ static id xe_tex_largo(id dev, MTLTextureDescriptor* d, IOSurfaceRef s, NSUInteger pl) {
+   if (!s || !d || getenv("XE_NOWIDEPITCH")) return nil;
+   size_t np = IOSurfaceGetPlaneCount(s);
++  if ((np && pl >= np) || (!np && pl != 0)) return nil;
+   size_t bpr = np ? IOSurfaceGetBytesPerRowOfPlane(s, pl) : IOSurfaceGetBytesPerRow(s);
+-  if (bpr < 32768 || d.textureType != MTLTextureType2D || d.mipmapLevelCount != 1 || d.sampleCount != 1) return nil;
++  if (bpr < 32768 || d.textureType != MTLTextureType2D || d.mipmapLevelCount != 1 ||
++      d.sampleCount != 1 || d.arrayLength != 1 || d.depth != 1) return nil;
+   NSUInteger al = [dev minimumLinearTextureAlignmentForPixelFormat:d.pixelFormat];
+   char* base = IOSurfaceGetBaseAddress(s);
+-  size_t off = np ? (size_t)((char*)IOSurfaceGetBaseAddressOfPlane(s, pl) - base) : 0;
+-  size_t len = (IOSurfaceGetAllocSize(s) + 4095) & ~(size_t)4095;
++  void* plane = np ? IOSurfaceGetBaseAddressOfPlane(s, pl) : base;
++  size_t len = IOSurfaceGetAllocSize(s);
++  size_t width = np ? IOSurfaceGetWidthOfPlane(s, pl) : IOSurfaceGetWidth(s);
++  size_t height = np ? IOSurfaceGetHeightOfPlane(s, pl) : IOSurfaceGetHeight(s);
++  if (!base || !plane || (uintptr_t)plane < (uintptr_t)base || !len ||
++      (len & 4095) || (uintptr_t)base > UINTPTR_MAX - (len - 1) ||
++      d.width > width || d.height > height) return nil;
++  size_t off = (uintptr_t)plane - (uintptr_t)base;
++  if (!xe_image_span(d.width,d.height,nc_pixel_size(d.pixelFormat),bpr,off,len,NULL,NULL)) return nil;
+   if (!al || ((uintptr_t)base & 4095) || (bpr % al) || (off % al)) {
+     if (__sync_add_and_fetch(&g_wide_n, 1) <= 8) LOG("PITCH LARGO bpr=%zu off=%zu al=%lu: não alinhado, caminho original", bpr, off, (unsigned long)al);
+     return nil;
+@@ -484,32 +496,172 @@
+ @end
+ static IMP g_nc3, g_nc4; static long g_nc_n;
+ static const void* kNcDealloc = &kNcDealloc;
+-static BOOL nc_precisa(MTLTextureDescriptor* d, NSUInteger off) {
+-  return (off & 255) != 0 && d.textureType == MTLTextureType2D && d.mipmapLevelCount == 1 && d.arrayLength == 1;
+-}
+-static id nc_copia(id dev, void* ptr, MTLTextureDescriptor* d, NSUInteger off, NSUInteger bpr) {
+-  MTLTextureDescriptor* c = [[d copy] autorelease]; c.storageMode = MTLStorageModeManaged;
++static BOOL nc_eligible(MTLTextureDescriptor* d) {
++  // CPU image upload path only: do not snapshot GPU render targets or writable
++  // resources. NoCopy images accepted here intentionally become managed snapshots.
++  return d && d.textureType == MTLTextureType2D &&
++      d.mipmapLevelCount == 1 && d.arrayLength == 1 && d.depth == 1 &&
++      d.sampleCount == 1 && !(d.usage & (MTLTextureUsageShaderWrite | MTLTextureUsageRenderTarget));
++}
++static void nc_native_stat(MTLTextureDescriptor *d, NSUInteger off, id native) {
++  if (!d || off) return;
++  int i = d.pixelFormat==MTLPixelFormatA8Unorm ? 0 :
++      d.pixelFormat==MTLPixelFormatR8Unorm ? 1 : d.pixelFormat==MTLPixelFormatRG8Unorm ? 2 : -1;
++  if (i<0) return;
++  static unsigned counts[3];
++  if (__sync_fetch_and_add(&counts[i],1)<8)
++    LOG("NOCOPY_ZERO fmt=%lu %lux%lu usage=0x%lx native_created=%d",
++        (unsigned long)d.pixelFormat,(unsigned long)d.width,(unsigned long)d.height,
++        (unsigned long)d.usage,native!=nil);
++}
++static NSUInteger nc_pixel_size(MTLPixelFormat format) {
++  switch (format) {
++    case MTLPixelFormatA8Unorm: case MTLPixelFormatR8Unorm: return 1;
++    case MTLPixelFormatRG8Unorm: case MTLPixelFormatR16Float: return 2;
++    case MTLPixelFormatRGBA8Unorm: case MTLPixelFormatRGBA8Unorm_sRGB:
++    case MTLPixelFormatBGRA8Unorm: case MTLPixelFormatBGRA8Unorm_sRGB: return 4;
++    case MTLPixelFormatRGBA16Float: return 8;
++    case MTLPixelFormatRGBA32Float: return 16;
++    default: return 0;  // Compressed/depth/unknown formats retain the native path.
++  }
++}
++static id nc_copia(id dev, void* ptr, NSUInteger len, MTLTextureDescriptor* d, NSUInteger off, NSUInteger bpr) {
++  uint64_t pitch = 0, span = 0;
++  if (!ptr || !nc_eligible(d) || !xe_image_span(d.width, d.height,
++      nc_pixel_size(d.pixelFormat), bpr, off, len, &pitch, &span) ||
++      (uintptr_t)ptr > UINTPTR_MAX - off ||
++      (uintptr_t)ptr + off > UINTPTR_MAX - (span - 1)) return nil;
++  MTLTextureDescriptor* c = [[d copy] autorelease];
++  c.resourceOptions = (c.resourceOptions & ~MTLResourceStorageModeMask) | MTLResourceStorageModeManaged;
++  c.storageMode = MTLStorageModeManaged;
+   id<MTLTexture> t = [dev newTextureWithDescriptor:c];
+   if (!t) return nil;
+-  [t replaceRegion:MTLRegionMake2D(0, 0, d.width, d.height) mipmapLevel:0 withBytes:(uint8_t*)ptr + off bytesPerRow:bpr];
++  @try {
++    [t replaceRegion:MTLRegionMake2D(0, 0, d.width, d.height) mipmapLevel:0 withBytes:(uint8_t*)ptr + off bytesPerRow:(NSUInteger)pitch];
++  } @catch (id exception) { [t release]; @throw; }
+   long n = __sync_add_and_fetch(&g_nc_n, 1);
+   if (n <= 4 || (n & (n - 1)) == 0) LOG("NOCOPY textura %lux%lu fmt=%lu off=0x%lx bpr=%lu -> cópia alinhada (n=%ld)", (unsigned long)d.width,
+       (unsigned long)d.height, (unsigned long)d.pixelFormat, (unsigned long)off, (unsigned long)bpr, n);
+   return t;
+ }
+ static id w_nc3(id s, SEL c, void* ptr, NSUInteger len, MTLTextureDescriptor* d, NSUInteger off, NSUInteger bpr) {
+-  if (nc_precisa(d, off)) { id t = nc_copia(s, ptr, d, off, bpr); if (t) return t; }
+-  return ((id(*)(id, SEL, void*, NSUInteger, id, NSUInteger, NSUInteger))g_nc3)(s, c, ptr, len, d, off, bpr);
+-}
++  // A non-nil native texture may still sample incorrectly on this stack. Upload
++  // eligible CPU images first, including aligned/zero offsets, without waiting
++  // for native creation to fail. Bounds/format/usage checks remain in nc_copia.
++  if (nc_eligible(d)) { id t = nc_copia(s, ptr, len, d, off, bpr); if (t) return t; }
++  id native = ((id(*)(id, SEL, void*, NSUInteger, id, NSUInteger, NSUInteger))g_nc3)(s, c, ptr, len, d, off, bpr);
++  nc_native_stat(d,off,native);
++  if (native || !nc_eligible(d)) return native;
++  // Offset zero is not excluded from a recovery after actual native creation failure.
++  return nc_copia(s, ptr, len, d, off, bpr);
++}
++
++// Defer the caller's release callback while native creation/fallback is undecided.
++// The native API may call its deallocator before returning nil. Copying after that
++// without this gate would read freed pixels. A successful native texture keeps its
++// original NoCopy semantics when the proactive managed copy was unavailable.
++@interface XeNoCopyOwnership : NSObject {
++  NSLock *_lock;
++  void (^_releaseBytes)(void*, NSUInteger);
++  void *_bytes; NSUInteger _length;
++  void *_nativeBytes; NSUInteger _nativeLength;
++  int _mode;
++  BOOL _requested, _fired;
++}
++- (id)initWithBlock:(id)block bytes:(void*)bytes length:(NSUInteger)length;
++- (void)event:(int)event;
++- (void)event:(int)event pointer:(void*)pointer length:(NSUInteger)length;
++- (void)nativeReleased:(void*)pointer length:(NSUInteger)length;
++- (BOOL)canRecover;
++@end
++enum { XeNativeCallback, XeChooseNative, XeChooseCopy, XeCancel, XeCopyReleased };
++@implementation XeNoCopyOwnership
++- (id)initWithBlock:(id)block bytes:(void*)bytes length:(NSUInteger)length {
++  if ((self=[super init])) {
++    _lock=[NSLock new]; _releaseBytes=[block copy]; _bytes=bytes; _length=length;
++    if (!_lock || !_releaseBytes) { [self release]; return nil; }
++  }
++  return self;
++}
++- (void)event:(int)event {
++  [self event:event pointer:NULL length:0];
++}
++- (void)nativeReleased:(void*)pointer length:(NSUInteger)length {
++  [self event:XeNativeCallback pointer:pointer length:length];
++}
++- (BOOL)canRecover {
++  [_lock lock]; BOOL ready=_requested&&!_fired; [_lock unlock]; return ready;
++}
++- (void)event:(int)event pointer:(void*)pointer length:(NSUInteger)length {
++  void (^run)(void*,NSUInteger)=nil;
++  void *releasedPointer=NULL; NSUInteger releasedLength=0;
++  [_lock lock];
++  if (event==XeNativeCallback) {
++    if (!_requested) { _nativeBytes=pointer; _nativeLength=length; }
++    _requested=YES;
++  }
++  else if (event==XeChooseNative) _mode=1;
++  else if (event==XeChooseCopy) _mode=2;
++  else if (event==XeCancel) _mode=3;
++  else if (event==XeCopyReleased) _mode=4;
++  if (!_fired && ((_requested && (_mode==1 || _mode==3)) || _mode==4)) {
++    _fired=YES; run=[_releaseBytes copy];
++    releasedPointer=_requested?_nativeBytes:_bytes;
++    releasedLength=_requested?_nativeLength:_length;
++  }
++  [_lock unlock];
++  if (run) { @try { run(releasedPointer,releasedLength); } @finally { [run release]; } }
++}
++- (void)dealloc { [_releaseBytes release]; [_lock release]; [super dealloc]; }
++@end
++
+ static id w_nc4(id s, SEL c, void* ptr, NSUInteger len, id dealloc, MTLTextureDescriptor* d, NSUInteger off, NSUInteger bpr) {
+-  if (nc_precisa(d, off)) {
+-    id t = nc_copia(s, ptr, d, off, bpr);
++  if (nc_eligible(d)) {
++    id t = nc_copia(s, ptr, len, d, off, bpr);
+     if (t) {
+-      if (dealloc) { XeDeallocV15* x = [[XeDeallocV15 alloc] initWithBlock:dealloc ptr:ptr len:len]; objc_setAssociatedObject(t, kNcDealloc, x, OBJC_ASSOCIATION_RETAIN); [x release]; }
++      if (dealloc) {
++        XeDeallocV15* x = [[XeDeallocV15 alloc] initWithBlock:dealloc ptr:ptr len:len];
++        if (!x) { [t release]; return nil; }
++        @try { objc_setAssociatedObject(t, kNcDealloc, x, OBJC_ASSOCIATION_RETAIN); }
++        @catch (id exception) { [t release]; @throw; }
++        @finally { [x release]; }
++      }
+       return t;
+     }
+   }
+-  return ((id(*)(id, SEL, void*, NSUInteger, id, id, NSUInteger, NSUInteger))g_nc4)(s, c, ptr, len, dealloc, d, off, bpr);
++  typedef id (*Native)(id,SEL,void*,NSUInteger,id,id,NSUInteger,NSUInteger);
++  if (!nc_eligible(d)) return ((Native)g_nc4)(s,c,ptr,len,dealloc,d,off,bpr);
++  if (!dealloc) {
++    id native=((Native)g_nc4)(s,c,ptr,len,nil,d,off,bpr);
++    nc_native_stat(d,off,native);
++    return native ?: nc_copia(s,ptr,len,d,off,bpr);
++  }
++  XeNoCopyOwnership *gate=[[XeNoCopyOwnership alloc] initWithBlock:dealloc bytes:ptr length:len];
++  if (!gate) return ((Native)g_nc4)(s,c,ptr,len,dealloc,d,off,bpr);
++  @try {
++    id native=((Native)g_nc4)(s,c,ptr,len,^(void *p,NSUInteger n) {
++        [gate nativeReleased:p length:n];
++      },d,off,bpr);
++    nc_native_stat(d,off,native);
++    if (native) { [gate event:XeChooseNative]; return native; }
++    // A failed private call without a release callback has ambiguous ownership.
++    if (![gate canRecover]) { [gate event:XeCancel]; return nil; }
++    id copied=nc_copia(s,ptr,len,d,off,bpr);
++    if (copied) {
++      [gate event:XeChooseCopy];
++      XeDeallocV15 *holder=[[XeDeallocV15 alloc] initWithBlock:^(void *p,NSUInteger n) {
++          [gate event:XeCopyReleased];
++        } ptr:ptr len:len];
++      if (!holder) { [gate event:XeCancel]; [copied release]; return nil; }
++      objc_setAssociatedObject(copied,kNcDealloc,holder,OBJC_ASSOCIATION_RETAIN);
++      [holder release];
++    } else [gate event:XeCancel];
++    return copied;
++  } @catch (id exception) {
++    [gate event:XeCancel]; @throw;
++  } @finally {
++    [gate release];
++  }
+ }
+ static void install_nocopyfix(void) {
+   if (getenv("XE_NOCOPY_ZERO")) { LOG("nocopyfix desligado (XE_NOCOPY_ZERO)"); g_nc3 = (IMP)1; return; }
+@@ -637,6 +789,7 @@
+   LOG("instalação tardia: entries=%d pd=%d rhm=%d", e, p, r);
+   return NULL;
+ }
++#ifndef XE_OFFLINE_AUDIT
+ __attribute__((constructor)) static void xedrv17_init(void) {
+ #ifdef SO_PIPELOG
+   install_pipelog(); return;
+@@ -650,3 +803,4 @@
+   LOG("carregada em %s[%d]: entries=%d pd=%d rhm=%d layout=%d lab=%d", getprogname(), getpid(), e, p, r, g_layout_ok, access(LAB_FLAG, F_OK) == 0);
+   if (!(e && p && r && g_tex_dev && g_fill)) { pthread_t th; pthread_create(&th, NULL, late, NULL); pthread_detach(th); }
+ }
++#endif
+--- a/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp
++++ b/vendor/iris-xe/src/NootedGreen/kern_gen11.hpp
+@@ -10,6 +10,7 @@
+ #include "AppleIntelParams.hpp"
+ #include <Headers/kern_util.hpp>
+ #include <IOKit/IOBufferMemoryDescriptor.h>
++#include "p1_scanout.hpp"
+ 
+ // ─── Platform info / connector structures (from NootedBlue reference) ────────
+ // Note: ConnectorType enum is defined later in this file (below line 1100).
+@@ -1326,6 +1327,8 @@
+ 	friend class Genx;
+ 
+ private:
++    static bool p1InitRangeAllocator(void *that, P1Scanout::AddressRange range, uint64_t alignment);
++    mach_vm_address_t op1InitRangeAllocator {};
+ 
+ 	// ── GuC (Graphics micro-Controller) firmware ──
+ 	static unsigned long loadGuCBinary(void *that);  // route: intercept GuC FW load
+--- a/vendor/iris-xe/src/NootedGreen/kern_green.hpp
++++ b/vendor/iris-xe/src/NootedGreen/kern_green.hpp
+@@ -284,6 +284,7 @@
+ public:
+     bool getIsRealTGL() const { return isRealTGL; }
+     uint64_t mmioLength() const { return (rmmio && rmmioPtr) ? rmmio->getLength() : 0; }  // xe/rc6fw (22/10)
++    uint64_t apertureLength() const { return apertureLen; }
+ private:
+     bool dmcIsAdlp = false;    // true when ADL-P DMC blob was loaded in hwInitializeCState
+     void adlpDcExit(const char *caller);
+--- /dev/null
++++ b/vendor/iris-xe/src/NootedGreen/p1_scanout.hpp
+@@ -0,0 +1,177 @@
++#ifndef P1_SCANOUT_HPP
++#define P1_SCANOUT_HPP
++#include <stdint.h>
++
++namespace P1Scanout {
++constexpr uint32_t PageSize = 4096;
++constexpr uint32_t StartPage = 4096;
++constexpr uint32_t PagesPerSlot = 6144;
++constexpr uint32_t SlotCount = 6;
++constexpr uint32_t GuardPages = 128;
++constexpr uint32_t MinMappedPages = 4096;
++constexpr uint32_t MaxDataPages = PagesPerSlot - GuardPages;
++constexpr uint64_t PoolStart = uint64_t(StartPage) * PageSize;
++constexpr uint64_t PoolBytes = uint64_t(PagesPerSlot) * SlotCount * PageSize;
++constexpr uint64_t PoolEnd = PoolStart + PoolBytes;
++constexpr uint64_t PteBase = 0x800000;
++
++struct AddressRange { uint64_t start, length; };
++static_assert(sizeof(AddressRange) == 16, "IGAddressRange ABI is two 64-bit values");
++static_assert(StartPage > 0x18, "Scanout aliases must not cover scratch/LRCA low pages");
++static_assert(PagesPerSlot >= MinMappedPages + GuardPages, "Alias padding must fit");
++static_assert(StartPage % 16 == 0 && PagesPerSlot % 16 == 0, "Slots require 64 KiB alignment");
++static_assert(PoolEnd <= 0x100000000ULL, "Primary-plane SURF address must fit 32 bits");
++
++// Intersect without overflowing an incoming canonical-address range.
++inline AddressRange overlap(AddressRange range) {
++    if (!range.length || range.start >= PoolEnd) return {0, 0};
++    const uint64_t start = range.start > PoolStart ? range.start : PoolStart;
++    const uint64_t available = PoolEnd - range.start;
++    const uint64_t end = range.length >= available ? PoolEnd : range.start + range.length;
++    return end > start ? AddressRange{start, end - start} : AddressRange{0, 0};
++}
++
++struct Layout {
++    uint32_t ctl, stride, size, offset, dataPages;
++    bool equals(const Layout &other) const {
++        return ctl == other.ctl && stride == other.stride && size == other.size &&
++            offset == other.offset && dataPages == other.dataPages;
++    }
++};
++
++inline bool layout(uint32_t ctl, uint32_t stride, uint32_t size, uint32_t offset, Layout &out) {
++    // P1's uncompressed linear/X-tiled primary plane only. Never guess other layouts.
++    const uint32_t tiling = (ctl >> 10) & 7;
++    const uint32_t format = (ctl >> 23) & 31;
++    const uint32_t bpp = format == 8 || format == 4 ? 4 : format == 12 ? 8 : format == 28 ? 2 : 0;
++    if ((ctl & (3U | (1U << 15) | (1U << 4))) || offset || !bpp ||
++        (tiling != 0 && tiling != 1)) return false;
++    const uint64_t units = stride & 0xfff;
++    const uint64_t height = uint64_t(size >> 16) + 1;
++    const uint64_t width = uint64_t(size & 0xffff) + 1;
++    if (!units || height > 8192 || width > 8192) return false;
++    const uint64_t pitch = units * (tiling == 0 ? 64 : 512);
++    if (pitch < width * bpp) return false;
++    const uint64_t rows = tiling == 1 ? (height + 7) & ~uint64_t(7) : height;
++    const uint64_t pages = (pitch * rows + PageSize - 1) / PageSize;
++    if (!pages || pages > MaxDataPages) return false; // Reject, never truncate.
++    out = {ctl & 0x0f800d03U, stride, size, offset, uint32_t(pages)};
++    return true;
++}
++
++class Cache {
++    struct Slot {
++        bool valid;
++        uint32_t sourcePage;
++        Layout layout;
++        uint64_t age;
++    } slots[SlotCount] {};
++    // Keep the PTEs installed by this cache in RAM. The destination bank is
++    // allocator-reserved and invalidated on reset; rereading it on every flip
++    // is unnecessary. Source backing must still be checked for recycled VAs.
++    uint64_t backing[SlotCount][MaxDataPages] {};
++    uint64_t snapshot[MaxDataPages] {};
++    uint64_t clock {0};
++    uint32_t generation {0}, lastArmed {0};
++    uintptr_t owner {0};
++    volatile int busy {0};
++
++    template<class IO> static bool readPte(IO &io, uint32_t page, uint64_t &value) {
++        const uint64_t reg = PteBase + uint64_t(page) * 8;
++        if (reg + 8 > io.mmioBytes()) return false;
++        // Reject an unstable split PTE instead of combining two different mappings.
++        for (unsigned attempt = 0; attempt < 2; ++attempt) {
++            const uint32_t lo = io.read32(reg), hi = io.read32(reg + 4);
++            if (lo == io.read32(reg) && hi == io.read32(reg + 4)) {
++                value = (uint64_t(hi) << 32) | lo;
++                return true;
++            }
++        }
++        return false;
++    }
++    static uint32_t address(unsigned slot) {
++        return (StartPage + slot * PagesPerSlot) * PageSize;
++    }
++    struct Unlock {
++        volatile int *lock;
++        ~Unlock() { __sync_lock_release(lock); }
++    };
++public:
++    // IO supplies a real allocator-reservation state; an aperture size alone is insufficient.
++    template<class IO> bool redirect(IO &io, uint32_t source, uint32_t &result) {
++        if (!io.reserved() || io.apertureBytes() < PoolEnd ||
++            PteBase + (PoolEnd / PageSize) * 8 > io.mmioBytes()) return false;
++        if (!__sync_bool_compare_and_swap(&busy, 0, 1)) return false;
++        Unlock unlock {&busy};
++        const uint32_t epoch = io.epoch();
++        if (generation != epoch || owner != io.owner()) {
++            for (auto &slot : slots) slot.valid = false;
++            generation = epoch; owner = io.owner();
++        }
++        Layout view;
++        if (!layout(io.read32(0x70180), io.read32(0x70188), io.read32(0x70190),
++                    io.read32(0x701a4), view)) return false;
++        const uint32_t sourcePage = source >> 12;
++        if (PteBase + (uint64_t(sourcePage) + view.dataPages) * 8 > io.mmioBytes()) return false;
++        for (uint32_t i = 0; i < view.dataPages; ++i) {
++            if (!readPte(io, sourcePage + i, snapshot[i]) || !(snapshot[i] & 1)) return false;
++        }
++        if (epoch != io.epoch()) return false;
++        const uint64_t padding = snapshot[view.dataPages - 1];
++        // Compare current source backing to the saved mapping in RAM. No GGTT
++        // destination reads on a hit; a matching VA alone is not an identity.
++        for (unsigned s = 0; s < SlotCount; ++s) {
++            auto &slot = slots[s];
++            if (!slot.valid || slot.sourcePage != sourcePage || !slot.layout.equals(view)) continue;
++            bool same = true;
++            for (uint32_t i = 0; i < view.dataPages; ++i) {
++                if (backing[s][i] != snapshot[i]) {
++                    same = false; break;
++                }
++            }
++            if (same && epoch == io.epoch()) {
++                slot.age = ++clock;
++                lastArmed = address(s);
++                result = lastArmed | (source & 0xfff);
++                return true; // No PTE writes on a validated hit.
++            }
++        }
++        const uint32_t live = io.read32(0x701ac) & 0xfffff000;
++        const uint32_t armed = io.read32(0x7019c) & 0xfffff000;
++        int selected = -1;
++        uint64_t oldest = ~uint64_t(0);
++        for (unsigned s = 0; s < SlotCount; ++s) {
++            const uint32_t dest = address(s);
++            const uint64_t end = uint64_t(dest) + uint64_t(PagesPerSlot) * PageSize;
++            const uint64_t activeSpan = uint64_t(PagesPerSlot) * PageSize;
++            // Protect ranges, including a native boot surface starting below the pool.
++            if ((uint64_t(dest) < uint64_t(live) + activeSpan && live < end) ||
++                (uint64_t(dest) < uint64_t(armed) + activeSpan && armed < end) ||
++                (lastArmed && dest == lastArmed)) continue;
++            if (!slots[s].valid) { selected = int(s); break; }
++            if (slots[s].age < oldest) { oldest = slots[s].age; selected = int(s); }
++        }
++        if (selected < 0 || epoch != io.epoch()) return false;
++        const uint32_t base = StartPage + uint32_t(selected) * PagesPerSlot;
++        slots[selected].valid = false;
++        // All source PTEs were validated before the first write. Fill only alias padding
++        // with the last page; do not invent missing display data or scan into a neighbour.
++        for (uint32_t i = 0; i < PagesPerSlot; ++i) {
++            const uint64_t pte = i < view.dataPages ? snapshot[i] : padding;
++            const uint64_t reg = PteBase + uint64_t(base + i) * 8;
++            io.write32(reg + 4, uint32_t(pte >> 32));
++            io.write32(reg, uint32_t(pte));
++        }
++        io.write32(0x101008, 1);
++        (void)io.read32(0x101008); // Posting read before the caller arms SURF.
++        if (epoch != io.epoch()) return false;
++        for (uint32_t i = 0; i < view.dataPages; ++i)
++            backing[selected][i] = snapshot[i];
++        slots[selected] = {true, sourcePage, view, ++clock};
++        lastArmed = address(unsigned(selected));
++        result = lastArmed | (source & 0xfff);
++        return true;
++    }
++};
++}
++#endif
+--- /dev/null
++++ b/vendor/iris-xe/macos/src/xe_image_span.h
+@@ -0,0 +1,22 @@
++#ifndef XE_IMAGE_SPAN_H
++#define XE_IMAGE_SPAN_H
++#include <stdint.h>
++
++// Exact accessible pixel footprint, excluding optional padding after the last row.
++// All arguments use bytes/pixels, never GGTT page counts.
++static inline int xe_image_span(uint64_t width, uint64_t height, uint64_t bpp,
++                                uint64_t stride, uint64_t offset, uint64_t length,
++                                uint64_t *actual_stride, uint64_t *span) {
++  if (!width || !height || !bpp || offset > length || width > UINT64_MAX / bpp)
++    return 0;
++  const uint64_t row = width * bpp;
++  if (!stride) stride = row;
++  if (stride < row || height - 1 > (UINT64_MAX - row) / stride)
++    return 0;
++  const uint64_t size = (height - 1) * stride + row;
++  if (size > length - offset) return 0;
++  if (actual_stride) *actual_stride = stride;
++  if (span) *span = size;
++  return 1;
++}
++#endif

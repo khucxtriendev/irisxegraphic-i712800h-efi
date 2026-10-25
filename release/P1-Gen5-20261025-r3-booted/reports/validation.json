@@ -1,0 +1,12 @@
+{
+  "release": "P1-Gen5-20261025-r3-booted",
+  "passed": true,
+  "EFI_equals_previous_R3": true,
+  "Metal_bundle_equals_installed_fix": true,
+  "standalone_and_bundled_shim_equal": true,
+  "isolated_NoCopy_GPU_repair_verified": true,
+  "dock_digits_user_confirmed": true,
+  "ocvalidate": "not run; EFI unchanged",
+  "hz_165_verified": false,
+  "system_or_USB_written_during_packaging": false
+}

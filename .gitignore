@@ -18,5 +18,13 @@ vendor/iris-xe/build/
 __pycache__/
 *.py[cod]
 
-# Large archives (both releases are already extracted in release/)
+# Large archives
 *.zip
+*.pkg
+
+# Binaries inside release directories (only keep source code in release/)
+release/**/Graphics/
+release/**/EFI/
+release/**/Optional/
+release/**/bin/
+release/**/*.app/

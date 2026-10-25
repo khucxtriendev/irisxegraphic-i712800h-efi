@@ -1,0 +1,12 @@
+{
+  "updated_at": "2026-10-25T15:24:27.273895+00:00",
+  "user_report": "t đã thấy chữ thông báo, hãy cập nhật vào bản r3 nhé",
+  "P1_test_app_visual_result": "user clicked: digits visible",
+  "installed_bundle_matches_packaged_fix": true,
+  "dock_badge_digits_confirmed_by_user": true,
+  "isolated_NoCopy_GPU_repair_verified": true,
+  "EFI_unchanged": true,
+  "all_other_GPU_features_verified": false,
+  "hz_165_verified": false,
+  "upstream_commit": "125f089fcc90520cd5565dee19f26c968f3d5c59"
+}

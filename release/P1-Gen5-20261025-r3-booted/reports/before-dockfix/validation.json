@@ -1,0 +1,19 @@
+{
+  "release": "P1-Gen5-20261025-r3-booted",
+  "passed": true,
+  "source_snapshot_matches_usb": true,
+  "source_file_count": 156,
+  "exactly_five_expected_config_differences_from_trial": true,
+  "all_other_efi_payloads_equal_trial": true,
+  "enabled_kext_references": "passed",
+  "acpi_checksums": "passed",
+  "plutil": "passed",
+  "signed_r2_components": "passed",
+  "ocvalidate": "unavailable locally; not run",
+  "desktop_boot": "reported successful by user",
+  "current_nvram_boot_args_equal_usb_config": true,
+  "metal_acceleration_verified": false,
+  "dock_badge_fix_verified": false,
+  "hz_165_verified": false,
+  "wrote_usb_or_system": false
+}

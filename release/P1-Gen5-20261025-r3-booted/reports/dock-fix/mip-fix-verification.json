@@ -1,0 +1,180 @@
+{
+  "isolated_gpu_nocopy_repair_passed": true,
+  "formats_tested": [
+    "A8Unorm",
+    "R8Unorm",
+    "BGRA8Unorm"
+  ],
+  "mip_levels_requested": 7,
+  "sampled_levels": [
+    0,
+    3,
+    6
+  ],
+  "all_after_samples_equal_expected": true,
+  "gpu_timeout": false,
+  "before_NoCopy_samples": [
+    {
+      "mips": 7,
+      "actual_format": 1,
+      "sample_LOD_0_3_6": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "format": 1
+    },
+    {
+      "mips": 7,
+      "actual_format": 10,
+      "sample_LOD_0_3_6": [
+        [
+          0,
+          0,
+          0,
+          255
+        ],
+        [
+          0,
+          0,
+          0,
+          255
+        ],
+        [
+          0,
+          0,
+          0,
+          255
+        ]
+      ],
+      "format": 10
+    },
+    {
+      "mips": 7,
+      "actual_format": 80,
+      "sample_LOD_0_3_6": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "format": 80
+    }
+  ],
+  "after_NoCopy_samples": [
+    {
+      "mips": 7,
+      "actual_format": 1,
+      "sample_LOD_0_3_6": [
+        [
+          0,
+          0,
+          0,
+          127
+        ],
+        [
+          0,
+          0,
+          0,
+          127
+        ],
+        [
+          0,
+          0,
+          0,
+          127
+        ]
+      ],
+      "format": 1
+    },
+    {
+      "mips": 7,
+      "actual_format": 10,
+      "sample_LOD_0_3_6": [
+        [
+          127,
+          0,
+          0,
+          255
+        ],
+        [
+          127,
+          0,
+          0,
+          255
+        ],
+        [
+          127,
+          0,
+          0,
+          255
+        ]
+      ],
+      "format": 10
+    },
+    {
+      "mips": 7,
+      "actual_format": 80,
+      "sample_LOD_0_3_6": [
+        [
+          127,
+          127,
+          127,
+          127
+        ],
+        [
+          127,
+          127,
+          127,
+          127
+        ],
+        [
+          127,
+          127,
+          127,
+          127
+        ]
+      ],
+      "format": 80
+    }
+  ],
+  "core_animation_fixture_before_white_pixels": 400,
+  "core_animation_fixture_after_white_pixels": 400,
+  "core_animation_fixture_reproduced_Dock_failure": false,
+  "actual_Dock_visual_fix_verified": false,
+  "system_driver_installed": false,
+  "efi_modified": false,
+  "cpu_mip_sanitizers": "PASS: five formats, bounds, both signatures, delayed deallocator, failed queue/encoder/command, opt-out",
+  "cpu_ownership_sanitizers": "PASS: native fallback, guarded callback, exceptions",
+  "signed_bundle_hashes_verified": true,
+  "frozen_source_hashes_verified": true
+}

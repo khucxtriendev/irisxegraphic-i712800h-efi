@@ -1,0 +1,30 @@
+1096: enum ConnectorType : uint32_t {
+1097: 	ConnectorZero       = 0x0,
+1098: 	ConnectorDummy      = 0x1,   /* Always used as dummy, seems to sometimes work as VGA */
+1099: 	ConnectorLVDS       = 0x2,   /* Just like on AMD LVDS is used for eDP */
+1100: 	ConnectorDigitalDVI = 0x4,   /* This is not eDP despite a common misbelief */
+1101: 	ConnectorSVID       = 0x8,
+1102: 	ConnectorVGA        = 0x10,
+1103: 	ConnectorDP         = 0x400,
+1104: 	ConnectorHDMI       = 0x800,
+1105: 	ConnectorAnalogDVI  = 0x2000
+1106: };
+1107: 
+1108: /* I can see very few mentioned in the code (0x1, 0x8, 0x40), though connectors themselves define way more! */
+1109: 
+1110: union ConnectorFlags {
+1111: 	struct ConnectorFlagBits {
+1112: 		/* Bits 1, 2, 8 are mentioned in AppleIntelFramebufferController::GetGPUCapability */
+1113: 		/* Lets apperture memory to be not required AppleIntelFramebuffer::isApertureMemoryRequired */
+1114: 		uint8_t CNAlterAppertureRequirements :1;  /* 0x1 */
+1115: 		uint8_t CNUnknownFlag_2              :1;  /* 0x2 */
+1116: 		uint8_t CNUnknownFlag_4              :1;  /* 0x4 */
+1117: 		/* Normally set for LVDS displays (i.e. built-in displays) */
+1118: 		uint8_t CNConnectorAlwaysConnected   :1;  /* 0x8 */
+1119: 		/* AppleIntelFramebuffer::maxSupportedDepths checks this and returns 2 IODisplayModeInformation::maxDepthIndex ?? */
+1120: 		uint8_t CNUnknownFlag_10             :1;  /* 0x10 */
+1121: 		uint8_t CNUnknownFlag_20             :1;  /* 0x20 */
+1122: 		/* Disable blit translation table? AppleIntelFramebufferController::ConfigureBufferTranslation */
+1123: 		uint8_t CNDisableBlitTranslationTable:1;  /* 0x40 */
+1124: 		/* Used in AppleIntelFramebufferController::setPowerWellState */
+1125: 		/* Activates MISC IO power well (SKL_DISP_PW_MISC_IO) */

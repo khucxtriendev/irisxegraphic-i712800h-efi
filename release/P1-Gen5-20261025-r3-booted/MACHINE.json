@@ -1,0 +1,174 @@
+{
+  "model": {
+    "name": "Lenovo ThinkPad P1 Gen 5",
+    "source": "previous machine confirmation + Lenovo PCI subsystem 17AA:22F8"
+  },
+  "cpu": {
+    "name": "Intel Core i7-12800H",
+    "signature": "0x906A3",
+    "physical_cores_spec": 14,
+    "p_cores_spec": 6,
+    "e_cores_spec": 8,
+    "logical_threads_observed": 20,
+    "macos_physicalcpu_observed": 6,
+    "physicalcpu_note": "CpuTopologyRebuild/kernel topology reporting; not proof that E-cores are disabled."
+  },
+  "memory": {
+    "bytes": 34359738368,
+    "modules": 2,
+    "type": "DDR5",
+    "rate_mts": 4800
+  },
+  "igpu": {
+    "native_id_spec": "8086:46A6",
+    "native_id_source": "Intel SKU specifications; runtime device-id is spoofed",
+    "runtime_id": "8086:9A49",
+    "execution_units_spec": 96,
+    "driver": "NootedGreen + Apple Tiger Lake 16.0.32 stack",
+    "driver_request_floor_mhz": 1400,
+    "upstream_default_request_floor_mhz": 1500
+  },
+  "dgpu": {
+    "runtime_id": "10DE:25B9",
+    "known_model": "NVIDIA RTX A1000 Laptop",
+    "configuration": "class-code ffffffff + disable-gpu property",
+    "power_off_verified": false,
+    "external_display_routing_verified": false
+  },
+  "panel": {
+    "model": "BOE NE160QDM-NY1",
+    "edid_vendor_hex": "09e5",
+    "edid_product_hex": "0ae0",
+    "native_pixels": [
+      2560,
+      1600
+    ],
+    "preferred_timing_hz": 60.002,
+    "saved_logical_size": [
+      1440,
+      900
+    ],
+    "saved_render_pixels": [
+      2880,
+      1800
+    ],
+    "runtime_ui_scale_ioreg": 2,
+    "edid_sha256": "088bd08b9b569f571462bcaf28eff70b920bb79cf60479daabc3a3e14cd4fd01",
+    "hz_165_verified": false
+  },
+  "audio": {
+    "pci_controller": "8086:51C8",
+    "codec_inferred": "Realtek ALC287",
+    "source": "Installed Windows INF associates INTELAUDIO VEN_10EC DEV_0287 with subsystem 17AA22F8; not a live HDA codec dump",
+    "layout_trial": 11,
+    "tested": false,
+    "layout_selected": 11,
+    "layout_id_data_hex": "0b000000"
+  },
+  "wifi": {
+    "pci_id": "8086:51F0",
+    "known_model": "Intel AX211",
+    "driver": "AirportItlwm-Tahoe 2.4.0"
+  },
+  "bluetooth": {
+    "usb_id": "8087:0033",
+    "usb_port": 10,
+    "controller_pci_id": "8086:51ED",
+    "usb_connector": 255,
+    "pairing_tested_new_efi": false
+  },
+  "camera": {
+    "usb_id": "174F:1812",
+    "interface_class": 14,
+    "type": "USB UVC (includes IR interface)",
+    "capture_tested": false
+  },
+  "fingerprint": {
+    "usb_id": "27C6:6594",
+    "upstream_dell_usb_id": "27C6:63BC",
+    "port_confirmed": false
+  },
+  "usb": {
+    "pch_controller": "8086:51ED",
+    "pch_ports_observed": {
+      "usb2": 12,
+      "usb3": 3
+    },
+    "thunderbolt_controller": "8086:1138",
+    "thunderbolt_ports_observed": {
+      "usb2": 2,
+      "usb3": 2
+    },
+    "physical_connector_map_verified": false
+  },
+  "storage": {
+    "model": "KIOXIA KXG8AZNV512G",
+    "trim": true
+  },
+  "os": {
+    "version": "26.7.1",
+    "build": "25G241"
+  },
+  "tested_boot": "user reported successful desktop boot; see reports/boot-confirmation.json",
+  "all_requested_features_verified": false,
+  "touchpad": {
+    "acpi_id": "SYNA801D",
+    "hid_vendor_hex": "06cb",
+    "hid_product_hex": "cec9",
+    "transport": "I2C",
+    "i2c_address_hex": "2c",
+    "gpio_controller": "INTC1055",
+    "gpio_pin_observed": 332,
+    "interrupt_mode_observed": "GPIO",
+    "transducers_observed": 5,
+    "gestures_tested_new_efi": false
+  },
+  "r3_display_trial": {
+    "status": "superseded by snapshot of user-booted USB; see reports/trial-r3"
+  },
+  "r3_booted": {
+    "release": "P1-Gen5-20261025-r3-booted",
+    "role": "R3 baseline: user-confirmed boot and Dock badge digits",
+    "created_at": "2026-10-25T14:28:14.947411+00:00",
+    "source_efi": "/Volumes/1401/EFI",
+    "source_config_sha256": "0a76fa1e1e8418c8fe77fd824cf54feab587e464ce0ad89a53e0678859233c90",
+    "source_efi_files": 156,
+    "all_efi_files_equal_usb": true,
+    "user_report": "t vừa boot từ EFI trong usb lên, thấy nó lên được",
+    "desktop_boot": "reported successful by user; not observed by agent",
+    "current_nvram_boot_args_equal_usb_config": true,
+    "boot_device_independently_verified": false,
+    "root_cause_confirmed": false,
+    "metal_acceleration_verified": false,
+    "dock_badge_fix_verified": true,
+    "hz_165_verified": false,
+    "cold_boot_and_repeat_boot_verified": false,
+    "binary_changes_from_trial_r3": [],
+    "config_kept_byte_for_byte": true,
+    "config_changes_from_trial_r3": {
+      "added_properties": [
+        "AAPL,override-no-connect",
+        "framebuffer-con0-enable",
+        "framebuffer-con0-type",
+        "framebuffer-con0-flags"
+      ],
+      "NVRAM/LegacyOverwrite": {
+        "trial": false,
+        "booted_usb": true
+      }
+    },
+    "wrote_usb_or_system": false
+  },
+  "dock_mipmap_fix": {
+    "updated_at": "2026-10-25T15:24:27.273895+00:00",
+    "user_report": "t đã thấy chữ thông báo, hãy cập nhật vào bản r3 nhé",
+    "P1_test_app_visual_result": "user clicked: digits visible",
+    "installed_bundle_matches_packaged_fix": true,
+    "dock_badge_digits_confirmed_by_user": true,
+    "isolated_NoCopy_GPU_repair_verified": true,
+    "EFI_unchanged": true,
+    "all_other_GPU_features_verified": false,
+    "hz_165_verified": false,
+    "upstream_commit": "125f089fcc90520cd5565dee19f26c968f3d5c59"
+  }
+}

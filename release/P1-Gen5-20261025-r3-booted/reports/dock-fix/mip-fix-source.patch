@@ -1,0 +1,35 @@
+--- baseline/libxedrv-user-A8.m
++++ src/mipfix/libxedrv.m
+@@ -496,11 +496,12 @@
+ @end
+ static IMP g_nc3, g_nc4; static long g_nc_n;
+ static const void* kNcDealloc = &kNcDealloc;
++#include "xe_mip_upload.h"
+ static BOOL nc_eligible(MTLTextureDescriptor* d) {
+   // CPU image upload path only: do not snapshot GPU render targets or writable
+   // resources. NoCopy images accepted here intentionally become managed snapshots.
+   return d && d.textureType == MTLTextureType2D &&
+-      d.mipmapLevelCount == 1 && d.arrayLength == 1 && d.depth == 1 &&
++      (d.mipmapLevelCount == 1 || nc_mip_eligible(d)) && d.arrayLength == 1 && d.depth == 1 &&
+       d.sampleCount == 1 && !(d.usage & (MTLTextureUsageShaderWrite | MTLTextureUsageRenderTarget));
+ }
+ static void nc_native_stat(MTLTextureDescriptor *d, NSUInteger off, id native) {
+@@ -535,7 +536,9 @@
+   c.resourceOptions = (c.resourceOptions & ~MTLResourceStorageModeMask) | MTLResourceStorageModeManaged;
+   c.storageMode = MTLStorageModeManaged;
+ 
+-  if (d.pixelFormat == MTLPixelFormatA8Unorm) {
++  // Keep the user's existing single-level A8 experiment. The new mip path
++  // preserves the requested format, as in upstream v19, and repairs the chain.
++  if (d.pixelFormat == MTLPixelFormatA8Unorm && d.mipmapLevelCount == 1) {
+     c.pixelFormat = MTLPixelFormatRGBA8Unorm;
+     id<MTLTexture> t = [dev newTextureWithDescriptor:c];
+     if (!t) return nil;
+@@ -566,6 +569,7 @@
+   if (!t) return nil;
+   @try {
+     [t replaceRegion:MTLRegionMake2D(0, 0, d.width, d.height) mipmapLevel:0 withBytes:(uint8_t*)ptr + off bytesPerRow:(NSUInteger)pitch];
++    if (!nc_generate_mips(dev,t,d)) { [t release]; return nil; }
+   } @catch (id exception) { [t release]; @throw; }
+   long n = __sync_add_and_fetch(&g_nc_n, 1);
+   if (n <= 4 || (n & (n - 1)) == 0) LOG("NOCOPY textura %lux%lu fmt=%lu off=0x%lx bpr=%lu -> cópia alinhada (n=%ld)", (unsigned long)d.width,

@@ -1,0 +1,118 @@
+4399: 		SYSLOG("ngreen", "V212: ADL-P Display 13+ workarounds applied — PIPE_CHICKEN(A)=0x%x CLKGATE_DIS_5=0x%x CHICKEN_DCPR_1=0x%x ERR_FATAL_MASK=0x%x",
+4400: 			   pipeChicken, clkGateDis5, chickenDcpr1, errFatalMask);
+4401: 	}
+4402: }
+4403: 
+4404: uint64_t Gen11::getOSInformation(AppleIntel::AppleIntelBaseController *that)
+4405: {
+4406: 	auto *pinfo = reinterpret_cast<PlatformInfo *>(callback->gPlatformInformationList);
+4407: 	if (pinfo) {
+4408: 		// Index 1 = the mobile TGL/ADL-P platform entry (0x9A490000 and variants).
+4409: 		pinfo[1].fInfoFlags =
+4410: 			FB_FLAG_DISABLE_PIPE_SCRAMBLE      |
+4411: 			FB_FLAG_FRAMEBUFFER_COMPRESSION    |
+4412: 			FB_FLAG_ALLOW_CONNECTOR_RECOVER    |
+4413: 			FB_FLAG_FORCE_POWER_ALWAYS_CONNECTED |
+4414: 			FB_FLAG_AVOID_FAST_LINK_TRAINING;
+4415: 
+4416: 		// cameliav=2 (CamelliaTcon2) requires GFX kext present — gate on -ngreentglwithgfx.
+4417: 		pinfo[1].cameliav = checkKernelArgument("-ngreentglwithgfx") ? 2 : 0;
+4418: 		pinfo[1].fMobile  = 1;
+4419: 		// 3/3/3 baseline restored. Multi-pipe reduction is whack-a-mole — every count
+4420: 		// reduction reveals new cross-pipe NULL-deref sites in TGL FB internals
+4421: 		// (enableController +0x1356, getFreeJoinablePathCount +0xa7, etc).
+4422: 		// Best known config: 3/3/3 + -ngreendp0 → reaches login with banded display.
+4423: 		pinfo[1].fPipeCount            = 3;
+4424: 		pinfo[1].fInfoPortCount        = 3;
+4425: 		pinfo[1].fInfoFramebufferCount = 3;
+4426: 		pinfo[1].fSliceCount  = 1;
+4427: 		pinfo[1].fmaxEuCount  = 8;
+4428: 		pinfo[1].fsubslices   = 10;
+4429: 
+4430: 		// Connector 0: built-in eDP (LVDS), DDI-A, pipe 0
+4431: 		pinfo[1].connectors[0].index = 0;
+4432: 		pinfo[1].connectors[0].busId = 0;
+4433: 		pinfo[1].connectors[0].pipe  = 0;
+4434: 		pinfo[1].connectors[0].pad   = 0;
+4435: 		pinfo[1].connectors[0].type  = ConnectorLVDS;
+4436: 		pinfo[1].connectors[0].flags = 0x8 | 0x10;
+4437: 
+4438: 		// Connector 1: external USB-C/Thunderbolt DP (TC1/DDI-D), pipe 2
+4439: 		pinfo[1].connectors[1].index = 1;
+4440: 		pinfo[1].connectors[1].busId = 1;
+4441: 		pinfo[1].connectors[1].pipe  = 2;
+4442: 		pinfo[1].connectors[1].pad   = 0;
+4443: 		pinfo[1].connectors[1].type  = ConnectorDP;
+4444: 		pinfo[1].connectors[1].flags = 0x1 | 0x400;
+4445: 
+4446: 		// Connectors 2-3: Dummy
+4447: 		pinfo[1].connectors[2] = { 2, 2, 2, 0, ConnectorDummy, 0 };
+4448: 		pinfo[1].connectors[3] = { 3, 3, 3, 0, ConnectorDummy, 0 };
+4449: 
+4450: 		SYSLOG("ngreen", "getOSInformation: patched pinfo[1] for ADL-P (LVDS+HDMI, mobile)");
+4451: 	}
+4452: 	return FunctionCast(getOSInformation, callback->ogetOSInformation)(that);
+4453: }
+4454: 
+4455: int Gen11::handleLinkIntegrityCheck()
+4456: {
+4457: 	return 0;
+4458: };
+4459: 
+4460: void Gen11::hwInitializeCState(AppleIntel::AppleIntelBaseController *that)
+4461: {
+4462: 	SYSLOG("ngreen", "NB-BUILD-V50-ALLOW-METAL");
+4463: 
+4464: 	int origB48 = getMember<int>(that, 0xB48);
+4465: 	int origCE4 = getMember<int>(that, 0xCE4);
+4466: 	SYSLOG("ngreen", "hwInitCState B48=%d CE4=%d", origB48, origCE4);
+4467: 
+4468: 	// Boot-arg "ngreen-dmc":
+4469: 	//   not set or "skip" → safe fallback: passthrough original + AUX only (proven working)
+4470: 	//   "tgl"             → load TGL DMC v2.12 blob + TGL display engine registers
+4471: 	//                       + ICL/TGL combo PHY signal levels (PHY_A eDP, PHY_B DP)
+4472: 	//   "adlp"            → load ADL-P DMC v2.16 blob + ADL-P display engine registers
+4473: 	//                       + combo PHY signal levels (PHY_A eDP)
+4474: 	//   "icl"             → passthrough original ICL DMC load + ICL combo PHY signal levels
+4475: 	char dmcArg[16] = {};
+4476: 	PE_parse_boot_argn("ngreen-dmc", dmcArg, sizeof(dmcArg));
+4477: 
+4478: 	if (dmcArg[0] == 't' || dmcArg[0] == 'T') {
+4479: 		// ── TGL DMC ──
+4480: 		SYSLOG("ngreen", "hwInitCState: ngreen-dmc=tgl, loading TGL DMC v2.12 (%u dwords)", tgl_dmc_ver2_12_bin_s / 4);
+4698: 		// nonsense bitrates. The setSignalLevels function should only be invoked DURING
+4699: 		// link training when swing/preEmph are properly populated, not as init scaffolding.
+4700: 		// Left as a comment so we can re-enable surgically once real swing values are known.
+4701: 		// {
+4702: 		// 	uint8_t swing[4]   = {0, 0, 0, 0};
+4703: 		// 	uint8_t preEmph[4] = {0, 0, 0, 0};
+4704: 		// 	IntelDPLinkTraining::setSignalLevelsADLP(/*phy=*/0, /*lanes=*/4, /*isHBR2=*/false, /*isEDP=*/true,  swing, preEmph);
+4705: 		// 	IntelDPLinkTraining::setSignalLevelsADLP(/*phy=*/1, /*lanes=*/4, /*isHBR2=*/false, /*isEDP=*/false, swing, preEmph);
+4706: 		// }
+4707: 		// Let original run with B48=1 so the ICL CSR blob is loaded to SRAM.
+4708: 		// The ADL-P DMC firmware (even correct binary) autonomously drops all eDP lanes
+4709: 		// at ~10s because its DC state management code runs on ADL-P hardware and performs
+4710: 		// link maintenance that the ICL driver can't recover from. The ICL DMC running on
+4711: 		// ADL-P hardware does NOT cause lane drops (it doesn't know ADL-P DC3CO/PSR2).
+4712: 		// Our ADL-P display engine context regs (8Fxxx) are re-applied after the original
+4713: 		// so the display engine still sees ADL-P-correct values despite ICL SRAM content.
+4714: 		FunctionCast(hwInitializeCState, callback->ohwInitializeCState)(that);
+4715: 		// Re-apply ADL-P context regs overwritten by original's ICL blob load.
+4716: 		NGreen::callback->writeReg32(0x8F074, 0x00086FC0);
+4717: 		NGreen::callback->writeReg32(0x8F034, 0xC003B400);
+4773: 
+4774: 	} else {
+4775: 		// ── skip (default, safe fallback) ──
+4776: 		// Proven working: just let original run + configure AUX.
+4777: 		// No DMC blob, no display engine register writes.
+4778: 		SYSLOG("ngreen", "hwInitCState: skip (safe fallback), passthrough original");
+4779: 		FunctionCast(hwInitializeCState, callback->ohwInitializeCState)(that);
+4780: 	}
+4781: 
+4782: 	hwConfigureCustomAUX(that, true);
+4783: 	SYSLOG("ngreen", "hwInitCState: done");
+4784: }
+4785: 
+4786: void NGreen::adlpDcExit(const char *caller) {
+4787: 	if (!dmcIsAdlp) return;
+4788: 	const uint32_t dcState = readReg32(0x45504); // DC_STATE_EN

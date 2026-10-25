@@ -1,0 +1,12 @@
+{
+  "visual_result" : "user clicked: digits visible",
+  "scope" : "This diagnostic application's own Dock tile only",
+  "own_badge_changes" : [
+    {
+      "read_back" : "12",
+      "requested" : "12",
+      "timestamp" : 1792941492.0147681
+    }
+  ],
+  "date" : "2026-10-25 15:18:14 +0000"
+}
