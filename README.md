@@ -1,5 +1,13 @@
 # ThinkPad P1 Gen 5 — EFI và Stack Iris Xe macOS Tahoe
 
+[![GitHub Release](https://img.shields.io/badge/Release-v3.0--booted-blue?style=for-the-badge&logo=github)](https://github.com/khucxtriendev/irisxegraphic-i712800h-efi/releases/tag/v3.0-booted)
+[![macOS Tahoe](https://img.shields.io/badge/macOS-Tahoe%2026.7.1-orange?style=for-the-badge&logo=apple)](https://github.com/khucxtriendev/irisxegraphic-i712800h-efi)
+[![Hardware](https://img.shields.io/badge/Lenovo-ThinkPad%20P1%20Gen%205-red?style=for-the-badge&logo=lenovo)](https://github.com/khucxtriendev/irisxegraphic-i712800h-efi)
+
+> 📦 **[TẢI VỀ BẢN BUILD R3 BOOTED (ZIP)](https://github.com/khucxtriendev/irisxegraphic-i712800h-efi/releases/tag/v3.0-booted)** — *Gói phát hành chính thức bao gồm đầy đủ EFI OpenCore và Driver đồ họa Metal Iris Xe đã boot và kiểm tra thành công trên macOS Tahoe 26.7.1.*
+
+---
+
 > **Nguồn gốc / Base Project:** Dự án này được phát triển, tùy biến và chuyển đổi (ported) dựa trên [JulioNectar/Hackintosh-XPS13Plus-IrisXe-Tahoe](https://github.com/JulioNectar/Hackintosh-XPS13Plus-IrisXe-Tahoe), được tinh chỉnh chuyên sâu để tương thích hoàn hảo với phần cứng máy trạm **Lenovo ThinkPad P1 Gen 5**.  
 > **Trạng thái:** **Bản build R3 đã boot thành công và đang hoạt động trên hệ thống** (Xác nhận boot: 22:16 +0700, 25/10/2026).  
 > **Hệ điều hành:** macOS Tahoe 26.7.1 (Build **25G241** / Darwin 25.6.0).  
@@ -47,17 +55,20 @@ launchctl disable gui/$UID/com.apple.mediaanalysisd
 ## 3. Cấu Trúc Bản Build & Các Thành Phần Đã Áp Dụng
 
 ```
-/Users/kxt/Documents/gen5_igpu_driver/
-├── EFI/                         # EFI đang áp dụng (NootedGreen R3 + Audio Layout 11 + ThinkPad ACPI/Kexts)
-├── build/userland/              # Bundle Metal driver MTL18 + libxedrv R3 + xe.bundle
-├── scripts/
+.
+├── EFI/                         # EFI OpenCore hoàn chỉnh (NootedGreen R3 + Audio Layout 11 + ThinkPad ACPI/Kexts)
+├── release/                     # Mã nguồn & tài liệu các bản release (Source DockMipFix, scripts, docs)
+│   └── P1-Gen5-20261025-r3-booted/  # Mã nguồn bản R3 mới nhất
+├── scripts/                     # Script cập nhật, cài đặt driver đồ họa và công cụ chẩn đoán
 │   ├── cai-dat-nhanh.sh         # Script cập nhật đồng bộ NootedGreen và Metal Bundle vào hệ thống
 │   ├── install-graphics.command # Script cài đặt Metal bundle & libxedrv vào /Library/GPUBundles
-│   ├── collect.command          # Thu thập log và chẩn đoán phần cứng (thêm flag --metal)
+│   ├── collect.command          # Thu thập log và chẩn đoán phần cứng (kèm flag --metal)
 │   └── probe-dock.command       # Kiểm tra render badge thông báo Dock
 ├── reports/                     # Dữ liệu chẩn đoán, benchmark và log runtime thực tế
 │   └── runtime-20261025-232920/ # Dữ liệu phiên boot R3 hiện tại
-└── roadmap-igpu.md              # Báo cáo đánh giá chi tiết theo 11 nhóm tiêu chuẩn Apple
+├── src/                         # Mã nguồn C/Objective-C probe phần cứng
+├── vendor/                      # Mã nguồn driver Iris Xe và NootedGreen
+└── docs/                        # Hướng dẫn chi tiết cài đặt và cấu hình ngoại vi
 ```
 
 ### Các bản vá cốt lõi đã nạp:
