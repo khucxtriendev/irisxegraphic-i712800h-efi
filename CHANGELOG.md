@@ -1,5 +1,16 @@
 # Thay đổi — 25/10/2026
 
+## R3 (Đã Boot & Xác Nhận Runtime 22:16)
+
+- **Boot thành công vào macOS Tahoe 26.7.1 (25G241)** với đầy đủ NootedGreen R3 + Metal driver bundle MTL18 + libxedrv R3.
+- **Xác nhận Metal GPU (PASS):** Shader compile, compute dispatch 256 vector GPU readback hoạt động hoàn hảo (`reports/runtime-20261025-232920/metal.txt`).
+- **Xác nhận âm thanh ALC287:** Nhận diện loa trong `内建输出 / 内置扬声器` 2 kênh 48kHz làm Default Output Device qua AppleALC layout 11 + SimpleHDA.
+- **Xác nhận ngoại vi:**
+  - Camera USB UVC `174F:1812` nhận diện native trực tiếp.
+  - Bluetooth Intel AX211 `8087:0033` nạp firmware v12490, nhận diện thiết bị ngoại vi đã ghép đôi.
+  - Touchpad Synaptics `SYNA801D` chạy ngắt GPIO pin 332 mượt mà qua VoodooI2C.
+- **Cập nhật tài liệu & cấu hình Daily Driver:** Bổ sung hướng dẫn khóa sleep an toàn (`pmset sleep 0`) và tắt daemon phân tích media nền để chống sập GPU.
+
 ## R2
 
 - Chủ động managed upload ảnh 2D ở offset 0/aligned/unaligned trước native, thay điều kiện chỉ recovery khi native nil. Giữ biên/format và loại GPU-writable/render target; ghi rõ snapshot semantics. Chưa boot xác nhận Dock.
