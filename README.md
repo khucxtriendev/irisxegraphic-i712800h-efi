@@ -172,7 +172,7 @@ Before booting the installer, press **F1** or **Enter** at the Lenovo splash scr
 * **Startup -> Fast Boot:** `Disabled`
 * **Security -> Virtualization -> Intel Virtualization Technology (VT-x):** `Enabled`
 * **Security -> Virtualization -> Intel VT-d:** `Enabled`
-* **Config -> Thunderbolt 4 -> BIOS Assist Mode:** `Disabled`
+* **Config -> Thunderbolt 4 / USB4:** Leave at factory defaults (on 12th Gen ThinkPad P1 Gen 5, Thunderbolt 4 is integrated directly into the Intel SoC, so legacy "BIOS Assist Mode" is either not present or already disabled by default).
 
 ### Phase 1: Prepare the USB Installer via NullMoth 1401
 1. Download the **1401 installer tool** from [nullmoth/1401](https://github.com/nullmoth/1401).
