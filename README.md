@@ -186,19 +186,73 @@ Before booting the installer, press **F1** or **Enter** at the Lenovo splash scr
 
 ### Phase 3: Install NullMoth NVIDIA Driver (External HDMI Display)
 1. Download the latest driver package from [NullMoth NVIDIA macOS Driver Releases](https://github.com/nullmoth/nvidia-macos-driver/releases).
-2. Install the package in macOS to deploy the NVIDIA kernel extensions (`NVRM.kext`, `NVAccel.kext`, etc.) and the Metal user-space bundle (`/Library/GPUBundles/NVMTLDriver.bundle`).
-3. Connect an external HDMI monitor — it will light up powered by the NVIDIA RTX A1000 with Metal 3 acceleration!
+2. Install the package inside macOS to deploy the NVIDIA kernel extensions (`NVRM.kext`, `NVAccel.kext`) and the Metal user-space bundle (`/Library/GPUBundles/NVMTLDriver.bundle`).
+3. ⚡ **Configure NVIDIA to "Armed-Only" Mode (Crucial Power & CPU Optimization):**
+   When using the laptop on battery or solely with the internal laptop display, background macOS applications could unnecessarily route Metal commands across the PCIe bus to the NVIDIA dGPU, spiking CPU usage and draining battery.
+   To lock the NVIDIA driver into "Armed-Only" mode (only activating when an external display is connected), run this command in Terminal:
+   ```bash
+   sudo sh -c 'echo "!*" > /Library/GPUBundles/nvmtl-allow.txt'
+   ```
+4. ⚠️ **HDMI External Monitor Connection Note (Cold-Plug Required):**
+   * If you wish to use the discrete card and external monitor, **plug in the HDMI cable BEFORE powering on or booting into macOS**.
+   * On modern macOS Hackintosh systems with discrete NVIDIA Ampere cards, HDMI display heads must be initialized during early boot. Hotplugging HDMI *after* macOS has already booted may fail to wake the display output until a reboot with the cable plugged in.
 
-### Phase 4: Deploy This ThinkPad P1 Gen 5 EFI & Post-Install (Intel Iris Xe)
-1. Download **`EFI-ThinkPad-P1-Gen5-IrisXe-Nvidia-v1.0.zip`** from this repository's [Releases](https://github.com/khucxtriendev/irisxegraphic-i712800h-efi/releases).
-2. Extract and copy the **`EFI`** directory to the EFI partition of your USB drive or internal SSD.
-3. Copy the **`postinstall_tools`** folder from this repo onto the root of the USB (volume `1401`).
-4. In macOS Terminal, execute the automated Intel graphics setup script:
+---
+
+### Phase 4: Install Intel Iris Xe Graphics Post-Install
+To enable 3D Metal hardware acceleration on the internal 16.0" 2560x1600 eDP screen, install the WhateverXe graphics bundle and JulioNectar's `impostor.dylib` bridge.
+
+You can choose either the automated script or the manual terminal method:
+
+#### Option A: Automated Script (Recommended)
+1. Ensure the `postinstall_tools` folder from this repo is placed on your USB drive (volume `1401`).
+2. Open Terminal and run:
    ```bash
    sudo bash /Volumes/1401/postinstall_tools/install_iris_xe.sh
    ```
-   *This script installs WhateverXe Graphics, injects JulioNectar's `impostor.dylib` (`xefix`), sets `root:wheel` permissions, and rebuilds the AuxKC kernel cache.*
-5. Restart your laptop:
+   *This automated script downloads and installs `WhateverXe-Graphics-0.4.0.pkg`, injects `impostor.dylib` into `/Library/GPUBundles`, applies `root:wheel` permissions, and rebuilds the AuxKC kernel cache.*
+
+#### Option B: Manual Installation
+If you prefer executing the steps manually:
+1. Download and install [WhateverXe-Graphics-0.4.0.pkg](https://github.com/b00t0x/WhateverXe-Graphics/releases/download/v0.4.0/WhateverXe-Graphics-0.4.0.pkg):
+   ```bash
+   sudo installer -pkg WhateverXe-Graphics-0.4.0.pkg -target /
+   ```
+2. Copy JulioNectar's `impostor.dylib` into the Intel Metal graphics bundle:
+   ```bash
+   sudo cp postinstall_tools/impostor.dylib /Library/GPUBundles/AppleIntelTGLGraphicsMTLDriver.bundle/Contents/MacOS/impostor.dylib
+   sudo chmod 755 /Library/GPUBundles/AppleIntelTGLGraphicsMTLDriver.bundle/Contents/MacOS/impostor.dylib
+   sudo codesign -f -s - -i impostor /Library/GPUBundles/AppleIntelTGLGraphicsMTLDriver.bundle/Contents/MacOS/impostor.dylib
+   ```
+3. Set proper system permissions:
+   ```bash
+   sudo chown -R root:wheel /Library/GPUBundles /Library/Extensions
+   sudo chmod -R 755 /Library/GPUBundles /Library/Extensions
+   ```
+4. Rebuild the Auxiliary Kernel Collection (AuxKC):
+   ```bash
+   sudo kmutil install --volume-root / --update-all
+   ```
+
+---
+
+### Phase 5: Deploy This EFI to Internal SSD & Final Reboot
+Now that both NVIDIA and Intel drivers are properly installed in `/Library`, deploy this OpenCore EFI to your internal NVMe SSD so the laptop can boot standalone:
+
+1. Download **`EFI-ThinkPad-P1-Gen5-IrisXe-Nvidia-v1.0.zip`** from [Releases](https://github.com/khucxtriendev/irisxegraphic-i712800h-efi/releases) (or grab the `EFI` folder from this repo).
+2. Mount the EFI partition (ESP) of your internal SSD using **MountEFI** or Terminal:
+   ```bash
+   # Identify your internal SSD EFI disk identifier (e.g. disk0s1):
+   diskutil list
+   sudo diskutil mount /dev/disk0s1
+   ```
+3. Copy the **`EFI`** folder into the root of the mounted EFI volume (`/Volumes/EFI/`).
+4. Safely unmount the EFI volume and remove the USB installer drive:
+   ```bash
+   diskutil unmount /Volumes/EFI
+   ```
+5. *(Optional)* If using an external monitor, plug in the HDMI cable now.
+6. Reboot your ThinkPad:
    ```bash
    sudo reboot
    ```
