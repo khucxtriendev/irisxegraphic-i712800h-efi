@@ -44,20 +44,42 @@ Both displays work concurrently with fluid hardware acceleration!
 
 ---
 
-## 2. Feature Status
+## 2. Feature Status & Apple Ecosystem Matrix
 
+### 🛠️ Hardware Functionality Checklist:
 - [x] **Dual-GPU Multi-Monitor Acceleration:**
   - Internal 16.0" 2560x1600 display running on Intel Iris Xe (Metal 2 / Metal 3).
   - External HDMI monitor running directly on NVIDIA RTX A1000 (Metal 3).
 - [x] **Display Backlight Brightness Control:** Smooth brightness slider for the internal panel via `SSDT-PNLF` and `BrightnessKeys.kext`.
-- [x] **Hybrid CPU Power Management:** `HybridPM.kext` (XE-PM) combined with `-hpm` dynamically scales P-cores and E-cores, enabling proper C-states to keep temperatures cool (45°C–55°C idle).
-- [x] **Audio Output:** Internal stereo speakers and 3.5mm headphone combo jack working via AppleALC (Realtek ALC287 `10EC:0287`, default `alcid=11`).
-- [ ] **Internal Microphone:** ⚠️ **Currently NOT working / WIP** (The codec is Realtek ALC287. Default layout 11 works for stereo output. Alternative candidate layouts `13`, `21`, `66` can be tested via `alcid=N` in `boot-args` for microphone/jack combo troubleshooting; digital DMIC array may additionally require AppleISST).
-- [x] **Wi-Fi & Bluetooth:** Connectivity across 2.4GHz / 5GHz / 6GHz networks and Bluetooth peripherals.
-- [x] **Keyboard & Trackpad:** ThinkPad keyboard shortcuts, TrackPoint navigation, and multi-touch gestures.
-- [x] **Battery & Power Monitoring:** ACPI battery percentage readout via `SMCBatteryManager.kext` + `ECEnabler.kext`.
+- [x] **Hybrid CPU Power Management:** `HybridPM.kext` (XE-PM) dynamically scales P-cores and E-cores, enabling C8/C10 deep sleep states (40°C–50°C idle).
+- [x] **Audio Speakers & Headphone Jack:** Realtek ALC287 codec (`alcid=11`) driving internal stereo speakers and 3.5mm audio jack.
+- [ ] **Internal Digital Microphone:** ⚠️ **Currently NOT working / WIP** (The Realtek ALC287 microphone pins and Intel Smart Sound Technology digital DMIC array require specialized driver handling; see workarounds below).
+- [x] **Wi-Fi & Bluetooth:** Intel Wi-Fi 6E AX211 (`AirportItlwm`) connecting to 2.4GHz / 5GHz / 6GHz networks, Bluetooth 5.2 connecting to mice, keyboards, and headphones.
+- [x] **Keyboard, TrackPoint & Precision Trackpad:** Backlit ThinkPad keyboard, red TrackPoint nub with physical click buttons, and multi-touch gestures on the glass trackpad.
+- [x] **Battery & Power Monitoring:** Live percentage readout, charging metrics, and cycle counts via `SMCBatteryManager` + `ECEnabler`.
+- [x] **Webcam:** Integrated 1080p FHD USB UVC webcam works out of the box with FaceTime, Zoom, and Photo Booth.
 - [ ] **Sleep & Wake:** ⚠️ **Currently NOT working / WIP** (Dual-GPU multi-head sleep requires further work synchronizing NVIDIA GSP firmware re-initialization and Intel Display 13 MBUS/DDB power wells upon wake).
-- [ ] **Windows Hello IR Camera:** Unsupported by macOS.
+- [ ] **Windows Hello IR Camera & Touch ID:** Unsupported by macOS (macOS requires Apple TrueDepth and Secure Enclave T2/Apple Silicon hardware).
+
+### 🍎 Apple Ecosystem & Continuity Services:
+
+| Feature | Status | Notes & Workarounds |
+| :--- | :--- | :--- |
+| **iMessage & FaceTime** | ✅ **Working** | Requires generating and entering your own unique MLB, ROM, and Serial Number in `PlatformInfo -> Generic`. |
+| **iCloud Drive & App Store** | ✅ **Working** | Full sync for Notes, Reminders, Photos, and App Store purchases. |
+| **Handoff** | ✅ **Working** | Seamlessly continue browsing tabs and open apps from iPhone/iPad to ThinkPad. |
+| **Universal Clipboard** | ✅ **Working** | Copy text or images on your iPhone and paste them directly on macOS. |
+| **Continuity Camera & Mic** | ✅ **Working** | **Recommended Microphone Workaround:** Mount your iPhone to use its studio-grade microphone and camera wirelessly in macOS. |
+| **AirDrop** | ❌ **Unsupported** | Intel Wi-Fi (`AirportItlwm`) does not support Apple's proprietary Apple Wireless Direct Link (AWDL) protocol on modern macOS (Sonoma/Sequoia). Requires a native Broadcom card for AirDrop. |
+| **Universal Control** | ⚠️ **Unsupported** | Depends on Apple AWDL protocol, which is unavailable on Intel Wi-Fi. |
+| **Sidecar** | ⚠️ **Untested / Limited** | Requires Apple T2 hardware or native Apple QuickSync H.265 encoder. |
+| **DRM (Apple TV+, Netflix 4K)** | ⚠️ **Partial** | Netflix/YouTube 1080p works in Chrome/Brave (Widevine). Safari FairPlay 4K streaming is limited on non-native GPUs. |
+
+> 🎙️ **Microphone Workarounds:**
+> While internal DMIC support is being reverse-engineered, you can use:
+> 1. Any 3.5mm headset with an in-line microphone (or USB headset/mic).
+> 2. Bluetooth headphones (AirPods, Sony, Bose with built-in mic).
+> 3. **Apple Continuity Microphone:** Wirelessly stream microphone input from your iPhone via Continuity!
 
 > 📦 **Complete Kext Inventory & Version Guide:**
 > For the complete inventory of all 35 kernel extensions included in this EFI, exact version numbers, bundle IDs, and why `VoodooPS2` & `VoodooI2C` are coordinated, refer to the [**Kext Reference & Version Inventory**](docs/KEXTS.md).
