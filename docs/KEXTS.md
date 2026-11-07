@@ -13,7 +13,7 @@ This document catalogs all 35 Kernel Extensions (Kexts) and sub-plugins included
 | **2** | **`HybridPM.kext`** | `1.0.0` | `org.anv1552.HybridPM` | ✅ **Enabled** | XE-PM CPU power management for Alder Lake 6P + 8E cores |
 | **3** | **`WhateverXe.kext`** | `0.7.0` | `org.b00t0x.WhateverXe` | ✅ **Enabled** | Patched Intel Iris Xe Display 13 driver (ThinkPad 6-bpc GOP) |
 | **4** | **`AMFIPass.kext`** | `1.4.1` | `com.dhinakg.AMFIPass` | ✅ **Enabled** | Bypasses AMFI checks for unsigned Metal graphics bundles |
-| **5** | **`AppleALC.kext`** | `1.9.9` | `as.vit9696.AppleALC` | ✅ **Enabled** | High-definition audio patching (`alcid=11` for ALC245) |
+| **5** | **`AppleALC.kext`** | `1.9.9` | `as.vit9696.AppleALC` | ✅ **Enabled** | High-definition audio patching (`alcid=11` for ALC287 `10EC:0287`) |
 | **6** | **`BrightnessKeys.kext`** | `1.0.4` | `as.acidanthera.BrightnessKeys` | ✅ **Enabled** | Handles ACPI brightness hotkeys (Fn+F5/F6) |
 | **7** | **`CpuTopologyRebuild.kext`** | `2.0.2` | `org.b00t0x.CpuTopologyRebuild` | ✅ **Enabled** | Reconstructs asymmetric CPU core topology for Thread Director |
 | **8** | **`ECEnabler.kext`** | `1.0.6` | `com.1Revenger1.ECEnabler` | ✅ **Enabled** | Enables reading non-standard Embedded Controller fields |
@@ -84,7 +84,7 @@ Laptop ThinkPad hardware separates inputs across two physical buses:
 * **`IntelBluetoothFirmware.kext` + `IntelBTPatcher.kext` (v2.5.1) & `BlueToolFixup.kext` (v2.7.3):**
   * Injects Intel Bluetooth firmware into the AX211 controller at boot, fixes HCI packet structures, and patches `bluetoothd` on macOS Sequoia / Tahoe.
 * **`AppleALC.kext` (v1.9.9):**
-  * Patches AppleHDA dynamically for Realtek ALC245 with layout ID 11 (`alcid=11`), enabling dual stereo speakers and the 3.5mm headphone combo jack.
+  * Patches AppleHDA dynamically for Realtek ALC287 (`10EC:0287`) with default layout ID 11 (`alcid=11`), enabling dual stereo speakers and 3.5mm combo jack. Alternative candidate layouts for microphone testing: `13`, `21`, `66`.
 
 ### 🔌 E. Hardware Monitoring, Sensors & USB
 * **`VirtualSMC.kext` (v1.3.9) Ecosystem:**
@@ -97,3 +97,43 @@ Laptop ThinkPad hardware separates inputs across two physical buses:
   * Integrates ThinkPad-specific ACPI features: battery charge thresholds (battery conservation mode) and fan curves.
 * **`USBToolBox.kext` (v1.2.0) & `UTBMap.kext` (v1.1):**
   * Complete USB port mapping for the ThinkPad P1 Gen 5, ensuring all Type-A, Type-C (Thunderbolt 4), SD card reader, and internal webcam/Bluetooth ports operate within the macOS 15-port limit.
+
+---
+
+## 3. Technical Clarifications & Common Questions
+
+### 1. Realtek Audio Codec Verification (ALC287 vs ALC245)
+* **Hardware Reality:** The Lenovo ThinkPad P1 Gen 5 (Type `21DDS88B00`) features a **Realtek ALC287** audio codec (`10EC:0287`), not ALC245.
+* **Why does `layout-id=11` work for speakers?**
+  * In the upstream `AppleALC` pinconfig database, layout 11 is shared between ALC245, ALC257, and ALC287 Lenovo configurations.
+  * While layout 11 successfully maps the stereo amplifier output for the speakers, its input nodes for the microphone / combo jack may differ from your hardware wiring.
+* **Alternative candidate layouts to test:**
+  * You can test alternative layouts by passing `alcid=N` in `boot-args` without modifying `config.plist`:
+    - `alcid=13`
+    - `alcid=21`
+    - `alcid=66`
+
+### 2. Is `CPUFriend.kext` Necessary on Alder Lake?
+* **No, `CPUFriend.kext` is superseded by XE-PM (`HybridPM.kext`).**
+* `CPUFriend` was designed for older monolithic Intel architectures (Comet Lake, Coffee Lake) to inject static `FrequencyVectors` into `X86PlatformPlugin`. It has no awareness of asymmetric P-cores and E-cores.
+* `HybridPM.kext` operates at a much deeper level: it hooks XCPM in kernel space, rewrites MSR `0x1FC`, dynamically converts 78.7 MHz HWP requests, and manages EPP (`hpmepp=N`). Running `CPUFriend` alongside `HybridPM` is either redundant or risks overriding dynamic HWP frequencies.
+
+### 3. A/B Testing: `CpuTopologyRebuild.kext`
+* `CpuTopologyRebuild.kext` + `ctrsmt=full` reorganizes Alder Lake's 14 cores (6P + 8E) into asymmetric processor sets for macOS.
+* However, as noted by author `b00t0x`, on certain macOS versions, the Apple XNU scheduler can occasionally schedule priority threads to E-cores, leading to slightly lower multi-core benchmark scores, or cause occasional boot hangs in verbose mode.
+* **Recommended A/B Testing Procedure:**
+  1. Benchmark your system with `CpuTopologyRebuild.kext` enabled and `ctrsmt=full` in `boot-args`.
+  2. Disable `CpuTopologyRebuild.kext` in OpenCore and remove `ctrsmt=full`, relying purely on `HybridPM.kext` for power scaling.
+  3. Compare single-core/multi-core Geekbench scores, idle package power, and boot stability to determine which profile is optimal for your workflow.
+
+### 4. ACPI Power Management: `SSDT-PLUG-ALT.aml`
+* Alder Lake does not use the legacy `_PR.CPU0` ACPI processor scope; instead, cores are defined under `_SB.PR00`.
+* This EFI **already includes `SSDT-PLUG-ALT.aml`** in `EFI/OC/ACPI/` to ensure native XCPM CPU power management hooks attach correctly at boot.
+
+### 5. Why Ethernet Kexts (`IntelMausi` / `RealtekRTL8111`) are Excluded
+* The ThinkPad P1 Gen 5 chassis **does not possess an onboard RJ-45 Ethernet port**. It relies entirely on the integrated Intel Wi-Fi 6E AX211 card (handled by `AirportItlwm.kext`) or external USB-C/Thunderbolt Ethernet adapters.
+* Including unused Ethernet drivers would only clutter the kernel extension cache and increase boot times.
+
+### 6. `ECEnabler.kext` vs `YogaSMC.kext`
+* **`ECEnabler.kext` (Mandatory):** Allows reading 16-bit and 32-bit fields from the Embedded Controller. Without this, `SMCBatteryManager` cannot read battery percentages or charging status.
+* **`YogaSMC.kext` (Sensors & Thermal Profiles):** On 12th Gen Alder Lake ThinkPads, Lenovo updated the EC thermal architecture. Users should verify in **Stats** whether fan RPM readouts update in real time; if fan RPM is static at 0 and conservation mode is unused, `YogaSMC` can be disabled to eliminate background ACPI polling overhead.

@@ -31,7 +31,7 @@ Both displays work concurrently with fluid hardware acceleration!
 | **Internal Panel** | 16.0" 16:10 WQXGA (2560 x 1600), BOE `NE160QDM-NY1` / `LEN41B0` (eDP, 6-bpc GOP initialization) |
 | **RAM** | 32GB (2 x 16GB) DDR5 4800MHz |
 | **Storage** | NVMe SSD M.2 PCIe 4.0 x4 |
-| **Audio** | Realtek ALC245 (`layout-id=11` via AppleALC) + Dolby Atmos stereo speakers (internal microphone WIP/unsupported) |
+| **Audio** | Realtek ALC287 (`10EC:0287`, layout-id `11` via AppleALC) + Dolby Atmos stereo speakers |
 | **Wireless & Bluetooth** | Intel Wi-Fi 6E AX211 160MHz (`AirportItlwm`) & Bluetooth 5.2 (`IntelBluetoothFirmware` + `IntelBTPatcher`) |
 | **Input Devices** | Backlit ThinkPad Keyboard, TrackPoint + Precision Touchpad (`VoodooPS2Controller` + `VoodooI2C`) |
 | **Power Management** | `HybridPM.kext` (XE-PM) + `CpuTopologyRebuild.kext` + `YogaSMC.kext` |
@@ -45,8 +45,8 @@ Both displays work concurrently with fluid hardware acceleration!
   - External HDMI monitor running directly on NVIDIA RTX A1000 (Metal 3).
 - [x] **Display Backlight Brightness Control:** Smooth brightness slider for the internal panel via `SSDT-PNLF` and `BrightnessKeys.kext`.
 - [x] **Hybrid CPU Power Management:** `HybridPM.kext` (XE-PM) combined with `-hpm` dynamically scales P-cores and E-cores, enabling proper C-states to keep temperatures cool (45°C–55°C idle).
-- [x] **Audio Output:** Internal stereo speakers and 3.5mm audio combo jack (Realtek ALC245 via AppleALC, `layout-id=11`).
-- [ ] **Internal Microphone:** ⚠️ **Currently NOT working / WIP** (Intel Smart Sound Technology / DMIC digital microphone array is not supported natively by AppleALC; external 3.5mm headset combo mic or USB microphone recommended).
+- [x] **Audio Output:** Internal stereo speakers and 3.5mm headphone combo jack working via AppleALC (Realtek ALC287 `10EC:0287`, default `alcid=11`).
+- [ ] **Internal Microphone:** ⚠️ **Currently NOT working / WIP** (The codec is Realtek ALC287. Default layout 11 works for stereo output. Alternative candidate layouts `13`, `21`, `66` can be tested via `alcid=N` in `boot-args` for microphone/jack combo troubleshooting; digital DMIC array may additionally require AppleISST).
 - [x] **Wi-Fi & Bluetooth:** Connectivity across 2.4GHz / 5GHz / 6GHz networks and Bluetooth peripherals.
 - [x] **Keyboard & Trackpad:** ThinkPad keyboard shortcuts, TrackPoint navigation, and multi-touch gestures.
 - [x] **Battery & Power Monitoring:** ACPI battery percentage readout via `SMCBatteryManager.kext` + `ECEnabler.kext`.
@@ -132,7 +132,7 @@ Below is the complete breakdown of the boot arguments utilized in `config.plist`
 | `nvfbheads=4` | NullMoth | Configures 4 display heads for the NVIDIA RTX A1000. |
 | `-nvkmsnosmooth` | NullMoth | Disables KMS smooth-stepping transitions on NVIDIA display ports. |
 | `nvfbhidpi=1` | NullMoth | Enables HiDPI scaling support on displays attached to the NVIDIA card. |
-| `alcid=11` | Audio | Sets AppleALC layout ID 11 for Realtek ALC245 audio codec. |
+| `alcid=11` | Audio | Sets AppleALC layout ID 11 for Realtek ALC287 (`10EC:0287`). Test `alcid=13` or `21` for mic/combo troubleshooting. |
 
 ---
 
