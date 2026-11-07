@@ -10,7 +10,7 @@
 [![WhateverXe](https://img.shields.io/badge/WhateverXe-Patched%206--bpc-orange.svg)](https://github.com/khucxtriendev/WhateverXe)
 [![Kexts](https://img.shields.io/badge/Kexts-35%20Inventory-teal.svg)](docs/KEXTS.md)
 [![Power Management](https://img.shields.io/badge/Power-XE--PM%20Guide-success.svg)](docs/XE-PM-GUIDE.md)
-[![Release](https://img.shields.io/badge/Release-EFI%20v1.0%20(ZIP)-purple.svg)](https://github.com/khucxtriendev/irisxegraphic-i712800h-efi/releases)
+[![Release](https://img.shields.io/badge/Release-EFI%20v1.0.0%20(ZIP)-purple.svg)](https://github.com/khucxtriendev/irisxegraphic-i712800h-efi/releases/tag/v1.0.0)
 
 ### 📚 Documentation & Technical Guides:
 * 📦 [**Kext Reference & Version Inventory**](docs/KEXTS.md): Full breakdown of all 35 kernel extensions, versions, bundle IDs, and input device coordination (`VoodooPS2` + `VoodooI2C`).
@@ -248,7 +248,7 @@ If you prefer executing the steps manually:
 ### Phase 5: Deploy This EFI to Internal SSD & Final Reboot
 Now that both NVIDIA and Intel drivers are properly installed in `/Library`, deploy this OpenCore EFI to your internal NVMe SSD so the laptop can boot standalone:
 
-1. Download **`EFI-ThinkPad-P1-Gen5-IrisXe-Nvidia-v1.0.zip`** from [Releases](https://github.com/khucxtriendev/irisxegraphic-i712800h-efi/releases) (or grab the `EFI` folder from this repo).
+1. Download **`EFI-ThinkPad-P1-Gen5-v1.0.0.zip`** from [Releases](https://github.com/khucxtriendev/irisxegraphic-i712800h-efi/releases/tag/v1.0.0) (or grab the `EFI` folder from this repo).
 2. Mount the EFI partition (ESP) of your internal SSD using **MountEFI** or Terminal:
    ```bash
    # Identify your internal SSD EFI disk identifier (e.g. disk0s1):
@@ -298,4 +298,4 @@ system_profiler SPDisplaysDataType
 ## 9. Pre-Packaged Release
 
 For immediate deployment, download the ready-to-use EFI archive from GitHub Releases:
-* 📦 **[Download EFI-ThinkPad-P1-Gen5-IrisXe-Nvidia-v1.0.zip](https://github.com/khucxtriendev/irisxegraphic-i712800h-efi/releases)**
+* 📦 **[Download EFI-ThinkPad-P1-Gen5-v1.0.0.zip](https://github.com/khucxtriendev/irisxegraphic-i712800h-efi/releases/download/v1.0.0/EFI-ThinkPad-P1-Gen5-v1.0.0.zip)**
