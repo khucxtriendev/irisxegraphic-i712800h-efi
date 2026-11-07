@@ -1,0 +1,82 @@
+diff --git a/WhateverXe/kern_alderlake_n.hpp b/WhateverXe/kern_alderlake_n.hpp
+index 11c6803..ef347ad 100644
+--- a/WhateverXe/kern_alderlake_n.hpp
++++ b/WhateverXe/kern_alderlake_n.hpp
+@@ -239,7 +239,8 @@ inline bool dpSource(const DisplayReadout &boot,unsigned pipe,unsigned ddi,const
+     // payload-allocation bit. Firmware may leave bit8 set on an SST GOP;
+     // preserve it and include it in the unchanged-source check, never clear it
+     // on an enabled transcoder or infer an MST transport from that bit alone.
+-    return (trans&0xFF700000U)==(0x82000000U|((ddi+1)<<27)) &&
++    const unsigned bpc=((trans>>20)&7);
++    return ((bpc==0 || bpc==2) && (trans&0xFF000000U)==(0x82000000U|((ddi+1)<<27))) &&
+         !(trans&((1U<<15)|(1U<<9))) && !ctl2 &&
+         (lanes==1 || lanes==2 || lanes==4) && ((buf>>1)&7)==lanes-1 &&
+         (buf&(typeC && tc->ownershipOptional?0x80000080U:0x800000C0U))==
+@@ -394,7 +395,7 @@ inline LinearStatus linearPlan(const DisplayReadout &r, LinearPlan &p,unsigned d
+     if(protocol!=GOPProtocol::TMDS && !dpSource(r,p.pipe,ddi,tc,protocol==GOPProtocol::EDP))return LinearStatus::InvalidDPSource;
+     p.geometry=XELPGeometry::linear(p.control,p.stride,p.size,p.position,p.offset);
+     if(!p.geometry.valid || (p.surface&4095) || p.surface!=surfLive ||
+-       ((trans>>20)&7)!=0 || (pipeConf&0xC0000000)!=0xC0000000 ||
++       (((trans>>20)&7)!=0 && ((trans>>20)&7)!=2) || (pipeConf&0xC0000000)!=0xC0000000 ||
+        !bootGeometry(r,p.pipe,p.geometry,htotal,vtotal))return LinearStatus::NotLinearFHD;
+     // DPT disable is global on Display 13. Exclude all other active planes
+     // and cursors, including planes on powered but inactive pipes.
+diff --git a/WhateverXe/kern_display13_boot.hpp b/WhateverXe/kern_display13_boot.hpp
+index 612bba7..1fa1904 100644
+--- a/WhateverXe/kern_display13_boot.hpp
++++ b/WhateverXe/kern_display13_boot.hpp
+@@ -174,7 +174,7 @@ template<class IO> Result normalize(IO &io,const AlderLakeN::DisplayReadout &boo
+         }
+         ports[p]=port;used|=1U<<port;
+         uint32_t stride=0,size=0,position=0,offset=0,ht=0,vt=0,conf=0;
+-        if(((trans>>20)&7) || !AlderLakeN::value(boot,0x70188+bank,stride) ||
++        if((((trans>>20)&7)!=0 && ((trans>>20)&7)!=2) || !AlderLakeN::value(boot,0x70188+bank,stride) ||
+            !AlderLakeN::value(boot,0x70190+bank,size) || !AlderLakeN::value(boot,0x7018C+bank,position) ||
+            !AlderLakeN::value(boot,0x701A4+bank,offset) || !AlderLakeN::value(boot,0x60000+bank,ht) ||
+            !AlderLakeN::value(boot,0x6000C+bank,vt) || !AlderLakeN::value(boot,0x70008+bank,conf) ||
+diff --git a/WhateverXe/kern_display13_fb_memory.hpp b/WhateverXe/kern_display13_fb_memory.hpp
+index 296947f..60f5cfd 100644
+--- a/WhateverXe/kern_display13_fb_memory.hpp
++++ b/WhateverXe/kern_display13_fb_memory.hpp
+@@ -419,7 +419,7 @@ template<class IO> Readout inspect(IO &io,const void *controller,size_t controll
+         const auto geometry=XELPGeometry::linear(r.control,r.stride,r.size,position,offset);
+         const bool source=dsi ? !(io.read(0x60400)&(1U<<31)) && XELPGeometry::timing(geometry,dsi->htotal,dsi->vtotal) :
+             (dpt&(1U<<30)) && ((trans>>27)&15)==expectedDDI+1 &&
+-            (dp ? ((trans>>24)&7)==2 : ((trans>>24)&7)<=1) && !((trans>>20)&7);
++            (dp ? ((trans>>24)&7)==2 : ((trans>>24)&7)<=1) && (!((trans>>20)&7) || ((trans>>20)&7)==2);
+         if (dpt==UINT32_MAX || !source || !(trans&(1U<<31)) || (conf&0xC0000000)!=0xC0000000 ||
+             !geometry.valid ||
+             position || offset || (r.surface&4095) ||
+diff --git a/WhateverXe/kern_xe.cpp b/WhateverXe/kern_xe.cpp
+index 5fee652..50a8b18 100644
+--- a/WhateverXe/kern_xe.cpp
++++ b/WhateverXe/kern_xe.cpp
+@@ -8955,7 +8955,8 @@ bool XE::wrapDisplay13FramebufferStart(IOService *that,IOService *provider) {
+         if(!ready)return false;
+     }
+     if((board.selected()&0x78) && (!s->display13FBTCHooksReady || !s->display13TCProbeReady)) {
+-        IORegistryEntry::getRegistryRoot()->setProperty("ADLPFBTCUnavailable",true);return false;
++        IORegistryEntry::getRegistryRoot()->setProperty("ADLPFBTCUnavailable",true);
++        if(!s->adlnOutputWiring.panel) return false;
+     }
+  const auto contract=XELP::DisplayContract::display13(s->display13Available(),s->adlnOutputWiring.dp!=0,s->adlnOutputWiring.panel!=0);
+  const bool ready=s->display13FramebufferRequested && s->display13BootReady && s->tglActive &&
+@@ -9714,7 +9715,17 @@ uint64_t XE::wrapAlderLakeNClockProbe(IOService *controller) {return adlnClockRe
+ bool XE::display13OnlyPipeAFramebuffer() {
+ 	auto &c=display13FBPower;if(!c.lock)return false;
+ 	IOLockLock(c.lock);
+-	const bool only=c.pipe[0].memoryFramebuffer && !c.pipe[1].memoryFramebuffer && !c.pipe[2].memoryFramebuffer;
++	bool secondaryActive=false;
++	if(c.map) {
++		Display13FBPowerIO powerIO {c.map};const auto wells=powerIO.read(Display13Power::Driver);
++		if(wells!=UINT32_MAX && (wells&3)==3 && !(wells&(1U<<16))) {
++			for(unsigned pipe=1;pipe<3;++pipe) if(wells&(1U<<(2*(5+pipe)))) {
++				const auto trans=powerIO.read(0x60400+pipe*0x1000),conf=powerIO.read(0x70008+pipe*0x1000);
++				if((trans!=UINT32_MAX && conf!=UINT32_MAX) && ((trans|conf)&(1U<<31))) secondaryActive=true;
++			}
++		}
++	}
++	const bool only=c.pipe[0].memoryFramebuffer && (!secondaryActive || (!c.pipe[1].memoryFramebuffer && !c.pipe[2].memoryFramebuffer));
+ 	IOLockUnlock(c.lock);return only;
+ }
+ void XE::wrapAlderLakeNClockSet(IOService *controller,uint64_t nativeHz) {
