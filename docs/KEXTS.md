@@ -1,7 +1,7 @@
 # Kext Reference & Version Inventory
 ### OpenCore EFI for Lenovo ThinkPad P1 Gen 5 (macOS Sequoia 15.x & Tahoe)
 
-This document catalogs all 35 Kernel Extensions (Kexts) and sub-plugins included in this OpenCore EFI, their exact version strings, bundle identifiers, and their active status in `config.plist`.
+This document catalogs all 36 Kernel Extensions (Kexts) and sub-plugins included in this OpenCore EFI, their exact version strings, bundle identifiers, and their active status in `config.plist`.
 
 ---
 
@@ -44,6 +44,7 @@ This document catalogs all 35 Kernel Extensions (Kexts) and sub-plugins included
 | **33** | ↳ `VoodooPS2Mouse.kext` | `2.3.8` | `as.acidanthera.voodoo.driver.PS2Mouse` | ✅ **Enabled** | Drives the iconic red TrackPoint nub & click buttons |
 | **34** | ↳ `VoodooInput.kext` (PS2) | `1.1.7` | `me.kishorprins.VoodooInput` | ⚪ *Disabled* | Disabled to avoid duplicate collision with VoodooI2C's engine |
 | **35** | ↳ `VoodooPS2Trackpad.kext` | `2.3.8` | `as.acidanthera.voodoo.driver.PS2Trackpad` | ⚪ *Disabled* | Disabled because touchpad is exclusively handled over I2C |
+| **36** | **`LatSOFAudio.kext`** | `1.0.0` | `org.pokipoi.LatSOFAudio` | ✅ **Enabled / Addon** | SOF DMIC companion driver for Intel SST/cAVS 2.5 digital microphones |
 
 ---
 
@@ -85,6 +86,8 @@ Laptop ThinkPad hardware separates inputs across two physical buses:
   * Injects Intel Bluetooth firmware into the AX211 controller at boot, fixes HCI packet structures, and patches `bluetoothd` on macOS Sequoia / Tahoe.
 * **`AppleALC.kext` (v1.9.9):**
   * Patches AppleHDA dynamically for Realtek ALC287 (`10EC:0287`) with default layout ID 11 (`alcid=11`), enabling dual stereo speakers and 3.5mm combo jack. Alternative candidate layouts for microphone testing: `13`, `21`, `66`.
+* **`LatSOFAudio.kext` (v1.0.0 by pokipoi):**
+  * Sound Open Firmware (SOF) companion driver enabling native Intel Smart Sound Technology (SST / cAVS 2.5) digital microphone (DMIC) arrays on Alder Lake (`8086:51c8`). Exposes a native `IOAudioEngine` (`imic`) for full Core Audio input support.
 
 ### 🔌 E. Hardware Monitoring, Sensors & USB
 * **`VirtualSMC.kext` (v1.3.9) Ecosystem:**

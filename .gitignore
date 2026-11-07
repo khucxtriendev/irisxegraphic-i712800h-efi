@@ -1,0 +1,7 @@
+# Backups and temporary config files
+*.bak
+*.bak*
+*.before-*
+*.nullmoth-hidpi-*
+*.DS_Store
+*.zip

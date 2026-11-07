@@ -8,13 +8,19 @@
 [![OpenCore](https://img.shields.io/badge/OpenCore-1.0.3-blue.svg)](https://github.com/acidanthera/OpenCorePkg)
 [![macOS](https://img.shields.io/badge/macOS-Sequoia%2015.x%20%7C%20Tahoe-green.svg)](https://www.apple.com/macos/)
 [![WhateverXe](https://img.shields.io/badge/WhateverXe-Patched%206--bpc-orange.svg)](https://github.com/khucxtriendev/WhateverXe)
-[![Kexts](https://img.shields.io/badge/Kexts-35%20Inventory-teal.svg)](docs/KEXTS.md)
+[![Microphone](https://img.shields.io/badge/DMIC-LatSOFAudio%20Working-success.svg)](LatSOF-Audio%20patched/)
+[![Display](https://img.shields.io/badge/Display-HiDPI%20Override-informational.svg)](Display_Override/)
+[![Keyboard](https://img.shields.io/badge/Keyboard-Native%20Remap-brightgreen.svg)](Keyboard_Remap/)
+[![Kexts](https://img.shields.io/badge/Kexts-36%20Inventory-teal.svg)](docs/KEXTS.md)
 [![Power Management](https://img.shields.io/badge/Power-XE--PM%20Guide-success.svg)](docs/XE-PM-GUIDE.md)
 [![Release](https://img.shields.io/badge/Release-EFI%20v1.0.0%20(ZIP)-purple.svg)](https://github.com/khucxtriendev/irisxegraphic-i712800h-efi/releases/tag/v1.0.0)
 
 ### 📚 Documentation & Technical Guides:
-* 📦 [**Kext Reference & Version Inventory**](docs/KEXTS.md): Full breakdown of all 35 kernel extensions, versions, bundle IDs, and input device coordination (`VoodooPS2` + `VoodooI2C`).
+* 📦 [**Kext Reference & Version Inventory**](docs/KEXTS.md): Full breakdown of all 36 kernel extensions, versions, bundle IDs, and input device coordination (`VoodooPS2` + `VoodooI2C`).
 * ⚡ [**XE-PM & Hybrid Power Management Guide**](docs/XE-PM-GUIDE.md): Architectural deep-dive into Alder Lake HWP frequency scaling, thermal profiles, and live `sysctl` commands.
+* 🎙️ [**LatSOF-Audio DMIC Guide**](LatSOF-Audio%20patched/HUONG_DAN_CAI_DAT.md): Native Intel Smart Sound (cAVS 2.5) digital microphone driver and volume setup.
+* 🖥️ [**Display Override & HiDPI Guide**](Display_Override/HUONG_DAN_CAI_DAT.md): BOE panel EDID patch, sharp text vector rendering, and accessibility font tuning.
+* ⌨️ [**Keyboard Remap Guide**](Keyboard_Remap/HUONG_DAN_SU_DUNG.md): 100% native Windows-style shortcuts (`Ctrl+C/V/Z`, `Alt+Tab`) and one-click `PrtSc` screenshot to clipboard.
 
 A production-grade OpenCore EFI configuration tailored specifically for the **Lenovo ThinkPad P1 Gen 5 (Type 21DDS88B00)**. 
 
@@ -34,12 +40,12 @@ Both displays work concurrently with fluid hardware acceleration!
 | **Processor (CPU)** | Intel Core i7-12800H (Alder Lake-H, 14 Cores / 20 Threads: 6 P-Cores up to 4.8 GHz + 8 E-Cores up to 3.7 GHz, 24MB L3 Cache, Display 13) |
 | **Integrated GPU (iGPU)** | Intel Iris Xe Graphics (`8086:46A6`, 96 EU) — **Internal 2560x1600 eDP display with Metal 2 / Metal 3** |
 | **Discrete GPU (dGPU)** | NVIDIA RTX A1000 Laptop (`10DE:25B9`, 4GB GDDR6 Ampere) — **External HDMI display with Metal 3** |
-| **Internal Panel** | 16.0" 16:10 WQXGA (2560 x 1600), BOE `NE160QDM-NY1` / `LEN41B0` (eDP, 6-bpc GOP initialization) |
+| **Internal Panel** | 16.0" 16:10 WQXGA (2560 x 1600), BOE `NE160QDM-NY1` / `LEN41B0` (eDP, 6-bpc GOP initialization, HiDPI Retina override & sharp vector font tuning) |
 | **RAM** | 32GB (2 x 16GB) DDR5 4800MHz |
 | **Storage** | NVMe SSD M.2 PCIe 4.0 x4 |
-| **Audio** | Realtek ALC287 (`10EC:0287`, layout-id `11` via AppleALC) + Dolby Atmos stereo speakers |
+| **Audio** | Realtek ALC287 (`10EC:0287`, layout-id `11` via AppleALC) + Dolby Atmos stereo speakers + **Intel SST/cAVS 2.5 DMIC array via `LatSOFAudio.kext`** |
 | **Wireless & Bluetooth** | Intel Wi-Fi 6E AX211 160MHz (`AirportItlwm`) & Bluetooth 5.2 (`IntelBluetoothFirmware` + `IntelBTPatcher`) |
-| **Input Devices** | Backlit ThinkPad Keyboard, TrackPoint + Precision Touchpad (`VoodooPS2Controller` + `VoodooI2C`) |
+| **Input Devices** | Backlit ThinkPad Keyboard (with native Windows-style remap & `PrtSc` to clipboard), TrackPoint + Precision Touchpad (`VoodooPS2Controller` + `VoodooI2C`) |
 | **Power Management** | `HybridPM.kext` (XE-PM) + `CpuTopologyRebuild.kext` + `YogaSMC.kext` |
 
 ---
@@ -51,11 +57,12 @@ Both displays work concurrently with fluid hardware acceleration!
   - Internal 16.0" 2560x1600 display running on Intel Iris Xe (Metal 2 / Metal 3).
   - External HDMI monitor running directly on NVIDIA RTX A1000 (Metal 3).
 - [x] **Display Backlight Brightness Control:** Smooth brightness slider for the internal panel via `SSDT-PNLF` and `BrightnessKeys.kext`.
+- [x] **Display Override & Ultra-Sharp Text Rendering:** Native Retina HiDPI profiles (`Display_Override/`) and Accessibility vector outline font smoothing override eliminating GPU downsampling blur.
 - [x] **Hybrid CPU Power Management:** `HybridPM.kext` (XE-PM) dynamically scales P-cores and E-cores, enabling C8/C10 deep sleep states (40°C–50°C idle).
 - [x] **Audio Speakers & Headphone Jack:** Realtek ALC287 codec (`alcid=11`) driving internal stereo speakers and 3.5mm audio jack.
-- [ ] **Internal Digital Microphone:** ⚠️ **Currently NOT working / WIP** (The Realtek ALC287 microphone pins and Intel Smart Sound Technology digital DMIC array require specialized driver handling; see workarounds below).
+- [x] **Internal Digital Microphone:** ✅ **Working** (Fully functional via patched `LatSOFAudio.kext` driving the Intel Smart Sound Technology cAVS 2.5 DMIC digital microphone array as a native macOS `IOAudio` device with hardware gain calibration).
 - [x] **Wi-Fi & Bluetooth:** Intel Wi-Fi 6E AX211 (`AirportItlwm`) connecting to 2.4GHz / 5GHz / 6GHz networks, Bluetooth 5.2 connecting to mice, keyboards, and headphones.
-- [x] **Keyboard, TrackPoint & Precision Trackpad:** Backlit ThinkPad keyboard, red TrackPoint nub with physical click buttons, and multi-touch gestures on the glass trackpad.
+- [x] **Keyboard, TrackPoint & Precision Trackpad:** Backlit ThinkPad keyboard with native Windows-style key remap and `PrtSc` screenshot (`Keyboard_Remap/`), red TrackPoint nub with physical click buttons, and multi-touch gestures on the glass trackpad.
 - [x] **Battery & Power Monitoring:** Live percentage readout, charging metrics, and cycle counts via `SMCBatteryManager` + `ECEnabler`.
 - [x] **Webcam:** Integrated 1080p FHD USB UVC webcam works out of the box with FaceTime, Zoom, and Photo Booth.
 - [ ] **Sleep & Wake:** ⚠️ **Currently NOT working / WIP** (Dual-GPU multi-head sleep requires further work synchronizing NVIDIA GSP firmware re-initialization and Intel Display 13 MBUS/DDB power wells upon wake).
@@ -69,17 +76,14 @@ Both displays work concurrently with fluid hardware acceleration!
 | **iCloud Drive & App Store** | ✅ **Working** | Full sync for Notes, Reminders, Photos, and App Store purchases. |
 | **Handoff** | ✅ **Working** | Seamlessly continue browsing tabs and open apps from iPhone/iPad to ThinkPad. |
 | **Universal Clipboard** | ✅ **Working** | Copy text or images on your iPhone and paste them directly on macOS. |
-| **Continuity Camera & Mic** | ✅ **Working** | **Recommended Microphone Workaround:** Mount your iPhone to use its studio-grade microphone and camera wirelessly in macOS. |
+| **Continuity Camera & Mic** | ✅ **Working** | Supported natively. Internal DMIC now functions independently via `LatSOFAudio.kext`, with iPhone Continuity available as a studio-grade alternative. |
 | **AirDrop** | ❌ **Unsupported** | Intel Wi-Fi (`AirportItlwm`) does not support Apple's proprietary Apple Wireless Direct Link (AWDL) protocol on modern macOS (Sonoma/Sequoia). Requires a native Broadcom card for AirDrop. |
 | **Universal Control** | ⚠️ **Unsupported** | Depends on Apple AWDL protocol, which is unavailable on Intel Wi-Fi. |
 | **Sidecar** | ⚠️ **Untested / Limited** | Requires Apple T2 hardware or native Apple QuickSync H.265 encoder. |
 | **DRM (Apple TV+, Netflix 4K)** | ⚠️ **Partial** | Netflix/YouTube 1080p works in Chrome/Brave (Widevine). Safari FairPlay 4K streaming is limited on non-native GPUs. |
 
-> 🎙️ **Microphone Workarounds:**
-> While internal DMIC support is being reverse-engineered, you can use:
-> 1. Any 3.5mm headset with an in-line microphone (or USB headset/mic).
-> 2. Bluetooth headphones (AirPods, Sony, Bose with built-in mic).
-> 3. **Apple Continuity Microphone:** Wirelessly stream microphone input from your iPhone via Continuity!
+> 🎙️ **Internal Digital Microphone Fully Working (`LatSOFAudio.kext`):**
+> The laptop's dual digital microphones (Intel cAVS 2.5 DMIC) are driven natively via our patched **`LatSOFAudio.kext`**. You no longer need external audio adapters or workarounds! See [Section 6 - Phase 6](#phase-6-internal-digital-microphone-setup-latsofaudiokext) for volume calibration and TCC permission steps.
 
 > 📦 **Complete Kext Inventory & Version Guide:**
 > For the complete inventory of all 35 kernel extensions included in this EFI, exact version numbers, bundle IDs, and why `VoodooPS2` & `VoodooI2C` are coordinated, refer to the [**Kext Reference & Version Inventory**](docs/KEXTS.md).
@@ -290,18 +294,134 @@ Now that both NVIDIA and Intel drivers are properly installed in `/Library`, dep
 
 ---
 
+### Phase 6: Internal Digital Microphone Setup (`LatSOFAudio.kext`)
+
+The ThinkPad P1 Gen 5 uses an **Intel Smart Sound Technology (SST / cAVS 2.5)** digital microphone (DMIC) array (`8086:51c8`). In modern Intel laptops, the DMIC microphones are wired directly to the on-die Intel DSP—not to the Realtek analog codec pins. Traditional AppleALC patches cannot initialize these DSP lines.
+
+We resolve this by integrating **`LatSOFAudio.kext`**, which implements the Sound Open Firmware (SOF) pipeline in-kernel and exposes a native `IOAudioEngine` (`imic`) recognized by macOS as a native system microphone.
+
+#### 1. Automated Installation
+Run the automated installer script from the `LatSOF-Audio patched` directory:
+```bash
+sudo bash "LatSOF-Audio patched/scripts/install.sh"
+sudo reboot
+```
+> [!WARNING]
+> Do NOT attempt to run `kmutil unload` dynamically while `coreaudiod` is active. Doing so can cause kernel deadlocks. Always reboot to let macOS cleanly rebuild AuxKC.
+
+#### 2. Input Volume Calibration (Crucial)
+On Windows, Lenovo uses Dynamic Speech AGC with a default pre-amp boost of ~+28 dB. In macOS:
+1. Navigate to **System Settings -> Sound -> Input**.
+2. Select **Internal Microphone**.
+3. Set **Input Volume** slider to **85% – 95%** for crisp, clear audio capture.
+*(Optional: Add `latsof_gain=28` to `boot-args` in `config.plist` to enforce hardware pre-amp gain by default).*
+
+#### 3. Microphone Permissions for Applications (TCC Bypass)
+Due to custom graphics injection (WhateverXe / NullMoth), standard macOS TCC permission popups may occasionally be suppressed in background:
+* **Option A (GUI):** Open `/Applications/1401.app` -> under *MICROPHONE AND CAMERA*, click **"Allow an app..."** and choose your app (e.g., Google Chrome, Discord, Zoom), then restart the app (`Cmd+Q`).
+* **Option B (Terminal):**
+  ```bash
+  /Applications/1401.app/Contents/Resources/nullmoth-tcc-grant "/Applications/Google Chrome.app"
+  ```
+
+---
+
+### Phase 7: Display Override & Ultra-Sharp Text Rendering (HiDPI & Font Smoothing)
+
+The ThinkPad P1 Gen 5 panel is a 16.0" 16:10 WQXGA panel (`2560x1600` / `2880x1800` BOE `0x9e5:0x0ae0`). When running without proper scaling, fonts can appear blurred due to GPU downsampling artifacts. We provide a 2-stage fix: native HiDPI Display Override and CoreGraphics font smoothing / vector glyph scaling override.
+
+#### 1. Install BOE Display Override (HiDPI & EDID Patch)
+The `Display_Override/` folder injects a custom EDID and resolution mapping into `/Library/Displays/Contents/Resources/Overrides/` (resides in local `/Library`, so **SIP does NOT need to be disabled** and updates persist):
+```bash
+sudo bash Display_Override/install.sh
+```
+
+#### 2. System Accessibility & CoreGraphics Font Smoothing Configuration
+Run the following commands in Terminal to eliminate downsampling blur and enforce razor-sharp font rendering:
+
+```bash
+# 1. Disable blurry font halo and enable CoreGraphics sharp font rendering pipeline:
+defaults write -g AppleFontSmoothing -int 0
+defaults write -g CGFontRenderingFontSmoothingDisabled -bool false
+
+# 2. Configure Accessibility to grant larger physical pixel budget for vector font glyphs:
+defaults write com.apple.universalaccess FontSizeCategory -dict global "L"
+defaults write com.apple.universalaccess UIPreferredContentSizeCategoryName "UICTContentSizeCategoryXL"
+defaults write com.apple.universalaccess customFonts -bool true
+
+# 3. Refresh preferences cache (or log out / reboot):
+killall cfprefsd
+```
+
+> [!TIP]
+> **👉 Tại sao cấu hình này lại làm nét chữ vượt trội? (Why this makes text razor-sharp):**
+> * **Trước khi cấu hình:** Ở kích thước mặc định (nhỏ), mỗi con chữ chỉ được vẽ bởi một vài pixel li ti. Khi bị nén và co giãn qua thuật toán GPU downsampling (từ 2880 xuống 2560 hoặc tỷ lệ không nguyên số), nét chữ bị vỡ và hòa lẫn vào nền gây ra hiện tượng mờ tịt (fuzzy/blurry text).
+> * **Sau khi cấu hình Trợ năng (Accessibility `FontSizeCategory = L` / `UIPreferredContentSizeCategoryName = UICTContentSizeCategoryXL` & `customFonts = True`):** Mỗi ký tự được cấp nhiều pixel vật lý hơn trên ma trận màn hình để dựng vector outline $\rightarrow$ nét chữ trở nên dày dặn, sắc cạnh và loại bỏ triệt để hiệu ứng mờ nhòe do GPU downsampling!
+> * **Hai thông số Font Smoothing kết hợp:**
+>   * `AppleFontSmoothing = 0`: Tắt bỏ hoàn toàn lớp quầng xám làm dày/nhòe font mặc định của macOS.
+>   * `CGFontRenderingFontSmoothingDisabled = False`: Bật lại đường ống dựng font sắc nét góc cạnh nguyên bản của CoreGraphics.
+
+---
+
+### Phase 8: ThinkPad Native Keyboard Remapping (Windows-Style & PrtSc Screenshot)
+
+ThinkPad users accustomed to Windows key layouts often struggle with macOS's swapped `Ctrl` / `Cmd` positions and awkward 4-key screenshot shortcuts (`Ctrl+Shift+Cmd+4`). 
+
+Our `Keyboard_Remap/` package provides a **100% native solution** using macOS's internal `hidutil` service and a user `LaunchAgent`.
+* **Zero 3rd-party bloat:** No background apps (Karabiner-Elements, AltTab, or BetterTouchTool) required.
+* **0% CPU / RAM overhead:** Runs directly inside the macOS HID kernel layer without input latency.
+
+#### Keyboard Remap Matrix:
+
+| ThinkPad Physical Key | Mapped macOS Key | Experience & Benefits |
+| :--- | :--- | :--- |
+| **Left Ctrl** *(Bottom-left corner)* | **Left Command (`⌘`)** | **Windows-Standard Shortcuts:** Natural muscle memory for `Ctrl+C`, `Ctrl+V`, `Ctrl+A`, `Ctrl+Z`, `Ctrl+S`, `Ctrl+T`, `Ctrl+W`... |
+| **Left Alt** *(Between Win and Space)* | **Left Command (`⌘`)** | **Standard Alt+Tab:** Seamless app switching using the native macOS App Switcher just like Windows. |
+| **Left Windows** *(Between Ctrl and Alt)* | **Left Control (`⌃`)** | **Native macOS Control:** Used for Terminal shortcuts (`Ctrl+C` interrupt, `Ctrl+L` clear) and macOS-specific commands. |
+| **Right Alt** *(Right of Space)* | **Option (`⌥`)** | **100% Preserved:** Kept intact for code navigation, IDE shortcuts, and special characters. |
+| **PrtSc** *(PrintScreen)* | **F13 $\rightarrow$ Hotkey 31** | **Crop-to-Clipboard Screenshot:** Press `PrtSc` $\rightarrow$ crosshair cursor appears $\rightarrow$ drag-select area $\rightarrow$ hit `Ctrl+V` to paste image straight into Telegram, Zalo, Messenger, Word! |
+
+#### 1-Click Installation:
+```bash
+bash Keyboard_Remap/install.sh
+```
+*(Takes effect immediately without needing a reboot; automatically loads on every login).*
+
+To revert back to factory default macOS keys anytime:
+```bash
+bash Keyboard_Remap/uninstall.sh
+```
+
+---
+
 ## 7. Verification
 
-After rebooting, open **Terminal** and verify both GPUs:
+After completing the installation and rebooting, verify all subsystems:
 
+### 1. Dual-GPU Multi-Monitor Acceleration:
 ```bash
 system_profiler SPDisplaysDataType
 ```
+* **Intel Iris Xe Graphics:** Driving the internal 16.0" 2560x1600 eDP panel (`Metal Support: Metal 2` or `Metal 3`).
+* **NVIDIA RTX A1000 Laptop:** Driving the external HDMI monitor (`Metal Support: Metal 3`).
 
-* **Expected Result:**
-  * **Intel Iris Xe Graphics:** Driving the internal 16.0" 2560x1600 eDP panel (`Metal Support: Metal 2` or `Metal 3`).
-  * **NVIDIA RTX A1000 Laptop:** Driving the external HDMI monitor (`Metal Support: Metal 3`).
-* Both displays run simultaneously with fluid 60 FPS hardware acceleration!
+### 2. Internal Digital Microphone (`LatSOFAudio`):
+```bash
+ioreg -r -c LatSOFAudioDevice -l | grep -E "Status|FW-Ready|PM-Gating|Topology"
+```
+* Expected: `"Status" = "OK"`, `"FW-Ready" = "OK"`, `"Topology" = "8 OK, 0 FAIL"`.
+
+### 3. Display Override & HiDPI:
+```bash
+ioreg -lw0 -r -c "IODisplayConnect" | grep "DisplayProductID"
+```
+* Expected: `DisplayProductID = 2784` (`0xae0`) and `DisplayVendorID = 2533` (`0x9e5`).
+
+### 4. Native Keyboard Remapping:
+```bash
+hidutil property --get "UserKeyMapping"
+```
+* Displays active mapping dictionary entries for HID codes `30064771296`, `30064771298`, `30064771299`, and `30064771142`.
 
 ---
 
@@ -309,6 +429,7 @@ system_profiler SPDisplaysDataType
 
 * **[khucxtriendev/WhateverXe](https://github.com/khucxtriendev/WhateverXe):** WhateverXe fork patched for Lenovo ThinkPad UEFI GOP 6-bpc (`0x8a200106`), eDP panel preservation during Type-C unreadiness, and physical register verification preventing `tryCloseGate()` black screens.
 * **[nullmoth/1401](https://github.com/nullmoth/1401) & [nullmoth/nvidia-macos-driver](https://github.com/nullmoth/nvidia-macos-driver):** The breakthrough NVIDIA modern macOS driver and installer app enabling NVIDIA Ampere/Turing dGPUs on macOS with Metal 3.
+* **[pokipoi/LatSOF-Audio](https://github.com/pokipoi/LatSOF-Audio):** Breakthrough Sound Open Firmware (SOF) companion driver bringing native Intel SST/cAVS digital DMIC microphones to macOS as a real `IOAudio` device.
 * **[b00t0x/WhateverXe](https://github.com/b00t0x/WhateverXe) & [b00t0x/WhateverXe-Graphics](https://github.com/b00t0x/WhateverXe-Graphics):** Foundational Intel Xe graphics adaptation layer on macOS.
 * **[Thatisjigen/WhateverXe](https://github.com/Thatisjigen/WhateverXe) & [Thatisjigen/HybridPM](https://github.com/Thatisjigen/HybridPM):** Display 13 eDP research, upstream WhateverXe mobile tree, and standalone `HybridPM.kext` port for hybrid Intel power management.
 * **[JulioNectar/Hackintosh-XPS13Plus-IrisXe-Tahoe](https://github.com/JulioNectar/Hackintosh-XPS13Plus-IrisXe-Tahoe):** Pioneer of Intel Iris Xe Metal driver adaptation, `impostor.dylib` (`xefix`), and original XE-PM hybrid core power management discovery on macOS Tahoe/Sequoia.
