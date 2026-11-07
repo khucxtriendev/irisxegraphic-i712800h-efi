@@ -8,7 +8,13 @@
 [![OpenCore](https://img.shields.io/badge/OpenCore-1.0.3-blue.svg)](https://github.com/acidanthera/OpenCorePkg)
 [![macOS](https://img.shields.io/badge/macOS-Sequoia%2015.x%20%7C%20Tahoe-green.svg)](https://www.apple.com/macos/)
 [![WhateverXe](https://img.shields.io/badge/WhateverXe-Patched%206--bpc-orange.svg)](https://github.com/khucxtriendev/WhateverXe)
+[![Kexts](https://img.shields.io/badge/Kexts-35%20Inventory-teal.svg)](docs/KEXTS.md)
+[![Power Management](https://img.shields.io/badge/Power-XE--PM%20Guide-success.svg)](docs/XE-PM-GUIDE.md)
 [![Release](https://img.shields.io/badge/Release-EFI%20v1.0%20(ZIP)-purple.svg)](https://github.com/khucxtriendev/irisxegraphic-i712800h-efi/releases)
+
+### 📚 Documentation & Technical Guides:
+* 📦 [**Kext Reference & Version Inventory**](docs/KEXTS.md): Full breakdown of all 35 kernel extensions, versions, bundle IDs, and input device coordination (`VoodooPS2` + `VoodooI2C`).
+* ⚡ [**XE-PM & Hybrid Power Management Guide**](docs/XE-PM-GUIDE.md): Architectural deep-dive into Alder Lake HWP frequency scaling, thermal profiles, and live `sysctl` commands.
 
 A production-grade OpenCore EFI configuration tailored specifically for the **Lenovo ThinkPad P1 Gen 5 (Type 21DDS88B00)**. 
 
