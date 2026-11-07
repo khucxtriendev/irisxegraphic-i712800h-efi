@@ -40,34 +40,98 @@ Both displays work concurrently with fluid hardware acceleration!
   - Internal 16.0" 2560x1600 display running on Intel Iris Xe (Metal 2 / Metal 3).
   - External HDMI monitor running directly on NVIDIA RTX A1000 (Metal 3).
 - [x] **Display Backlight Brightness Control:** Smooth brightness slider for the internal panel via `SSDT-PNLF` and `BrightnessKeys.kext`.
-- [x] **Hybrid CPU Power Management:** `HybridPM.kext` combined with `-hpm` dynamically scales P-cores and E-cores, enabling proper C-states to keep the laptop cool.
-- [x] **Audio:** Internal stereo speakers, 3.5mm headphone jack, and internal microphone.
+- [x] **Hybrid CPU Power Management:** `HybridPM.kext` (XE-PM) combined with `-hpm` dynamically scales P-cores and E-cores, enabling proper C-states to keep temperatures cool (45°C–55°C idle).
+- [x] **Audio:** Internal stereo speakers, 3.5mm headphone combo jack, and internal microphone.
 - [x] **Wi-Fi & Bluetooth:** Connectivity across 2.4GHz / 5GHz / 6GHz networks and Bluetooth peripherals.
 - [x] **Keyboard & Trackpad:** ThinkPad keyboard shortcuts, TrackPoint navigation, and multi-touch gestures.
 - [x] **Battery & Power Monitoring:** ACPI battery percentage readout via `SMCBatteryManager.kext` + `ECEnabler.kext`.
-- [x] **Sleep & Wake:** Display clock and HDMI link restoration upon wake.
+- [ ] **Sleep & Wake:** ⚠️ **Currently NOT working / WIP** (Dual-GPU multi-head sleep requires further work synchronizing NVIDIA GSP firmware re-initialization and Intel Display 13 MBUS/DDB power wells upon wake).
 - [ ] **Windows Hello IR Camera:** Unsupported by macOS.
 
 ---
 
-## 3. Upstream Credits & Acknowledgments
+## 3. CPU Power Management: How to Use XE-PM (HybridPM)
 
-This achievement is built upon the incredible work of the open-source community:
+Intel 12th Gen Alder Lake-H (`i7-12800H`) features a hybrid architecture combining **6 Performance cores (12 threads)** and **8 Efficient cores (8 threads)**. Because macOS Apple XCPM scheduler predates hybrid architectures, it natively misclassifies E-cores, ignores Intel Thread Director, and causes P-cores to run at elevated frequencies.
 
-* **[khucxtriendev/WhateverXe](https://github.com/khucxtriendev/WhateverXe):** WhateverXe fork patched for Lenovo ThinkPad UEFI GOP 6-bpc (`0x8a200106`), eDP panel preservation during Type-C unreadiness, and physical register verification preventing `tryCloseGate()` black screens.
-* **[nullmoth/1401](https://github.com/nullmoth/1401) & [nullmoth/nvidia-macos-driver](https://github.com/nullmoth/nvidia-macos-driver):** The breakthrough NVIDIA modern macOS driver and installer app enabling NVIDIA Ampere/Turing dGPUs on macOS with Metal 3.
-* **[b00t0x/WhateverXe](https://github.com/b00t0x/WhateverXe) & [b00t0x/WhateverXe-Graphics](https://github.com/b00t0x/WhateverXe-Graphics):** Foundational Intel Xe graphics adaptation layer on macOS.
-* **[Thatisjigen/WhateverXe](https://github.com/Thatisjigen/WhateverXe) & [Thatisjigen/acer-nitro-anv15-52-macos](https://github.com/Thatisjigen/acer-nitro-anv15-52-macos):** Display 13 eDP research and implementations for mobile Alder Lake / Raptor Lake architectures.
-* **[JulioNectar/Hackintosh-XPS13Plus-IrisXe-Tahoe](https://github.com/JulioNectar/Hackintosh-XPS13Plus-IrisXe-Tahoe):** Pioneer of Intel Iris Xe Metal driver adaptation on macOS Tahoe/Sequoia:
-  - `xefix.m` / `libxedrv`: Synchronizing compute vs render order and eliminating WindowServer backdrop blur rectangle artifacts.
-  - `posh_patch`: Resolving the command buffer memory leak.
-  - `XE-PM` (`HybridPM.kext`): Intelligent frequency scaling for hybrid P/E core architectures.
-* **[Acidanthera](https://github.com/acidanthera):** OpenCorePkg, Lilu, VirtualSMC, AppleALC, RestrictEvents, AMFIPass, etc.
-* **[OpenIntelWireless](https://github.com/OpenIntelWireless):** AirportItlwm and IntelBluetoothFirmware.
+This EFI employs **XE-PM** (originally by [JulioNectar](https://github.com/JulioNectar/Hackintosh-XPS13Plus-IrisXe-Tahoe), ported as `HybridPM.kext` by Thatisjigen) alongside `CpuTopologyRebuild.kext` to resolve hybrid scheduling:
+
+### HybridPM Configuration Parameters:
+* **`-hpm`**: Activates the HybridPM Lilu plugin.
+* **`-hpmbeta`**: Relaxes OS checks to allow running on newer macOS versions (Sequoia 15.x and Tahoe).
+* **`hpmd3=1`**: Enforces package D3 state behavior for idle power saving.
+* **`hpmepp=128`**: Sets the Energy Performance Preference (EPP) register to `128` (a balanced sweet-spot between performance and battery thermal efficiency, where `0` = maximum performance and `255` = maximum power saving).
+* **`hpmpl1=45`**: Configures the long-term Power Limit 1 (PL1) ceiling to `45W`, matching the native TDP of the Intel Core i7-12800H.
+* **`ctrsmt=full`**: Tells `CpuTopologyRebuild.kext` to build an asymmetric core topology mapping so macOS correctly schedules background tasks to E-cores and high-priority threads to P-cores.
 
 ---
 
-## 4. Complete Step-by-Step Installation Procedure
+## 4. Comprehensive Boot-Args Analysis
+
+Below is the complete breakdown of the boot arguments utilized in `config.plist`:
+
+```text
+-v debug=0x100 keepsyms=1 -allow3d -disablegfxfirmware -igfxdvmt ctrsmt=full amfi_get_out_of_my_way=0x1 amfi=0x80 ipc_control_port_options=0 revblock=pci,gmux revpatch=sbvmm,cpuname revcpu=1 -wex-reset-recover -wex-scanout-coherent -wex-hidpi-dbuf alcid=11 -hpm -hpmbeta hpmd3=1 hpmepp=128 hpmpl1=45 nvfb=1 nvaccel=1 nvfbheads=4 -nvkmsnosmooth nvfbhidpi=1
+```
+
+### Breakdown by Subsystem:
+
+| Argument | Category | Purpose |
+| :--- | :--- | :--- |
+| `-v` | Diagnostic | Enables verbose boot mode for hardware logging and troubleshooting. |
+| `debug=0x100` | Kernel | Prevents automatic reboot upon kernel panic, allowing inspection of the panic log. |
+| `keepsyms=1` | Kernel | Retains kernel debug symbols in panic backtraces. |
+| `-allow3d` | WhateverXe | Enables 3D hardware acceleration for Intel Xe integrated graphics. |
+| `-disablegfxfirmware` | WhateverXe | Prevents loading Apple's incompatible proprietary GPU firmware on Alder Lake Xe. |
+| `-igfxdvmt` | WhateverXe | Enables DVMT stolen memory patching for Intel Xe. |
+| `-wex-reset-recover` | WhateverXe | Saves and restores render engine MOCS/L3 cache tables across GPU hang resets. |
+| `-wex-scanout-coherent`| WhateverXe | Treats flipped display surfaces as displayable for coherent MOCS caching. |
+| `-wex-hidpi-dbuf` | WhateverXe | Allocates 96 DBUF blocks for cursor and primary planes, preventing HiDPI scaling glitches. |
+| `amfi_get_out_of_my_way=0x1` | Security | AMFIPass parameter bypassing AMFI code-signing checks for third-party graphics bundles. |
+| `amfi=0x80` | Security | Relaxes AMFI signature enforcement for unapproved user-space drivers. |
+| `ipc_control_port_options=0` | Kernel | Relaxes mach port IPC restrictions required for custom Metal bundles. |
+| `ctrsmt=full` | CPU Topology | Configures full asymmetric SMT topology for Alder Lake 6P + 8E cores. |
+| `revblock=pci,gmux` | RestrictEvents | Blocks GMUX and PCI validation checks. |
+| `revpatch=sbvmm,cpuname` | RestrictEvents | Enables Software Update VMM patching and CPU brand string override. |
+| `revcpu=1` | RestrictEvents | Enables custom CPU topology display in macOS System Settings. |
+| `-hpm` | XE-PM | Activates JulioNectar's Hybrid CPU Power Management plugin. |
+| `-hpmbeta` | XE-PM | Permits XE-PM execution on macOS Sequoia and Tahoe. |
+| `hpmd3=1` | XE-PM | Enables package D3 low-power states. |
+| `hpmepp=128` | XE-PM | Sets balanced Energy Performance Preference (EPP). |
+| `hpmpl1=45` | XE-PM | Configures 45W long-term TDP power limit for i7-12800H. |
+| `nvfb=1` | NullMoth | Enables NullMoth NVIDIA Framebuffer (NVRMFB) driver. |
+| `nvaccel=1` | NullMoth | Enables NullMoth NVIDIA Hardware Acceleration (NVAccel). |
+| `nvfbheads=4` | NullMoth | Configures 4 display heads for the NVIDIA RTX A1000. |
+| `-nvkmsnosmooth` | NullMoth | Disables KMS smooth-stepping transitions on NVIDIA display ports. |
+| `nvfbhidpi=1` | NullMoth | Enables HiDPI scaling support on displays attached to the NVIDIA card. |
+| `alcid=11` | Audio | Sets AppleALC layout ID 11 for Realtek ALC245 audio codec. |
+
+---
+
+## 5. Sleep & Wake: Current Limitations & Workaround
+
+> [!WARNING]
+> **Sleep & Wake is currently in development and NOT yet functional on this dual-GPU setup.**
+> Attempting to sleep the machine can lead to black screens, kernel panics on wake, or disconnected HDMI links.
+
+### Why Sleep/Wake Fails on Dual-GPU Hackintosh:
+1. **NVIDIA GSP Firmware Wake:** The NVIDIA Ampere architecture relies on GSP (GPU System Processor) firmware. When waking from S3/Modern Standby, the GSP firmware must be completely cold-booted and reloaded by `NVRM.kext`. Modern macOS lacks native handling for discrete NVIDIA sleep/wake cycles.
+2. **Display 13 Pipe Desynchronization:** WhateverXe must reprogram MBUS, Pipe DDB, and clock gates upon wake. When two independent GPU drivers (Intel + NVIDIA) attempt to wake simultaneously, display handoff can stall.
+
+### Recommended System Settings to Prevent Sleep:
+To prevent unexpected panics while sleeping, configure macOS power management in Terminal:
+
+```bash
+sudo pmset -a disablesleep 1
+sudo pmset -a sleep 0
+sudo pmset -a displaysleep 15
+sudo pmset -a hibernatemode 0
+```
+*(This allows the display to turn off after 15 minutes of inactivity while keeping the system awake and stable).*
+
+---
+
+## 6. Complete Step-by-Step Installation Procedure
 
 To achieve a fully functional dual-GPU setup, follow these four phases in order:
 
@@ -102,7 +166,7 @@ To achieve a fully functional dual-GPU setup, follow these four phases in order:
 
 ---
 
-## 5. Verification
+## 7. Verification
 
 After rebooting, open **Terminal** and verify both GPUs:
 
@@ -113,11 +177,23 @@ system_profiler SPDisplaysDataType
 * **Expected Result:**
   * **Intel Iris Xe Graphics:** Driving the internal 16.0" 2560x1600 eDP panel (`Metal Support: Metal 2` or `Metal 3`).
   * **NVIDIA RTX A1000 Laptop:** Driving the external HDMI monitor (`Metal Support: Metal 3`).
-* Both displays run simultaneously with fluid 60 FPS hardware acceleration, smooth window movement, and balanced thermal performance!
+* Both displays run simultaneously with fluid 60 FPS hardware acceleration!
 
 ---
 
-## 6. Pre-Packaged Release
+## 8. Upstream Credits & Acknowledgments
+
+* **[khucxtriendev/WhateverXe](https://github.com/khucxtriendev/WhateverXe):** WhateverXe fork patched for Lenovo ThinkPad UEFI GOP 6-bpc (`0x8a200106`), eDP panel preservation during Type-C unreadiness, and physical register verification preventing `tryCloseGate()` black screens.
+* **[nullmoth/1401](https://github.com/nullmoth/1401) & [nullmoth/nvidia-macos-driver](https://github.com/nullmoth/nvidia-macos-driver):** The breakthrough NVIDIA modern macOS driver and installer app enabling NVIDIA Ampere/Turing dGPUs on macOS with Metal 3.
+* **[b00t0x/WhateverXe](https://github.com/b00t0x/WhateverXe) & [b00t0x/WhateverXe-Graphics](https://github.com/b00t0x/WhateverXe-Graphics):** Foundational Intel Xe graphics adaptation layer on macOS.
+* **[Thatisjigen/WhateverXe](https://github.com/Thatisjigen/WhateverXe) & [Thatisjigen/acer-nitro-anv15-52-macos](https://github.com/Thatisjigen/acer-nitro-anv15-52-macos):** Display 13 eDP research and implementations for mobile Alder Lake / Raptor Lake architectures.
+* **[JulioNectar/Hackintosh-XPS13Plus-IrisXe-Tahoe](https://github.com/JulioNectar/Hackintosh-XPS13Plus-IrisXe-Tahoe):** Pioneer of Intel Iris Xe Metal driver adaptation and XE-PM hybrid core power management on macOS Tahoe/Sequoia.
+* **[Acidanthera](https://github.com/acidanthera):** OpenCorePkg, Lilu, VirtualSMC, AppleALC, RestrictEvents, AMFIPass, etc.
+* **[OpenIntelWireless](https://github.com/OpenIntelWireless):** AirportItlwm and IntelBluetoothFirmware.
+
+---
+
+## 9. Pre-Packaged Release
 
 For immediate deployment, download the ready-to-use EFI archive from GitHub Releases:
 * 📦 **[Download EFI-ThinkPad-P1-Gen5-IrisXe-Nvidia-v1.0.zip](https://github.com/khucxtriendev/irisxegraphic-i712800h-efi/releases)**
