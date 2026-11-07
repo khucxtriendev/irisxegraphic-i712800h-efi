@@ -52,17 +52,37 @@ Both displays work concurrently with fluid hardware acceleration!
 
 ## 3. CPU Power Management: How to Use XE-PM (HybridPM)
 
-Intel 12th Gen Alder Lake-H (`i7-12800H`) features a hybrid architecture combining **6 Performance cores (12 threads)** and **8 Efficient cores (8 threads)**. Because macOS Apple XCPM scheduler predates hybrid architectures, it natively misclassifies E-cores, ignores Intel Thread Director, and causes P-cores to run at elevated frequencies.
+Intel 12th Gen Alder Lake-H (`i7-12800H`) features a hybrid architecture combining **6 Performance cores (12 threads)** and **8 Efficient cores (8 threads)**. Because macOS Apple XCPM scheduler predates hybrid architectures, it natively misclassifies E-cores, ignores Intel Thread Director, and causes P-cores to run at elevated frequencies while keeping idle power consumption high (30W–45W at idle, 80°C–90°C).
 
-This EFI employs **XE-PM** (originally by [JulioNectar](https://github.com/JulioNectar/Hackintosh-XPS13Plus-IrisXe-Tahoe), ported as `HybridPM.kext` by Thatisjigen) alongside `CpuTopologyRebuild.kext` to resolve hybrid scheduling:
+This EFI employs **XE-PM** (originally discovered and developed by [JulioNectar](https://github.com/JulioNectar/Hackintosh-XPS13Plus-IrisXe-Tahoe), and ported into the standalone Lilu plugin `HybridPM.kext` by [Thatisjigen](https://github.com/Thatisjigen/HybridPM)) alongside `CpuTopologyRebuild.kext` to correct hybrid scheduling, HWP multiplier scaling (78.7 MHz mismatch), and deep C-states (C8/C10).
 
-### HybridPM Configuration Parameters:
+> 📖 **Comprehensive Technical Guide:**
+> For an exhaustive architectural explanation, live `sysctl` runtime commands without rebooting, and custom power profiles, please see our dedicated [**XE-PM & Hybrid CPU Power Management Guide**](docs/XE-PM-GUIDE.md).
+>
+> 🔗 **Original Upstream Documentation:**
+> * [JulioNectar XE-PM Guide: Full CPU Turbo & Lower Idle Power](https://github.com/JulioNectar/Hackintosh-XPS13Plus-IrisXe-Tahoe#new-full-cpu-turbo-and-lower-idle-power--ngreenpm-26-oct)
+> * [Thatisjigen HybridPM Upstream Documentation](https://github.com/Thatisjigen/HybridPM#what-it-does)
+
+### Active HybridPM Parameters in `config.plist`:
 * **`-hpm`**: Activates the HybridPM Lilu plugin.
 * **`-hpmbeta`**: Relaxes OS checks to allow running on newer macOS versions (Sequoia 15.x and Tahoe).
-* **`hpmd3=1`**: Enforces package D3 state behavior for idle power saving.
+* **`hpmd3=1`**: Enforces package D3 state behavior for driverless PCI devices, drastically lowering idle draw.
 * **`hpmepp=128`**: Sets the Energy Performance Preference (EPP) register to `128` (a balanced sweet-spot between performance and battery thermal efficiency, where `0` = maximum performance and `255` = maximum power saving).
-* **`hpmpl1=45`**: Configures the long-term Power Limit 1 (PL1) ceiling to `45W`, matching the native TDP of the Intel Core i7-12800H.
-* **`ctrsmt=full`**: Tells `CpuTopologyRebuild.kext` to build an asymmetric core topology mapping so macOS correctly schedules background tasks to E-cores and high-priority threads to P-cores.
+* **`hpmpl1=45`**: Configures the sustained Power Limit 1 (PL1) ceiling to `45W`, matching the native TDP of the Intel Core i7-12800H.
+* **`ctrsmt=full`**: Instructs `CpuTopologyRebuild.kext` to build an asymmetric core topology mapping so macOS correctly schedules background tasks to E-cores and high-priority threads to P-cores.
+
+### Live Dynamic Power Tuning (No Reboot Required):
+You can switch power modes instantly in Terminal:
+```bash
+# Maximum Performance (EPP 0):
+sudo sysctl -w debug.hybridpm.epp=0
+
+# Balanced / Daily Workflow (EPP 128 - Default):
+sudo sysctl -w debug.hybridpm.epp=128
+
+# Maximum Battery / Whisper Quiet (EPP 192):
+sudo sysctl -w debug.hybridpm.epp=192
+```
 
 ---
 
@@ -186,8 +206,8 @@ system_profiler SPDisplaysDataType
 * **[khucxtriendev/WhateverXe](https://github.com/khucxtriendev/WhateverXe):** WhateverXe fork patched for Lenovo ThinkPad UEFI GOP 6-bpc (`0x8a200106`), eDP panel preservation during Type-C unreadiness, and physical register verification preventing `tryCloseGate()` black screens.
 * **[nullmoth/1401](https://github.com/nullmoth/1401) & [nullmoth/nvidia-macos-driver](https://github.com/nullmoth/nvidia-macos-driver):** The breakthrough NVIDIA modern macOS driver and installer app enabling NVIDIA Ampere/Turing dGPUs on macOS with Metal 3.
 * **[b00t0x/WhateverXe](https://github.com/b00t0x/WhateverXe) & [b00t0x/WhateverXe-Graphics](https://github.com/b00t0x/WhateverXe-Graphics):** Foundational Intel Xe graphics adaptation layer on macOS.
-* **[Thatisjigen/WhateverXe](https://github.com/Thatisjigen/WhateverXe) & [Thatisjigen/acer-nitro-anv15-52-macos](https://github.com/Thatisjigen/acer-nitro-anv15-52-macos):** Display 13 eDP research and implementations for mobile Alder Lake / Raptor Lake architectures.
-* **[JulioNectar/Hackintosh-XPS13Plus-IrisXe-Tahoe](https://github.com/JulioNectar/Hackintosh-XPS13Plus-IrisXe-Tahoe):** Pioneer of Intel Iris Xe Metal driver adaptation and XE-PM hybrid core power management on macOS Tahoe/Sequoia.
+* **[Thatisjigen/WhateverXe](https://github.com/Thatisjigen/WhateverXe) & [Thatisjigen/HybridPM](https://github.com/Thatisjigen/HybridPM):** Display 13 eDP research, upstream WhateverXe mobile tree, and standalone `HybridPM.kext` port for hybrid Intel power management.
+* **[JulioNectar/Hackintosh-XPS13Plus-IrisXe-Tahoe](https://github.com/JulioNectar/Hackintosh-XPS13Plus-IrisXe-Tahoe):** Pioneer of Intel Iris Xe Metal driver adaptation, `impostor.dylib` (`xefix`), and original XE-PM hybrid core power management discovery on macOS Tahoe/Sequoia.
 * **[Acidanthera](https://github.com/acidanthera):** OpenCorePkg, Lilu, VirtualSMC, AppleALC, RestrictEvents, AMFIPass, etc.
 * **[OpenIntelWireless](https://github.com/OpenIntelWireless):** AirportItlwm and IntelBluetoothFirmware.
 
