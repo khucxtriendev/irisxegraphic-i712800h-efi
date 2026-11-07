@@ -8,6 +8,14 @@
 		<array>
 			<dict>
 				<key>Comment</key>
+				<string>SSDT-ALS0.aml</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
+				<string>SSDT-ALS0.aml</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
 				<string>SSDT-SBUS.aml</string>
 				<key>Enabled</key>
 				<true/>
@@ -45,6 +53,14 @@
 				<true/>
 				<key>Path</key>
 				<string>SSDT-PLUG-ALT.aml</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>SSDT-PNLF.aml</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
+				<string>SSDT-PNLF.aml</string>
 			</dict>
 			<dict>
 				<key>Comment</key>
@@ -134,7 +150,7 @@
 				<true/>
 				<key>Find</key>
 				<data>
-				R1BJMC5fU1RB
+				FF9TVEE=
 				</data>
 				<key>Limit</key>
 				<integer>0</integer>
@@ -146,7 +162,83 @@
 				</data>
 				<key>Replace</key>
 				<data>
-				R1BJMC5YU1RB
+				FFhTVEE=
+				</data>
+				<key>ReplaceMask</key>
+				<data>
+				</data>
+				<key>Skip</key>
+				<integer>0</integer>
+				<key>TableLength</key>
+				<integer>0</integer>
+				<key>TableSignature</key>
+				<data>
+				</data>
+			</dict>
+			<dict>
+				<key>Base</key>
+				<string></string>
+				<key>BaseSkip</key>
+				<integer>0</integer>
+				<key>Comment</key>
+				<string>NBCF Zero to One</string>
+				<key>Count</key>
+				<integer>0</integer>
+				<key>Enabled</key>
+				<true/>
+				<key>Find</key>
+				<data>
+				CE5CQ0YA
+				</data>
+				<key>Limit</key>
+				<integer>0</integer>
+				<key>Mask</key>
+				<data>
+				</data>
+				<key>OemTableId</key>
+				<data>
+				</data>
+				<key>Replace</key>
+				<data>
+				CE5CQ0YB
+				</data>
+				<key>ReplaceMask</key>
+				<data>
+				</data>
+				<key>Skip</key>
+				<integer>0</integer>
+				<key>TableLength</key>
+				<integer>0</integer>
+				<key>TableSignature</key>
+				<data>
+				</data>
+			</dict>
+			<dict>
+				<key>Base</key>
+				<string></string>
+				<key>BaseSkip</key>
+				<integer>0</integer>
+				<key>Comment</key>
+				<string>PNLF to XNLF Rename</string>
+				<key>Count</key>
+				<integer>0</integer>
+				<key>Enabled</key>
+				<true/>
+				<key>Find</key>
+				<data>
+				UE5MRg==
+				</data>
+				<key>Limit</key>
+				<integer>0</integer>
+				<key>Mask</key>
+				<data>
+				</data>
+				<key>OemTableId</key>
+				<data>
+				</data>
+				<key>Replace</key>
+				<data>
+				WE5MRg==
 				</data>
 				<key>ReplaceMask</key>
 				<data>
@@ -217,32 +309,7 @@
 	<key>Booter</key>
 	<dict>
 		<key>MmioWhitelist</key>
-		<array>
-			<dict>
-				<key>Address</key>
-				<integer>3221225472</integer>
-				<key>Comment</key>
-				<string>PCIe ECAM/MCFG 0xC0000000 (256MB) - NAO devirtualizar</string>
-				<key>Enabled</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>Address</key>
-				<integer>4177526784</integer>
-				<key>Comment</key>
-				<string>0xF9000000</string>
-				<key>Enabled</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>Address</key>
-				<integer>4278190080</integer>
-				<key>Comment</key>
-				<string>0xFF000000</string>
-				<key>Enabled</key>
-				<false/>
-			</dict>
-		</array>
+		<array/>
 		<key>Patch</key>
 		<array>
 			<dict>
@@ -279,13 +346,13 @@
 		<key>Quirks</key>
 		<dict>
 			<key>AllowRelocationBlock</key>
-			<false/>
+			<true/>
 			<key>AvoidRuntimeDefrag</key>
 			<true/>
 			<key>ClearTaskSwitchBit</key>
 			<false/>
 			<key>DevirtualiseMmio</key>
-			<true/>
+			<false/>
 			<key>DisableSingleUser</key>
 			<false/>
 			<key>DisableVariableWrite</key>
@@ -307,7 +374,7 @@
 			<key>ProtectSecureBoot</key>
 			<false/>
 			<key>ProtectUefiServices</key>
-			<false/>
+			<true/>
 			<key>ProvideCustomSlide</key>
 			<true/>
 			<key>ProvideMaxSlide</key>
@@ -330,38 +397,62 @@
 		<dict>
 			<key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)</key>
 			<dict>
-				<key>class-code</key>
-				<data>
-				/////w==
-				</data>
-				<key>disable-gpu</key>
-				<true/>
+				<key>acpi-wake-type</key>
+				<integer>1</integer>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x1f,0x3)</key>
+			<dict>
+				<key>layout-id</key>
+				<integer>11</integer>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
 			<dict>
-				<key>AAPL,ig-platform-id</key>
+				<key>@0,built-in</key>
 				<data>
-				AABJmg==
+				AQAAAA==
+				</data>
+				<key>@0,display-type</key>
+				<string>LCD</string>
+				<key>AAPL,override-no-connect</key>
+				<data>
+				AP///////wAJ5eAKAAAAACwfAQS1IhV4A3zlpFVMnyYP
+				UFQAAAABAQEBAQEBAQEBAQEBAQEBa24AoKBAhGAwIDYA
+				WNcQAAAaAAAA/QE8pR4tUAAKICAgICAgAAAA/gBCT0Ug
+				Q1EKICAgICAgAAAA/ABDb2xvciBMQ0QKICAgAT5wE3kA
+				AAMBFKUvAYX/CZ8ALwAfAD8GgwACAAUAAAAAAAAAAAAA
+				AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+				AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+				AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA+kA==
 				</data>
 				<key>AAPL,slot-name</key>
-				<string>built-in</string>
-				<key>built-in</key>
+				<string>Internal@0,2,0</string>
+				<key>AAPL00,override-no-connect</key>
 				<data>
-				AA==
+				AP///////wAJ5eAKAAAAACwfAQS1IhV4A3zlpFVMnyYP
+				UFQAAAABAQEBAQEBAQEBAQEBAQEBa24AoKBAhGAwIDYA
+				WNcQAAAaAAAA/QE8pR4tUAAKICAgICAgAAAA/gBCT0Ug
+				Q1EKICAgICAgAAAA/ABDb2xvciBMQ0QKICAgAT5wE3kA
+				AAMBFKUvAYX/CZ8ALwAfAD8GgwACAAUAAAAAAAAAAAAA
+				AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+				AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+				AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA+kA==
 				</data>
-				<key>complete-modeset</key>
+				<key>disable-agdc</key>
 				<data>
 				AQAAAA==
 				</data>
-				<key>device-id</key>
+				<key>edid</key>
 				<data>
-				SZoAAA==
+				AP///////wAJ5eAKAAAAACwfAQS1IhV4A3zlpFVMnyYP
+				UFQAAAABAQEBAQEBAQEBAQEBAQEBa24AoKBAhGAwIDYA
+				WNcQAAAaAAAA/QE8pR4tUAAKICAgICAgAAAA/gBCT0Ug
+				Q1EKICAgICAgAAAA/ABDb2xvciBMQ0QKICAgAT5wE3kA
+				AAMBFKUvAYX/CZ8ALwAfAD8GgwACAAUAAAAAAAAAAAAA
+				AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+				AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+				AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA+kA==
 				</data>
-				<key>enable-max-pixel-clock-override</key>
-				<data>
-				AQAAAA==
-				</data>
-				<key>force-online</key>
+				<key>enable-backlight-registers-fix</key>
 				<data>
 				AQAAAA==
 				</data>
@@ -369,23 +460,12 @@
 				<data>
 				AQAAAA==
 				</data>
-				<key>hda-gfx</key>
-				<string>onboard-1</string>
+				<key>framebuffer-stolenmem</key>
+				<data>
+				AADAAw==
+				</data>
 				<key>model</key>
 				<string>Intel Iris Xe Graphics</string>
-				<key>rps-control</key>
-				<data>
-				AQAAAA==
-				</data>
-			</dict>
-			<key>PciRoot(0x0)/Pci(0x1F,0x3)</key>
-			<dict>
-				<key>layout-id</key>
-				<data>
-				CwAAAA==
-				</data>
-				<key>hda-gfx</key>
-				<string>onboard-1</string>
 			</dict>
 		</dict>
 		<key>Delete</key>
@@ -415,109 +495,55 @@
 			</dict>
 			<dict>
 				<key>Arch</key>
-				<string>x86_64</string>
+				<string>Any</string>
+				<key>BundlePath</key>
+				<string>HybridPM.kext</string>
+				<key>Comment</key>
+				<string>JulioNectar XE-PM CPU Power Management</string>
+				<key>Enabled</key>
+				<true/>
+				<key>ExecutablePath</key>
+				<string>Contents/MacOS/HybridPM</string>
+				<key>MaxKernel</key>
+				<string></string>
+				<key>MinKernel</key>
+				<string></string>
+				<key>PlistPath</key>
+				<string>Contents/Info.plist</string>
+			</dict>
+			<dict>
+				<key>Arch</key>
+				<string>Any</string>
+				<key>BundlePath</key>
+				<string>AMFIPass.kext</string>
+				<key>Comment</key>
+				<string></string>
+				<key>Enabled</key>
+				<true/>
+				<key>ExecutablePath</key>
+				<string>Contents/MacOS/AMFIPass</string>
+				<key>MaxKernel</key>
+				<string></string>
+				<key>MinKernel</key>
+				<string>20.0.0</string>
+				<key>PlistPath</key>
+				<string>Contents/Info.plist</string>
+			</dict>
+			<dict>
+				<key>Arch</key>
+				<string>Any</string>
 				<key>BundlePath</key>
 				<string>AppleALC.kext</string>
 				<key>Comment</key>
-				<string>ThinkPad P1 Gen 5; verify hardware behavior after boot</string>
+				<string></string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/AppleALC</string>
 				<key>MaxKernel</key>
-				<string>25.99.99</string>
-				<key>MinKernel</key>
-				<string>25.0.0</string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-			</dict>
-			<dict>
-				<key>Arch</key>
-				<string>x86_64</string>
-				<key>BundlePath</key>
-				<string>SimpleHDA.kext</string>
-				<key>Comment</key>
-				<string>ThinkPad P1 Gen 5; verify hardware behavior after boot</string>
-				<key>Enabled</key>
-				<true/>
-				<key>ExecutablePath</key>
-				<string>Contents/MacOS/SimpleHDA</string>
-				<key>MaxKernel</key>
-				<string>25.99.99</string>
-				<key>MinKernel</key>
-				<string>25.0.0</string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-			</dict>
-			<dict>
-				<key>Arch</key>
-				<string>Any</string>
-				<key>BundlePath</key>
-				<string>ECEnabler.kext</string>
-				<key>Comment</key>
-				<string>Fix 16-bit/32-bit Embedded Controller fields on ThinkPad</string>
-				<key>Enabled</key>
-				<true/>
-				<key>ExecutablePath</key>
-				<string>Contents/MacOS/ECEnabler</string>
-				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
 				<string></string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-			</dict>
-			<dict>
-				<key>Arch</key>
-				<string>Any</string>
-				<key>BundlePath</key>
-				<string>IntelBluetoothFirmware.kext</string>
-				<key>Comment</key>
-				<string></string>
-				<key>Enabled</key>
-				<true/>
-				<key>ExecutablePath</key>
-				<string>Contents/MacOS/IntelBluetoothFirmware</string>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>MinKernel</key>
-				<string></string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-			</dict>
-			<dict>
-				<key>Arch</key>
-				<string>Any</string>
-				<key>BundlePath</key>
-				<string>IntelBTPatcher.kext</string>
-				<key>Comment</key>
-				<string></string>
-				<key>Enabled</key>
-				<true/>
-				<key>ExecutablePath</key>
-				<string>Contents/MacOS/IntelBTPatcher</string>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>MinKernel</key>
-				<string></string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-			</dict>
-			<dict>
-				<key>Arch</key>
-				<string>Any</string>
-				<key>BundlePath</key>
-				<string>BlueToolFixup.kext</string>
-				<key>Comment</key>
-				<string></string>
-				<key>Enabled</key>
-				<true/>
-				<key>ExecutablePath</key>
-				<string>Contents/MacOS/BlueToolFixup</string>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>MinKernel</key>
-				<string>21.0.0</string>
 				<key>PlistPath</key>
 				<string>Contents/Info.plist</string>
 			</dict>
@@ -561,11 +587,29 @@
 				<key>Arch</key>
 				<string>Any</string>
 				<key>BundlePath</key>
+				<string>ECEnabler.kext</string>
+				<key>Comment</key>
+				<string></string>
+				<key>Enabled</key>
+				<true/>
+				<key>ExecutablePath</key>
+				<string>Contents/MacOS/ECEnabler</string>
+				<key>MaxKernel</key>
+				<string></string>
+				<key>MinKernel</key>
+				<string></string>
+				<key>PlistPath</key>
+				<string>Contents/Info.plist</string>
+			</dict>
+			<dict>
+				<key>Arch</key>
+				<string>Any</string>
+				<key>BundlePath</key>
 				<string>NVMeFix.kext</string>
 				<key>Comment</key>
 				<string></string>
 				<key>Enabled</key>
-				<false/>
+				<true/>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/NVMeFix</string>
 				<key>MaxKernel</key>
@@ -615,13 +659,49 @@
 				<key>Arch</key>
 				<string>Any</string>
 				<key>BundlePath</key>
-				<string>YogaSMC.kext</string>
+				<string>BlueToolFixup.kext</string>
 				<key>Comment</key>
-				<string>Lenovo ThinkPad EC / Lid / Sensors</string>
+				<string></string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
-				<string>Contents/MacOS/YogaSMC</string>
+				<string>Contents/MacOS/BlueToolFixup</string>
+				<key>MaxKernel</key>
+				<string></string>
+				<key>MinKernel</key>
+				<string>21.0.0</string>
+				<key>PlistPath</key>
+				<string>Contents/Info.plist</string>
+			</dict>
+			<dict>
+				<key>Arch</key>
+				<string>Any</string>
+				<key>BundlePath</key>
+				<string>IntelBTPatcher.kext</string>
+				<key>Comment</key>
+				<string></string>
+				<key>Enabled</key>
+				<true/>
+				<key>ExecutablePath</key>
+				<string>Contents/MacOS/IntelBTPatcher</string>
+				<key>MaxKernel</key>
+				<string></string>
+				<key>MinKernel</key>
+				<string></string>
+				<key>PlistPath</key>
+				<string>Contents/Info.plist</string>
+			</dict>
+			<dict>
+				<key>Arch</key>
+				<string>Any</string>
+				<key>BundlePath</key>
+				<string>IntelBluetoothFirmware.kext</string>
+				<key>Comment</key>
+				<string></string>
+				<key>Enabled</key>
+				<true/>
+				<key>ExecutablePath</key>
+				<string>Contents/MacOS/IntelBluetoothFirmware</string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
@@ -651,29 +731,11 @@
 				<key>Arch</key>
 				<string>Any</string>
 				<key>BundlePath</key>
-				<string>SMCDellSensors.kext</string>
-				<key>Comment</key>
-				<string></string>
-				<key>Enabled</key>
-				<false/>
-				<key>ExecutablePath</key>
-				<string>Contents/MacOS/SMCDellSensors</string>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>MinKernel</key>
-				<string></string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-			</dict>
-			<dict>
-				<key>Arch</key>
-				<string>Any</string>
-				<key>BundlePath</key>
 				<string>SMCLightSensor.kext</string>
 				<key>Comment</key>
 				<string></string>
 				<key>Enabled</key>
-				<false/>
+				<true/>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/SMCLightSensor</string>
 				<key>MaxKernel</key>
@@ -709,9 +771,27 @@
 				<key>Comment</key>
 				<string></string>
 				<key>Enabled</key>
-				<false/>
+				<true/>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/SMCSuperIO</string>
+				<key>MaxKernel</key>
+				<string></string>
+				<key>MinKernel</key>
+				<string></string>
+				<key>PlistPath</key>
+				<string>Contents/Info.plist</string>
+			</dict>
+			<dict>
+				<key>Arch</key>
+				<string>x86_64</string>
+				<key>BundlePath</key>
+				<string>SMCNvidiaGPU.kext</string>
+				<key>Comment</key>
+				<string>VirtualSMC sensor plugin for NVIDIA GPU</string>
+				<key>Enabled</key>
+				<true/>
+				<key>ExecutablePath</key>
+				<string>Contents/MacOS/SMCNvidiaGPU</string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
@@ -739,31 +819,13 @@
 			</dict>
 			<dict>
 				<key>Arch</key>
-				<string>x86_64</string>
-				<key>BundlePath</key>
-				<string>P1Gen5USBMap.kext</string>
-				<key>Comment</key>
-				<string>ThinkPad P1 Gen 5; verify hardware behavior after boot</string>
-				<key>Enabled</key>
-				<true/>
-				<key>ExecutablePath</key>
-				<string></string>
-				<key>MaxKernel</key>
-				<string>25.99.99</string>
-				<key>MinKernel</key>
-				<string>25.0.0</string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-			</dict>
-			<dict>
-				<key>Arch</key>
 				<string>Any</string>
 				<key>BundlePath</key>
-				<string>UTBDefault.kext</string>
+				<string>UTBMap.kext</string>
 				<key>Comment</key>
-				<string></string>
+				<string>UTBMap.kext</string>
 				<key>Enabled</key>
-				<false/>
+				<true/>
 				<key>ExecutablePath</key>
 				<string></string>
 				<key>MaxKernel</key>
@@ -943,7 +1005,7 @@
 				<key>Comment</key>
 				<string></string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/VoodooPS2Trackpad</string>
 				<key>MaxKernel</key>
@@ -957,35 +1019,17 @@
 				<key>Arch</key>
 				<string>Any</string>
 				<key>BundlePath</key>
-				<string>WhateverGreen.kext</string>
+				<string>WhateverXe.kext</string>
 				<key>Comment</key>
 				<string></string>
-				<key>Enabled</key>
-				<false/>
-				<key>ExecutablePath</key>
-				<string>Contents/MacOS/WhateverGreen</string>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>MinKernel</key>
-				<string></string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-			</dict>
-			<dict>
-				<key>Arch</key>
-				<string>Any</string>
-				<key>BundlePath</key>
-				<string>NootedGreen.kext</string>
-				<key>Comment</key>
-				<string>teste NootedGreen Tahoe (2026-10-16)</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
-				<string>Contents/MacOS/NootedGreen</string>
+				<string>Contents/MacOS/WhateverXe</string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
-				<string>25.0.0</string>
+				<string>20.0.0</string>
 				<key>PlistPath</key>
 				<string>Contents/Info.plist</string>
 			</dict>
@@ -997,9 +1041,27 @@
 				<key>Comment</key>
 				<string></string>
 				<key>Enabled</key>
-				<false/>
+				<true/>
 				<key>ExecutablePath</key>
 				<string></string>
+				<key>MaxKernel</key>
+				<string></string>
+				<key>MinKernel</key>
+				<string></string>
+				<key>PlistPath</key>
+				<string>Contents/Info.plist</string>
+			</dict>
+			<dict>
+				<key>Arch</key>
+				<string>Any</string>
+				<key>BundlePath</key>
+				<string>YogaSMC.kext</string>
+				<key>Comment</key>
+				<string></string>
+				<key>Enabled</key>
+				<true/>
+				<key>ExecutablePath</key>
+				<string>Contents/MacOS/YogaSMC</string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
@@ -1013,7 +1075,7 @@
 				<key>BundlePath</key>
 				<string>itlwm.kext</string>
 				<key>Comment</key>
-				<string>fallback (needs HeliPort); disabled in favour of AirportItlwm</string>
+				<string></string>
 				<key>Enabled</key>
 				<false/>
 				<key>ExecutablePath</key>
@@ -1031,15 +1093,15 @@
 				<key>BundlePath</key>
 				<string>AirportItlwm.kext</string>
 				<key>Comment</key>
-				<string>laobamac AirportItlwm-Tahoe v2.4.0-alpha 738d4c6 (native IO80211Family/Skywalk)</string>
+				<string>AirportItlwm for Sequoia</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/AirportItlwm</string>
 				<key>MaxKernel</key>
-				<string>25.99.99</string>
+				<string>24.99.99</string>
 				<key>MinKernel</key>
-				<string>25.0.0</string>
+				<string>24.0.0</string>
 				<key>PlistPath</key>
 				<string>Contents/Info.plist</string>
 			</dict>
@@ -1077,7 +1139,7 @@
 				<key>Count</key>
 				<integer>1</integer>
 				<key>Enabled</key>
-				<false/>
+				<true/>
 				<key>Find</key>
 				<data>
 				QYuGlAEAAA==
@@ -1113,7 +1175,7 @@
 				<key>Count</key>
 				<integer>1</integer>
 				<key>Enabled</key>
-				<false/>
+				<true/>
 				<key>Find</key>
 				<data>
 				i4iUAQAA
@@ -1149,7 +1211,7 @@
 				<key>Count</key>
 				<integer>1</integer>
 				<key>Enabled</key>
-				<false/>
+				<true/>
 				<key>Find</key>
 				<data>
 				i4iQAQAA
@@ -1262,24 +1324,24 @@
 			<key>PickerAudioAssist</key>
 			<false/>
 			<key>PickerMode</key>
-			<string>Builtin</string>
+			<string>External</string>
 			<key>PickerVariant</key>
 			<string>Auto</string>
 			<key>PollAppleHotKeys</key>
-			<true/>
+			<false/>
 			<key>ShowPicker</key>
 			<true/>
 			<key>TakeoffDelay</key>
 			<integer>0</integer>
 			<key>Timeout</key>
-			<integer>0</integer>
+			<integer>5</integer>
 		</dict>
 		<key>Debug</key>
 		<dict>
 			<key>AppleDebug</key>
-			<false/>
+			<true/>
 			<key>ApplePanic</key>
-			<false/>
+			<true/>
 			<key>DisableWatchDog</key>
 			<true/>
 			<key>DisplayDelay</key>
@@ -1291,7 +1353,7 @@
 			<key>SysReport</key>
 			<false/>
 			<key>Target</key>
-			<integer>65</integer>
+			<integer>67</integer>
 		</dict>
 		<key>Entries</key>
 		<array/>
@@ -1310,7 +1372,7 @@
 			<key>EnablePassword</key>
 			<false/>
 			<key>ExposeSensitiveData</key>
-			<integer>6</integer>
+			<integer>7</integer>
 			<key>HaltLevel</key>
 			<integer>2147483648</integer>
 			<key>PasswordHash</key>
@@ -1334,25 +1396,69 @@
 			<false/>
 		</dict>
 		<key>Tools</key>
-		<array/>
+		<array>
+			<dict>
+				<key>Arguments</key>
+				<string></string>
+				<key>Auxiliary</key>
+				<false/>
+				<key>Comment</key>
+				<string>NullMoth: remove the NVIDIA driver at the next start</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Flavour</key>
+				<string>Auto</string>
+				<key>FullNvramAccess</key>
+				<true/>
+				<key>Name</key>
+				<string>1401: Remove NVIDIA driver</string>
+				<key>Path</key>
+				<string>NullMothSafe.efi</string>
+				<key>RealPath</key>
+				<false/>
+				<key>TextMode</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<string>once</string>
+				<key>Auxiliary</key>
+				<false/>
+				<key>Comment</key>
+				<string>NullMoth: start macOS once without the NVIDIA driver</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Flavour</key>
+				<string>Auto</string>
+				<key>FullNvramAccess</key>
+				<true/>
+				<key>Name</key>
+				<string>1401: Start once without NVIDIA driver</string>
+				<key>Path</key>
+				<string>NullMothSafe.efi</string>
+				<key>RealPath</key>
+				<false/>
+				<key>TextMode</key>
+				<true/>
+			</dict>
+		</array>
 	</dict>
 	<key>NVRAM</key>
 	<dict>
 		<key>Add</key>
 		<dict>
-			<key>4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14</key>
+			<key>4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102</key>
 			<dict>
-				<key>DefaultBackgroundColor</key>
+				<key>background-color</key>
 				<data>
 				AAAAAA==
 				</data>
-			</dict>
-			<key>4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102</key>
-			<dict>
+				<key>revblock</key>
+				<string>pci,gmux</string>
 				<key>revcpu</key>
 				<integer>1</integer>
 				<key>revcpuname</key>
-				<string>Intel Core i7-12800H</string>
+				<string>12th Gen Intel(R) Core(TM) i7-12800H</string>
 				<key>revpatch</key>
 				<string>sbvmm,cpuname</string>
 				<key>rtc-blacklist</key>
@@ -1376,10 +1482,10 @@
 				AAAAAAAAAAAAAAAAAAA=
 				</data>
 				<key>boot-args</key>
-				<string>IGLogLevel=3 -ngreentglwithgfx -allow3d -disablegfxfirmware ngreen-dmc=adlp -ngreenv189 -ngreenkeepefi -ngreenxefix -ngreenfixbootmode amfi_get_out_of_my_way=1 ngreenSched=4 ngreenV142=3 -xenobb -ngreennoblr -ngreenv99g disablesleep=1 gfxrst=1 -v ngreengtfreq=1400 keepsyms=1 -alcbeta alcid=11</string>
+				<string>-v debug=0x100 keepsyms=1 -allow3d -disablegfxfirmware -igfxdvmt ctrsmt=full amfi_get_out_of_my_way=0x1 amfi=0x80 ipc_control_port_options=0 revblock=pci,gmux revpatch=sbvmm,cpuname revcpu=1 -wex-reset-recover -wex-scanout-coherent -wex-hidpi-dbuf alcid=11 -hpm -hpmbeta hpmd3=1 hpmepp=128 hpmpl1=45 nvfb=1 nvaccel=1 nvfbheads=4 -nvkmsnosmooth nvfbhidpi=1</string>
 				<key>csr-active-config</key>
 				<data>
-				EwoAAA==
+				QwoAAA==
 				</data>
 				<key>prev-lang:kbd</key>
 				<data>
@@ -1390,24 +1496,22 @@
 		</dict>
 		<key>Delete</key>
 		<dict>
-			<key>4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14</key>
-			<array>
-				<string>DefaultBackgroundColor</string>
-			</array>
 			<key>4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102</key>
 			<array>
+				<string>background-color</string>
 				<string>rtc-blacklist</string>
 				<string>revcpu</string>
 				<string>revcpuname</string>
 				<string>revpatch</string>
+				<string>revblock</string>
 			</array>
 			<key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
 			<array>
-				<string>boot-args</string>
 				<string>ForceDisplayRotationInEFI</string>
 				<string>csr-active-config</string>
 				<string>bluetoothExternalDongleFailed</string>
 				<string>bluetoothInternalControllerInfo</string>
+				<string>boot-args</string>
 			</array>
 		</dict>
 		<key>LegacyOverwrite</key>
@@ -1456,14 +1560,14 @@
 			<key>AdviseFeatures</key>
 			<false/>
 			<key>MLB</key>
-			<string>C02045100YEAX8S4</string>
+			<string>C021359024NP8PGJA</string>
 			<key>MaxBIOSVersion</key>
 			<false/>
 			<key>ProcessorType</key>
 			<integer>3841</integer>
 			<key>ROM</key>
 			<data>
-			vANYMURd
+			gcACttPp
 			</data>
 			<key>SpoofVendor</key>
 			<true/>
@@ -1472,9 +1576,9 @@
 			<key>SystemProductName</key>
 			<string>MacBookPro16,2</string>
 			<key>SystemSerialNumber</key>
-			<string>C02DWTDOML7H</string>
+			<string>C02G9ZYZML7H</string>
 			<key>SystemUUID</key>
-			<string>96E7992D-4DBA-4BD4-96EB-C89CCD8BD601</string>
+			<string>37C9AC33-B28B-4C57-806B-E6037C96D351</string>
 		</dict>
 		<key>UpdateDataHub</key>
 		<true/>
@@ -1566,15 +1670,29 @@
 				<key>Arguments</key>
 				<string></string>
 				<key>Comment</key>
-				<string>Not shipped (Apple binary). Get it from acidanthera/OcBinaryData if you need HFS+ media.</string>
+				<string></string>
 				<key>Enabled</key>
-				<false/>
+				<true/>
 				<key>HideVerbose</key>
 				<false/>
 				<key>LoadEarly</key>
 				<false/>
 				<key>Path</key>
 				<string>HfsPlus.efi</string>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<string></string>
+				<key>Comment</key>
+				<string></string>
+				<key>Enabled</key>
+				<true/>
+				<key>HideVerbose</key>
+				<false/>
+				<key>LoadEarly</key>
+				<false/>
+				<key>Path</key>
+				<string>OpenCanopy.efi</string>
 			</dict>
 			<dict>
 				<key>Arguments</key>
@@ -1603,6 +1721,20 @@
 				<false/>
 				<key>Path</key>
 				<string>ResetNvramEntry.efi</string>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<string></string>
+				<key>Comment</key>
+				<string>Lenovo cloud-recovery panic fix (LegionCbmrFix 1.0.0)</string>
+				<key>Enabled</key>
+				<true/>
+				<key>HideVerbose</key>
+				<false/>
+				<key>LoadEarly</key>
+				<false/>
+				<key>Path</key>
+				<string>LegionCbmrFix.efi</string>
 			</dict>
 		</array>
 		<key>Input</key>

@@ -1,3 +1,0 @@
-No accessible display. Run in Terminal in the logged-in desktop session.
-
-Exit status: 3

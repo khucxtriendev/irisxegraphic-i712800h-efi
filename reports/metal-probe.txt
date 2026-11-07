@@ -1,3 +1,0 @@
-No accessible Metal device in this session.
-
-Exit status: 3

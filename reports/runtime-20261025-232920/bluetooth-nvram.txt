@@ -1,2 +1,0 @@
-bluetoothExternalDongleFailed	%00
-bluetoothInternalControllerInfo	%00%00%00%00%00%00%00%00%00%00%00%00%00%00

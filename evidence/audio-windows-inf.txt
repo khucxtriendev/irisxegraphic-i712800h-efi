@@ -1,1 +1,0 @@
-%Device.ExtensionDesc% = DeviceExtension_Install,INTELAUDIO\FUNC_01&VEN_10EC&DEV_0287&SUBSYS_17AA22F8

@@ -1,3 +1,0 @@
-P1-Gen5-20261025-r3-booted
-ab9a9e9cc5c94c2e2245aa505f7bab2b629beae721c3e848e3894107725a7a96  P1-Gen5-20261025-r3-booted.zip
-Dock digits confirmed; Graphics includes NoCopy mip fix.
