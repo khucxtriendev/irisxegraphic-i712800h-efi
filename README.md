@@ -53,6 +53,9 @@ Both displays work concurrently with fluid hardware acceleration!
 - [ ] **Sleep & Wake:** ⚠️ **Currently NOT working / WIP** (Dual-GPU multi-head sleep requires further work synchronizing NVIDIA GSP firmware re-initialization and Intel Display 13 MBUS/DDB power wells upon wake).
 - [ ] **Windows Hello IR Camera:** Unsupported by macOS.
 
+> 📦 **Complete Kext Inventory & Version Guide:**
+> For the complete inventory of all 35 kernel extensions included in this EFI, exact version numbers, bundle IDs, and why `VoodooPS2` & `VoodooI2C` are coordinated, refer to the [**Kext Reference & Version Inventory**](docs/KEXTS.md).
+
 ---
 
 ## 3. CPU Power Management: How to Use XE-PM (HybridPM)
