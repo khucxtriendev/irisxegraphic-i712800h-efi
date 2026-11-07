@@ -5,75 +5,80 @@
 [![macOS](https://img.shields.io/badge/macOS-Sequoia%2015.x%20%7C%20Tahoe-green.svg)](https://www.apple.com/macos/)
 [![WhateverXe](https://img.shields.io/badge/WhateverXe-Patched%206--bpc-orange.svg)](https://github.com/khucxtriendev/WhateverXe)
 
-Kho lưu trữ cấu hình OpenCore EFI hoàn chỉnh dành riêng cho **Lenovo ThinkPad P1 Gen 5 (Type 21DDS88B00)**, kích hoạt thành công tăng tốc phần cứng **Intel Iris Xe Graphics (QE/CI Metal 3D)** trên màn hình độ phân giải cao **2560 x 1600 (WQXGA)** mà không bị đen màn hình hay sọc sọc hiển thị.
+A production-ready OpenCore EFI configuration tailored specifically for the **Lenovo ThinkPad P1 Gen 5 (Type 21DDS88B00)**. This EFI successfully enables full **Intel Iris Xe Graphics (QE/CI with Metal 3D)** hardware acceleration on the internal **16.0" 2560x1600 (WQXGA)** eDP display without black screens or vertical slicing artifacts.
 
 ---
 
-## 1. Thông Số Phần Cứng (Hardware Specifications)
+## 1. Hardware Specifications
 
-| Thành phần | Chi tiết cấu hình |
+| Component | Detailed Specification |
 | :--- | :--- |
-| **Model máy** | Lenovo ThinkPad P1 Gen 5 (Type `21DDS88B00`) |
-| **Vi xử lý (CPU)** | Intel Core i7-12800H (Alder Lake-H, 14 Cores / 20 Threads: 6 P-Cores up to 4.8 GHz + 8 E-Cores up to 3.7 GHz, 24MB L3 Cache, Display 13) |
-| **Đồ hoạ tích hợp (iGPU)** | Intel Iris Xe Graphics (`8086:46A6`, 96 Execution Units) — **Đã kích hoạt full QE/CI Metal 3D** |
-| **Đồ hoạ rời (dGPU)** | NVIDIA RTX A1000 Laptop (`10DE:25B9`, 4GB GDDR6) — *Đã vô hiệu hoá để tiết kiệm pin và chống nóng* |
-| **Màn hình trong** | 16.0" 16:10 WQXGA (2560 x 1600), tấm nền BOE `NE160QDM-NY1` / `LEN41B0` (eDP, khởi tạo GOP 6-bpc) |
-| **Bộ nhớ RAM** | 32GB (2 x 16GB) DDR5 4800MHz |
-| **Ổ cứng lưu trữ** | NVMe SSD M.2 PCIe 4.0 x4 |
-| **Âm thanh (Audio)** | Realtek ALC245 (AppleALC `layout-id=11`) + Loa stereo Dolby Atmos |
-| **Mạng không dây** | Intel Wi-Fi 6E AX211 160MHz (`AirportItlwm`) & Bluetooth 5.2 (`IntelBluetoothFirmware` + `IntelBTPatcher`) |
-| **Thiết bị nhập liệu** | Bàn phím ThinkPad có đèn nền, TrackPoint + Touchpad đa điểm (`VoodooPS2Controller` + `VoodooI2C`) |
-| **Quản lý nguồn** | `HybridPM.kext` (XE-PM) + `CpuTopologyRebuild.kext` + `YogaSMC.kext` |
+| **Model** | Lenovo ThinkPad P1 Gen 5 (Type `21DDS88B00`) |
+| **Processor (CPU)** | Intel Core i7-12800H (Alder Lake-H, 14 Cores / 20 Threads: 6 P-Cores up to 4.8 GHz + 8 E-Cores up to 3.7 GHz, 24MB L3 Cache, Display 13) |
+| **Integrated GPU (iGPU)** | Intel Iris Xe Graphics (`8086:46A6`, 96 Execution Units) — **Fully accelerated QE/CI Metal 3D** |
+| **Discrete GPU (dGPU)** | NVIDIA RTX A1000 Laptop (`10DE:25B9`, 4GB GDDR6) — *Isolated and powered off to save battery and prevent heat* |
+| **Internal Panel** | 16.0" 16:10 WQXGA (2560 x 1600), BOE `NE160QDM-NY1` / `LEN41B0` (eDP, 6-bpc GOP initialization) |
+| **RAM** | 32GB (2 x 16GB) DDR5 4800MHz |
+| **Storage** | NVMe SSD M.2 PCIe 4.0 x4 |
+| **Audio** | Realtek ALC245 (`layout-id=11` via AppleALC) with Dolby Atmos stereo speakers |
+| **Wireless & Bluetooth** | Intel Wi-Fi 6E AX211 160MHz (`AirportItlwm`) & Bluetooth 5.2 (`IntelBluetoothFirmware` + `IntelBTPatcher`) |
+| **Input Devices** | Backlit ThinkPad Keyboard, TrackPoint + Precision Touchpad (`VoodooPS2Controller` + `VoodooI2C`) |
+| **Power Management** | `HybridPM.kext` (XE-PM) + `CpuTopologyRebuild.kext` + `YogaSMC.kext` |
 
 ---
 
-## 2. Tình Trạng Tính Năng (Current Status)
+## 2. Feature Status
 
-- [x] **Tăng tốc đồ hoạ phần cứng (QE/CI & Metal 3D):** Hoạt động mượt mà ở độ phân giải gốc 2560x1600 @ 60Hz.
-- [x] **Điều khiển độ sáng màn hình:** Hoạt động qua `SSDT-PNLF` và cụm phím tắt `BrightnessKeys.kext`.
-- [x] **Quản lý xung nhịp CPU kiến trúc lai:** `HybridPM.kext` kết hợp `-hpm` giúp điều phối nhân P và nhân E, tự hạ C-states tiết kiệm điện và giữ máy mát mẻ.
-- [x] **Âm thanh:** Loa trong, jack tai nghe 3.5mm và microphone hoạt động qua AppleALC.
-- [x] **Wi-Fi & Bluetooth:** Nhận diện và kết nối tốt mạng 2.4GHz / 5GHz / 6GHz và các thiết bị Bluetooth.
-- [x] **Bàn phím & Trackpad:** Phím bấm chuẩn ThinkPad, TrackPoint mượt, cảm ứng đa điểm cuộn mượt.
-- [x] **Hiển thị phần trăm pin & sạc:** `SMCBatteryManager.kext` + `ECEnabler.kext`.
-- [x] **Chế độ ngủ (Sleep & Wake):** Thức dậy giữ nguyên xung nhịp xuất hình.
-- [ ] **NVIDIA RTX A1000 dGPU:** Không hỗ trợ trên macOS hiện đại; đã ngắt nguồn điện để giảm nhiệt độ máy 20-30°C.
-- [ ] **Camera Windows Hello / IR:** Không hỗ trợ (macOS không hỗ trợ bảo mật khuôn mặt hồng ngoại ngoài FaceID của Apple).
-
----
-
-## 3. Nguồn Gốc & Liên Kết Các Repository Đã Sử Dụng (Credits)
-
-Dự án này là thành quả kế thừa và phát triển từ các công trình xuất sắc của cộng đồng Hackintosh:
-
-* **[khucxtriendev/WhateverXe](https://github.com/khucxtriendev/WhateverXe):** Fork WhateverXe được vá đặc biệt để hỗ trợ UEFI GOP 6-bpc (`0x8a200106`) của ThinkPad P1 Gen 5 và đọc thanh ghi phần cứng tránh lỗi sập xung đen màn hình lúc WindowServer handoff.
-* **[b00t0x/WhateverXe](https://github.com/b00t0x/WhateverXe) & [b00t0x/WhateverXe-Graphics](https://github.com/b00t0x/WhateverXe-Graphics):** Dự án nền tảng điều khiển đồ hoạ Intel Xe trên macOS.
-* **[Thatisjigen/WhateverXe](https://github.com/Thatisjigen/WhateverXe) & [Thatisjigen/acer-nitro-anv15-52-macos](https://github.com/Thatisjigen/acer-nitro-anv15-52-macos):** Nhánh nghiên cứu xuất sắc hỗ trợ Display 13 eDP cho dòng vi xử lý Alder Lake / Raptor Lake di động.
-* **[JulioNectar/Hackintosh-XPS13Plus-IrisXe-Tahoe](https://github.com/JulioNectar/Hackintosh-XPS13Plus-IrisXe-Tahoe):** Tác giả tiên phong dự án Intel Iris Xe Metal trên macOS Tahoe/Sequoia, sáng tạo ra các bản vá cốt lõi:
-  - `xefix.m` / `libxedrv`: Đồng bộ thứ tự Compute/Render và khử lỗi vệt đen blur WindowServer.
-  - `posh_patch`: Khắc phục lỗi rò rỉ bộ nhớ (leak 5.6 MB/s) của trình điều khiển Metal.
-  - `XE-PM` (`HybridPM.kext`): Bộ điều khiển xung nhịp thông minh cho kiến trúc CPU lai Alder Lake.
-* **[Acidanthera](https://github.com/acidanthera):** OpenCorePkg, Lilu, VirtualSMC, AppleALC, RestrictEvents, AMFIPass, v.v.
-* **[OpenIntelWireless](https://github.com/OpenIntelWireless):** Bộ đôi `AirportItlwm` và `IntelBluetoothFirmware`.
+- [x] **Hardware Graphics Acceleration (QE/CI & Metal 3D):** Fully functional at native 2560x1600 @ 60Hz.
+- [x] **Display Backlight Brightness Control:** Smooth brightness slider via `SSDT-PNLF` and `BrightnessKeys.kext`.
+- [x] **Hybrid CPU Power Management:** `HybridPM.kext` combined with `-hpm` dynamically scales P-cores and E-cores, enabling proper C-states to keep the laptop cool and responsive.
+- [x] **Audio:** Internal stereo speakers, 3.5mm headphone combo jack, and internal microphone.
+- [x] **Wi-Fi & Bluetooth:** Full connectivity across 2.4GHz / 5GHz / 6GHz networks and Bluetooth peripherals.
+- [x] **Keyboard & Trackpad:** Native ThinkPad keyboard shortcuts, TrackPoint navigation, and multi-touch gestures.
+- [x] **Battery & Power Monitoring:** ACPI battery status and percentage readout via `SMCBatteryManager.kext` + `ECEnabler.kext`.
+- [x] **Sleep & Wake:** Proper display clock restoration upon waking from sleep.
+- [ ] **NVIDIA RTX A1000 dGPU:** Unsupported on modern macOS; power-down isolation drops internal temperature by 20°C–30°C.
+- [ ] **Windows Hello IR Camera:** Unsupported by macOS.
 
 ---
 
-## 4. Hướng Dẫn Cài Đặt Bằng Phân Vùng USB `1401`
+## 3. Upstream Credits & Acknowledgments
 
-Phân vùng USB khởi động được đặt tên nhãn là **`1401`** (định dạng FAT32). Đây là cấu trúc tiêu chuẩn để cài đặt và chạy các công cụ tự động.
+This configuration builds upon pioneering work by the Hackintosh community:
 
-### Chuẩn bị USB:
-1. Định dạng một phân vùng USB chuẩn **FAT32** (hoặc Master Boot Record / GPT).
-2. Đặt tên nhãn phân vùng (Volume Label) là: **`1401`**.
-3. Sao chép các thư mục từ repository này vào USB:
-   * Thư mục `EFI/` (chứa `BOOT/` và `OC/`) ➔ đặt ngay tại thư mục gốc của USB.
-   * Thư mục `postinstall_tools/` ➔ đặt ngay tại thư mục gốc của USB.
+* **[khucxtriendev/WhateverXe](https://github.com/khucxtriendev/WhateverXe):** WhateverXe fork patched specifically for Lenovo ThinkPad UEFI GOP 6-bpc (`0x8a200106`), eDP panel preservation during Type-C unreadiness, and physical register verification preventing `tryCloseGate()` black screens.
+* **[b00t0x/WhateverXe](https://github.com/b00t0x/WhateverXe) & [b00t0x/WhateverXe-Graphics](https://github.com/b00t0x/WhateverXe-Graphics):** Foundational Intel Xe graphics adaptation layer on macOS.
+* **[Thatisjigen/WhateverXe](https://github.com/Thatisjigen/WhateverXe) & [Thatisjigen/acer-nitro-anv15-52-macos](https://github.com/Thatisjigen/acer-nitro-anv15-52-macos):** Display 13 eDP research and implementations for mobile Alder Lake / Raptor Lake architectures.
+* **[JulioNectar/Hackintosh-XPS13Plus-IrisXe-Tahoe](https://github.com/JulioNectar/Hackintosh-XPS13Plus-IrisXe-Tahoe):** Trailblazing Intel Iris Xe Metal driver adaptation for modern macOS, including:
+  - `xefix.m` / `libxedrv`: Synchronizing compute vs render order and eliminating WindowServer backdrop blur rectangle artifacts.
+  - `posh_patch`: Resolving the command buffer memory leak (5.6 MB/s).
+  - `XE-PM` (`HybridPM.kext`): Intelligent frequency scaling for hybrid P/E core architectures.
+* **[Acidanthera](https://github.com/acidanthera):** OpenCorePkg, Lilu, VirtualSMC, AppleALC, RestrictEvents, AMFIPass, etc.
+* **[OpenIntelWireless](https://github.com/OpenIntelWireless):** AirportItlwm and IntelBluetoothFirmware.
+
+---
+
+## 4. Installation via USB Partition `1401`
+
+The bootable USB partition is standardized with the volume label **`1401`** (formatted as FAT32).
+
+### Preparing the USB Drive:
+1. Format a USB drive partition with **FAT32** (MBR or GPT).
+2. Set the volume label to: **`1401`**.
+3. Copy the folders from this repository to the USB:
+   * The `EFI/` directory (containing `BOOT/` and `OC/`) ➔ Place in the USB root.
+   * The `postinstall_tools/` directory ➔ Place in the USB root.
 
 ```
 USB 1401/
 ├── EFI/
 │   ├── BOOT/
+│   │   └── BOOTx64.efi
 │   └── OC/
+│       ├── config.plist
+│       ├── ACPI/
+│       ├── Drivers/
+│       └── Kexts/
 └── postinstall_tools/
     ├── install_iris_xe.sh
     ├── impostor.dylib
@@ -81,80 +86,80 @@ USB 1401/
     └── whateverxe_thinkpad_p1_gen5.patch
 ```
 
-### Khởi động và cài đặt macOS:
-1. Cắm USB vào cổng USB-A của ThinkPad P1 Gen 5.
-2. Bật nguồn máy, nhấn liên tục phím **F12** để vào Boot Menu của BIOS.
-3. Chọn ổ USB `1401` để vào menu OpenCore.
-4. Chọn bộ cài macOS Sequoia và tiến hành cài đặt vào ổ cứng máy.
+### Booting and Installing macOS:
+1. Insert the USB drive into the ThinkPad P1 Gen 5.
+2. Power on the laptop and immediately press **F12** to enter the BIOS Boot Menu.
+3. Select the `1401` USB device to launch the OpenCore picker.
+4. Select the macOS Sequoia installer and proceed with the installation.
 
 ---
 
-## 5. Hướng Dẫn Cài Đặt Vào `/Library` (Kích Hoạt Metal 3D)
+## 5. Post-Installation: Installing Drivers into `/Library` (Enabling Metal 3D)
 
 > [!IMPORTANT]
-> **Tại sao bắt buộc phải cài đặt vào `/Library`?**
-> Kext WhateverXe ở EFI chỉ đảm nhận quét hình ảnh 2D cơ bản ra màn hình. Nếu chưa cài driver Metal vào `/Library/GPUBundles`, macOS sẽ buộc 14 nhân CPU phải vẽ từng khung hình (Software Rendering) ➔ **Máy sẽ rất lag và nóng ran (80°C - 95°C)**.
-> Sau khi cài đặt bộ driver vào `/Library`, GPU 96 EU sẽ trực tiếp xử lý Metal 3D, giao diện mượt 60 FPS và máy mát rượi!
+> **Why is installing into `/Library` mandatory?**
+> The WhateverXe kernel extension in the EFI only provides a 2D GOP framebuffer scanout to illuminate the screen. Without the Intel Metal driver bundle installed in `/Library/GPUBundles`, macOS falls back to software rendering on the CPU (Apple llvmpipe).
+> Running software rendering on a 2560x1600 display consumes 50%–100% of the 14-core CPU, causing **extreme UI lag and high temperatures (80°C–95°C)**. Installing the driver into `/Library` activates the 96-EU GPU for Metal 3D, delivering smooth 60 FPS animations and cool CPU temperatures.
 
-### Cách 1: Cài đặt tự động bằng 1 lệnh duy nhất (Khuyên dùng)
+### Option 1: Automated 1-Step Installation (Recommended)
 
-Sau khi đã boot vào màn hình Desktop của macOS, hãy cắm USB `1401` vào máy, mở ứng dụng **Terminal** và chạy lệnh sau:
+Once you reach the macOS Desktop, ensure the `1401` USB is plugged in, open **Terminal**, and execute:
 
 ```bash
 sudo bash /Volumes/1401/postinstall_tools/install_iris_xe.sh
 ```
 
-*(Mẹo: Bạn có thể gõ `sudo bash ` có dấu cách, rồi mở Finder kéo thả file `install_iris_xe.sh` từ USB vào cửa sổ Terminal rồi nhấn Enter).*
+*(Tip: You can type `sudo bash ` with a trailing space, then drag and drop `install_iris_xe.sh` from Finder directly into Terminal and press Enter).*
 
-**Script này sẽ tự động:**
-1. Tải và cài đặt gói driver `WhateverXe-Graphics-0.4.0.pkg` vào `/Library/GPUBundles` và `/Library/Extensions`.
-2. Nạp cầu nối `impostor.dylib` (bản vá `xefix` của JulioNectar) và ký chữ ký số `codesign`.
-3. Phân quyền chuẩn `root:wheel` cho toàn bộ thư mục driver.
-4. Làm mới bộ đệm hạt nhân AuxKC (`kmutil install --update-all`).
+**What this script automates:**
+1. Verifies or automatically downloads `WhateverXe-Graphics-0.4.0.pkg` from GitHub and installs it into `/Library/GPUBundles` and `/Library/Extensions`.
+2. Injects JulioNectar's `impostor.dylib` (`xefix`) bridge and ad-hoc codesigns it.
+3. Sets correct ownership and permissions (`root:wheel`, `755`).
+4. Rebuilds the Auxiliary Kernel Collection (`kmutil install --volume-root / --update-all`).
 
 ---
 
-### Cách 2: Cài đặt thủ công từng bước
+### Option 2: Manual Installation Steps
 
-Nếu bạn muốn tự tay thực hiện từng dòng lệnh:
+If you prefer executing each step manually:
 
-1. **Cài đặt gói Graphics Package:**
+1. **Install the WhateverXe Graphics package:**
    ```bash
    sudo installer -pkg /Volumes/1401/postinstall_tools/WhateverXe-Graphics-0.4.0.pkg -target /
    ```
-2. **Nạp bản vá Metal Bridge của JulioNectar:**
+2. **Inject the JulioNectar Metal bridge:**
    ```bash
    sudo cp -f /Volumes/1401/postinstall_tools/impostor.dylib /Library/GPUBundles/AppleIntelTGLGraphicsMTLDriver.bundle/Contents/MacOS/impostor.dylib
    sudo chmod 755 /Library/GPUBundles/AppleIntelTGLGraphicsMTLDriver.bundle/Contents/MacOS/impostor.dylib
    sudo codesign -f -s - -i impostor /Library/GPUBundles/AppleIntelTGLGraphicsMTLDriver.bundle/Contents/MacOS/impostor.dylib
    ```
-3. **Phân quyền chuẩn:**
+3. **Set permissions:**
    ```bash
    sudo chown -R root:wheel /Library/GPUBundles /Library/Extensions
    sudo chmod -R 755 /Library/GPUBundles /Library/Extensions
    ```
-4. **Cập nhật Kernel Cache:**
+4. **Rebuild the Kernel Cache:**
    ```bash
    sudo kmutil install --volume-root / --update-all
    ```
-5. **Khởi động lại máy:**
+5. **Restart the machine:**
    ```bash
    sudo reboot
    ```
 
 ---
 
-## 6. Kiểm Tra Sau Khi Cài Đặt Thành Công
+## 6. Post-Install Verification
 
-Sau khi khởi động lại, mở **Terminal** và gõ lệnh:
+After rebooting, open **Terminal** and run:
 ```bash
 system_profiler SPDisplaysDataType | grep -E "Chipset Model|Metal"
 ```
 
-* **Kết quả chuẩn:**
+* **Expected Output:**
   ```text
   Chipset Model: Intel Iris Xe Graphics
-  Metal Support: Metal 3 (hoặc Metal 2)
+  Metal Support: Metal 3 (or Metal 2)
   ```
-* Mở **Activity Monitor**, bạn sẽ thấy `WindowServer` chỉ ăn 1-3% CPU.
-* Toàn bộ thanh Dock, hiệu ứng phóng to thu nhỏ cửa sổ và video 4K chạy mượt mà 60 FPS, quạt máy êm và nhiệt độ duy trì mát mẻ 45°C - 55°C.
+* Open **Activity Monitor**: `WindowServer` utilization should drop to a steady 1%–3%.
+* Window resizing, Dock magnification, and 4K video playback will run at a fluid **60 FPS**, with CPU temperatures idling comfortably around 45°C–55°C.
