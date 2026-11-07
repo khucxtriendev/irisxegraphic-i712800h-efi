@@ -1,6 +1,10 @@
 # OpenCore EFI for Lenovo ThinkPad P1 Gen 5
 ### Intel Core i7-12800H | Dual-GPU: Intel Iris Xe + NVIDIA RTX A1000 | macOS Sequoia 15.x & Tahoe
 
+<p align="center">
+  <img src="stats.webp" alt="ThinkPad P1 Gen 5 Dual-GPU macOS Stats" width="100%">
+</p>
+
 [![OpenCore](https://img.shields.io/badge/OpenCore-1.0.3-blue.svg)](https://github.com/acidanthera/OpenCorePkg)
 [![macOS](https://img.shields.io/badge/macOS-Sequoia%2015.x%20%7C%20Tahoe-green.svg)](https://www.apple.com/macos/)
 [![WhateverXe](https://img.shields.io/badge/WhateverXe-Patched%206--bpc-orange.svg)](https://github.com/khucxtriendev/WhateverXe)
@@ -27,7 +31,7 @@ Both displays work concurrently with fluid hardware acceleration!
 | **Internal Panel** | 16.0" 16:10 WQXGA (2560 x 1600), BOE `NE160QDM-NY1` / `LEN41B0` (eDP, 6-bpc GOP initialization) |
 | **RAM** | 32GB (2 x 16GB) DDR5 4800MHz |
 | **Storage** | NVMe SSD M.2 PCIe 4.0 x4 |
-| **Audio** | Realtek ALC245 (`layout-id=11` via AppleALC) + Dolby Atmos stereo speakers |
+| **Audio** | Realtek ALC245 (`layout-id=11` via AppleALC) + Dolby Atmos stereo speakers (internal microphone WIP/unsupported) |
 | **Wireless & Bluetooth** | Intel Wi-Fi 6E AX211 160MHz (`AirportItlwm`) & Bluetooth 5.2 (`IntelBluetoothFirmware` + `IntelBTPatcher`) |
 | **Input Devices** | Backlit ThinkPad Keyboard, TrackPoint + Precision Touchpad (`VoodooPS2Controller` + `VoodooI2C`) |
 | **Power Management** | `HybridPM.kext` (XE-PM) + `CpuTopologyRebuild.kext` + `YogaSMC.kext` |
@@ -41,7 +45,8 @@ Both displays work concurrently with fluid hardware acceleration!
   - External HDMI monitor running directly on NVIDIA RTX A1000 (Metal 3).
 - [x] **Display Backlight Brightness Control:** Smooth brightness slider for the internal panel via `SSDT-PNLF` and `BrightnessKeys.kext`.
 - [x] **Hybrid CPU Power Management:** `HybridPM.kext` (XE-PM) combined with `-hpm` dynamically scales P-cores and E-cores, enabling proper C-states to keep temperatures cool (45°C–55°C idle).
-- [x] **Audio:** Internal stereo speakers, 3.5mm headphone combo jack, and internal microphone.
+- [x] **Audio Output:** Internal stereo speakers and 3.5mm audio combo jack (Realtek ALC245 via AppleALC, `layout-id=11`).
+- [ ] **Internal Microphone:** ⚠️ **Currently NOT working / WIP** (Intel Smart Sound Technology / DMIC digital microphone array is not supported natively by AppleALC; external 3.5mm headset combo mic or USB microphone recommended).
 - [x] **Wi-Fi & Bluetooth:** Connectivity across 2.4GHz / 5GHz / 6GHz networks and Bluetooth peripherals.
 - [x] **Keyboard & Trackpad:** ThinkPad keyboard shortcuts, TrackPoint navigation, and multi-touch gestures.
 - [x] **Battery & Power Monitoring:** ACPI battery percentage readout via `SMCBatteryManager.kext` + `ECEnabler.kext`.
@@ -153,7 +158,21 @@ sudo pmset -a hibernatemode 0
 
 ## 6. Complete Step-by-Step Installation Procedure
 
-To achieve a fully functional dual-GPU setup, follow these four phases in order:
+To achieve a fully functional dual-GPU setup, follow these phases in order:
+
+### Phase 0: Lenovo ThinkPad BIOS Configuration (Crucial: Hybrid Graphics)
+Before booting the installer, press **F1** or **Enter** at the Lenovo splash screen to enter the UEFI BIOS Setup and configure the following options:
+
+* ⚠️ **Config -> Display -> Graphics Device:** Set to **`Hybrid Graphics`** *(MANDATORY)*
+  * **DO NOT** select *Discrete Graphics only*: This disables the Intel Iris Xe GPU at the ACPI/PCIe level, preventing the internal 2560x1600 eDP screen from initializing.
+  * **DO NOT** select *Integrated Graphics only*: This cuts power to the NVIDIA RTX A1000, disabling external HDMI video output.
+  * **Hybrid Graphics** keeps both GPUs accessible so WhateverXe drives the internal panel and NullMoth drives the external HDMI monitor.
+* **Security -> Secure Boot:** `Disabled`
+* **Security -> Intel Total Memory Encryption (TME):** `Disabled`
+* **Startup -> Fast Boot:** `Disabled`
+* **Security -> Virtualization -> Intel Virtualization Technology (VT-x):** `Enabled`
+* **Security -> Virtualization -> Intel VT-d:** `Enabled`
+* **Config -> Thunderbolt 4 -> BIOS Assist Mode:** `Disabled`
 
 ### Phase 1: Prepare the USB Installer via NullMoth 1401
 1. Download the **1401 installer tool** from [nullmoth/1401](https://github.com/nullmoth/1401).
