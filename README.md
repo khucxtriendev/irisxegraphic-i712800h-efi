@@ -13,7 +13,7 @@
 [![Keyboard](https://img.shields.io/badge/Keyboard-Native%20Remap-brightgreen.svg)](Keyboard_Remap/)
 [![Kexts](https://img.shields.io/badge/Kexts-36%20Inventory-teal.svg)](docs/KEXTS.md)
 [![Power Management](https://img.shields.io/badge/Power-XE--PM%20Guide-success.svg)](docs/XE-PM-GUIDE.md)
-[![Release](https://img.shields.io/badge/Release-EFI%20v1.0.0%20(ZIP)-purple.svg)](https://github.com/khucxtriendev/irisxegraphic-i712800h-efi/releases/tag/v1.0.0)
+[![Release](https://img.shields.io/badge/Release-EFI%20v1.0.1%20(ZIP)-purple.svg)](https://github.com/khucxtriendev/irisxegraphic-i712800h-efi/releases/tag/v1.0.1)
 
 ### 📚 Documentation & Technical Guides:
 * 📦 [**Kext Reference & Version Inventory**](docs/KEXTS.md): Full breakdown of all 36 kernel extensions, versions, bundle IDs, and input device coordination (`VoodooPS2` + `VoodooI2C`).
@@ -441,4 +441,4 @@ hidutil property --get "UserKeyMapping"
 ## 9. Pre-Packaged Release
 
 For immediate deployment, download the ready-to-use EFI archive from GitHub Releases:
-* 📦 **[Download EFI-ThinkPad-P1-Gen5-v1.0.0.zip](https://github.com/khucxtriendev/irisxegraphic-i712800h-efi/releases/download/v1.0.0/EFI-ThinkPad-P1-Gen5-v1.0.0.zip)**
+* 📦 **[Download EFI-ThinkPad-P1-Gen5-v1.0.1.zip](https://github.com/khucxtriendev/irisxegraphic-i712800h-efi/releases/download/v1.0.1/EFI-ThinkPad-P1-Gen5-v1.0.1.zip)**
