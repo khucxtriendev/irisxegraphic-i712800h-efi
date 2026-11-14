@@ -77,7 +77,7 @@ Both displays work concurrently with fluid hardware acceleration!
 | **Handoff** | ✅ **Working** | Seamlessly continue browsing tabs and open apps from iPhone/iPad to ThinkPad. |
 | **Universal Clipboard** | ✅ **Working** | Copy text or images on your iPhone and paste them directly on macOS. |
 | **Continuity Camera & Mic** | ✅ **Working** | Supported natively. Internal DMIC now functions independently via `LatSOFAudio.kext`, with iPhone Continuity available as a studio-grade alternative. |
-| **AirDrop** | ❌ **Unsupported** | Intel Wi-Fi (`AirportItlwm`) does not support Apple's proprietary Apple Wireless Direct Link (AWDL) protocol on modern macOS (Sonoma/Sequoia). Requires a native Broadcom card for AirDrop. |
+| **AirDrop** | **Working** | Intel Wi-Fi (`ForbiddenItlwm`) 
 | **Universal Control** | ⚠️ **Unsupported** | Depends on Apple AWDL protocol, which is unavailable on Intel Wi-Fi. |
 | **Sidecar** | ⚠️ **Untested / Limited** | Requires Apple T2 hardware or native Apple QuickSync H.265 encoder. |
 | **DRM (Apple TV+, Netflix 4K)** | ⚠️ **Partial** | Netflix/YouTube 1080p works in Chrome/Brave (Widevine). Safari FairPlay 4K streaming is limited on non-native GPUs. |
@@ -434,7 +434,7 @@ hidutil property --get "UserKeyMapping"
 * **[Thatisjigen/WhateverXe](https://github.com/Thatisjigen/WhateverXe) & [Thatisjigen/HybridPM](https://github.com/Thatisjigen/HybridPM):** Display 13 eDP research, upstream WhateverXe mobile tree, and standalone `HybridPM.kext` port for hybrid Intel power management.
 * **[JulioNectar/Hackintosh-XPS13Plus-IrisXe-Tahoe](https://github.com/JulioNectar/Hackintosh-XPS13Plus-IrisXe-Tahoe):** Pioneer of Intel Iris Xe Metal driver adaptation, `impostor.dylib` (`xefix`), and original XE-PM hybrid core power management discovery on macOS Tahoe/Sequoia.
 * **[Acidanthera](https://github.com/acidanthera):** OpenCorePkg, Lilu, VirtualSMC, AppleALC, RestrictEvents, AMFIPass, etc.
-* **[OpenIntelWireless](https://github.com/OpenIntelWireless):** AirportItlwm and IntelBluetoothFirmware.
+* **[retropinapple](https://github.com/retropineaple/ForbiddenItlwm):** ForbiddenItlwm for Airdrop.
 
 ---
 
